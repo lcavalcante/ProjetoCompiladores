@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ufcg.edu.br.ProjetoCompiladores/src-gen" editDirectory="/ufcg.edu.br.ProjetoCompiladores.edit/src"
+    editorDirectory="/ufcg.edu.br.ProjetoCompiladores.editor/src" modelPluginID="ufcg.edu.br.ProjetoCompiladores"
+    forceOverwrite="true" modelName="Java" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="ufcg.edu.br.ProjetoCompiladores.edit"
+    editorPluginID="ufcg.edu.br.ProjetoCompiladores.editor" runtimeVersion="2.11">
+  <genPackages prefix="Java" basePackage="org.xtext.java" disposableProviderFactory="true"
+      fileExtensions="pc" ecorePackage="Java.ecore#/">
+    <genClasses ecoreClass="Java.ecore#//Head">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Head/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Compilation_unit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Compilation_unit/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Compilation_unit/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Package_statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Package_statement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Import_statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Import_statement/classname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Import_statement/packagename"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
