@@ -80,6 +80,11 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.STATIC_INITIALIZER: return createStatic_initializer();
       case JavaPackage.STATEMENT_BLOCK: return createStatement_block();
       case JavaPackage.STATEMENT: return createStatement();
+      case JavaPackage.SWITCH_STATEMENT: return createSwitch_Statement();
+      case JavaPackage.FOR_STATEMENT: return createFor_Statement();
+      case JavaPackage.WHILE_STATEMENT: return createWhile_Statement();
+      case JavaPackage.DO_STATEMENT: return createDo_Statement();
+      case JavaPackage.IF_STATEMENT: return createIf_Statement();
       case JavaPackage.TRY_STATEMENT: return createTry_statement();
       case JavaPackage.PACKAGE_STATEMENT: return createPackage_statement();
       case JavaPackage.IMPORT_STATEMENT: return createImport_statement();
@@ -262,6 +267,61 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     StatementImpl statement = new StatementImpl();
     return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Switch_Statement createSwitch_Statement()
+  {
+    Switch_StatementImpl switch_Statement = new Switch_StatementImpl();
+    return switch_Statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public For_Statement createFor_Statement()
+  {
+    For_StatementImpl for_Statement = new For_StatementImpl();
+    return for_Statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public While_Statement createWhile_Statement()
+  {
+    While_StatementImpl while_Statement = new While_StatementImpl();
+    return while_Statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Do_Statement createDo_Statement()
+  {
+    Do_StatementImpl do_Statement = new Do_StatementImpl();
+    return do_Statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public If_Statement createIf_Statement()
+  {
+    If_StatementImpl if_Statement = new If_StatementImpl();
+    return if_Statement;
   }
 
   /**

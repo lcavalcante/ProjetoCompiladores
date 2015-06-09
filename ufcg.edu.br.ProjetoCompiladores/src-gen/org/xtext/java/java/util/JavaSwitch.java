@@ -185,6 +185,41 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.SWITCH_STATEMENT:
+      {
+        Switch_Statement switch_Statement = (Switch_Statement)theEObject;
+        T result = caseSwitch_Statement(switch_Statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.FOR_STATEMENT:
+      {
+        For_Statement for_Statement = (For_Statement)theEObject;
+        T result = caseFor_Statement(for_Statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.WHILE_STATEMENT:
+      {
+        While_Statement while_Statement = (While_Statement)theEObject;
+        T result = caseWhile_Statement(while_Statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.DO_STATEMENT:
+      {
+        Do_Statement do_Statement = (Do_Statement)theEObject;
+        T result = caseDo_Statement(do_Statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.IF_STATEMENT:
+      {
+        If_Statement if_Statement = (If_Statement)theEObject;
+        T result = caseIf_Statement(if_Statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.TRY_STATEMENT:
       {
         Try_statement try_statement = (Try_statement)theEObject;
@@ -462,6 +497,86 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Switch Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Switch Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSwitch_Statement(Switch_Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFor_Statement(For_Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhile_Statement(While_Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Do Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Do Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDo_Statement(Do_Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIf_Statement(If_Statement object)
   {
     return null;
   }

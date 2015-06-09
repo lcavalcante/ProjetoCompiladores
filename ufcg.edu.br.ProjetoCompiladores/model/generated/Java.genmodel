@@ -73,15 +73,40 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Type/name"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Static_initializer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Static_initializer/static"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Static_initializer/name"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Statement_block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement_block/statements"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/ifStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/doStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/whileStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/forStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/switchStatement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/try"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Statement/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Switch_Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Switch_Statement/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//For_Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//For_Statement/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//For_Statement/pv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//For_Statement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//While_Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//While_Statement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Do_Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Do_Statement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//If_Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//If_Statement/statement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//If_Statement/elseStatement"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Try_statement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/try"/>

@@ -167,6 +167,51 @@ public interface JavaFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Switch Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Switch Statement</em>'.
+   * @generated
+   */
+  Switch_Statement createSwitch_Statement();
+
+  /**
+   * Returns a new object of class '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Statement</em>'.
+   * @generated
+   */
+  For_Statement createFor_Statement();
+
+  /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  While_Statement createWhile_Statement();
+
+  /**
+   * Returns a new object of class '<em>Do Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Do Statement</em>'.
+   * @generated
+   */
+  Do_Statement createDo_Statement();
+
+  /**
+   * Returns a new object of class '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Statement</em>'.
+   * @generated
+   */
+  If_Statement createIf_Statement();
+
+  /**
    * Returns a new object of class '<em>Try statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

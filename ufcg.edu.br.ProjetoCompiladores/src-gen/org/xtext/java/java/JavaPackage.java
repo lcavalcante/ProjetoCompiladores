@@ -665,13 +665,22 @@ public interface JavaPackage extends EPackage
   int STATIC_INITIALIZER = 13;
 
   /**
+   * The feature id for the '<em><b>Static</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_INITIALIZER__STATIC = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATIC_INITIALIZER__NAME = 0;
+  int STATIC_INITIALIZER__NAME = 1;
 
   /**
    * The number of structural features of the '<em>Static initializer</em>' class.
@@ -680,7 +689,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATIC_INITIALIZER_FEATURE_COUNT = 1;
+  int STATIC_INITIALIZER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.StatementImpl <em>Statement</em>}' class.
@@ -693,13 +702,67 @@ public interface JavaPackage extends EPackage
   int STATEMENT = 15;
 
   /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__VARIABLE = 0;
+
+  /**
+   * The feature id for the '<em><b>If Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__IF_STATEMENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Do Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__DO_STATEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>While Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__WHILE_STATEMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>For Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__FOR_STATEMENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Switch Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__SWITCH_STATEMENT = 5;
+
+  /**
    * The feature id for the '<em><b>Try</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT__TRY = 0;
+  int STATEMENT__TRY = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -708,7 +771,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__NAME = 1;
+  int STATEMENT__NAME = 7;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -717,7 +780,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__STATEMENT = 2;
+  int STATEMENT__STATEMENT = 8;
 
   /**
    * The number of structural features of the '<em>Statement</em>' class.
@@ -726,7 +789,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 3;
+  int STATEMENT_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Statement_blockImpl <em>Statement block</em>}' class.
@@ -737,6 +800,60 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   int STATEMENT_BLOCK = 14;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__VARIABLE = STATEMENT__VARIABLE;
+
+  /**
+   * The feature id for the '<em><b>If Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__IF_STATEMENT = STATEMENT__IF_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Do Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__DO_STATEMENT = STATEMENT__DO_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>While Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__WHILE_STATEMENT = STATEMENT__WHILE_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>For Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__FOR_STATEMENT = STATEMENT__FOR_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Switch Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__SWITCH_STATEMENT = STATEMENT__SWITCH_STATEMENT;
 
   /**
    * The feature id for the '<em><b>Try</b></em>' containment reference.
@@ -784,6 +901,173 @@ public interface JavaPackage extends EPackage
   int STATEMENT_BLOCK_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Switch_StatementImpl <em>Switch Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Switch_StatementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getSwitch_Statement()
+   * @generated
+   */
+  int SWITCH_STATEMENT = 16;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_STATEMENT__STATEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Switch Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_STATEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.For_StatementImpl <em>For Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.For_StatementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getFor_Statement()
+   * @generated
+   */
+  int FOR_STATEMENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__VARIABLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Pv</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__PV = 1;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__STATEMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>For Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.While_StatementImpl <em>While Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.While_StatementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getWhile_Statement()
+   * @generated
+   */
+  int WHILE_STATEMENT = 18;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__STATEMENT = 0;
+
+  /**
+   * The number of structural features of the '<em>While Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Do_StatementImpl <em>Do Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Do_StatementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getDo_Statement()
+   * @generated
+   */
+  int DO_STATEMENT = 19;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DO_STATEMENT__STATEMENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Do Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DO_STATEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.If_StatementImpl <em>If Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.If_StatementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getIf_Statement()
+   * @generated
+   */
+  int IF_STATEMENT = 20;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__STATEMENT = 0;
+
+  /**
+   * The feature id for the '<em><b>Else Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSE_STATEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>If Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -791,7 +1075,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getTry_statement()
    * @generated
    */
-  int TRY_STATEMENT = 16;
+  int TRY_STATEMENT = 21;
 
   /**
    * The feature id for the '<em><b>Try</b></em>' attribute.
@@ -873,7 +1157,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 17;
+  int PACKAGE_STATEMENT = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -901,7 +1185,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 18;
+  int IMPORT_STATEMENT = 23;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -1501,6 +1785,17 @@ public interface JavaPackage extends EPackage
   EClass getStatic_initializer();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Static_initializer#getStatic <em>Static</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Static</em>'.
+   * @see org.xtext.java.java.Static_initializer#getStatic()
+   * @see #getStatic_initializer()
+   * @generated
+   */
+  EAttribute getStatic_initializer_Static();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Static_initializer#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1543,6 +1838,72 @@ public interface JavaPackage extends EPackage
   EClass getStatement();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable</em>'.
+   * @see org.xtext.java.java.Statement#getVariable()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Variable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getIfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If Statement</em>'.
+   * @see org.xtext.java.java.Statement#getIfStatement()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_IfStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getDoStatement <em>Do Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Do Statement</em>'.
+   * @see org.xtext.java.java.Statement#getDoStatement()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_DoStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getWhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>While Statement</em>'.
+   * @see org.xtext.java.java.Statement#getWhileStatement()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_WhileStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getForStatement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>For Statement</em>'.
+   * @see org.xtext.java.java.Statement#getForStatement()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_ForStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getSwitchStatement <em>Switch Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Switch Statement</em>'.
+   * @see org.xtext.java.java.Statement#getSwitchStatement()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_SwitchStatement();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getTry <em>Try</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1574,6 +1935,144 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EReference getStatement_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Switch_Statement <em>Switch Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Switch Statement</em>'.
+   * @see org.xtext.java.java.Switch_Statement
+   * @generated
+   */
+  EClass getSwitch_Statement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Switch_Statement#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see org.xtext.java.java.Switch_Statement#getStatements()
+   * @see #getSwitch_Statement()
+   * @generated
+   */
+  EReference getSwitch_Statement_Statements();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.For_Statement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Statement</em>'.
+   * @see org.xtext.java.java.For_Statement
+   * @generated
+   */
+  EClass getFor_Statement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.For_Statement#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable</em>'.
+   * @see org.xtext.java.java.For_Statement#getVariable()
+   * @see #getFor_Statement()
+   * @generated
+   */
+  EReference getFor_Statement_Variable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.For_Statement#getPv <em>Pv</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pv</em>'.
+   * @see org.xtext.java.java.For_Statement#getPv()
+   * @see #getFor_Statement()
+   * @generated
+   */
+  EAttribute getFor_Statement_Pv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.For_Statement#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.java.java.For_Statement#getStatement()
+   * @see #getFor_Statement()
+   * @generated
+   */
+  EReference getFor_Statement_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.While_Statement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>While Statement</em>'.
+   * @see org.xtext.java.java.While_Statement
+   * @generated
+   */
+  EClass getWhile_Statement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.While_Statement#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.java.java.While_Statement#getStatement()
+   * @see #getWhile_Statement()
+   * @generated
+   */
+  EReference getWhile_Statement_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Do_Statement <em>Do Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Do Statement</em>'.
+   * @see org.xtext.java.java.Do_Statement
+   * @generated
+   */
+  EClass getDo_Statement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Do_Statement#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.java.java.Do_Statement#getStatement()
+   * @see #getDo_Statement()
+   * @generated
+   */
+  EReference getDo_Statement_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.If_Statement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Statement</em>'.
+   * @see org.xtext.java.java.If_Statement
+   * @generated
+   */
+  EClass getIf_Statement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.If_Statement#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.java.java.If_Statement#getStatement()
+   * @see #getIf_Statement()
+   * @generated
+   */
+  EReference getIf_Statement_Statement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.If_Statement#getElseStatement <em>Else Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Else Statement</em>'.
+   * @see org.xtext.java.java.If_Statement#getElseStatement()
+   * @see #getIf_Statement()
+   * @generated
+   */
+  EReference getIf_Statement_ElseStatement();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Try_statement <em>Try statement</em>}'.
@@ -2191,6 +2690,14 @@ public interface JavaPackage extends EPackage
     EClass STATIC_INITIALIZER = eINSTANCE.getStatic_initializer();
 
     /**
+     * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATIC_INITIALIZER__STATIC = eINSTANCE.getStatic_initializer_Static();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2227,6 +2734,54 @@ public interface JavaPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__VARIABLE = eINSTANCE.getStatement_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>If Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__IF_STATEMENT = eINSTANCE.getStatement_IfStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Do Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__DO_STATEMENT = eINSTANCE.getStatement_DoStatement();
+
+    /**
+     * The meta object literal for the '<em><b>While Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__WHILE_STATEMENT = eINSTANCE.getStatement_WhileStatement();
+
+    /**
+     * The meta object literal for the '<em><b>For Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__FOR_STATEMENT = eINSTANCE.getStatement_ForStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Switch Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__SWITCH_STATEMENT = eINSTANCE.getStatement_SwitchStatement();
+
+    /**
      * The meta object literal for the '<em><b>Try</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2249,6 +2804,120 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference STATEMENT__STATEMENT = eINSTANCE.getStatement_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Switch_StatementImpl <em>Switch Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Switch_StatementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getSwitch_Statement()
+     * @generated
+     */
+    EClass SWITCH_STATEMENT = eINSTANCE.getSwitch_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_STATEMENT__STATEMENTS = eINSTANCE.getSwitch_Statement_Statements();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.For_StatementImpl <em>For Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.For_StatementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getFor_Statement()
+     * @generated
+     */
+    EClass FOR_STATEMENT = eINSTANCE.getFor_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__VARIABLE = eINSTANCE.getFor_Statement_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Pv</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOR_STATEMENT__PV = eINSTANCE.getFor_Statement_Pv();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__STATEMENT = eINSTANCE.getFor_Statement_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.While_StatementImpl <em>While Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.While_StatementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getWhile_Statement()
+     * @generated
+     */
+    EClass WHILE_STATEMENT = eINSTANCE.getWhile_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__STATEMENT = eINSTANCE.getWhile_Statement_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Do_StatementImpl <em>Do Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Do_StatementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getDo_Statement()
+     * @generated
+     */
+    EClass DO_STATEMENT = eINSTANCE.getDo_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DO_STATEMENT__STATEMENT = eINSTANCE.getDo_Statement_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.If_StatementImpl <em>If Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.If_StatementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getIf_Statement()
+     * @generated
+     */
+    EClass IF_STATEMENT = eINSTANCE.getIf_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__STATEMENT = eINSTANCE.getIf_Statement_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Else Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSE_STATEMENT = eINSTANCE.getIf_Statement_ElseStatement();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.

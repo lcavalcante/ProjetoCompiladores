@@ -23,6 +23,7 @@ import org.xtext.java.java.Static_initializer;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.impl.Static_initializerImpl#getStatic <em>Static</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Static_initializerImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -30,6 +31,26 @@ import org.xtext.java.java.Static_initializer;
  */
 public class Static_initializerImpl extends MinimalEObjectImpl.Container implements Static_initializer
 {
+  /**
+   * The default value of the '{@link #getStatic() <em>Static</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatic()
+   * @generated
+   * @ordered
+   */
+  protected static final String STATIC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getStatic() <em>Static</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatic()
+   * @generated
+   * @ordered
+   */
+  protected String static_ = STATIC_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +80,29 @@ public class Static_initializerImpl extends MinimalEObjectImpl.Container impleme
   protected EClass eStaticClass()
   {
     return JavaPackage.Literals.STATIC_INITIALIZER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getStatic()
+  {
+    return static_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStatic(String newStatic)
+  {
+    String oldStatic = static_;
+    static_ = newStatic;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATIC_INITIALIZER__STATIC, oldStatic, static_));
   }
 
   /**
@@ -135,6 +179,8 @@ public class Static_initializerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case JavaPackage.STATIC_INITIALIZER__STATIC:
+        return getStatic();
       case JavaPackage.STATIC_INITIALIZER__NAME:
         return getName();
     }
@@ -151,6 +197,9 @@ public class Static_initializerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case JavaPackage.STATIC_INITIALIZER__STATIC:
+        setStatic((String)newValue);
+        return;
       case JavaPackage.STATIC_INITIALIZER__NAME:
         setName((Statement_block)newValue);
         return;
@@ -168,6 +217,9 @@ public class Static_initializerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case JavaPackage.STATIC_INITIALIZER__STATIC:
+        setStatic(STATIC_EDEFAULT);
+        return;
       case JavaPackage.STATIC_INITIALIZER__NAME:
         setName((Statement_block)null);
         return;
@@ -185,10 +237,29 @@ public class Static_initializerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case JavaPackage.STATIC_INITIALIZER__STATIC:
+        return STATIC_EDEFAULT == null ? static_ != null : !STATIC_EDEFAULT.equals(static_);
       case JavaPackage.STATIC_INITIALIZER__NAME:
         return name != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (static: ");
+    result.append(static_);
+    result.append(')');
+    return result.toString();
   }
 
 } //Static_initializerImpl

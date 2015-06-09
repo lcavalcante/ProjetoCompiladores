@@ -155,6 +155,31 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
+      public Adapter caseSwitch_Statement(Switch_Statement object)
+      {
+        return createSwitch_StatementAdapter();
+      }
+      @Override
+      public Adapter caseFor_Statement(For_Statement object)
+      {
+        return createFor_StatementAdapter();
+      }
+      @Override
+      public Adapter caseWhile_Statement(While_Statement object)
+      {
+        return createWhile_StatementAdapter();
+      }
+      @Override
+      public Adapter caseDo_Statement(Do_Statement object)
+      {
+        return createDo_StatementAdapter();
+      }
+      @Override
+      public Adapter caseIf_Statement(If_Statement object)
+      {
+        return createIf_StatementAdapter();
+      }
+      @Override
       public Adapter caseTry_statement(Try_statement object)
       {
         return createTry_statementAdapter();
@@ -427,6 +452,81 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Switch_Statement <em>Switch Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Switch_Statement
+   * @generated
+   */
+  public Adapter createSwitch_StatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.For_Statement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.For_Statement
+   * @generated
+   */
+  public Adapter createFor_StatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.While_Statement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.While_Statement
+   * @generated
+   */
+  public Adapter createWhile_StatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Do_Statement <em>Do Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Do_Statement
+   * @generated
+   */
+  public Adapter createDo_StatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.If_Statement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.If_Statement
+   * @generated
+   */
+  public Adapter createIf_StatementAdapter()
   {
     return null;
   }

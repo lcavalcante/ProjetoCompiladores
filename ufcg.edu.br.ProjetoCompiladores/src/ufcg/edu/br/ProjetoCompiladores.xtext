@@ -10,7 +10,7 @@ Head :
 ;
 
 Compilation_unit:
-	  package = (Package_statement)? imports+=Import_statement* type_declarations += Type_declaration*
+	 {Compilation_unit} package = (Package_statement)? imports+=Import_statement* type_declarations += Type_declaration*
 ;
 
 Type_declaration:
@@ -41,7 +41,7 @@ Field_declaration:
 ;
 
 Method_declaration:
-	modifiers+=Modifier* type=Type name=ID '(' parameter=Parameter_list? ')' ('[]')* ((statement = Statement_block) | debug=';')
+	modifiers+=Modifier* type=Type name=ID '(' parameter=Parameter_list? ')' (('['']')|('[]'))* ((statement = Statement_block) | debug=';')
 ;
 
 Constructor_declaration:
@@ -53,7 +53,7 @@ Parameter_list:
 ;
 
 Parameter:
-	type=Type name=ID ('[]')*
+	type=Type name=ID (('['']')|('[]'))*
 ;
 
 Variable_declaration:
@@ -61,11 +61,11 @@ Variable_declaration:
 ;
 
 Variable_declarator:
-	name=ID ('[]')* //('=' initializer=Variable_initializer)?
+	name=ID (('['']')|('[]'))* //('=' initializer=Variable_initializer)?
 ;
 
 Type:
-	name=Type_specifier ('[]')*
+	name=Type_specifier (('['']')|('[]'))*
 ;
 
 Type_specifier:
@@ -98,13 +98,44 @@ Statement_block:
 ;
 
 Statement:
-	(Statement_block)
-	| try=Try_statement
+	 (variable = Variable_declaration)
+	|(ifStatement=If_Statement)
+	|(doStatement=Do_Statement)
+	|(whileStatement=While_Statement)
+	|(forStatement=For_Statement)
+	|(switchStatement=Switch_Statement) 
+	|(Statement_block)
+	|(try=Try_statement)
 	|(name=ID ':' statement=Statement) 
-	| {Statement}'break' name=ID? ';'
-	| {Statement}'continue' name=ID? ';'
-	| {Statement}';'
+	|{Statement}'break' name=ID? ';'
+	|{Statement}'continue' name=ID? ';'
+	|{Statement}';'
 	
+;
+
+Switch_Statement:{Switch_Statement}
+	'switch' '(' /*sExpression=Expression */ ')' '{'
+	(('case' /*cExpressions+=Expression */ ':')|('default' ':')|(statements+=Statement))*
+	'}'
+;
+
+For_Statement:
+	'for' '(' (variable=Variable_declaration| pv=';' /*| (expression=Expression ';') */ )
+	/*(expression2=Expression)?*/ ';'
+	/*(expression3=Expression)?*/ ';'
+	')' statement=Statement
+;
+
+While_Statement:
+	'while' '(' /*expression=Expression */ ')' statement=Statement
+;
+
+Do_Statement:
+	'do' statement=Statement 'while' '(' /*expression=Expression*/ ')' ';'
+;
+
+If_Statement:
+	'if' '(' /*Expression */ ')' statement=Statement  (=> 'else' elseStatement=Statement)?
 ;
 
 Try_statement:
@@ -131,7 +162,7 @@ Package_name_aux:
 ;	
 
 Import_statement:
-	'import' ((classname = Class_name ';') | (packagename=Package_name '.*;;'))  
+	'import' ((classname = Class_name ';') | (packagename=Package_name '.' '*' ';' ';'))  
 ;
 
 
@@ -168,7 +199,7 @@ terminal FINALLY:
 	'finally'
 ;
 terminal ID:
-	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0' .. '\uFFFF')*	
+	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0'..'\uFFFF')*	
 ;
 terminal ML_COMMENT  : 
   '/*' -> '*/';

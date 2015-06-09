@@ -19,8 +19,11 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Compilation_unit;
 import org.xtext.java.java.Constructor_declaration;
+import org.xtext.java.java.Do_Statement;
 import org.xtext.java.java.Field_declaration;
+import org.xtext.java.java.For_Statement;
 import org.xtext.java.java.Head;
+import org.xtext.java.java.If_Statement;
 import org.xtext.java.java.Import_statement;
 import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaPackage;
@@ -31,11 +34,13 @@ import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
+import org.xtext.java.java.Switch_Statement;
 import org.xtext.java.java.Try_statement;
 import org.xtext.java.java.Type;
 import org.xtext.java.java.Type_declaration;
 import org.xtext.java.java.Variable_declaration;
 import org.xtext.java.java.Variable_declarator;
+import org.xtext.java.java.While_Statement;
 import org.xtext.java.services.JavaGrammarAccess;
 
 @SuppressWarnings("all")
@@ -56,11 +61,20 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.CONSTRUCTOR_DECLARATION:
 				sequence_Constructor_declaration(context, (Constructor_declaration) semanticObject); 
 				return; 
+			case JavaPackage.DO_STATEMENT:
+				sequence_Do_Statement(context, (Do_Statement) semanticObject); 
+				return; 
 			case JavaPackage.FIELD_DECLARATION:
 				sequence_Field_declaration(context, (Field_declaration) semanticObject); 
 				return; 
+			case JavaPackage.FOR_STATEMENT:
+				sequence_For_Statement(context, (For_Statement) semanticObject); 
+				return; 
 			case JavaPackage.HEAD:
 				sequence_Head(context, (Head) semanticObject); 
+				return; 
+			case JavaPackage.IF_STATEMENT:
+				sequence_If_Statement(context, (If_Statement) semanticObject); 
 				return; 
 			case JavaPackage.IMPORT_STATEMENT:
 				sequence_Import_statement(context, (Import_statement) semanticObject); 
@@ -89,6 +103,9 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.STATIC_INITIALIZER:
 				sequence_Static_initializer(context, (Static_initializer) semanticObject); 
 				return; 
+			case JavaPackage.SWITCH_STATEMENT:
+				sequence_Switch_Statement(context, (Switch_Statement) semanticObject); 
+				return; 
 			case JavaPackage.TRY_STATEMENT:
 				sequence_Try_statement(context, (Try_statement) semanticObject); 
 				return; 
@@ -103,6 +120,9 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case JavaPackage.VARIABLE_DECLARATOR:
 				sequence_Variable_declarator(context, (Variable_declarator) semanticObject); 
+				return; 
+			case JavaPackage.WHILE_STATEMENT:
+				sequence_While_Statement(context, (While_Statement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -137,6 +157,22 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     statement=Statement
+	 */
+	protected void sequence_Do_Statement(EObject context, Do_Statement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.DO_STATEMENT__STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.DO_STATEMENT__STATEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDo_StatementAccess().getStatementStatementParserRuleCall_1_0(), semanticObject.getStatement());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     ((doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)) | name=Static_initializer | debug=';')
 	 */
 	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
@@ -146,9 +182,27 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     ((variable=Variable_declaration | pv=';') statement=Statement)
+	 */
+	protected void sequence_For_Statement(EObject context, For_Statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     elements+=Compilation_unit
 	 */
 	protected void sequence_Head(EObject context, Head semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (statement=Statement elseStatement=Statement?)
+	 */
+	protected void sequence_If_Statement(EObject context, If_Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -244,17 +298,29 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     name=Statement_block
+	 *     (static=STATIC name=Statement_block)
 	 */
 	protected void sequence_Static_initializer(EObject context, Static_initializer semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.STATIC_INITIALIZER__STATIC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.STATIC_INITIALIZER__STATIC));
 			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.STATIC_INITIALIZER__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.STATIC_INITIALIZER__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStatic_initializerAccess().getStaticSTATICTerminalRuleCall_0_0(), semanticObject.getStatic());
 		feeder.accept(grammarAccess.getStatic_initializerAccess().getNameStatement_blockParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (statements+=Statement*)
+	 */
+	protected void sequence_Switch_Statement(EObject context, Switch_Statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -313,6 +379,22 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getVariable_declaratorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     statement=Statement
+	 */
+	protected void sequence_While_Statement(EObject context, While_Statement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.WHILE_STATEMENT__STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.WHILE_STATEMENT__STATEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWhile_StatementAccess().getStatementStatementParserRuleCall_3_0(), semanticObject.getStatement());
 		feeder.finish();
 	}
 }

@@ -89,6 +89,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Static_initializer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Statement_block"
         containment="true"/>
   </eClassifiers>
@@ -97,10 +98,47 @@
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable_declaration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifStatement" eType="#//If_Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doStatement" eType="#//Do_Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whileStatement" eType="#//While_Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forStatement" eType="#//For_Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchStatement" eType="#//Switch_Statement"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="try" eType="#//Try_statement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Switch_Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="For_Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable_declaration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="While_Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Do_Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="If_Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseStatement" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Try_statement">
