@@ -592,13 +592,13 @@ ruleField_declaration returns [EObject current=null]
 	    }
 
 )
-)))
+)
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getField_declarationAccess().getNameStatic_initializerParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getField_declarationAccess().getNameMethod_declarationParserRuleCall_0_1_2_0()); 
 	    }
-		lv_name_3_0=ruleStatic_initializer		{
+		lv_name_3_0=ruleMethod_declaration		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getField_declarationRule());
 	        }
@@ -606,6 +606,25 @@ ruleField_declaration returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_3_0, 
+        		"Method_declaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getField_declarationAccess().getNameStatic_initializerParserRuleCall_1_0()); 
+	    }
+		lv_name_4_0=ruleStatic_initializer		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getField_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_4_0, 
         		"Static_initializer");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -614,20 +633,159 @@ ruleField_declaration returns [EObject current=null]
 )
     |(
 (
-		lv_debug_4_0=	';' 
+		lv_debug_5_0=	';' 
     {
-        newLeafNode(lv_debug_4_0, grammarAccess.getField_declarationAccess().getDebugSemicolonKeyword_2_0());
+        newLeafNode(lv_debug_5_0, grammarAccess.getField_declarationAccess().getDebugSemicolonKeyword_2_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getField_declarationRule());
 	        }
-       		setWithLastConsumed($current, "debug", lv_debug_4_0, ";");
+       		setWithLastConsumed($current, "debug", lv_debug_5_0, ";");
 	    }
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleMethod_declaration
+entryRuleMethod_declaration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMethod_declarationRule()); }
+	 iv_ruleMethod_declaration=ruleMethod_declaration 
+	 { $current=$iv_ruleMethod_declaration.current; } 
+	 EOF 
+;
+
+// Rule Method_declaration
+ruleMethod_declaration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_modifiers_0_0=RULE_MODIFIER
+		{
+			newLeafNode(lv_modifiers_0_0, grammarAccess.getMethod_declarationAccess().getModifiersMODIFIERTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMethod_declarationRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"modifiers",
+        		lv_modifiers_0_0, 
+        		"MODIFIER");
+	    }
+
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMethod_declarationAccess().getTypeTypeParserRuleCall_1_0()); 
+	    }
+		lv_type_1_0=ruleType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMethod_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_1_0, 
+        		"Type");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_name_2_0=RULE_ID
+		{
+			newLeafNode(lv_name_2_0, grammarAccess.getMethod_declarationAccess().getNameIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMethod_declarationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_3='(' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getMethod_declarationAccess().getLeftParenthesisKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMethod_declarationAccess().getParameterParameter_listParserRuleCall_4_0()); 
+	    }
+		lv_parameter_4_0=ruleParameter_list		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMethod_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"parameter",
+        		lv_parameter_4_0, 
+        		"Parameter_list");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getMethod_declarationAccess().getRightParenthesisKeyword_5());
+    }
+(	otherlv_6='[]' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getMethod_declarationAccess().getLeftSquareBracketRightSquareBracketKeyword_6());
+    }
+)*((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMethod_declarationAccess().getStatementStatement_blockParserRuleCall_7_0_0()); 
+	    }
+		lv_statement_7_0=ruleStatement_block		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMethod_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"statement",
+        		lv_statement_7_0, 
+        		"Statement_block");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		lv_debug_8_0=	';' 
+    {
+        newLeafNode(lv_debug_8_0, grammarAccess.getMethod_declarationAccess().getDebugSemicolonKeyword_7_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMethod_declarationRule());
+	        }
+       		setWithLastConsumed($current, "debug", lv_debug_8_0, ";");
+	    }
+
+)
+)))
 ;
 
 
@@ -1545,9 +1703,9 @@ ruleImport_statement returns [EObject current=null]
 	    }
 
 )
-)	otherlv_4='.*;' 
+)	otherlv_4='.*;;' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getImport_statementAccess().getFullStopAsteriskSemicolonKeyword_1_1_1());
+    	newLeafNode(otherlv_4, grammarAccess.getImport_statementAccess().getFullStopAsteriskSemicolonSemicolonKeyword_1_1_1());
     }
 )))
 ;
@@ -1624,12 +1782,6 @@ RULE_MODIFIER : ('public'|'private'|'protected'|'static'|'final'|'native'|'synch
 
 RULE_ID : ('a'..'z'|'A'..'Z'|'_'|'$') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'$'|'\u00C0'..'\uFFFF')*;
 
-RULE_DOC_COMMENT : '/**';
-
-RULE_INT : ('0'..'9')+;
-
-RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
@@ -1637,5 +1789,7 @@ RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 RULE_ANY_OTHER : .;
+
+RULE_DOC_COMMENT : '/**';
 
 

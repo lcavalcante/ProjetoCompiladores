@@ -70,6 +70,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.INTERFACE_DECLARATION: return createInterface_declaration();
       case JavaPackage.CLASS_DECLARATION: return createClass_declaration();
       case JavaPackage.FIELD_DECLARATION: return createField_declaration();
+      case JavaPackage.METHOD_DECLARATION: return createMethod_declaration();
       case JavaPackage.CONSTRUCTOR_DECLARATION: return createConstructor_declaration();
       case JavaPackage.PARAMETER_LIST: return createParameter_list();
       case JavaPackage.PARAMETER: return createParameter();
@@ -150,6 +151,17 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     Field_declarationImpl field_declaration = new Field_declarationImpl();
     return field_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Method_declaration createMethod_declaration()
+  {
+    Method_declarationImpl method_declaration = new Method_declarationImpl();
+    return method_declaration;
   }
 
   /**

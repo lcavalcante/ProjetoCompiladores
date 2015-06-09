@@ -24,6 +24,7 @@ import org.xtext.java.java.Head;
 import org.xtext.java.java.Import_statement;
 import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaPackage;
+import org.xtext.java.java.Method_declaration;
 import org.xtext.java.java.Package_statement;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
@@ -65,6 +66,9 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case JavaPackage.INTERFACE_DECLARATION:
 				sequence_Interface_declaration(context, (Interface_declaration) semanticObject); 
+				return; 
+			case JavaPackage.METHOD_DECLARATION:
+				sequence_Method_declaration(context, (Method_declaration) semanticObject); 
 				return; 
 			case JavaPackage.PACKAGE_STATEMENT:
 				sequence_Package_statement(context, (Package_statement) semanticObject); 
@@ -129,7 +133,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration)) | name=Static_initializer | debug=';')
+	 *     ((doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)) | name=Static_initializer | debug=';')
 	 */
 	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -159,6 +163,15 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (modifiers+=MODIFIER* interfaceName=ID (extend=Interface_name extends+=Interface_name*)?)
 	 */
 	protected void sequence_Interface_declaration(EObject context, Interface_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (modifiers+=MODIFIER* type=Type name=ID parameter=Parameter_list? (statement=Statement_block | debug=';'))
+	 */
+	protected void sequence_Method_declaration(EObject context, Method_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

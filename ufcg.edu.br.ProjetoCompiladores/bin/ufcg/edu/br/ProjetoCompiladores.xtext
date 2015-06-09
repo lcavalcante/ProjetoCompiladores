@@ -1,4 +1,4 @@
-grammar org.xtext.java.Java with org.eclipse.xtext.common.Terminals
+grammar org.xtext.java.Java hidden(WS, ML_COMMENT, SL_COMMENT)
 
 generate java "http://www.xtext.org/java/Java"
 
@@ -34,9 +34,14 @@ Field_declaration:
 	(doc=DOC_COMMENT? (
 		name=Variable_declaration
 		| name=Constructor_declaration
+		| name=Method_declaration
 	))
 	|(name=Static_initializer) 
 	| debug=';'
+;
+
+Method_declaration:
+	modifiers+=MODIFIER* type=Type name=ID '(' parameter=Parameter_list? ')' ('[]')* ((statement = Statement_block) | debug=';')
 ;
 
 Constructor_declaration:
@@ -107,7 +112,7 @@ Package_name_aux:
 ;	
 
 Import_statement:
-	'import' ((classname = Class_name ';') | (packagename=Package_name '.*;'))  
+	'import' ((classname = Class_name ';') | (packagename=Package_name '.*;;'))  
 ;
 
 
@@ -136,6 +141,16 @@ terminal MODIFIER:
 terminal ID:
 	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0' .. '\uFFFF')*	
 ;
+terminal ML_COMMENT  : 
+  '/*' -> '*/';
+terminal SL_COMMENT : 
+  '//' !('\n'|'\r')* ('\r'? '\n')?;
+ 
+terminal WS  : 
+  (' '|'\t'|'\r'|'\n')+;
+ 
+terminal ANY_OTHER: 
+  .;
 
 terminal DOC_COMMENT :
 	'/**'

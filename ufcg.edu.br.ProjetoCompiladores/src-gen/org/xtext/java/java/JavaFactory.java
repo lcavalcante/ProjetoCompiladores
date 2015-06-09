@@ -77,6 +77,15 @@ public interface JavaFactory extends EFactory
   Field_declaration createField_declaration();
 
   /**
+   * Returns a new object of class '<em>Method declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method declaration</em>'.
+   * @generated
+   */
+  Method_declaration createMethod_declaration();
+
+  /**
    * Returns a new object of class '<em>Constructor declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

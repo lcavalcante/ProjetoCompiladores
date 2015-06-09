@@ -12,7 +12,6 @@ import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class JavaGrammarAccess extends AbstractGrammarElementFinder {
@@ -297,19 +296,23 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameVariable_declarationParserRuleCall_0_1_0_0 = (RuleCall)cNameAssignment_0_1_0.eContents().get(0);
 		private final Assignment cNameAssignment_0_1_1 = (Assignment)cAlternatives_0_1.eContents().get(1);
 		private final RuleCall cNameConstructor_declarationParserRuleCall_0_1_1_0 = (RuleCall)cNameAssignment_0_1_1.eContents().get(0);
+		private final Assignment cNameAssignment_0_1_2 = (Assignment)cAlternatives_0_1.eContents().get(2);
+		private final RuleCall cNameMethod_declarationParserRuleCall_0_1_2_0 = (RuleCall)cNameAssignment_0_1_2.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cNameStatic_initializerParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDebugAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
 		private final Keyword cDebugSemicolonKeyword_2_0 = (Keyword)cDebugAssignment_2.eContents().get(0);
 		
 		//Field_declaration:
-		//	doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration) | name=Static_initializer | debug=";";
+		//	doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration) |
+		//	name=Static_initializer | debug=";";
 		@Override public ParserRule getRule() { return rule; }
 
-		//doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration) | name=Static_initializer | debug=";"
+		//doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration) |
+		//name=Static_initializer | debug=";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration)
+		//doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)
 		public Group getGroup_0() { return cGroup_0; }
 
 		//doc=DOC_COMMENT?
@@ -318,7 +321,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//DOC_COMMENT
 		public RuleCall getDocDOC_COMMENTTerminalRuleCall_0_0_0() { return cDocDOC_COMMENTTerminalRuleCall_0_0_0; }
 
-		//name=Variable_declaration | name=Constructor_declaration
+		//name=Variable_declaration | name=Constructor_declaration | name=Method_declaration
 		public Alternatives getAlternatives_0_1() { return cAlternatives_0_1; }
 
 		//name=Variable_declaration
@@ -333,6 +336,12 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//Constructor_declaration
 		public RuleCall getNameConstructor_declarationParserRuleCall_0_1_1_0() { return cNameConstructor_declarationParserRuleCall_0_1_1_0; }
 
+		//name=Method_declaration
+		public Assignment getNameAssignment_0_1_2() { return cNameAssignment_0_1_2; }
+
+		//Method_declaration
+		public RuleCall getNameMethod_declarationParserRuleCall_0_1_2_0() { return cNameMethod_declarationParserRuleCall_0_1_2_0; }
+
 		//name=Static_initializer
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
@@ -344,6 +353,83 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"
 		public Keyword getDebugSemicolonKeyword_2_0() { return cDebugSemicolonKeyword_2_0; }
+	}
+
+	public class Method_declarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Method_declaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cModifiersAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cModifiersMODIFIERTerminalRuleCall_0_0 = (RuleCall)cModifiersAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cParameterAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cParameterParameter_listParserRuleCall_4_0 = (RuleCall)cParameterAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftSquareBracketRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
+		private final Assignment cStatementAssignment_7_0 = (Assignment)cAlternatives_7.eContents().get(0);
+		private final RuleCall cStatementStatement_blockParserRuleCall_7_0_0 = (RuleCall)cStatementAssignment_7_0.eContents().get(0);
+		private final Assignment cDebugAssignment_7_1 = (Assignment)cAlternatives_7.eContents().get(1);
+		private final Keyword cDebugSemicolonKeyword_7_1_0 = (Keyword)cDebugAssignment_7_1.eContents().get(0);
+		
+		//Method_declaration:
+		//	modifiers+=MODIFIER* type=Type name=ID "(" parameter=Parameter_list? ")" "[]"* (statement=Statement_block |
+		//	debug=";");
+		@Override public ParserRule getRule() { return rule; }
+
+		//modifiers+=MODIFIER* type=Type name=ID "(" parameter=Parameter_list? ")" "[]"* (statement=Statement_block | debug=";")
+		public Group getGroup() { return cGroup; }
+
+		//modifiers+=MODIFIER*
+		public Assignment getModifiersAssignment_0() { return cModifiersAssignment_0; }
+
+		//MODIFIER
+		public RuleCall getModifiersMODIFIERTerminalRuleCall_0_0() { return cModifiersMODIFIERTerminalRuleCall_0_0; }
+
+		//type=Type
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+
+		//Type
+		public RuleCall getTypeTypeParserRuleCall_1_0() { return cTypeTypeParserRuleCall_1_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+
+		//parameter=Parameter_list?
+		public Assignment getParameterAssignment_4() { return cParameterAssignment_4; }
+
+		//Parameter_list
+		public RuleCall getParameterParameter_listParserRuleCall_4_0() { return cParameterParameter_listParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+
+		//"[]"*
+		public Keyword getLeftSquareBracketRightSquareBracketKeyword_6() { return cLeftSquareBracketRightSquareBracketKeyword_6; }
+
+		//statement=Statement_block | debug=";"
+		public Alternatives getAlternatives_7() { return cAlternatives_7; }
+
+		//statement=Statement_block
+		public Assignment getStatementAssignment_7_0() { return cStatementAssignment_7_0; }
+
+		//Statement_block
+		public RuleCall getStatementStatement_blockParserRuleCall_7_0_0() { return cStatementStatement_blockParserRuleCall_7_0_0; }
+
+		//debug=";"
+		public Assignment getDebugAssignment_7_1() { return cDebugAssignment_7_1; }
+
+		//";"
+		public Keyword getDebugSemicolonKeyword_7_1_0() { return cDebugSemicolonKeyword_7_1_0; }
 	}
 
 	public class Constructor_declarationElements extends AbstractParserRuleElementFinder {
@@ -853,19 +939,19 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Assignment cPackagenameAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
 		private final RuleCall cPackagenamePackage_nameParserRuleCall_1_1_0_0 = (RuleCall)cPackagenameAssignment_1_1_0.eContents().get(0);
-		private final Keyword cFullStopAsteriskSemicolonKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Keyword cFullStopAsteriskSemicolonSemicolonKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
 		
 		//Import_statement:
-		//	"import" (classname=Class_name ";" | packagename=Package_name ".*;");
+		//	"import" (classname=Class_name ";" | packagename=Package_name ".*;;");
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" (classname=Class_name ";" | packagename=Package_name ".*;")
+		//"import" (classname=Class_name ";" | packagename=Package_name ".*;;")
 		public Group getGroup() { return cGroup; }
 
 		//"import"
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
-		//classname=Class_name ";" | packagename=Package_name ".*;"
+		//classname=Class_name ";" | packagename=Package_name ".*;;"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//classname=Class_name ";"
@@ -880,7 +966,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_1_0_1() { return cSemicolonKeyword_1_0_1; }
 
-		//packagename=Package_name ".*;"
+		//packagename=Package_name ".*;;"
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//packagename=Package_name
@@ -889,8 +975,8 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//Package_name
 		public RuleCall getPackagenamePackage_nameParserRuleCall_1_1_0_0() { return cPackagenamePackage_nameParserRuleCall_1_1_0_0; }
 
-		//".*;"
-		public Keyword getFullStopAsteriskSemicolonKeyword_1_1_1() { return cFullStopAsteriskSemicolonKeyword_1_1_1; }
+		//".*;;"
+		public Keyword getFullStopAsteriskSemicolonSemicolonKeyword_1_1_1() { return cFullStopAsteriskSemicolonSemicolonKeyword_1_1_1; }
 	}
 
 	public class Class_nameElements extends AbstractParserRuleElementFinder {
@@ -925,6 +1011,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	private final Interface_declarationElements pInterface_declaration;
 	private final Class_declarationElements pClass_declaration;
 	private final Field_declarationElements pField_declaration;
+	private final Method_declarationElements pMethod_declaration;
 	private final Constructor_declarationElements pConstructor_declaration;
 	private final Parameter_listElements pParameter_list;
 	private final ParameterElements pParameter;
@@ -943,23 +1030,24 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	private final Interface_nameElements pInterface_name;
 	private final TerminalRule tMODIFIER;
 	private final TerminalRule tID;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
+	private final TerminalRule tANY_OTHER;
 	private final TerminalRule tDOC_COMMENT;
 	
 	private final Grammar grammar;
 
-	private final TerminalsGrammarAccess gaTerminals;
-
 	@Inject
-	public JavaGrammarAccess(GrammarProvider grammarProvider,
-		TerminalsGrammarAccess gaTerminals) {
+	public JavaGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaTerminals = gaTerminals;
 		this.pHead = new HeadElements();
 		this.pCompilation_unit = new Compilation_unitElements();
 		this.pType_declaration = new Type_declarationElements();
 		this.pInterface_declaration = new Interface_declarationElements();
 		this.pClass_declaration = new Class_declarationElements();
 		this.pField_declaration = new Field_declarationElements();
+		this.pMethod_declaration = new Method_declarationElements();
 		this.pConstructor_declaration = new Constructor_declarationElements();
 		this.pParameter_list = new Parameter_listElements();
 		this.pParameter = new ParameterElements();
@@ -978,6 +1066,10 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		this.pInterface_name = new Interface_nameElements();
 		this.tMODIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MODIFIER");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 		this.tDOC_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOC_COMMENT");
 	}
 	
@@ -1002,10 +1094,6 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
 
 	
 	//Head:
@@ -1061,13 +1149,25 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Field_declaration:
-	//	doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration) | name=Static_initializer | debug=";";
+	//	doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration) |
+	//	name=Static_initializer | debug=";";
 	public Field_declarationElements getField_declarationAccess() {
 		return pField_declaration;
 	}
 	
 	public ParserRule getField_declarationRule() {
 		return getField_declarationAccess().getRule();
+	}
+
+	//Method_declaration:
+	//	modifiers+=MODIFIER* type=Type name=ID "(" parameter=Parameter_list? ")" "[]"* (statement=Statement_block |
+	//	debug=";");
+	public Method_declarationElements getMethod_declarationAccess() {
+		return pMethod_declaration;
+	}
+	
+	public ParserRule getMethod_declarationRule() {
+		return getMethod_declarationAccess().getRule();
 	}
 
 	//Constructor_declaration:
@@ -1203,7 +1303,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Import_statement:
-	//	"import" (classname=Class_name ";" | packagename=Package_name ".*;");
+	//	"import" (classname=Class_name ";" | packagename=Package_name ".*;;");
 	public Import_statementElements getImport_statementAccess() {
 		return pImport_statement;
 	}
@@ -1246,46 +1346,33 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		return tID;
 	} 
 
-	//terminal DOC_COMMENT:
-	//	"/ **";
-	public TerminalRule getDOC_COMMENTRule() {
-		return tDOC_COMMENT;
-	} 
-
-	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
-	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
-	} 
-
-	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
-	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
-	} 
-
 	//terminal ML_COMMENT:
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
+		return tML_COMMENT;
 	} 
 
 	//terminal SL_COMMENT:
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
+		return tSL_COMMENT;
 	} 
 
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return tWS;
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return tANY_OTHER;
+	} 
+
+	//terminal DOC_COMMENT:
+	//	"/ **";
+	public TerminalRule getDOC_COMMENTRule() {
+		return tDOC_COMMENT;
 	} 
 }

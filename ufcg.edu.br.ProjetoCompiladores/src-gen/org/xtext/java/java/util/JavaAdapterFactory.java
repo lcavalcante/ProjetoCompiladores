@@ -105,6 +105,11 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createField_declarationAdapter();
       }
       @Override
+      public Adapter caseMethod_declaration(Method_declaration object)
+      {
+        return createMethod_declarationAdapter();
+      }
+      @Override
       public Adapter caseConstructor_declaration(Constructor_declaration object)
       {
         return createConstructor_declarationAdapter();
@@ -267,6 +272,21 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createField_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Method_declaration <em>Method declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Method_declaration
+   * @generated
+   */
+  public Adapter createMethod_declarationAdapter()
   {
     return null;
   }

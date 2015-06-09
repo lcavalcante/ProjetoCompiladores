@@ -114,6 +114,13 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.METHOD_DECLARATION:
+      {
+        Method_declaration method_declaration = (Method_declaration)theEObject;
+        T result = caseMethod_declaration(method_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.CONSTRUCTOR_DECLARATION:
       {
         Constructor_declaration constructor_declaration = (Constructor_declaration)theEObject;
@@ -287,6 +294,22 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseField_declaration(Field_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Method declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethod_declaration(Method_declaration object)
   {
     return null;
   }

@@ -342,6 +342,79 @@ public interface JavaPackage extends EPackage
   int FIELD_DECLARATION_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Method_declarationImpl <em>Method declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Method_declarationImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getMethod_declaration()
+   * @generated
+   */
+  int METHOD_DECLARATION = 6;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION__MODIFIERS = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION__NAME = 2;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION__PARAMETER = 3;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION__STATEMENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Debug</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION__DEBUG = 5;
+
+  /**
+   * The number of structural features of the '<em>Method declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_DECLARATION_FEATURE_COUNT = 6;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -349,7 +422,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getConstructor_declaration()
    * @generated
    */
-  int CONSTRUCTOR_DECLARATION = 6;
+  int CONSTRUCTOR_DECLARATION = 7;
 
   /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -404,7 +477,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter_list()
    * @generated
    */
-  int PARAMETER_LIST = 7;
+  int PARAMETER_LIST = 8;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -441,7 +514,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 8;
+  int PARAMETER = 9;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -478,7 +551,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 9;
+  int VARIABLE_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -533,7 +606,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declarator()
    * @generated
    */
-  int VARIABLE_DECLARATOR = 10;
+  int VARIABLE_DECLARATOR = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -561,7 +634,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getType()
    * @generated
    */
-  int TYPE = 11;
+  int TYPE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -589,7 +662,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatic_initializer()
    * @generated
    */
-  int STATIC_INITIALIZER = 12;
+  int STATIC_INITIALIZER = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -617,7 +690,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement_block()
    * @generated
    */
-  int STATEMENT_BLOCK = 13;
+  int STATEMENT_BLOCK = 14;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -645,7 +718,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 14;
+  int STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -682,7 +755,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 15;
+  int PACKAGE_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -710,7 +783,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 16;
+  int IMPORT_STATEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -1008,6 +1081,82 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EAttribute getField_declaration_Debug();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Method_declaration <em>Method declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method declaration</em>'.
+   * @see org.xtext.java.java.Method_declaration
+   * @generated
+   */
+  EClass getMethod_declaration();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.java.java.Method_declaration#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see org.xtext.java.java.Method_declaration#getModifiers()
+   * @see #getMethod_declaration()
+   * @generated
+   */
+  EAttribute getMethod_declaration_Modifiers();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Method_declaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.java.java.Method_declaration#getType()
+   * @see #getMethod_declaration()
+   * @generated
+   */
+  EReference getMethod_declaration_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Method_declaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Method_declaration#getName()
+   * @see #getMethod_declaration()
+   * @generated
+   */
+  EAttribute getMethod_declaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Method_declaration#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see org.xtext.java.java.Method_declaration#getParameter()
+   * @see #getMethod_declaration()
+   * @generated
+   */
+  EReference getMethod_declaration_Parameter();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Method_declaration#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.java.java.Method_declaration#getStatement()
+   * @see #getMethod_declaration()
+   * @generated
+   */
+  EReference getMethod_declaration_Statement();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Method_declaration#getDebug <em>Debug</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Debug</em>'.
+   * @see org.xtext.java.java.Method_declaration#getDebug()
+   * @see #getMethod_declaration()
+   * @generated
+   */
+  EAttribute getMethod_declaration_Debug();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Constructor_declaration <em>Constructor declaration</em>}'.
@@ -1584,6 +1733,64 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EAttribute FIELD_DECLARATION__DEBUG = eINSTANCE.getField_declaration_Debug();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Method_declarationImpl <em>Method declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Method_declarationImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getMethod_declaration()
+     * @generated
+     */
+    EClass METHOD_DECLARATION = eINSTANCE.getMethod_declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METHOD_DECLARATION__MODIFIERS = eINSTANCE.getMethod_declaration_Modifiers();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_DECLARATION__TYPE = eINSTANCE.getMethod_declaration_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METHOD_DECLARATION__NAME = eINSTANCE.getMethod_declaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_DECLARATION__PARAMETER = eINSTANCE.getMethod_declaration_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_DECLARATION__STATEMENT = eINSTANCE.getMethod_declaration_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Debug</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METHOD_DECLARATION__DEBUG = eINSTANCE.getMethod_declaration_Debug();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
