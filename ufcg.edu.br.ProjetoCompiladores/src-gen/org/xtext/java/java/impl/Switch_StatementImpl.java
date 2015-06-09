@@ -26,10 +26,10 @@ import org.xtext.java.java.Switch_Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Switch_StatementImpl#getStatements <em>Statements</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.While_Statement#getStatement <em>Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getWhile_Statement()
  * @model

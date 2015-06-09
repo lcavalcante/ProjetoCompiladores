@@ -895,8 +895,8 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		
 		//Statement:
-		//	variable=Variable_declaration | ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement |
-		//	forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID ":"
+		//	variable=Variable_declaration | ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement
+		//	| forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID ":"
 		//	statement=Statement | {Statement} "break" name=ID? ";" | {Statement} "continue" name=ID? ";" | {Statement} ";";
 		@Override public ParserRule getRule() { return rule; }
 
@@ -1809,8 +1809,8 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Statement:
-	//	variable=Variable_declaration | ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement |
-	//	forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID ":"
+	//	variable=Variable_declaration | ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement
+	//	| forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID ":"
 	//	statement=Statement | {Statement} "break" name=ID? ";" | {Statement} "continue" name=ID? ";" | {Statement} ";";
 	public StatementElements getStatementAccess() {
 		return pStatement;

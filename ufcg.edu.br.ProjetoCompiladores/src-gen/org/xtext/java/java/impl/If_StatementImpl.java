@@ -21,11 +21,11 @@ import org.xtext.java.java.Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.If_StatementImpl#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.If_StatementImpl#getElseStatement <em>Else Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

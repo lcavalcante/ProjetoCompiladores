@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Try_statement#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getTryStatement <em>Try Statement</em>}</li>
@@ -23,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Try_statement#getFinally <em>Finally</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getFinallyStatement <em>Finally Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getTry_statement()
  * @model

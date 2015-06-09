@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Import_statement#getClassname <em>Classname</em>}</li>
  *   <li>{@link org.xtext.java.java.Import_statement#getPackagename <em>Packagename</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getImport_statement()
  * @model

@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Statement#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getIfStatement <em>If Statement</em>}</li>
@@ -23,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Statement#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getStatement <em>Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getStatement()
  * @model

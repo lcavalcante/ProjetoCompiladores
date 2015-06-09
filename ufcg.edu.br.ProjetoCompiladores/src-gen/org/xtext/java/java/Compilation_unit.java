@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Compilation_unit#getPackage <em>Package</em>}</li>
  *   <li>{@link org.xtext.java.java.Compilation_unit#getImports <em>Imports</em>}</li>
  *   <li>{@link org.xtext.java.java.Compilation_unit#getType_declarations <em>Type declarations</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getCompilation_unit()
  * @model

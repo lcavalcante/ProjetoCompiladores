@@ -24,54 +24,54 @@ public class InternalJavaParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOC_COMMENT", "RULE_ID", "RULE_MOD", "RULE_STATIC", "RULE_TRY", "RULE_CATCH", "RULE_FINALLY", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'interface'", "'extends'", "','", "'{'", "'}'", "'class'", "'implements'", "'('", "')'", "'['", "']'", "'[]'", "'boolean'", "'byte'", "'char'", "'short'", "'int'", "'float'", "'long'", "'double'", "':'", "'break'", "'continue'", "'switch'", "'case'", "'default'", "'for'", "'while'", "'do'", "'if'", "'else'", "'package'", "'.'", "'import'", "'*'"
     };
-    public static final int T__50=50;
-    public static final int RULE_CATCH=9;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
     public static final int RULE_ID=5;
-    public static final int RULE_MOD=6;
-    public static final int RULE_DOC_COMMENT=4;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int RULE_FINALLY=10;
-    public static final int T__28=28;
     public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int T__23=23;
-    public static final int T__24=24;
+    public static final int RULE_DOC_COMMENT=4;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
     public static final int T__25=25;
-    public static final int T__20=20;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=14;
     public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int RULE_STATIC=7;
+    public static final int EOF=-1;
+    public static final int RULE_MOD=6;
+    public static final int T__19=19;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_CATCH=9;
+    public static final int RULE_TRY=8;
     public static final int RULE_SL_COMMENT=12;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int RULE_ML_COMMENT=11;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_TRY=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=13;
-    public static final int RULE_STATIC=7;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
+    public static final int RULE_FINALLY=10;
 
     // delegates
     // delegators
@@ -7109,11 +7109,11 @@ public class InternalJavaParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred2_InternalJava() {
+    public final boolean synpred1_InternalJava() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred2_InternalJava_fragment(); // can never throw exception
+            synpred1_InternalJava_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -7123,11 +7123,11 @@ public class InternalJavaParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred1_InternalJava() {
+    public final boolean synpred2_InternalJava() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred1_InternalJava_fragment(); // can never throw exception
+            synpred2_InternalJava_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -7201,11 +7201,11 @@ public class InternalJavaParser extends AbstractInternalAntlrParser {
     static final String DFA15_eofS =
         "\25\uffff";
     static final String DFA15_minS =
-        "\14\5\1\32\1\5\1\17\1\5\1\uffff\1\5\2\uffff\1\5";
+        "\14\5\1\32\1\5\1\17\1\uffff\2\5\2\uffff\1\5";
     static final String DFA15_maxS =
-        "\3\43\10\33\1\60\1\32\2\33\1\5\1\uffff\1\33\2\uffff\1\60";
+        "\3\43\10\33\1\60\1\32\2\33\1\uffff\1\5\1\33\2\uffff\1\60";
     static final String DFA15_acceptS =
-        "\20\uffff\1\2\1\uffff\1\1\1\3\1\uffff";
+        "\17\uffff\1\2\2\uffff\1\3\1\1\1\uffff";
     static final String DFA15_specialS =
         "\25\uffff}>";
     static final String[] DFA15_transitionS = {
@@ -7220,16 +7220,16 @@ public class InternalJavaParser extends AbstractInternalAntlrParser {
             "\1\16\23\uffff\1\14\1\uffff\1\15",
             "\1\16\23\uffff\1\14\1\uffff\1\15",
             "\1\16\23\uffff\1\14\1\uffff\1\15",
-            "\1\16\21\uffff\1\20\1\uffff\1\14\1\uffff\1\15\24\uffff\1\17",
+            "\1\16\21\uffff\1\17\1\uffff\1\14\1\uffff\1\15\24\uffff\1\20",
             "\1\21",
             "\1\16\23\uffff\1\14\1\uffff\1\15",
-            "\1\22\2\uffff\1\22\4\uffff\1\23\1\uffff\1\22\1\uffff\1\22",
-            "\1\24",
+            "\1\23\2\uffff\1\23\4\uffff\1\22\1\uffff\1\23\1\uffff\1\23",
             "",
+            "\1\24",
             "\1\16\23\uffff\1\14\1\uffff\1\15",
             "",
             "",
-            "\1\16\23\uffff\1\14\1\uffff\1\15\24\uffff\1\17"
+            "\1\16\23\uffff\1\14\1\uffff\1\15\24\uffff\1\20"
     };
 
     static final short[] DFA15_eot = DFA.unpackEncodedString(DFA15_eotS);
@@ -7274,11 +7274,13 @@ public class InternalJavaParser extends AbstractInternalAntlrParser {
     static final String DFA34_maxS =
         "\1\55\1\uffff\1\60\13\uffff";
     static final String DFA34_acceptS =
-        "\1\uffff\1\1\1\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\12\1\13\1\14\1\11";
+        "\1\uffff\1\1\1\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\12\1\13\1\14"+
+        "\1\11";
     static final String DFA34_specialS =
         "\16\uffff}>";
     static final String[] DFA34_transitionS = {
-            "\1\2\2\1\1\11\6\uffff\1\14\3\uffff\1\10\10\uffff\10\1\1\uffff\1\12\1\13\1\7\2\uffff\1\6\1\5\1\4\1\3",
+            "\1\2\2\1\1\11\6\uffff\1\14\3\uffff\1\10\10\uffff\10\1\1\uffff"+
+            "\1\12\1\13\1\7\2\uffff\1\6\1\5\1\4\1\3",
             "",
             "\1\1\23\uffff\1\1\1\uffff\1\1\10\uffff\1\15\13\uffff\1\1",
             "",

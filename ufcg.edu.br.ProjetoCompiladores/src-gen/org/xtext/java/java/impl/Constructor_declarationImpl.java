@@ -28,13 +28,13 @@ import org.xtext.java.java.Statement_block;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Constructor_declarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Constructor_declarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Constructor_declarationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Constructor_declarationImpl#getStatement <em>Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
