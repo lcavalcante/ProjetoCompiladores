@@ -77,6 +77,33 @@ public interface JavaFactory extends EFactory
   Field_declaration createField_declaration();
 
   /**
+   * Returns a new object of class '<em>Variable declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable declaration</em>'.
+   * @generated
+   */
+  Variable_declaration createVariable_declaration();
+
+  /**
+   * Returns a new object of class '<em>Variable declarator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable declarator</em>'.
+   * @generated
+   */
+  Variable_declarator createVariable_declarator();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
    * Returns a new object of class '<em>Static initializer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

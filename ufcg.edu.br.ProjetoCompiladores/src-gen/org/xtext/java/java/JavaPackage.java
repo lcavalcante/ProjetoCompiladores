@@ -306,13 +306,22 @@ public interface JavaPackage extends EPackage
   int FIELD_DECLARATION = 5;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_DECLARATION__DOC = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FIELD_DECLARATION__NAME = 0;
+  int FIELD_DECLARATION__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Debug</b></em>' attribute.
@@ -321,7 +330,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIELD_DECLARATION__DEBUG = 1;
+  int FIELD_DECLARATION__DEBUG = 2;
 
   /**
    * The number of structural features of the '<em>Field declaration</em>' class.
@@ -330,7 +339,118 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIELD_DECLARATION_FEATURE_COUNT = 2;
+  int FIELD_DECLARATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Variable_declarationImpl <em>Variable declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Variable_declarationImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declaration()
+   * @generated
+   */
+  int VARIABLE_DECLARATION = 6;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION__MODIFIERS = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION__NAME = 2;
+
+  /**
+   * The feature id for the '<em><b>Names</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION__NAMES = 3;
+
+  /**
+   * The number of structural features of the '<em>Variable declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Variable_declaratorImpl <em>Variable declarator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Variable_declaratorImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declarator()
+   * @generated
+   */
+  int VARIABLE_DECLARATOR = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATOR__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Variable declarator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATOR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.TypeImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Static_initializerImpl <em>Static initializer</em>}' class.
@@ -340,7 +460,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatic_initializer()
    * @generated
    */
-  int STATIC_INITIALIZER = 6;
+  int STATIC_INITIALIZER = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -368,7 +488,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement_block()
    * @generated
    */
-  int STATEMENT_BLOCK = 7;
+  int STATEMENT_BLOCK = 10;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -396,7 +516,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 8;
+  int STATEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -433,7 +553,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 9;
+  int PACKAGE_STATEMENT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +581,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 10;
+  int IMPORT_STATEMENT = 13;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -728,6 +848,17 @@ public interface JavaPackage extends EPackage
   EClass getField_declaration();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Field_declaration#getDoc <em>Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Doc</em>'.
+   * @see org.xtext.java.java.Field_declaration#getDoc()
+   * @see #getField_declaration()
+   * @generated
+   */
+  EAttribute getField_declaration_Doc();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Field_declaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -748,6 +879,102 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EAttribute getField_declaration_Debug();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Variable_declaration <em>Variable declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable declaration</em>'.
+   * @see org.xtext.java.java.Variable_declaration
+   * @generated
+   */
+  EClass getVariable_declaration();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.java.java.Variable_declaration#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see org.xtext.java.java.Variable_declaration#getModifiers()
+   * @see #getVariable_declaration()
+   * @generated
+   */
+  EAttribute getVariable_declaration_Modifiers();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Variable_declaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.java.java.Variable_declaration#getType()
+   * @see #getVariable_declaration()
+   * @generated
+   */
+  EReference getVariable_declaration_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Variable_declaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see org.xtext.java.java.Variable_declaration#getName()
+   * @see #getVariable_declaration()
+   * @generated
+   */
+  EReference getVariable_declaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Variable_declaration#getNames <em>Names</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Names</em>'.
+   * @see org.xtext.java.java.Variable_declaration#getNames()
+   * @see #getVariable_declaration()
+   * @generated
+   */
+  EReference getVariable_declaration_Names();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Variable_declarator <em>Variable declarator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable declarator</em>'.
+   * @see org.xtext.java.java.Variable_declarator
+   * @generated
+   */
+  EClass getVariable_declarator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Variable_declarator#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Variable_declarator#getName()
+   * @see #getVariable_declarator()
+   * @generated
+   */
+  EAttribute getVariable_declarator_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type</em>'.
+   * @see org.xtext.java.java.Type
+   * @generated
+   */
+  EClass getType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Type#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Type#getName()
+   * @see #getType()
+   * @generated
+   */
+  EAttribute getType_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Static_initializer <em>Static initializer</em>}'.
@@ -1088,6 +1315,14 @@ public interface JavaPackage extends EPackage
     EClass FIELD_DECLARATION = eINSTANCE.getField_declaration();
 
     /**
+     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_DECLARATION__DOC = eINSTANCE.getField_declaration_Doc();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1102,6 +1337,84 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EAttribute FIELD_DECLARATION__DEBUG = eINSTANCE.getField_declaration_Debug();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Variable_declarationImpl <em>Variable declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Variable_declarationImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declaration()
+     * @generated
+     */
+    EClass VARIABLE_DECLARATION = eINSTANCE.getVariable_declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DECLARATION__MODIFIERS = eINSTANCE.getVariable_declaration_Modifiers();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_DECLARATION__TYPE = eINSTANCE.getVariable_declaration_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_DECLARATION__NAME = eINSTANCE.getVariable_declaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Names</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_DECLARATION__NAMES = eINSTANCE.getVariable_declaration_Names();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Variable_declaratorImpl <em>Variable declarator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Variable_declaratorImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declarator()
+     * @generated
+     */
+    EClass VARIABLE_DECLARATOR = eINSTANCE.getVariable_declarator();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DECLARATOR__NAME = eINSTANCE.getVariable_declarator_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.TypeImpl <em>Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.TypeImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getType()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.getType();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Static_initializerImpl <em>Static initializer</em>}' class.

@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -13,7 +14,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.JavaPackage;
-import org.xtext.java.java.Static_initializer;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +23,7 @@ import org.xtext.java.java.Static_initializer;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getDebug <em>Debug</em>}</li>
  * </ul>
@@ -32,6 +33,26 @@ import org.xtext.java.java.Static_initializer;
 public class Field_declarationImpl extends MinimalEObjectImpl.Container implements Field_declaration
 {
   /**
+   * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDoc()
+   * @generated
+   * @ordered
+   */
+  protected static final String DOC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDoc() <em>Doc</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDoc()
+   * @generated
+   * @ordered
+   */
+  protected String doc = DOC_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -39,7 +60,7 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected Static_initializer name;
+  protected EObject name;
 
   /**
    * The default value of the '{@link #getDebug() <em>Debug</em>}' attribute.
@@ -87,7 +108,30 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Static_initializer getName()
+  public String getDoc()
+  {
+    return doc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDoc(String newDoc)
+  {
+    String oldDoc = doc;
+    doc = newDoc;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.FIELD_DECLARATION__DOC, oldDoc, doc));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObject getName()
   {
     return name;
   }
@@ -97,9 +141,9 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Static_initializer newName, NotificationChain msgs)
+  public NotificationChain basicSetName(EObject newName, NotificationChain msgs)
   {
-    Static_initializer oldName = name;
+    EObject oldName = name;
     name = newName;
     if (eNotificationRequired())
     {
@@ -114,7 +158,7 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(Static_initializer newName)
+  public void setName(EObject newName)
   {
     if (newName != name)
     {
@@ -179,6 +223,8 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case JavaPackage.FIELD_DECLARATION__DOC:
+        return getDoc();
       case JavaPackage.FIELD_DECLARATION__NAME:
         return getName();
       case JavaPackage.FIELD_DECLARATION__DEBUG:
@@ -197,8 +243,11 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case JavaPackage.FIELD_DECLARATION__DOC:
+        setDoc((String)newValue);
+        return;
       case JavaPackage.FIELD_DECLARATION__NAME:
-        setName((Static_initializer)newValue);
+        setName((EObject)newValue);
         return;
       case JavaPackage.FIELD_DECLARATION__DEBUG:
         setDebug((String)newValue);
@@ -217,8 +266,11 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case JavaPackage.FIELD_DECLARATION__DOC:
+        setDoc(DOC_EDEFAULT);
+        return;
       case JavaPackage.FIELD_DECLARATION__NAME:
-        setName((Static_initializer)null);
+        setName((EObject)null);
         return;
       case JavaPackage.FIELD_DECLARATION__DEBUG:
         setDebug(DEBUG_EDEFAULT);
@@ -237,6 +289,8 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case JavaPackage.FIELD_DECLARATION__DOC:
+        return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case JavaPackage.FIELD_DECLARATION__NAME:
         return name != null;
       case JavaPackage.FIELD_DECLARATION__DEBUG:
@@ -256,7 +310,9 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (debug: ");
+    result.append(" (doc: ");
+    result.append(doc);
+    result.append(", debug: ");
     result.append(debug);
     result.append(')');
     return result.toString();

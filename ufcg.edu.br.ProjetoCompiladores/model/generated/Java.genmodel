@@ -34,8 +34,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Class_declaration/fields"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Field_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Field_declaration/doc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Field_declaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Field_declaration/debug"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Variable_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Variable_declaration/modifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Variable_declaration/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Variable_declaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Variable_declaration/names"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Variable_declarator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Variable_declarator/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Type/name"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Static_initializer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Static_initializer/name"/>

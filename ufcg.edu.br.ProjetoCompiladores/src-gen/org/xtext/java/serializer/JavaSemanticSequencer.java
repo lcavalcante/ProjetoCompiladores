@@ -27,7 +27,10 @@ import org.xtext.java.java.Package_statement;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
+import org.xtext.java.java.Type;
 import org.xtext.java.java.Type_declaration;
+import org.xtext.java.java.Variable_declaration;
+import org.xtext.java.java.Variable_declarator;
 import org.xtext.java.services.JavaGrammarAccess;
 
 @SuppressWarnings("all")
@@ -69,8 +72,17 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.STATIC_INITIALIZER:
 				sequence_Static_initializer(context, (Static_initializer) semanticObject); 
 				return; 
+			case JavaPackage.TYPE:
+				sequence_Type(context, (Type) semanticObject); 
+				return; 
 			case JavaPackage.TYPE_DECLARATION:
 				sequence_Type_declaration(context, (Type_declaration) semanticObject); 
+				return; 
+			case JavaPackage.VARIABLE_DECLARATION:
+				sequence_Variable_declaration(context, (Variable_declaration) semanticObject); 
+				return; 
+			case JavaPackage.VARIABLE_DECLARATOR:
+				sequence_Variable_declarator(context, (Variable_declarator) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -96,7 +108,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=Static_initializer | debug=';')
+	 *     ((doc=DOC_COMMENT? name=Variable_declaration) | name=Static_initializer | debug=';')
 	 */
 	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -148,7 +160,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     {Statement}
+	 *     ((name=ID?) | (name=ID?))
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -182,9 +194,50 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     name=Type_specifier
+	 */
+	protected void sequence_Type(EObject context, Type semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.TYPE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTypeAccess().getNameType_specifierParserRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (doc=DOC_COMMENT? (name=Class_declaration | name=Interface_declaration))
 	 */
 	protected void sequence_Type_declaration(EObject context, Type_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (modifiers+=MODIFIER* type=Type name=Variable_declarator names+=Variable_declarator*)
+	 */
+	protected void sequence_Variable_declaration(EObject context, Variable_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_Variable_declarator(EObject context, Variable_declarator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVariable_declaratorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
 	}
 }

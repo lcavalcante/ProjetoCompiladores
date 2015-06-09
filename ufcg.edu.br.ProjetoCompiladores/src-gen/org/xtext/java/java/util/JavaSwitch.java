@@ -114,6 +114,27 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.VARIABLE_DECLARATION:
+      {
+        Variable_declaration variable_declaration = (Variable_declaration)theEObject;
+        T result = caseVariable_declaration(variable_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.VARIABLE_DECLARATOR:
+      {
+        Variable_declarator variable_declarator = (Variable_declarator)theEObject;
+        T result = caseVariable_declarator(variable_declarator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.TYPE:
+      {
+        Type type = (Type)theEObject;
+        T result = caseType(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.STATIC_INITIALIZER:
       {
         Static_initializer static_initializer = (Static_initializer)theEObject;
@@ -245,6 +266,54 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseField_declaration(Field_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable_declaration(Variable_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable declarator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable declarator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable_declarator(Variable_declarator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseType(Type object)
   {
     return null;
   }

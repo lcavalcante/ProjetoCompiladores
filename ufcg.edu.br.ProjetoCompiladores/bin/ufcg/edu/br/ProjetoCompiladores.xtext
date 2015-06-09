@@ -31,7 +31,35 @@ Class_declaration:
 ;
 
 Field_declaration:
-	(name=Static_initializer) | debug=';'
+	(doc=DOC_COMMENT? (
+		name=Variable_declaration
+	))
+	|(name=Static_initializer) 
+	| debug=';'
+;
+
+Variable_declaration:
+	modifiers+=MODIFIER* type=Type name=Variable_declarator (',' names+= Variable_declarator)* ';'
+;
+
+Variable_declarator:
+	name=ID ('[]')* //('=' initializer=Variable_initializer)?
+;
+
+Type:
+	name=Type_specifier ('[]')*
+;
+
+Type_specifier:
+	    "boolean" 
+      | "byte" 
+      | "char" 
+      | "short" 
+      | "int" 
+      | "float" 
+      | "long" 
+      | "double" 
+      | Class_name
 ;
 
 Static_initializer:
@@ -43,7 +71,11 @@ Statement_block:
 ;
 
 Statement:
-	(name=ID ':' statement=Statement) | {Statement}';'
+	(name=ID ':' statement=Statement) 
+	| {Statement}'break' name=ID? ';'
+	| {Statement}'continue' name=ID? ';'
+	| {Statement}';'
+	
 ;
 
 
@@ -87,11 +119,12 @@ terminal MODIFIER:
       | "transient" 	
 ;
 
-terminal DOC_COMMENT :
-	'/*'
-;
+
 terminal ID:
 	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0' .. '\uFFFF')*	
 ;
 
+terminal DOC_COMMENT :
+	'/**'
+;
 

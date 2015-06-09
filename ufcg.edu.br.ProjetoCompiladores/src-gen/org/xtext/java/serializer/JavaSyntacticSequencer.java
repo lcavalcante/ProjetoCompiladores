@@ -10,6 +10,10 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.java.services.JavaGrammarAccess;
@@ -18,10 +22,16 @@ import org.xtext.java.services.JavaGrammarAccess;
 public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JavaGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__;
+	protected AbstractElementAlias match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a;
+	protected AbstractElementAlias match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JavaGrammarAccess) access;
+		match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_2_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_3_1()));
+		match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a = new TokenAlias(true, true, grammarAccess.getTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
+		match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a = new TokenAlias(true, true, grammarAccess.getVariable_declaratorAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
 	}
 	
 	@Override
@@ -36,8 +46,47 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if(match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__.equals(syntax))
+				emit_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a.equals(syntax))
+				emit_Type_LeftSquareBracketRightSquareBracketKeyword_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a.equals(syntax))
+				emit_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ';' | ('break' ';') | ('continue' ';')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '[]'*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Type_specifier (ambiguity) (rule end)
+	 */
+	protected void emit_Type_LeftSquareBracketRightSquareBracketKeyword_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '[]'*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) (rule end)
+	 */
+	protected void emit_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

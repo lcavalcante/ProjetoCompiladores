@@ -70,6 +70,9 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.INTERFACE_DECLARATION: return createInterface_declaration();
       case JavaPackage.CLASS_DECLARATION: return createClass_declaration();
       case JavaPackage.FIELD_DECLARATION: return createField_declaration();
+      case JavaPackage.VARIABLE_DECLARATION: return createVariable_declaration();
+      case JavaPackage.VARIABLE_DECLARATOR: return createVariable_declarator();
+      case JavaPackage.TYPE: return createType();
       case JavaPackage.STATIC_INITIALIZER: return createStatic_initializer();
       case JavaPackage.STATEMENT_BLOCK: return createStatement_block();
       case JavaPackage.STATEMENT: return createStatement();
@@ -144,6 +147,39 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     Field_declarationImpl field_declaration = new Field_declarationImpl();
     return field_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable_declaration createVariable_declaration()
+  {
+    Variable_declarationImpl variable_declaration = new Variable_declarationImpl();
+    return variable_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable_declarator createVariable_declarator()
+  {
+    Variable_declaratorImpl variable_declarator = new Variable_declaratorImpl();
+    return variable_declarator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
   }
 
   /**

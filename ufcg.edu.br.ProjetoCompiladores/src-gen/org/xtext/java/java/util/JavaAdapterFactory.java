@@ -105,6 +105,21 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createField_declarationAdapter();
       }
       @Override
+      public Adapter caseVariable_declaration(Variable_declaration object)
+      {
+        return createVariable_declarationAdapter();
+      }
+      @Override
+      public Adapter caseVariable_declarator(Variable_declarator object)
+      {
+        return createVariable_declaratorAdapter();
+      }
+      @Override
+      public Adapter caseType(Type object)
+      {
+        return createTypeAdapter();
+      }
+      @Override
       public Adapter caseStatic_initializer(Static_initializer object)
       {
         return createStatic_initializerAdapter();
@@ -237,6 +252,51 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createField_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Variable_declaration <em>Variable declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Variable_declaration
+   * @generated
+   */
+  public Adapter createVariable_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Variable_declarator <em>Variable declarator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Variable_declarator
+   * @generated
+   */
+  public Adapter createVariable_declaratorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Type
+   * @generated
+   */
+  public Adapter createTypeAdapter()
   {
     return null;
   }
