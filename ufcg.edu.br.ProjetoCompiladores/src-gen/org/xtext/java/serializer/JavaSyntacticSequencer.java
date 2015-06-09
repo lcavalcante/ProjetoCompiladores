@@ -24,7 +24,7 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected JavaGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Method_declaration_LeftSquareBracketRightSquareBracketKeyword_6_a;
 	protected AbstractElementAlias match_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a;
-	protected AbstractElementAlias match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__;
+	protected AbstractElementAlias match_Statement_SemicolonKeyword_5_1_or___BreakKeyword_3_1_SemicolonKeyword_3_3___or___ContinueKeyword_4_1_SemicolonKeyword_4_3__;
 	protected AbstractElementAlias match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a;
 	protected AbstractElementAlias match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a;
 	
@@ -33,16 +33,28 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 		grammarAccess = (JavaGrammarAccess) access;
 		match_Method_declaration_LeftSquareBracketRightSquareBracketKeyword_6_a = new TokenAlias(true, true, grammarAccess.getMethod_declarationAccess().getLeftSquareBracketRightSquareBracketKeyword_6());
 		match_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a = new TokenAlias(true, true, grammarAccess.getParameterAccess().getLeftSquareBracketRightSquareBracketKeyword_2());
-		match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_2_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_3_1()));
+		match_Statement_SemicolonKeyword_5_1_or___BreakKeyword_3_1_SemicolonKeyword_3_3___or___ContinueKeyword_4_1_SemicolonKeyword_4_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_4_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_5_1()));
 		match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a = new TokenAlias(true, true, grammarAccess.getTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
 		match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a = new TokenAlias(true, true, grammarAccess.getVariable_declaratorAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getSTATICRule())
+			return getSTATICToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal STATIC :
+	 * 	'static'
+	 * ;
+	 */
+	protected String getSTATICToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "static";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -54,8 +66,8 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Method_declaration_LeftSquareBracketRightSquareBracketKeyword_6_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a.equals(syntax))
 				emit_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__.equals(syntax))
-				emit_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Statement_SemicolonKeyword_5_1_or___BreakKeyword_3_1_SemicolonKeyword_3_3___or___ContinueKeyword_4_1_SemicolonKeyword_4_3__.equals(syntax))
+				emit_Statement_SemicolonKeyword_5_1_or___BreakKeyword_3_1_SemicolonKeyword_3_3___or___ContinueKeyword_4_1_SemicolonKeyword_4_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a.equals(syntax))
 				emit_Type_LeftSquareBracketRightSquareBracketKeyword_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a.equals(syntax))
@@ -96,7 +108,7 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Statement_SemicolonKeyword_5_1_or___BreakKeyword_3_1_SemicolonKeyword_3_3___or___ContinueKeyword_4_1_SemicolonKeyword_4_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

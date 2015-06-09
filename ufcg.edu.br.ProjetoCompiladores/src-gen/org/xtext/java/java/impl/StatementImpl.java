@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Statement;
+import org.xtext.java.java.Try_statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +23,7 @@ import org.xtext.java.java.Statement;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.impl.StatementImpl#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
@@ -30,6 +32,16 @@ import org.xtext.java.java.Statement;
  */
 public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
+  /**
+   * The cached value of the '{@link #getTry() <em>Try</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTry()
+   * @generated
+   * @ordered
+   */
+  protected Try_statement try_;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -79,6 +91,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   protected EClass eStaticClass()
   {
     return JavaPackage.Literals.STATEMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Try_statement getTry()
+  {
+    return try_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetTry(Try_statement newTry, NotificationChain msgs)
+  {
+    Try_statement oldTry = try_;
+    try_ = newTry;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__TRY, oldTry, newTry);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTry(Try_statement newTry)
+  {
+    if (newTry != try_)
+    {
+      NotificationChain msgs = null;
+      if (try_ != null)
+        msgs = ((InternalEObject)try_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__TRY, null, msgs);
+      if (newTry != null)
+        msgs = ((InternalEObject)newTry).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__TRY, null, msgs);
+      msgs = basicSetTry(newTry, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__TRY, newTry, newTry));
   }
 
   /**
@@ -162,6 +222,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__TRY:
+        return basicSetTry(null, msgs);
       case JavaPackage.STATEMENT__STATEMENT:
         return basicSetStatement(null, msgs);
     }
@@ -178,6 +240,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__TRY:
+        return getTry();
       case JavaPackage.STATEMENT__NAME:
         return getName();
       case JavaPackage.STATEMENT__STATEMENT:
@@ -196,6 +260,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__TRY:
+        setTry((Try_statement)newValue);
+        return;
       case JavaPackage.STATEMENT__NAME:
         setName((String)newValue);
         return;
@@ -216,6 +283,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__TRY:
+        setTry((Try_statement)null);
+        return;
       case JavaPackage.STATEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -236,6 +306,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__TRY:
+        return try_ != null;
       case JavaPackage.STATEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case JavaPackage.STATEMENT__STATEMENT:

@@ -4,8 +4,6 @@ package org.xtext.java.java;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Statement block</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Statement_block extends EObject
+public interface Statement_block extends Statement
 {
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.

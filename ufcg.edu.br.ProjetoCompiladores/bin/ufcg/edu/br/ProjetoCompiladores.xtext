@@ -18,13 +18,13 @@ Type_declaration:
 ;
 
 Interface_declaration:
-	modifiers+=MODIFIER* 'interface' interfaceName=ID
+	modifiers+=Modifier* 'interface' interfaceName=ID
 	('extends' extend=Interface_name (',' extends+=(Interface_name))*)? 
 	'{' '}'
 ;
 
 Class_declaration:
-	modifiers+=MODIFIER* 'class' className=ID 
+	modifiers+=Modifier* 'class' className=ID 
 	('extends' extend=Class_name)?
 	('implements' implement=Interface_name (',' implements+=(Interface_name))*)? 
 	'{' (fields+=Field_declaration*)'}'
@@ -41,11 +41,11 @@ Field_declaration:
 ;
 
 Method_declaration:
-	modifiers+=MODIFIER* type=Type name=ID '(' parameter=Parameter_list? ')' ('[]')* ((statement = Statement_block) | debug=';')
+	modifiers+=Modifier* type=Type name=ID '(' parameter=Parameter_list? ')' ('[]')* ((statement = Statement_block) | debug=';')
 ;
 
 Constructor_declaration:
-	modifiers+=MODIFIER* name=ID '(' (parameters=Parameter_list)? ')' statement=Statement_block
+	modifiers+=Modifier* name=ID '(' (parameters=Parameter_list)? ')' statement=Statement_block
 ;
 
 Parameter_list:
@@ -57,7 +57,7 @@ Parameter:
 ;
 
 Variable_declaration:
-	modifiers+=MODIFIER* type=Type name=Variable_declarator (',' names+= Variable_declarator)* ';'
+	modifiers+=Modifier* type=Type name=Variable_declarator (',' names+= Variable_declarator)* ';'
 ;
 
 Variable_declarator:
@@ -80,8 +80,17 @@ Type_specifier:
       | Class_name
 ;
 
+
+Modifier :
+	MOD | STATIC
+;
+
+terminal STATIC :
+	'static'
+;
+
 Static_initializer:
-	'static' name=Statement_block 
+	static=STATIC name=Statement_block 
 ;
 
 Statement_block:
@@ -89,12 +98,22 @@ Statement_block:
 ;
 
 Statement:
-	(name=ID ':' statement=Statement) 
+	(Statement_block)
+	| try=Try_statement
+	|(name=ID ':' statement=Statement) 
 	| {Statement}'break' name=ID? ';'
 	| {Statement}'continue' name=ID? ';'
 	| {Statement}';'
 	
 ;
+
+Try_statement:
+	try=TRY tryStatement=Statement 
+	(=> catchs+=CATCH '('parameters+=Parameter ')' catchStatements+=Statement )*
+	(=> finally=FINALLY finallyStatement=Statement)?
+;
+
+
 
 
 
@@ -124,11 +143,11 @@ Class_name:
 Interface_name:
 	Package_name
 ;
-terminal MODIFIER:
+
+terminal MOD:
 		"public" 
       | "private" 
-      | "protected" 
-      | "static" 
+      | "protected"  
       | "final" 
       | "native" 
       | "synchronized" 
@@ -138,6 +157,16 @@ terminal MODIFIER:
 ;
 
 
+terminal TRY:
+	'try'
+;
+
+terminal CATCH:
+	'catch'
+;
+terminal FINALLY:
+	'finally'
+;
 terminal ID:
 	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0' .. '\uFFFF')*	
 ;

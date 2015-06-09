@@ -174,6 +174,7 @@ public class JavaSwitch<T> extends Switch<T>
       {
         Statement_block statement_block = (Statement_block)theEObject;
         T result = caseStatement_block(statement_block);
+        if (result == null) result = caseStatement(statement_block);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -181,6 +182,13 @@ public class JavaSwitch<T> extends Switch<T>
       {
         Statement statement = (Statement)theEObject;
         T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.TRY_STATEMENT:
+      {
+        Try_statement try_statement = (Try_statement)theEObject;
+        T result = caseTry_statement(try_statement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -454,6 +462,22 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Try statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Try statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTry_statement(Try_statement object)
   {
     return null;
   }

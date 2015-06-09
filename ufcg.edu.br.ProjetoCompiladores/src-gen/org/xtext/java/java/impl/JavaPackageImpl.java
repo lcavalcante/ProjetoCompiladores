@@ -25,6 +25,7 @@ import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
+import org.xtext.java.java.Try_statement;
 import org.xtext.java.java.Type;
 import org.xtext.java.java.Type_declaration;
 import org.xtext.java.java.Variable_declaration;
@@ -149,6 +150,13 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * @generated
    */
   private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass try_statementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -802,9 +810,19 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStatement_Try()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getStatement_Name()
   {
-    return (EAttribute)statementEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)statementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -814,7 +832,87 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    */
   public EReference getStatement_Statement()
   {
-    return (EReference)statementEClass.getEStructuralFeatures().get(1);
+    return (EReference)statementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTry_statement()
+  {
+    return try_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTry_statement_Try()
+  {
+    return (EAttribute)try_statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTry_statement_TryStatement()
+  {
+    return (EReference)try_statementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTry_statement_Catchs()
+  {
+    return (EAttribute)try_statementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTry_statement_Parameters()
+  {
+    return (EReference)try_statementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTry_statement_CatchStatements()
+  {
+    return (EReference)try_statementEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTry_statement_Finally()
+  {
+    return (EAttribute)try_statementEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTry_statement_FinallyStatement()
+  {
+    return (EReference)try_statementEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -969,8 +1067,18 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(statement_blockEClass, STATEMENT_BLOCK__STATEMENTS);
 
     statementEClass = createEClass(STATEMENT);
+    createEReference(statementEClass, STATEMENT__TRY);
     createEAttribute(statementEClass, STATEMENT__NAME);
     createEReference(statementEClass, STATEMENT__STATEMENT);
+
+    try_statementEClass = createEClass(TRY_STATEMENT);
+    createEAttribute(try_statementEClass, TRY_STATEMENT__TRY);
+    createEReference(try_statementEClass, TRY_STATEMENT__TRY_STATEMENT);
+    createEAttribute(try_statementEClass, TRY_STATEMENT__CATCHS);
+    createEReference(try_statementEClass, TRY_STATEMENT__PARAMETERS);
+    createEReference(try_statementEClass, TRY_STATEMENT__CATCH_STATEMENTS);
+    createEAttribute(try_statementEClass, TRY_STATEMENT__FINALLY);
+    createEReference(try_statementEClass, TRY_STATEMENT__FINALLY_STATEMENT);
 
     package_statementEClass = createEClass(PACKAGE_STATEMENT);
     createEAttribute(package_statementEClass, PACKAGE_STATEMENT__NAME);
@@ -1009,6 +1117,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    statement_blockEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1083,8 +1192,18 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getStatement_block_Statements(), this.getStatement(), null, "statements", null, 0, -1, Statement_block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStatement_Try(), this.getTry_statement(), null, "try", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Statement(), this.getStatement(), null, "statement", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(try_statementEClass, Try_statement.class, "Try_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTry_statement_Try(), ecorePackage.getEString(), "try", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTry_statement_TryStatement(), this.getStatement(), null, "tryStatement", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTry_statement_Catchs(), ecorePackage.getEString(), "catchs", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTry_statement_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTry_statement_CatchStatements(), this.getStatement(), null, "catchStatements", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTry_statement_Finally(), ecorePackage.getEString(), "finally", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTry_statement_FinallyStatement(), this.getStatement(), null, "finallyStatement", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(package_statementEClass, Package_statement.class, "Package_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPackage_statement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Package_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

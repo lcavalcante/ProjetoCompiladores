@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.Statement#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getStatement <em>Statement</em>}</li>
  * </ul>
@@ -23,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Statement extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Try</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Try</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Try</em>' containment reference.
+   * @see #setTry(Try_statement)
+   * @see org.xtext.java.java.JavaPackage#getStatement_Try()
+   * @model containment="true"
+   * @generated
+   */
+  Try_statement getTry();
+
+  /**
+   * Sets the value of the '{@link org.xtext.java.java.Statement#getTry <em>Try</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Try</em>' containment reference.
+   * @see #getTry()
+   * @generated
+   */
+  void setTry(Try_statement value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -80,6 +80,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.STATIC_INITIALIZER: return createStatic_initializer();
       case JavaPackage.STATEMENT_BLOCK: return createStatement_block();
       case JavaPackage.STATEMENT: return createStatement();
+      case JavaPackage.TRY_STATEMENT: return createTry_statement();
       case JavaPackage.PACKAGE_STATEMENT: return createPackage_statement();
       case JavaPackage.IMPORT_STATEMENT: return createImport_statement();
       default:
@@ -261,6 +262,17 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     StatementImpl statement = new StatementImpl();
     return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Try_statement createTry_statement()
+  {
+    Try_statementImpl try_statement = new Try_statementImpl();
+    return try_statement;
   }
 
   /**

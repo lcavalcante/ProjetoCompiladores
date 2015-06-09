@@ -167,6 +167,15 @@ public interface JavaFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Try statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Try statement</em>'.
+   * @generated
+   */
+  Try_statement createTry_statement();
+
+  /**
    * Returns a new object of class '<em>Package statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

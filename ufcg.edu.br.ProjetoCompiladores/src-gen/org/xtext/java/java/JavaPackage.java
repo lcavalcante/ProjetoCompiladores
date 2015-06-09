@@ -683,34 +683,6 @@ public interface JavaPackage extends EPackage
   int STATIC_INITIALIZER_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.java.java.impl.Statement_blockImpl <em>Statement block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.java.java.impl.Statement_blockImpl
-   * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement_block()
-   * @generated
-   */
-  int STATEMENT_BLOCK = 14;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_BLOCK__STATEMENTS = 0;
-
-  /**
-   * The number of structural features of the '<em>Statement block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_BLOCK_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.StatementImpl <em>Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -721,13 +693,22 @@ public interface JavaPackage extends EPackage
   int STATEMENT = 15;
 
   /**
+   * The feature id for the '<em><b>Try</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__TRY = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT__NAME = 0;
+  int STATEMENT__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -736,7 +717,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__STATEMENT = 1;
+  int STATEMENT__STATEMENT = 2;
 
   /**
    * The number of structural features of the '<em>Statement</em>' class.
@@ -745,7 +726,144 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 2;
+  int STATEMENT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Statement_blockImpl <em>Statement block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Statement_blockImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement_block()
+   * @generated
+   */
+  int STATEMENT_BLOCK = 14;
+
+  /**
+   * The feature id for the '<em><b>Try</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__TRY = STATEMENT__TRY;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__NAME = STATEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__STATEMENT = STATEMENT__STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Statement block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Try_statementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getTry_statement()
+   * @generated
+   */
+  int TRY_STATEMENT = 16;
+
+  /**
+   * The feature id for the '<em><b>Try</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__TRY = 0;
+
+  /**
+   * The feature id for the '<em><b>Try Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__TRY_STATEMENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Catchs</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__CATCHS = 2;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__PARAMETERS = 3;
+
+  /**
+   * The feature id for the '<em><b>Catch Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__CATCH_STATEMENTS = 4;
+
+  /**
+   * The feature id for the '<em><b>Finally</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__FINALLY = 5;
+
+  /**
+   * The feature id for the '<em><b>Finally Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT__FINALLY_STATEMENT = 6;
+
+  /**
+   * The number of structural features of the '<em>Try statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_STATEMENT_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Package_statementImpl <em>Package statement</em>}' class.
@@ -755,7 +873,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 16;
+  int PACKAGE_STATEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -783,7 +901,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 17;
+  int IMPORT_STATEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -1425,6 +1543,17 @@ public interface JavaPackage extends EPackage
   EClass getStatement();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getTry <em>Try</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Try</em>'.
+   * @see org.xtext.java.java.Statement#getTry()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Try();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtext.java.java.Statement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1445,6 +1574,93 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EReference getStatement_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Try_statement <em>Try statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Try statement</em>'.
+   * @see org.xtext.java.java.Try_statement
+   * @generated
+   */
+  EClass getTry_statement();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Try_statement#getTry <em>Try</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Try</em>'.
+   * @see org.xtext.java.java.Try_statement#getTry()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EAttribute getTry_statement_Try();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Try_statement#getTryStatement <em>Try Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Try Statement</em>'.
+   * @see org.xtext.java.java.Try_statement#getTryStatement()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EReference getTry_statement_TryStatement();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.java.java.Try_statement#getCatchs <em>Catchs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Catchs</em>'.
+   * @see org.xtext.java.java.Try_statement#getCatchs()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EAttribute getTry_statement_Catchs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Try_statement#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see org.xtext.java.java.Try_statement#getParameters()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EReference getTry_statement_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Try_statement#getCatchStatements <em>Catch Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Catch Statements</em>'.
+   * @see org.xtext.java.java.Try_statement#getCatchStatements()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EReference getTry_statement_CatchStatements();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Try_statement#getFinally <em>Finally</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Finally</em>'.
+   * @see org.xtext.java.java.Try_statement#getFinally()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EAttribute getTry_statement_Finally();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Try_statement#getFinallyStatement <em>Finally Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Finally Statement</em>'.
+   * @see org.xtext.java.java.Try_statement#getFinallyStatement()
+   * @see #getTry_statement()
+   * @generated
+   */
+  EReference getTry_statement_FinallyStatement();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Package_statement <em>Package statement</em>}'.
@@ -2011,6 +2227,14 @@ public interface JavaPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
+     * The meta object literal for the '<em><b>Try</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__TRY = eINSTANCE.getStatement_Try();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2025,6 +2249,72 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference STATEMENT__STATEMENT = eINSTANCE.getStatement_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Try_statementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getTry_statement()
+     * @generated
+     */
+    EClass TRY_STATEMENT = eINSTANCE.getTry_statement();
+
+    /**
+     * The meta object literal for the '<em><b>Try</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRY_STATEMENT__TRY = eINSTANCE.getTry_statement_Try();
+
+    /**
+     * The meta object literal for the '<em><b>Try Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRY_STATEMENT__TRY_STATEMENT = eINSTANCE.getTry_statement_TryStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Catchs</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRY_STATEMENT__CATCHS = eINSTANCE.getTry_statement_Catchs();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRY_STATEMENT__PARAMETERS = eINSTANCE.getTry_statement_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Catch Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRY_STATEMENT__CATCH_STATEMENTS = eINSTANCE.getTry_statement_CatchStatements();
+
+    /**
+     * The meta object literal for the '<em><b>Finally</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRY_STATEMENT__FINALLY = eINSTANCE.getTry_statement_Finally();
+
+    /**
+     * The meta object literal for the '<em><b>Finally Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRY_STATEMENT__FINALLY_STATEMENT = eINSTANCE.getTry_statement_FinallyStatement();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Package_statementImpl <em>Package statement</em>}' class.

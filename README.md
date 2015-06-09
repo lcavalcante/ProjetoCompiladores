@@ -26,6 +26,13 @@ public synchronized class teste extends Raio implements Parta, daqui {
     private int[][] a;
     final public private short a,b,c;
     final List a;
+    static {
+        try ; 
+        catch (Exception e) ; 
+        finally 
+            try ;
+            finally ;
+    }
     static {;}
     static {break id ;}
     static {continue id ;}

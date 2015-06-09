@@ -31,6 +31,7 @@ import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
+import org.xtext.java.java.Try_statement;
 import org.xtext.java.java.Type;
 import org.xtext.java.java.Type_declaration;
 import org.xtext.java.java.Variable_declaration;
@@ -88,6 +89,9 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.STATIC_INITIALIZER:
 				sequence_Static_initializer(context, (Static_initializer) semanticObject); 
 				return; 
+			case JavaPackage.TRY_STATEMENT:
+				sequence_Try_statement(context, (Try_statement) semanticObject); 
+				return; 
 			case JavaPackage.TYPE:
 				sequence_Type(context, (Type) semanticObject); 
 				return; 
@@ -106,7 +110,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (modifiers+=MODIFIER* className=ID extend=Class_name? (implement=Interface_name implements+=Interface_name*)? fields+=Field_declaration*)
+	 *     (modifiers+=Modifier* className=ID extend=Class_name? (implement=Interface_name implements+=Interface_name*)? fields+=Field_declaration*)
 	 */
 	protected void sequence_Class_declaration(EObject context, Class_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -124,7 +128,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (modifiers+=MODIFIER* name=ID parameters=Parameter_list? statement=Statement_block)
+	 *     (modifiers+=Modifier* name=ID parameters=Parameter_list? statement=Statement_block)
 	 */
 	protected void sequence_Constructor_declaration(EObject context, Constructor_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -160,7 +164,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (modifiers+=MODIFIER* interfaceName=ID (extend=Interface_name extends+=Interface_name*)?)
+	 *     (modifiers+=Modifier* interfaceName=ID (extend=Interface_name extends+=Interface_name*)?)
 	 */
 	protected void sequence_Interface_declaration(EObject context, Interface_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -169,7 +173,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (modifiers+=MODIFIER* type=Type name=ID parameter=Parameter_list? (statement=Statement_block | debug=';'))
+	 *     (modifiers+=Modifier* type=Type name=ID parameter=Parameter_list? (statement=Statement_block | debug=';'))
 	 */
 	protected void sequence_Method_declaration(EObject context, Method_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -256,6 +260,15 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (try=TRY tryStatement=Statement (catchs+=CATCH parameters+=Parameter catchStatements+=Statement)* (finally=FINALLY finallyStatement=Statement)?)
+	 */
+	protected void sequence_Try_statement(EObject context, Try_statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     name=Type_specifier
 	 */
 	protected void sequence_Type(EObject context, Type semanticObject) {
@@ -281,7 +294,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (modifiers+=MODIFIER* type=Type name=Variable_declarator names+=Variable_declarator*)
+	 *     (modifiers+=Modifier* type=Type name=Variable_declarator names+=Variable_declarator*)
 	 */
 	protected void sequence_Variable_declaration(EObject context, Variable_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

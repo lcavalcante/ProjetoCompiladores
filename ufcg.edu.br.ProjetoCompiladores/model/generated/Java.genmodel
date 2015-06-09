@@ -79,8 +79,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement_block/statements"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/try"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Statement/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Try_statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/try"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/tryStatement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/catchs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/catchStatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/finally"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/finallyStatement"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Package_statement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Package_statement/name"/>
