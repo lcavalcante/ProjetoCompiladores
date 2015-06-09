@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Compilation_unit;
+import org.xtext.java.java.Constructor_declaration;
 import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.Head;
 import org.xtext.java.java.Import_statement;
@@ -18,6 +19,8 @@ import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaFactory;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Package_statement;
+import org.xtext.java.java.Parameter;
+import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
@@ -75,6 +78,27 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * @generated
    */
   private EClass field_declarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass constructor_declarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parameter_listEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -450,6 +474,116 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getConstructor_declaration()
+  {
+    return constructor_declarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConstructor_declaration_Modifiers()
+  {
+    return (EAttribute)constructor_declarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConstructor_declaration_Name()
+  {
+    return (EAttribute)constructor_declarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConstructor_declaration_Parameters()
+  {
+    return (EReference)constructor_declarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConstructor_declaration_Statement()
+  {
+    return (EReference)constructor_declarationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParameter_list()
+  {
+    return parameter_listEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParameter_list_Parameter()
+  {
+    return (EReference)parameter_listEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParameter_list_Parameters()
+  {
+    return (EReference)parameter_listEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParameter()
+  {
+    return parameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParameter_Type()
+  {
+    return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getParameter_Name()
+  {
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVariable_declaration()
   {
     return variable_declarationEClass;
@@ -716,6 +850,20 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(field_declarationEClass, FIELD_DECLARATION__NAME);
     createEAttribute(field_declarationEClass, FIELD_DECLARATION__DEBUG);
 
+    constructor_declarationEClass = createEClass(CONSTRUCTOR_DECLARATION);
+    createEAttribute(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__MODIFIERS);
+    createEAttribute(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__NAME);
+    createEReference(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__PARAMETERS);
+    createEReference(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__STATEMENT);
+
+    parameter_listEClass = createEClass(PARAMETER_LIST);
+    createEReference(parameter_listEClass, PARAMETER_LIST__PARAMETER);
+    createEReference(parameter_listEClass, PARAMETER_LIST__PARAMETERS);
+
+    parameterEClass = createEClass(PARAMETER);
+    createEReference(parameterEClass, PARAMETER__TYPE);
+    createEAttribute(parameterEClass, PARAMETER__NAME);
+
     variable_declarationEClass = createEClass(VARIABLE_DECLARATION);
     createEAttribute(variable_declarationEClass, VARIABLE_DECLARATION__MODIFIERS);
     createEReference(variable_declarationEClass, VARIABLE_DECLARATION__TYPE);
@@ -807,6 +955,20 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEAttribute(getField_declaration_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getField_declaration_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getField_declaration_Debug(), ecorePackage.getEString(), "debug", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(constructor_declarationEClass, Constructor_declaration.class, "Constructor_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConstructor_declaration_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstructor_declaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstructor_declaration_Parameters(), this.getParameter_list(), null, "parameters", null, 0, 1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstructor_declaration_Statement(), this.getStatement_block(), null, "statement", null, 0, 1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parameter_listEClass, Parameter_list.class, "Parameter_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParameter_list_Parameter(), this.getParameter(), null, "parameter", null, 0, 1, Parameter_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParameter_list_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Parameter_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParameter_Type(), this.getType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variable_declarationEClass, Variable_declaration.class, "Variable_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_declaration_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, Variable_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

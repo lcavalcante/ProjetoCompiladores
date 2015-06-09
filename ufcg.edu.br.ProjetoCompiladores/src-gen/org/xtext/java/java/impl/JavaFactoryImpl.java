@@ -70,6 +70,9 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.INTERFACE_DECLARATION: return createInterface_declaration();
       case JavaPackage.CLASS_DECLARATION: return createClass_declaration();
       case JavaPackage.FIELD_DECLARATION: return createField_declaration();
+      case JavaPackage.CONSTRUCTOR_DECLARATION: return createConstructor_declaration();
+      case JavaPackage.PARAMETER_LIST: return createParameter_list();
+      case JavaPackage.PARAMETER: return createParameter();
       case JavaPackage.VARIABLE_DECLARATION: return createVariable_declaration();
       case JavaPackage.VARIABLE_DECLARATOR: return createVariable_declarator();
       case JavaPackage.TYPE: return createType();
@@ -147,6 +150,39 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     Field_declarationImpl field_declaration = new Field_declarationImpl();
     return field_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Constructor_declaration createConstructor_declaration()
+  {
+    Constructor_declarationImpl constructor_declaration = new Constructor_declarationImpl();
+    return constructor_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Parameter_list createParameter_list()
+  {
+    Parameter_listImpl parameter_list = new Parameter_listImpl();
+    return parameter_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Parameter createParameter()
+  {
+    ParameterImpl parameter = new ParameterImpl();
+    return parameter;
   }
 
   /**

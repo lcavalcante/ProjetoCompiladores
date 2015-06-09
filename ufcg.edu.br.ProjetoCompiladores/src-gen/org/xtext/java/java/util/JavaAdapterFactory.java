@@ -105,6 +105,21 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createField_declarationAdapter();
       }
       @Override
+      public Adapter caseConstructor_declaration(Constructor_declaration object)
+      {
+        return createConstructor_declarationAdapter();
+      }
+      @Override
+      public Adapter caseParameter_list(Parameter_list object)
+      {
+        return createParameter_listAdapter();
+      }
+      @Override
+      public Adapter caseParameter(Parameter object)
+      {
+        return createParameterAdapter();
+      }
+      @Override
       public Adapter caseVariable_declaration(Variable_declaration object)
       {
         return createVariable_declarationAdapter();
@@ -252,6 +267,51 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createField_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Constructor_declaration <em>Constructor declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Constructor_declaration
+   * @generated
+   */
+  public Adapter createConstructor_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Parameter_list <em>Parameter list</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Parameter_list
+   * @generated
+   */
+  public Adapter createParameter_listAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Parameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Parameter
+   * @generated
+   */
+  public Adapter createParameterAdapter()
   {
     return null;
   }

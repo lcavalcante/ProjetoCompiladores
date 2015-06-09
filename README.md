@@ -17,6 +17,12 @@ public synchronized class teste extends Raio implements Parta, daqui {
     /**
      * 
      */
+    public teste(){
+        
+    }
+    public teste(int ai, short meu, boolean[] Deus){
+        Sou : Foda : ;
+    }
     private int[][] a;
     final public private short a,b,c;
     final List a;

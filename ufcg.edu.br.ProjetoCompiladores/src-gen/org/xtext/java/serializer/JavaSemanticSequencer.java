@@ -18,12 +18,15 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Compilation_unit;
+import org.xtext.java.java.Constructor_declaration;
 import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.Head;
 import org.xtext.java.java.Import_statement;
 import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Package_statement;
+import org.xtext.java.java.Parameter;
+import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
@@ -48,6 +51,9 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.COMPILATION_UNIT:
 				sequence_Compilation_unit(context, (Compilation_unit) semanticObject); 
 				return; 
+			case JavaPackage.CONSTRUCTOR_DECLARATION:
+				sequence_Constructor_declaration(context, (Constructor_declaration) semanticObject); 
+				return; 
 			case JavaPackage.FIELD_DECLARATION:
 				sequence_Field_declaration(context, (Field_declaration) semanticObject); 
 				return; 
@@ -62,6 +68,12 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case JavaPackage.PACKAGE_STATEMENT:
 				sequence_Package_statement(context, (Package_statement) semanticObject); 
+				return; 
+			case JavaPackage.PARAMETER:
+				sequence_Parameter(context, (Parameter) semanticObject); 
+				return; 
+			case JavaPackage.PARAMETER_LIST:
+				sequence_Parameter_list(context, (Parameter_list) semanticObject); 
 				return; 
 			case JavaPackage.STATEMENT:
 				sequence_Statement(context, (Statement) semanticObject); 
@@ -108,7 +120,16 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((doc=DOC_COMMENT? name=Variable_declaration) | name=Static_initializer | debug=';')
+	 *     (modifiers+=MODIFIER* name=ID parameters=Parameter_list? statement=Statement_block)
+	 */
+	protected void sequence_Constructor_declaration(EObject context, Constructor_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration)) | name=Static_initializer | debug=';')
 	 */
 	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -155,6 +176,34 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPackage_statementAccess().getNamePackage_nameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=Type name=ID)
+	 */
+	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.PARAMETER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.PARAMETER__TYPE));
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.PARAMETER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.PARAMETER__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_0_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (parameter=Parameter parameters+=Parameter*)
+	 */
+	protected void sequence_Parameter_list(EObject context, Parameter_list semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

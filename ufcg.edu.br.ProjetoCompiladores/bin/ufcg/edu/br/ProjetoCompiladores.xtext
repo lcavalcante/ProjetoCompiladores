@@ -33,9 +33,22 @@ Class_declaration:
 Field_declaration:
 	(doc=DOC_COMMENT? (
 		name=Variable_declaration
+		| name=Constructor_declaration
 	))
 	|(name=Static_initializer) 
 	| debug=';'
+;
+
+Constructor_declaration:
+	modifiers+=MODIFIER* name=ID '(' (parameters=Parameter_list)? ')' statement=Statement_block
+;
+
+Parameter_list:
+	parameter=Parameter (',' parameters+=Parameter)*
+;
+
+Parameter:
+	type=Type name=ID ('[]')*
 ;
 
 Variable_declaration:

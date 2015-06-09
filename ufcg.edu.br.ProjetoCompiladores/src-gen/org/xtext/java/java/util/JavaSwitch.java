@@ -114,6 +114,27 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.CONSTRUCTOR_DECLARATION:
+      {
+        Constructor_declaration constructor_declaration = (Constructor_declaration)theEObject;
+        T result = caseConstructor_declaration(constructor_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.PARAMETER_LIST:
+      {
+        Parameter_list parameter_list = (Parameter_list)theEObject;
+        T result = caseParameter_list(parameter_list);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.PARAMETER:
+      {
+        Parameter parameter = (Parameter)theEObject;
+        T result = caseParameter(parameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.VARIABLE_DECLARATION:
       {
         Variable_declaration variable_declaration = (Variable_declaration)theEObject;
@@ -266,6 +287,54 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseField_declaration(Field_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Constructor declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Constructor declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstructor_declaration(Constructor_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter list</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter list</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameter_list(Parameter_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameter(Parameter object)
   {
     return null;
   }

@@ -342,6 +342,135 @@ public interface JavaPackage extends EPackage
   int FIELD_DECLARATION_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Constructor_declarationImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getConstructor_declaration()
+   * @generated
+   */
+  int CONSTRUCTOR_DECLARATION = 6;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR_DECLARATION__MODIFIERS = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR_DECLARATION__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR_DECLARATION__PARAMETERS = 2;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR_DECLARATION__STATEMENT = 3;
+
+  /**
+   * The number of structural features of the '<em>Constructor declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR_DECLARATION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Parameter_listImpl <em>Parameter list</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Parameter_listImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter_list()
+   * @generated
+   */
+  int PARAMETER_LIST = 7;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST__PARAMETER = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST__PARAMETERS = 1;
+
+  /**
+   * The number of structural features of the '<em>Parameter list</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.ParameterImpl <em>Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.ParameterImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter()
+   * @generated
+   */
+  int PARAMETER = 8;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Variable_declarationImpl <em>Variable declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -349,7 +478,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 6;
+  int VARIABLE_DECLARATION = 9;
 
   /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -404,7 +533,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declarator()
    * @generated
    */
-  int VARIABLE_DECLARATOR = 7;
+  int VARIABLE_DECLARATOR = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -432,7 +561,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getType()
    * @generated
    */
-  int TYPE = 8;
+  int TYPE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -460,7 +589,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatic_initializer()
    * @generated
    */
-  int STATIC_INITIALIZER = 9;
+  int STATIC_INITIALIZER = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -488,7 +617,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement_block()
    * @generated
    */
-  int STATEMENT_BLOCK = 10;
+  int STATEMENT_BLOCK = 13;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -516,7 +645,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 11;
+  int STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -553,7 +682,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 12;
+  int PACKAGE_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -581,7 +710,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 13;
+  int IMPORT_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -879,6 +1008,124 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EAttribute getField_declaration_Debug();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Constructor_declaration <em>Constructor declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Constructor declaration</em>'.
+   * @see org.xtext.java.java.Constructor_declaration
+   * @generated
+   */
+  EClass getConstructor_declaration();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.java.java.Constructor_declaration#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see org.xtext.java.java.Constructor_declaration#getModifiers()
+   * @see #getConstructor_declaration()
+   * @generated
+   */
+  EAttribute getConstructor_declaration_Modifiers();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Constructor_declaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Constructor_declaration#getName()
+   * @see #getConstructor_declaration()
+   * @generated
+   */
+  EAttribute getConstructor_declaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Constructor_declaration#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameters</em>'.
+   * @see org.xtext.java.java.Constructor_declaration#getParameters()
+   * @see #getConstructor_declaration()
+   * @generated
+   */
+  EReference getConstructor_declaration_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Constructor_declaration#getStatement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see org.xtext.java.java.Constructor_declaration#getStatement()
+   * @see #getConstructor_declaration()
+   * @generated
+   */
+  EReference getConstructor_declaration_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Parameter_list <em>Parameter list</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parameter list</em>'.
+   * @see org.xtext.java.java.Parameter_list
+   * @generated
+   */
+  EClass getParameter_list();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Parameter_list#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see org.xtext.java.java.Parameter_list#getParameter()
+   * @see #getParameter_list()
+   * @generated
+   */
+  EReference getParameter_list_Parameter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Parameter_list#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see org.xtext.java.java.Parameter_list#getParameters()
+   * @see #getParameter_list()
+   * @generated
+   */
+  EReference getParameter_list_Parameters();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Parameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parameter</em>'.
+   * @see org.xtext.java.java.Parameter
+   * @generated
+   */
+  EClass getParameter();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Parameter#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.java.java.Parameter#getType()
+   * @see #getParameter()
+   * @generated
+   */
+  EReference getParameter_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Parameter#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Parameter#getName()
+   * @see #getParameter()
+   * @generated
+   */
+  EAttribute getParameter_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Variable_declaration <em>Variable declaration</em>}'.
@@ -1337,6 +1584,100 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EAttribute FIELD_DECLARATION__DEBUG = eINSTANCE.getField_declaration_Debug();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Constructor_declarationImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getConstructor_declaration()
+     * @generated
+     */
+    EClass CONSTRUCTOR_DECLARATION = eINSTANCE.getConstructor_declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTRUCTOR_DECLARATION__MODIFIERS = eINSTANCE.getConstructor_declaration_Modifiers();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTRUCTOR_DECLARATION__NAME = eINSTANCE.getConstructor_declaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRUCTOR_DECLARATION__PARAMETERS = eINSTANCE.getConstructor_declaration_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRUCTOR_DECLARATION__STATEMENT = eINSTANCE.getConstructor_declaration_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Parameter_listImpl <em>Parameter list</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Parameter_listImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter_list()
+     * @generated
+     */
+    EClass PARAMETER_LIST = eINSTANCE.getParameter_list();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER_LIST__PARAMETER = eINSTANCE.getParameter_list_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER_LIST__PARAMETERS = eINSTANCE.getParameter_list_Parameters();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.ParameterImpl <em>Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.ParameterImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter()
+     * @generated
+     */
+    EClass PARAMETER = eINSTANCE.getParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER__TYPE = eINSTANCE.getParameter_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Variable_declarationImpl <em>Variable declaration</em>}' class.

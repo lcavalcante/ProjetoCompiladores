@@ -22,6 +22,7 @@ import org.xtext.java.services.JavaGrammarAccess;
 public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JavaGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a;
 	protected AbstractElementAlias match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__;
 	protected AbstractElementAlias match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a;
 	protected AbstractElementAlias match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a;
@@ -29,6 +30,7 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JavaGrammarAccess) access;
+		match_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a = new TokenAlias(true, true, grammarAccess.getParameterAccess().getLeftSquareBracketRightSquareBracketKeyword_2());
 		match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_2_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_3_1()));
 		match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a = new TokenAlias(true, true, grammarAccess.getTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
 		match_Variable_declarator_LeftSquareBracketRightSquareBracketKeyword_1_a = new TokenAlias(true, true, grammarAccess.getVariable_declaratorAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
@@ -46,7 +48,9 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__.equals(syntax))
+			if(match_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a.equals(syntax))
+				emit_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__.equals(syntax))
 				emit_Statement_SemicolonKeyword_3_1_or___BreakKeyword_1_1_SemicolonKeyword_1_3___or___ContinueKeyword_2_1_SemicolonKeyword_2_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Type_LeftSquareBracketRightSquareBracketKeyword_1_a.equals(syntax))
 				emit_Type_LeftSquareBracketRightSquareBracketKeyword_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -56,6 +60,17 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     '[]'*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) (rule end)
+	 */
+	protected void emit_Parameter_LeftSquareBracketRightSquareBracketKeyword_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ';' | ('break' ';') | ('continue' ';')

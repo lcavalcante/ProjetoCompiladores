@@ -39,6 +39,7 @@ public class JavaParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getType_declarationAccess().getAlternatives_1(), "rule__Type_declaration__Alternatives_1");
 					put(grammarAccess.getField_declarationAccess().getAlternatives(), "rule__Field_declaration__Alternatives");
+					put(grammarAccess.getField_declarationAccess().getAlternatives_0_1(), "rule__Field_declaration__Alternatives_0_1");
 					put(grammarAccess.getType_specifierAccess().getAlternatives(), "rule__Type_specifier__Alternatives");
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getImport_statementAccess().getAlternatives_1(), "rule__Import_statement__Alternatives_1");
@@ -52,6 +53,10 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getClass_declarationAccess().getGroup_4(), "rule__Class_declaration__Group_4__0");
 					put(grammarAccess.getClass_declarationAccess().getGroup_4_2(), "rule__Class_declaration__Group_4_2__0");
 					put(grammarAccess.getField_declarationAccess().getGroup_0(), "rule__Field_declaration__Group_0__0");
+					put(grammarAccess.getConstructor_declarationAccess().getGroup(), "rule__Constructor_declaration__Group__0");
+					put(grammarAccess.getParameter_listAccess().getGroup(), "rule__Parameter_list__Group__0");
+					put(grammarAccess.getParameter_listAccess().getGroup_1(), "rule__Parameter_list__Group_1__0");
+					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getVariable_declarationAccess().getGroup(), "rule__Variable_declaration__Group__0");
 					put(grammarAccess.getVariable_declarationAccess().getGroup_3(), "rule__Variable_declaration__Group_3__0");
 					put(grammarAccess.getVariable_declaratorAccess().getGroup(), "rule__Variable_declarator__Group__0");
@@ -86,9 +91,18 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getClass_declarationAccess().getImplementsAssignment_4_2_1(), "rule__Class_declaration__ImplementsAssignment_4_2_1");
 					put(grammarAccess.getClass_declarationAccess().getFieldsAssignment_6(), "rule__Class_declaration__FieldsAssignment_6");
 					put(grammarAccess.getField_declarationAccess().getDocAssignment_0_0(), "rule__Field_declaration__DocAssignment_0_0");
-					put(grammarAccess.getField_declarationAccess().getNameAssignment_0_1(), "rule__Field_declaration__NameAssignment_0_1");
+					put(grammarAccess.getField_declarationAccess().getNameAssignment_0_1_0(), "rule__Field_declaration__NameAssignment_0_1_0");
+					put(grammarAccess.getField_declarationAccess().getNameAssignment_0_1_1(), "rule__Field_declaration__NameAssignment_0_1_1");
 					put(grammarAccess.getField_declarationAccess().getNameAssignment_1(), "rule__Field_declaration__NameAssignment_1");
 					put(grammarAccess.getField_declarationAccess().getDebugAssignment_2(), "rule__Field_declaration__DebugAssignment_2");
+					put(grammarAccess.getConstructor_declarationAccess().getModifiersAssignment_0(), "rule__Constructor_declaration__ModifiersAssignment_0");
+					put(grammarAccess.getConstructor_declarationAccess().getNameAssignment_1(), "rule__Constructor_declaration__NameAssignment_1");
+					put(grammarAccess.getConstructor_declarationAccess().getParametersAssignment_3(), "rule__Constructor_declaration__ParametersAssignment_3");
+					put(grammarAccess.getConstructor_declarationAccess().getStatementAssignment_5(), "rule__Constructor_declaration__StatementAssignment_5");
+					put(grammarAccess.getParameter_listAccess().getParameterAssignment_0(), "rule__Parameter_list__ParameterAssignment_0");
+					put(grammarAccess.getParameter_listAccess().getParametersAssignment_1_1(), "rule__Parameter_list__ParametersAssignment_1_1");
+					put(grammarAccess.getParameterAccess().getTypeAssignment_0(), "rule__Parameter__TypeAssignment_0");
+					put(grammarAccess.getParameterAccess().getNameAssignment_1(), "rule__Parameter__NameAssignment_1");
 					put(grammarAccess.getVariable_declarationAccess().getModifiersAssignment_0(), "rule__Variable_declaration__ModifiersAssignment_0");
 					put(grammarAccess.getVariable_declarationAccess().getTypeAssignment_1(), "rule__Variable_declaration__TypeAssignment_1");
 					put(grammarAccess.getVariable_declarationAccess().getNameAssignment_2(), "rule__Variable_declaration__NameAssignment_2");

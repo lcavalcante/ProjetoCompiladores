@@ -38,6 +38,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Field_declaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Field_declaration/debug"/>
     </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Constructor_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Constructor_declaration/modifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Constructor_declaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Constructor_declaration/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Constructor_declaration/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Parameter_list">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Parameter_list/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Parameter_list/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Parameter/name"/>
+    </genClasses>
     <genClasses ecoreClass="Java.ecore#//Variable_declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Variable_declaration/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Variable_declaration/type"/>
