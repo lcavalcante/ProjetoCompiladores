@@ -41,6 +41,69 @@ public interface JavaFactory extends EFactory
   Compilation_unit createCompilation_unit();
 
   /**
+   * Returns a new object of class '<em>Type declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type declaration</em>'.
+   * @generated
+   */
+  Type_declaration createType_declaration();
+
+  /**
+   * Returns a new object of class '<em>Interface declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface declaration</em>'.
+   * @generated
+   */
+  Interface_declaration createInterface_declaration();
+
+  /**
+   * Returns a new object of class '<em>Class declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class declaration</em>'.
+   * @generated
+   */
+  Class_declaration createClass_declaration();
+
+  /**
+   * Returns a new object of class '<em>Field declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field declaration</em>'.
+   * @generated
+   */
+  Field_declaration createField_declaration();
+
+  /**
+   * Returns a new object of class '<em>Static initializer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Static initializer</em>'.
+   * @generated
+   */
+  Static_initializer createStatic_initializer();
+
+  /**
+   * Returns a new object of class '<em>Statement block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement block</em>'.
+   * @generated
+   */
+  Statement_block createStatement_block();
+
+  /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
    * Returns a new object of class '<em>Package statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

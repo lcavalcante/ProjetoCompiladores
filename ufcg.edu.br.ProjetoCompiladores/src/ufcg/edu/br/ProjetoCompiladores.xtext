@@ -10,8 +10,43 @@ Head :
 ;
 
 Compilation_unit:
-	  package = (Package_statement)? imports+=Import_statement*
+	  package = (Package_statement)? imports+=Import_statement* type_declarations += Type_declaration*
 ;
+
+Type_declaration:
+	doc=DOC_COMMENT? (name=Class_declaration | name=Interface_declaration) ';'
+;
+
+Interface_declaration:
+	modifiers+=MODIFIER* 'interface' interfaceName=ID
+	('extends' extend=Interface_name (',' extends+=(Interface_name))*)? 
+	'{' '}'
+;
+
+Class_declaration:
+	modifiers+=MODIFIER* 'class' className=ID 
+	('extends' extend=Class_name)?
+	('implements' implement=Interface_name (',' implements+=(Interface_name))*)? 
+	'{' (fields+=Field_declaration*)'}'
+;
+
+Field_declaration:
+	(name=Static_initializer) | debug=';'
+;
+
+Static_initializer:
+	'static' name=Statement_block 
+;
+
+Statement_block:
+	{Statement_block} '{' (statements+=Statement*) '}'
+;
+
+Statement:
+	(name=ID ':' statement=Statement) | {Statement}';'
+;
+
+
 
 Package_statement:
 	'package' name=Package_name ';'
@@ -39,11 +74,24 @@ Class_name:
 Interface_name:
 	Package_name
 ;
+terminal MODIFIER:
+		"public" 
+      | "private" 
+      | "protected" 
+      | "static" 
+      | "final" 
+      | "native" 
+      | "synchronized" 
+      | "abstract" 
+      | "threadsafe" 
+      | "transient" 	
+;
 
+terminal DOC_COMMENT :
+	'/*'
+;
 terminal ID:
 	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0' .. '\uFFFF')*	
 ;
 
-terminal DOC_COMMENT :
-	'/**' -> '*/'
-;
+

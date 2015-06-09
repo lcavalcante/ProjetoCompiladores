@@ -86,6 +86,55 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.TYPE_DECLARATION:
+      {
+        Type_declaration type_declaration = (Type_declaration)theEObject;
+        T result = caseType_declaration(type_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.INTERFACE_DECLARATION:
+      {
+        Interface_declaration interface_declaration = (Interface_declaration)theEObject;
+        T result = caseInterface_declaration(interface_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.CLASS_DECLARATION:
+      {
+        Class_declaration class_declaration = (Class_declaration)theEObject;
+        T result = caseClass_declaration(class_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.FIELD_DECLARATION:
+      {
+        Field_declaration field_declaration = (Field_declaration)theEObject;
+        T result = caseField_declaration(field_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.STATIC_INITIALIZER:
+      {
+        Static_initializer static_initializer = (Static_initializer)theEObject;
+        T result = caseStatic_initializer(static_initializer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.STATEMENT_BLOCK:
+      {
+        Statement_block statement_block = (Statement_block)theEObject;
+        T result = caseStatement_block(statement_block);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.STATEMENT:
+      {
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.PACKAGE_STATEMENT:
       {
         Package_statement package_statement = (Package_statement)theEObject;
@@ -132,6 +181,118 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCompilation_unit(Compilation_unit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseType_declaration(Type_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interface declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interface declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterface_declaration(Interface_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClass_declaration(Class_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseField_declaration(Field_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Static initializer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Static initializer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatic_initializer(Static_initializer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Statement block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Statement block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatement_block(Statement_block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatement(Statement object)
   {
     return null;
   }

@@ -16,11 +16,18 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Compilation_unit;
+import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.Head;
 import org.xtext.java.java.Import_statement;
+import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Package_statement;
+import org.xtext.java.java.Statement;
+import org.xtext.java.java.Statement_block;
+import org.xtext.java.java.Static_initializer;
+import org.xtext.java.java.Type_declaration;
 import org.xtext.java.services.JavaGrammarAccess;
 
 @SuppressWarnings("all")
@@ -32,8 +39,14 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == JavaPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case JavaPackage.CLASS_DECLARATION:
+				sequence_Class_declaration(context, (Class_declaration) semanticObject); 
+				return; 
 			case JavaPackage.COMPILATION_UNIT:
 				sequence_Compilation_unit(context, (Compilation_unit) semanticObject); 
+				return; 
+			case JavaPackage.FIELD_DECLARATION:
+				sequence_Field_declaration(context, (Field_declaration) semanticObject); 
 				return; 
 			case JavaPackage.HEAD:
 				sequence_Head(context, (Head) semanticObject); 
@@ -41,8 +54,23 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.IMPORT_STATEMENT:
 				sequence_Import_statement(context, (Import_statement) semanticObject); 
 				return; 
+			case JavaPackage.INTERFACE_DECLARATION:
+				sequence_Interface_declaration(context, (Interface_declaration) semanticObject); 
+				return; 
 			case JavaPackage.PACKAGE_STATEMENT:
 				sequence_Package_statement(context, (Package_statement) semanticObject); 
+				return; 
+			case JavaPackage.STATEMENT:
+				sequence_Statement(context, (Statement) semanticObject); 
+				return; 
+			case JavaPackage.STATEMENT_BLOCK:
+				sequence_Statement_block(context, (Statement_block) semanticObject); 
+				return; 
+			case JavaPackage.STATIC_INITIALIZER:
+				sequence_Static_initializer(context, (Static_initializer) semanticObject); 
+				return; 
+			case JavaPackage.TYPE_DECLARATION:
+				sequence_Type_declaration(context, (Type_declaration) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -50,9 +78,27 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (package=Package_statement? imports+=Import_statement*)
+	 *     (modifiers+=MODIFIER* className=ID extend=Class_name? (implement=Interface_name implements+=Interface_name*)? fields+=Field_declaration*)
+	 */
+	protected void sequence_Class_declaration(EObject context, Class_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (package=Package_statement? imports+=Import_statement* type_declarations+=Type_declaration*)
 	 */
 	protected void sequence_Compilation_unit(EObject context, Compilation_unit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=Static_initializer | debug=';')
+	 */
+	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -77,6 +123,15 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (modifiers+=MODIFIER* interfaceName=ID (extend=Interface_name extends+=Interface_name*)?)
+	 */
+	protected void sequence_Interface_declaration(EObject context, Interface_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     name=Package_name
 	 */
 	protected void sequence_Package_statement(EObject context, Package_statement semanticObject) {
@@ -88,5 +143,48 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPackage_statementAccess().getNamePackage_nameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {Statement}
+	 */
+	protected void sequence_Statement(EObject context, Statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (statements+=Statement*)
+	 */
+	protected void sequence_Statement_block(EObject context, Statement_block semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=Statement_block
+	 */
+	protected void sequence_Static_initializer(EObject context, Static_initializer semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.STATIC_INITIALIZER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.STATIC_INITIALIZER__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStatic_initializerAccess().getNameStatement_blockParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC_COMMENT? (name=Class_declaration | name=Interface_declaration))
+	 */
+	protected void sequence_Type_declaration(EObject context, Type_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

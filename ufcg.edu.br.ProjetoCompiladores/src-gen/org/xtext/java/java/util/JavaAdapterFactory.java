@@ -85,6 +85,41 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createCompilation_unitAdapter();
       }
       @Override
+      public Adapter caseType_declaration(Type_declaration object)
+      {
+        return createType_declarationAdapter();
+      }
+      @Override
+      public Adapter caseInterface_declaration(Interface_declaration object)
+      {
+        return createInterface_declarationAdapter();
+      }
+      @Override
+      public Adapter caseClass_declaration(Class_declaration object)
+      {
+        return createClass_declarationAdapter();
+      }
+      @Override
+      public Adapter caseField_declaration(Field_declaration object)
+      {
+        return createField_declarationAdapter();
+      }
+      @Override
+      public Adapter caseStatic_initializer(Static_initializer object)
+      {
+        return createStatic_initializerAdapter();
+      }
+      @Override
+      public Adapter caseStatement_block(Statement_block object)
+      {
+        return createStatement_blockAdapter();
+      }
+      @Override
+      public Adapter caseStatement(Statement object)
+      {
+        return createStatementAdapter();
+      }
+      @Override
       public Adapter casePackage_statement(Package_statement object)
       {
         return createPackage_statementAdapter();
@@ -142,6 +177,111 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCompilation_unitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Type_declaration <em>Type declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Type_declaration
+   * @generated
+   */
+  public Adapter createType_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Interface_declaration <em>Interface declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Interface_declaration
+   * @generated
+   */
+  public Adapter createInterface_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Class_declaration <em>Class declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Class_declaration
+   * @generated
+   */
+  public Adapter createClass_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Field_declaration <em>Field declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Field_declaration
+   * @generated
+   */
+  public Adapter createField_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Static_initializer <em>Static initializer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Static_initializer
+   * @generated
+   */
+  public Adapter createStatic_initializerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Statement_block <em>Statement block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Statement_block
+   * @generated
+   */
+  public Adapter createStatement_blockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Statement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Statement
+   * @generated
+   */
+  public Adapter createStatementAdapter()
   {
     return null;
   }

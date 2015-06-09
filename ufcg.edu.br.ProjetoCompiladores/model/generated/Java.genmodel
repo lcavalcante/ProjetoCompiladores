@@ -13,6 +13,39 @@
     <genClasses ecoreClass="Java.ecore#//Compilation_unit">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Compilation_unit/package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Compilation_unit/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Compilation_unit/type_declarations"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Type_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Type_declaration/doc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Type_declaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Interface_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Interface_declaration/modifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Interface_declaration/interfaceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Interface_declaration/extend"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Interface_declaration/extends"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Class_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Class_declaration/modifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Class_declaration/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Class_declaration/extend"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Class_declaration/implement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Class_declaration/implements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Class_declaration/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Field_declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Field_declaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Field_declaration/debug"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Static_initializer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Static_initializer/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Statement_block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement_block/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Statement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/statement"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Package_statement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Package_statement/name"/>
