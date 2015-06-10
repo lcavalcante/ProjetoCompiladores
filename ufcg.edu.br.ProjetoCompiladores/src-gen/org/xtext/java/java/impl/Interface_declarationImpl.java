@@ -24,13 +24,13 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getInterfaceName <em>Interface Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getExtend <em>Extend</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getExtends <em>Extends</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

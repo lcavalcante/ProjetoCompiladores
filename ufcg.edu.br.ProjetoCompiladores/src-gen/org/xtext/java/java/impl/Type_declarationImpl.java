@@ -21,11 +21,11 @@ import org.xtext.java.java.Type_declaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Type_declarationImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Type_declarationImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

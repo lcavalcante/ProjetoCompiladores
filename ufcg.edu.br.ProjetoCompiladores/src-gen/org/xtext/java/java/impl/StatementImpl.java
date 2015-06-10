@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.Do_Statement;
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.For_Statement;
 import org.xtext.java.java.If_Statement;
 import org.xtext.java.java.JavaPackage;
@@ -27,6 +28,7 @@ import org.xtext.java.java.While_Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getIfStatement <em>If Statement</em>}</li>
@@ -34,11 +36,11 @@ import org.xtext.java.java.While_Statement;
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getWhileStatement <em>While Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getForStatement <em>For Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getSwitchStatement <em>Switch Statement</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.StatementImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -105,6 +107,26 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   protected Switch_Statement switchStatement;
 
   /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected Expression expression;
+
+  /**
+   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatement()
+   * @generated
+   * @ordered
+   */
+  protected Statement statement;
+
+  /**
    * The cached value of the '{@link #getTry() <em>Try</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -133,16 +155,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStatement()
-   * @generated
-   * @ordered
-   */
-  protected Statement statement;
 
   /**
    * <!-- begin-user-doc -->
@@ -458,6 +470,102 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expression getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  {
+    Expression oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(Expression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__EXPRESSION, newExpression, newExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Statement getStatement()
+  {
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs)
+  {
+    Statement oldStatement = statement;
+    statement = newStatement;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__STATEMENT, oldStatement, newStatement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStatement(Statement newStatement)
+  {
+    if (newStatement != statement)
+    {
+      NotificationChain msgs = null;
+      if (statement != null)
+        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__STATEMENT, null, msgs);
+      if (newStatement != null)
+        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__STATEMENT, null, msgs);
+      msgs = basicSetStatement(newStatement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__STATEMENT, newStatement, newStatement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Try_statement getTry()
   {
     return try_;
@@ -529,54 +637,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement getStatement()
-  {
-    return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs)
-  {
-    Statement oldStatement = statement;
-    statement = newStatement;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__STATEMENT, oldStatement, newStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStatement(Statement newStatement)
-  {
-    if (newStatement != statement)
-    {
-      NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__STATEMENT, newStatement, newStatement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -594,10 +654,12 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return basicSetForStatement(null, msgs);
       case JavaPackage.STATEMENT__SWITCH_STATEMENT:
         return basicSetSwitchStatement(null, msgs);
-      case JavaPackage.STATEMENT__TRY:
-        return basicSetTry(null, msgs);
+      case JavaPackage.STATEMENT__EXPRESSION:
+        return basicSetExpression(null, msgs);
       case JavaPackage.STATEMENT__STATEMENT:
         return basicSetStatement(null, msgs);
+      case JavaPackage.STATEMENT__TRY:
+        return basicSetTry(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -624,12 +686,14 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getForStatement();
       case JavaPackage.STATEMENT__SWITCH_STATEMENT:
         return getSwitchStatement();
+      case JavaPackage.STATEMENT__EXPRESSION:
+        return getExpression();
+      case JavaPackage.STATEMENT__STATEMENT:
+        return getStatement();
       case JavaPackage.STATEMENT__TRY:
         return getTry();
       case JavaPackage.STATEMENT__NAME:
         return getName();
-      case JavaPackage.STATEMENT__STATEMENT:
-        return getStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -662,14 +726,17 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case JavaPackage.STATEMENT__SWITCH_STATEMENT:
         setSwitchStatement((Switch_Statement)newValue);
         return;
+      case JavaPackage.STATEMENT__EXPRESSION:
+        setExpression((Expression)newValue);
+        return;
+      case JavaPackage.STATEMENT__STATEMENT:
+        setStatement((Statement)newValue);
+        return;
       case JavaPackage.STATEMENT__TRY:
         setTry((Try_statement)newValue);
         return;
       case JavaPackage.STATEMENT__NAME:
         setName((String)newValue);
-        return;
-      case JavaPackage.STATEMENT__STATEMENT:
-        setStatement((Statement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -703,14 +770,17 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case JavaPackage.STATEMENT__SWITCH_STATEMENT:
         setSwitchStatement((Switch_Statement)null);
         return;
+      case JavaPackage.STATEMENT__EXPRESSION:
+        setExpression((Expression)null);
+        return;
+      case JavaPackage.STATEMENT__STATEMENT:
+        setStatement((Statement)null);
+        return;
       case JavaPackage.STATEMENT__TRY:
         setTry((Try_statement)null);
         return;
       case JavaPackage.STATEMENT__NAME:
         setName(NAME_EDEFAULT);
-        return;
-      case JavaPackage.STATEMENT__STATEMENT:
-        setStatement((Statement)null);
         return;
     }
     super.eUnset(featureID);
@@ -738,12 +808,14 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return forStatement != null;
       case JavaPackage.STATEMENT__SWITCH_STATEMENT:
         return switchStatement != null;
+      case JavaPackage.STATEMENT__EXPRESSION:
+        return expression != null;
+      case JavaPackage.STATEMENT__STATEMENT:
+        return statement != null;
       case JavaPackage.STATEMENT__TRY:
         return try_ != null;
       case JavaPackage.STATEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case JavaPackage.STATEMENT__STATEMENT:
-        return statement != null;
     }
     return super.eIsSet(featureID);
   }

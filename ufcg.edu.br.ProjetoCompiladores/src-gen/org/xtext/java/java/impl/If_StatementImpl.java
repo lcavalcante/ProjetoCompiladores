@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.If_Statement;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Statement;
@@ -21,16 +22,27 @@ import org.xtext.java.java.Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.impl.If_StatementImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.If_StatementImpl#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.If_StatementImpl#getElseStatement <em>Else Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class If_StatementImpl extends MinimalEObjectImpl.Container implements If_Statement
 {
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected Expression expression;
+
   /**
    * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -70,6 +82,54 @@ public class If_StatementImpl extends MinimalEObjectImpl.Container implements If
   protected EClass eStaticClass()
   {
     return JavaPackage.Literals.IF_STATEMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  {
+    Expression oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.IF_STATEMENT__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(Expression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.IF_STATEMENT__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.IF_STATEMENT__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.IF_STATEMENT__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -178,6 +238,8 @@ public class If_StatementImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
+      case JavaPackage.IF_STATEMENT__EXPRESSION:
+        return basicSetExpression(null, msgs);
       case JavaPackage.IF_STATEMENT__STATEMENT:
         return basicSetStatement(null, msgs);
       case JavaPackage.IF_STATEMENT__ELSE_STATEMENT:
@@ -196,6 +258,8 @@ public class If_StatementImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
+      case JavaPackage.IF_STATEMENT__EXPRESSION:
+        return getExpression();
       case JavaPackage.IF_STATEMENT__STATEMENT:
         return getStatement();
       case JavaPackage.IF_STATEMENT__ELSE_STATEMENT:
@@ -214,6 +278,9 @@ public class If_StatementImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
+      case JavaPackage.IF_STATEMENT__EXPRESSION:
+        setExpression((Expression)newValue);
+        return;
       case JavaPackage.IF_STATEMENT__STATEMENT:
         setStatement((Statement)newValue);
         return;
@@ -234,6 +301,9 @@ public class If_StatementImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
+      case JavaPackage.IF_STATEMENT__EXPRESSION:
+        setExpression((Expression)null);
+        return;
       case JavaPackage.IF_STATEMENT__STATEMENT:
         setStatement((Statement)null);
         return;
@@ -254,6 +324,8 @@ public class If_StatementImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
+      case JavaPackage.IF_STATEMENT__EXPRESSION:
+        return expression != null;
       case JavaPackage.IF_STATEMENT__STATEMENT:
         return statement != null;
       case JavaPackage.IF_STATEMENT__ELSE_STATEMENT:

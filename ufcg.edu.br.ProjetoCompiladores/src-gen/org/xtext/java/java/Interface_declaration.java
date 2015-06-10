@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getInterfaceName <em>Interface Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getExtend <em>Extend</em>}</li>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getExtends <em>Extends</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getInterface_declaration()
  * @model

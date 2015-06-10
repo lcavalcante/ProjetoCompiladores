@@ -67,35 +67,49 @@ Variable_initializer:
 ;
 
 Expression:
-	(numericExpression=Numeric_Expression)
-	|(logicalExpression=Logical_Expression)
-	|(bitExpression=Bit_Expression)
-	|=>(castExpression=Cast_Expression)
-	|=>(creatingExpression=Creating_Expression)
-	|(literalExpression=Literal_Expression)
-	|(null='null')
-	|(super='super')
-	|(this='this')
-	|(name=ID)
-	|('(' argList+=Arg_List ')')
-	|('[' expression=Expression ']')
-	|('.' expression=Expression)
-	|(',' expression=Expression)
-	|('instanceof' (name=Class_name))
+	(numericExpression=Numeric_Expression) (aux=Expression_aux) //B
+	|(logicalExpression=Logical_Expression) aux=Expression_aux//B
+	|(bitExpression=Bit_Expression) aux=Expression_aux//B
+	|=>(castExpression=Cast_Expression) aux=Expression_aux//B
+	|=>(creatingExpression=Creating_Expression) aux=Expression_aux//B
+	|=>(literalExpression=Literal_Expression) aux=Expression_aux//B
+	|(null='null') aux=Expression_aux//B
+	|(super='super') aux=Expression_aux//B
+	|(this='this') aux=Expression_aux//B
+	|(name=ID) aux=Expression_aux //B
+	//|(expression=Expression) ('(' argList+=Arg_List ')') //a
+	//|(expression=Expression) ('[' expression2=Expression ']') //a
+	//|(expression=Expression) ('.' expression2=Expression)//a
+	//|(expression=Expression) (',' expression2=Expression)//a
+	//|(expression=Expression) ('instanceof' (name=Class_name))//a
+	
 ;
+
+Expression_aux:
+	//(
+	((=>'(' argList+=Arg_List ')') aux1=Expression_aux)
+	|((=>'[' expression2+=Expression ']') aux2=Expression_aux)
+	|((=>'.' expression2+=Expression) aux3=Expression_aux)
+	|((=>',' expression+=Expression) aux4=Expression_aux)
+	|((=>'instanceof' (name+=Class_name)) aux5=Expression_aux)
+	|{Expression_aux}
+	//)*
+;
+
 
 Float_Literal:
-	decimalDigits1=DECIMAL_DIGITS '.' (decimalDigits2=DECIMAL_DIGITS)? (exp=EXPOENT_PART)?/*(expoentPart=Expoent_part)?*/ (floatTypeSufix=FLOAT_TYPE_SUFIX)?
+	decimalDigits1=DECIMAL_DIGITS '.' (decimalDigits2=DECIMAL_DIGITS)? (exp=EXPOENT_PART)? (floatTypeSufix=FLOAT_TYPE_SUFIX)?
 ;
 
-terminal EXPONENTIAL:
-	'e' | 'e+' | 'e-'
-;
 
 Literal_Expression:
 	((exp=HEXA 'l'?) | (exp1=DECIMAL_DIGITS 'l'?))
 	| exp2=Float_Literal
+	| string=STRING
+	| char=CHAR
 ;
+
+
 
 Creating_Expression:
 	'new' (
@@ -184,6 +198,9 @@ Statement:
 	|(whileStatement=While_Statement)
 	|(forStatement=For_Statement)
 	|(switchStatement=Switch_Statement) 
+	|('synchronized' '(' expression=Expression ')' statement=Statement)
+	|{Statement} ("return" (expression=Expression)? ";" ) 
+	|( "throw" expression=Expression ";" ) 
 	|(Statement_block)
 	|(try=Try_statement)
 	|(name=ID ':' statement=Statement) 
@@ -251,6 +268,15 @@ Interface_name:
 	Package_name
 ;
 
+terminal HEXA:
+	//| ('0'..'7')* 
+	('0' 'x' ('0'..'9' 'a'..'f')* )
+;
+
+
+terminal EXPONENTIAL:
+	'e' | 'e+' | 'e-'
+;
 
 terminal EXPOENT_PART:
 	EXPONENTIAL (DECIMAL_DIGITS) 
@@ -296,13 +322,13 @@ terminal ID:
 	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0'..'\uFFFF')*	
 ;
 
-terminal HEXA:
-	//| ('0'..'7')* 
-	('0' 'x' ('0'..'9' 'a'..'f')* )
-;
 
 terminal DECIMAL_DIGITS returns ecore::EInt:
 	('0'..'9')+
+;
+
+terminal STRING:
+	'"' -> '"'
 ;
 
 terminal ML_COMMENT  : 
@@ -314,8 +340,8 @@ terminal SL_COMMENT :
 terminal WS  : 
   (' '|'\t'|'\r'|'\n')+;
  
-terminal ANY_OTHER: 
-  .;
+terminal CHAR: 
+  "'" . "'";
 
 terminal DOC_COMMENT :
 	'/**'

@@ -131,6 +131,105 @@ public interface JavaFactory extends EFactory
   Variable_declarator createVariable_declarator();
 
   /**
+   * Returns a new object of class '<em>Variable initializer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable initializer</em>'.
+   * @generated
+   */
+  Variable_initializer createVariable_initializer();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Expression aux</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression aux</em>'.
+   * @generated
+   */
+  Expression_aux createExpression_aux();
+
+  /**
+   * Returns a new object of class '<em>Float Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Literal</em>'.
+   * @generated
+   */
+  Float_Literal createFloat_Literal();
+
+  /**
+   * Returns a new object of class '<em>Literal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal Expression</em>'.
+   * @generated
+   */
+  Literal_Expression createLiteral_Expression();
+
+  /**
+   * Returns a new object of class '<em>Creating Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Creating Expression</em>'.
+   * @generated
+   */
+  Creating_Expression createCreating_Expression();
+
+  /**
+   * Returns a new object of class '<em>Cast Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cast Expression</em>'.
+   * @generated
+   */
+  Cast_Expression createCast_Expression();
+
+  /**
+   * Returns a new object of class '<em>Bit Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bit Expression</em>'.
+   * @generated
+   */
+  Bit_Expression createBit_Expression();
+
+  /**
+   * Returns a new object of class '<em>Logical Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logical Expression</em>'.
+   * @generated
+   */
+  Logical_Expression createLogical_Expression();
+
+  /**
+   * Returns a new object of class '<em>Arg List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Arg List</em>'.
+   * @generated
+   */
+  Arg_List createArg_List();
+
+  /**
+   * Returns a new object of class '<em>Numeric Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Numeric Expression</em>'.
+   * @generated
+   */
+  Numeric_Expression createNumeric_Expression();
+
+  /**
    * Returns a new object of class '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
