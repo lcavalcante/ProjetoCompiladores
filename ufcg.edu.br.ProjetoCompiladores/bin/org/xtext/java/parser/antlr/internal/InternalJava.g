@@ -5,6 +5,7 @@ grammar InternalJava;
 
 options {
 	superClass=AbstractInternalAntlrParser;
+	backtrack=true;
 	
 }
 
@@ -34,6 +35,11 @@ import org.xtext.java.services.JavaGrammarAccess;
 
 @parser::members {
 
+/*
+  This grammar contains a lot of empty actions to work around a bug in ANTLR.
+  Otherwise the ANTLR tool will create synpreds that cannot be compiled in some rare cases.
+*/
+ 
  	private JavaGrammarAccess grammarAccess;
  	
     public InternalJavaParser(TokenStream input, JavaGrammarAccess grammarAccess) {
@@ -117,6 +123,9 @@ ruleCompilation_unit returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getCompilation_unitAccess().getCompilation_unitAction_0(),
@@ -1266,6 +1275,9 @@ ruleVariable_initializer returns [EObject current=null]
 )
 )
     |((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getVariable_initializerAccess().getVariable_initializerAction_1_0(),
@@ -2102,6 +2114,9 @@ ruleExpression_aux returns [EObject current=null]
 )
 ))
     |(
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getExpression_auxAccess().getExpression_auxAction_7(),
@@ -2956,6 +2971,9 @@ ruleStatement_block returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getStatement_blockAccess().getStatement_blockAction_0(),
@@ -3142,6 +3160,9 @@ ruleStatement returns [EObject current=null]
 )
 )
     |
+	{ 
+	  /* */ 
+	}
     { 
         newCompositeNode(grammarAccess.getStatementAccess().getStatement_blockParserRuleCall_7()); 
     }
@@ -3212,6 +3233,9 @@ ruleStatement returns [EObject current=null]
 )
 ))
     |((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getStatementAccess().getStatementAction_10_0(),
@@ -3245,6 +3269,9 @@ ruleStatement returns [EObject current=null]
     }
 )
     |((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getStatementAccess().getStatementAction_11_0(),
@@ -3278,6 +3305,9 @@ ruleStatement returns [EObject current=null]
     }
 )
     |((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getStatementAccess().getStatementAction_12_0(),
@@ -3309,6 +3339,9 @@ ruleSwitch_Statement returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+	{ 
+	  /* */ 
+	}
     {
         $current = forceCreateModelElement(
             grammarAccess.getSwitch_StatementAccess().getSwitch_StatementAction_0(),
