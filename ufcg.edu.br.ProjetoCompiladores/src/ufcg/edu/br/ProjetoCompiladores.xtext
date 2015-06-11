@@ -18,7 +18,7 @@ Type_declaration:
 Interface_declaration:
 	modifiers+=Modifier* 'interface' interfaceName=ID
 	('extends' extend=Interface_name (',' extends+=(Interface_name))*)? 
-	'{' '}'
+	'{'(fields+=Field_declaration*) '}'
 ;
 
 Class_declaration:
@@ -63,25 +63,54 @@ Variable_declarator:
 ;
 
 Variable_initializer:
-	expression=Expression
+	(expression=Expression)
+	|({Variable_initializer}=>'{' (variableInitializer1=Variable_initializer (',' variableIniatializer2+=Variable_initializer)* (',')?)? '}')
+	
 ;
 
 Expression:
-	(numericExpression=Numeric_Expression)
-	|(logicalExpression=Logical_Expression)
-	|(bitExpression=Bit_Expression)
-	|=>(castExpression=Cast_Expression)
-	|=>(creatingExpression=Creating_Expression)
-	|(literalExpression=Literal_Expression)
-	|(null='null')
-	|(super='super')
-	|(this='this')
-	|(name=ID)
-	|('(' argList+=Arg_List ')')
-	|('[' expression=Expression ']')
-	|('.' expression=Expression)
-	|(',' expression=Expression)
-	|('instanceof' (name=Class_name))
+	=>((numericExpression3=Numeric_Expression_NR) ) aux=Expression_aux	
+//	|=>(testingExpression=Testing_Expression) aux=Expression_aux
+//	|(logicalExpression=Logical_Expression) aux=Expression_aux
+//	|=>(stringExpression=String_expression) aux=Expression_aux
+//	|(bitExpression=Bit_Expression) aux=Expression_aux
+	|=>(castExpression=Cast_Expression) aux=Expression_aux
+	|=>(creatingExpression=Creating_Expression) aux=Expression_aux
+	|(literalExpression=Literal_Expression) aux=Expression_aux
+	|(null='null') aux=Expression_aux 
+	|(super='super') aux=Expression_aux
+	|(this='this') aux=Expression_aux
+	|(name=ID) aux=Expression_aux	 
+;
+
+
+//String_expression:
+//	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
+//	|(logicalExpression3=Logical_Expression)
+//	|=>(testingExpression3=Testing_Expression)
+//	|(bitExpression=Bit_Expression)
+//	|expressionNoRecursive=Expression_no_recursive) sinal=( PLUS | "+=" ) exp3=Expression 
+//;
+//
+//Testing_Expression :
+//	((=>(numericExpression2=Numeric_Expression)
+//	|(logicalExpression2=Logical_Expression)
+//	|(bitExpression=Bit_Expression)
+//	|expressionNoRecursive=Expression_no_recursive) (sinal2=( PLUS | "+=" ) exp4=Expression)?)
+//	sinal3=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) exp2=Expression
+//;
+
+Expression_aux :
+	
+	 (('(' argList+=Arg_List ')')) aux=Expression_aux
+	 |(('[' expression2=Expression ']')) aux=Expression_aux
+	 |(('.' expression2=Expression)) aux=Expression_aux
+	 |((',' expression2=Expression)) aux=Expression_aux 
+	 |(('instanceof' (name=Class_name))) aux=Expression_aux
+	 |(sgin=(INCREMENT|DECREMENT) aux=Expression_aux)
+	 |(sinalNumeric= ( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) exp2=Expression aux=Expression_aux)
+	 | {Expression_aux}
+
 ;
 
 Float_Literal:
@@ -95,6 +124,12 @@ terminal EXPONENTIAL:
 Literal_Expression:
 	((exp=HEXA 'l'?) | (exp1=DECIMAL_DIGITS 'l'?))
 	| exp2=Float_Literal
+	| (string = STRING)
+	| (char=CHAR)
+;
+
+terminal STRING:
+	'"' -> '"'
 ;
 
 Creating_Expression:
@@ -109,15 +144,18 @@ Cast_Expression:
 	('(' type=Type ')' expression=Expression)
 ;
 
-Bit_Expression:
-	('~' expression=Expression)
-;
-
-Logical_Expression:
-	('!' expression=Expression)
-	| true=TRUE
-	| false=FALSE
-;
+//Bit_Expression:
+//	('~' expression=Expression)
+//	| (((logicalExpression=Logical_Expression)
+//	|(expressionNoRecursive=Expression_no_recursive)) ((sinalString=( PLUS | "+=" ) expString=Expression) | (sinalTesting=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) expTesting=Expression) | sinalNumeric= ( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) expNumeric=Expression)?) 
+//	( ">>=" | "<<" | ">>" | ">>>" ) expressionBit=Expression
+//;
+//
+//Logical_Expression:
+//	('!' expression=Expression)
+//	| true=TRUE
+//	| false=FALSE
+//;
 
 FALSE:
 	'false'
@@ -131,9 +169,12 @@ Arg_List:
 	expression=Expression (',' expressions+=Expression)*
 ;
 
-Numeric_Expression:
-	sinal=(MINUS|INCREMENT|DECREMENT) expression=Expression
+
+Numeric_Expression_NR:
+	sinal_numeric=(MINUS|INCREMENT|DECREMENT) expression=Expression
+	
 ;
+
 
 terminal DECREMENT:
 	'--'
@@ -142,7 +183,6 @@ terminal DECREMENT:
 terminal INCREMENT:
 	'++'
 ;
-
 
 Type:
 	name=Type_specifier (('['']')|('[]'))*
@@ -179,6 +219,7 @@ Statement_block:
 
 Statement:
 	 (variable = Variable_declaration)
+	|(expressionx=Expression)
 	|(ifStatement=If_Statement)
 	|(doStatement=Do_Statement)
 	|(whileStatement=While_Statement)
@@ -190,7 +231,6 @@ Statement:
 	|{Statement}'break' name=ID? ';'
 	|{Statement}'continue' name=ID? ';'
 	|{Statement}';'
-	
 ;
 
 Switch_Statement:{Switch_Statement}
@@ -254,6 +294,10 @@ Interface_name:
 
 terminal EXPOENT_PART:
 	EXPONENTIAL (DECIMAL_DIGITS) 
+;
+
+terminal CHAR:
+	"'" . "'"
 ;
 
 terminal PLUS:

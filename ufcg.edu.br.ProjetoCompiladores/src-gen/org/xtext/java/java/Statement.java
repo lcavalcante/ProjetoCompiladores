@@ -11,8 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Statement#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.xtext.java.java.Statement#getExpressionx <em>Expressionx</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getIfStatement <em>If Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getDoStatement <em>Do Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getWhileStatement <em>While Statement</em>}</li>
@@ -22,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Statement#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getStatement()
  * @model
@@ -55,6 +56,32 @@ public interface Statement extends EObject
    * @generated
    */
   void setVariable(Variable_declaration value);
+
+  /**
+   * Returns the value of the '<em><b>Expressionx</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expressionx</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expressionx</em>' containment reference.
+   * @see #setExpressionx(Expression)
+   * @see org.xtext.java.java.JavaPackage#getStatement_Expressionx()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getExpressionx();
+
+  /**
+   * Sets the value of the '{@link org.xtext.java.java.Statement#getExpressionx <em>Expressionx</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expressionx</em>' containment reference.
+   * @see #getExpressionx()
+   * @generated
+   */
+  void setExpressionx(Expression value);
 
   /**
    * Returns the value of the '<em><b>If Statement</b></em>' containment reference.

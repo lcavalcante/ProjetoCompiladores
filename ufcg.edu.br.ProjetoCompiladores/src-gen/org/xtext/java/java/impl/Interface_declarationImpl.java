@@ -5,16 +5,21 @@ package org.xtext.java.java.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaPackage;
 
@@ -24,13 +29,14 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getInterfaceName <em>Interface Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getExtend <em>Extend</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getExtends <em>Extends</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.Interface_declarationImpl#getFields <em>Fields</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -95,6 +101,16 @@ public class Interface_declarationImpl extends MinimalEObjectImpl.Container impl
    * @ordered
    */
   protected EList<String> extends_;
+
+  /**
+   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFields()
+   * @generated
+   * @ordered
+   */
+  protected EList<Field_declaration> fields;
 
   /**
    * <!-- begin-user-doc -->
@@ -196,6 +212,36 @@ public class Interface_declarationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Field_declaration> getFields()
+  {
+    if (fields == null)
+    {
+      fields = new EObjectContainmentEList<Field_declaration>(Field_declaration.class, this, JavaPackage.INTERFACE_DECLARATION__FIELDS);
+    }
+    return fields;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case JavaPackage.INTERFACE_DECLARATION__FIELDS:
+        return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -209,6 +255,8 @@ public class Interface_declarationImpl extends MinimalEObjectImpl.Container impl
         return getExtend();
       case JavaPackage.INTERFACE_DECLARATION__EXTENDS:
         return getExtends();
+      case JavaPackage.INTERFACE_DECLARATION__FIELDS:
+        return getFields();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -238,6 +286,10 @@ public class Interface_declarationImpl extends MinimalEObjectImpl.Container impl
         getExtends().clear();
         getExtends().addAll((Collection<? extends String>)newValue);
         return;
+      case JavaPackage.INTERFACE_DECLARATION__FIELDS:
+        getFields().clear();
+        getFields().addAll((Collection<? extends Field_declaration>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -264,6 +316,9 @@ public class Interface_declarationImpl extends MinimalEObjectImpl.Container impl
       case JavaPackage.INTERFACE_DECLARATION__EXTENDS:
         getExtends().clear();
         return;
+      case JavaPackage.INTERFACE_DECLARATION__FIELDS:
+        getFields().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -286,6 +341,8 @@ public class Interface_declarationImpl extends MinimalEObjectImpl.Container impl
         return EXTEND_EDEFAULT == null ? extend != null : !EXTEND_EDEFAULT.equals(extend);
       case JavaPackage.INTERFACE_DECLARATION__EXTENDS:
         return extends_ != null && !extends_.isEmpty();
+      case JavaPackage.INTERFACE_DECLARATION__FIELDS:
+        return fields != null && !fields.isEmpty();
     }
     return super.eIsSet(featureID);
   }

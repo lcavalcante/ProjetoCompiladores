@@ -30,13 +30,13 @@ import org.xtext.java.java.Variable_declarator;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Variable_declarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Variable_declarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Variable_declarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Variable_declarationImpl#getNames <em>Names</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

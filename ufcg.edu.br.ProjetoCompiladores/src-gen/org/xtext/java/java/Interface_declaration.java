@@ -13,13 +13,14 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getInterfaceName <em>Interface Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getExtend <em>Extend</em>}</li>
  *   <li>{@link org.xtext.java.java.Interface_declaration#getExtends <em>Extends</em>}</li>
+ *   <li>{@link org.xtext.java.java.Interface_declaration#getFields <em>Fields</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getInterface_declaration()
  * @model
@@ -110,5 +111,21 @@ public interface Interface_declaration extends EObject
    * @generated
    */
   EList<String> getExtends();
+
+  /**
+   * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.java.java.Field_declaration}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fields</em>' containment reference list.
+   * @see org.xtext.java.java.JavaPackage#getInterface_declaration_Fields()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Field_declaration> getFields();
 
 } // Interface_declaration

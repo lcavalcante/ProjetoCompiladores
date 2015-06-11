@@ -135,6 +135,51 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createVariable_declaratorAdapter();
       }
       @Override
+      public Adapter caseVariable_initializer(Variable_initializer object)
+      {
+        return createVariable_initializerAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseExpression_aux(Expression_aux object)
+      {
+        return createExpression_auxAdapter();
+      }
+      @Override
+      public Adapter caseFloat_Literal(Float_Literal object)
+      {
+        return createFloat_LiteralAdapter();
+      }
+      @Override
+      public Adapter caseLiteral_Expression(Literal_Expression object)
+      {
+        return createLiteral_ExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCreating_Expression(Creating_Expression object)
+      {
+        return createCreating_ExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCast_Expression(Cast_Expression object)
+      {
+        return createCast_ExpressionAdapter();
+      }
+      @Override
+      public Adapter caseArg_List(Arg_List object)
+      {
+        return createArg_ListAdapter();
+      }
+      @Override
+      public Adapter caseNumeric_Expression_NR(Numeric_Expression_NR object)
+      {
+        return createNumeric_Expression_NRAdapter();
+      }
+      @Override
       public Adapter caseType(Type object)
       {
         return createTypeAdapter();
@@ -392,6 +437,141 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariable_declaratorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Variable_initializer <em>Variable initializer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Variable_initializer
+   * @generated
+   */
+  public Adapter createVariable_initializerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Expression_aux <em>Expression aux</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Expression_aux
+   * @generated
+   */
+  public Adapter createExpression_auxAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Float_Literal <em>Float Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Float_Literal
+   * @generated
+   */
+  public Adapter createFloat_LiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Literal_Expression <em>Literal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Literal_Expression
+   * @generated
+   */
+  public Adapter createLiteral_ExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Creating_Expression <em>Creating Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Creating_Expression
+   * @generated
+   */
+  public Adapter createCreating_ExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Cast_Expression <em>Cast Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Cast_Expression
+   * @generated
+   */
+  public Adapter createCast_ExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Arg_List <em>Arg List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Arg_List
+   * @generated
+   */
+  public Adapter createArg_ListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Numeric_Expression_NR <em>Numeric Expression NR</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Numeric_Expression_NR
+   * @generated
+   */
+  public Adapter createNumeric_Expression_NRAdapter()
   {
     return null;
   }

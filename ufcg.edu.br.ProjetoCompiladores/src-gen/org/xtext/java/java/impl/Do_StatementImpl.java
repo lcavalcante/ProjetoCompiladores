@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.Do_Statement;
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Statement;
 
@@ -21,10 +22,11 @@ import org.xtext.java.java.Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Do_StatementImpl#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.Do_StatementImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -39,6 +41,16 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
    * @ordered
    */
   protected Statement statement;
+
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected Expression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,6 +126,54 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expression getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  {
+    Expression oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.DO_STATEMENT__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(Expression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.DO_STATEMENT__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.DO_STATEMENT__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.DO_STATEMENT__EXPRESSION, newExpression, newExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -121,6 +181,8 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
     {
       case JavaPackage.DO_STATEMENT__STATEMENT:
         return basicSetStatement(null, msgs);
+      case JavaPackage.DO_STATEMENT__EXPRESSION:
+        return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,6 +199,8 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
     {
       case JavaPackage.DO_STATEMENT__STATEMENT:
         return getStatement();
+      case JavaPackage.DO_STATEMENT__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,6 +217,9 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
     {
       case JavaPackage.DO_STATEMENT__STATEMENT:
         setStatement((Statement)newValue);
+        return;
+      case JavaPackage.DO_STATEMENT__EXPRESSION:
+        setExpression((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,6 +238,9 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
       case JavaPackage.DO_STATEMENT__STATEMENT:
         setStatement((Statement)null);
         return;
+      case JavaPackage.DO_STATEMENT__EXPRESSION:
+        setExpression((Expression)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -187,6 +257,8 @@ public class Do_StatementImpl extends MinimalEObjectImpl.Container implements Do
     {
       case JavaPackage.DO_STATEMENT__STATEMENT:
         return statement != null;
+      case JavaPackage.DO_STATEMENT__EXPRESSION:
+        return expression != null;
     }
     return super.eIsSet(featureID);
   }

@@ -76,6 +76,15 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.PARAMETER: return createParameter();
       case JavaPackage.VARIABLE_DECLARATION: return createVariable_declaration();
       case JavaPackage.VARIABLE_DECLARATOR: return createVariable_declarator();
+      case JavaPackage.VARIABLE_INITIALIZER: return createVariable_initializer();
+      case JavaPackage.EXPRESSION: return createExpression();
+      case JavaPackage.EXPRESSION_AUX: return createExpression_aux();
+      case JavaPackage.FLOAT_LITERAL: return createFloat_Literal();
+      case JavaPackage.LITERAL_EXPRESSION: return createLiteral_Expression();
+      case JavaPackage.CREATING_EXPRESSION: return createCreating_Expression();
+      case JavaPackage.CAST_EXPRESSION: return createCast_Expression();
+      case JavaPackage.ARG_LIST: return createArg_List();
+      case JavaPackage.NUMERIC_EXPRESSION_NR: return createNumeric_Expression_NR();
       case JavaPackage.TYPE: return createType();
       case JavaPackage.STATIC_INITIALIZER: return createStatic_initializer();
       case JavaPackage.STATEMENT_BLOCK: return createStatement_block();
@@ -223,6 +232,105 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     Variable_declaratorImpl variable_declarator = new Variable_declaratorImpl();
     return variable_declarator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable_initializer createVariable_initializer()
+  {
+    Variable_initializerImpl variable_initializer = new Variable_initializerImpl();
+    return variable_initializer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression_aux createExpression_aux()
+  {
+    Expression_auxImpl expression_aux = new Expression_auxImpl();
+    return expression_aux;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Float_Literal createFloat_Literal()
+  {
+    Float_LiteralImpl float_Literal = new Float_LiteralImpl();
+    return float_Literal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Literal_Expression createLiteral_Expression()
+  {
+    Literal_ExpressionImpl literal_Expression = new Literal_ExpressionImpl();
+    return literal_Expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Creating_Expression createCreating_Expression()
+  {
+    Creating_ExpressionImpl creating_Expression = new Creating_ExpressionImpl();
+    return creating_Expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Cast_Expression createCast_Expression()
+  {
+    Cast_ExpressionImpl cast_Expression = new Cast_ExpressionImpl();
+    return cast_Expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Arg_List createArg_List()
+  {
+    Arg_ListImpl arg_List = new Arg_ListImpl();
+    return arg_List;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Numeric_Expression_NR createNumeric_Expression_NR()
+  {
+    Numeric_Expression_NRImpl numeric_Expression_NR = new Numeric_Expression_NRImpl();
+    return numeric_Expression_NR;
   }
 
   /**

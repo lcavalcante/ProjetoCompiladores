@@ -1,0 +1,345 @@
+grammar org.xtext.java.Java hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate java "http://www.xtext.org/java/Java"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+Head :
+	elements += Compilation_unit
+;
+
+Compilation_unit:
+	 {Compilation_unit} package = (Package_statement)? imports+=Import_statement* type_declarations += Type_declaration*
+;
+
+Type_declaration:
+	doc=DOC_COMMENT? (name=Class_declaration | name=Interface_declaration) ';'
+;
+
+Interface_declaration:
+	modifiers+=Modifier* 'interface' interfaceName=ID
+	('extends' extend=Interface_name (',' extends+=(Interface_name))*)? 
+	'{' '}'
+;
+
+Class_declaration:
+	modifiers+=Modifier* 'class' className=ID 
+	('extends' extend=Class_name)?
+	('implements' implement=Interface_name (',' implements+=(Interface_name))*)? 
+	'{' (fields+=Field_declaration*)'}'
+;
+
+Field_declaration:
+	(doc=DOC_COMMENT? (
+		name=Variable_declaration
+		| name=Constructor_declaration
+		| name=Method_declaration
+	))
+	|(name=Static_initializer) 
+	| debug=';'
+;
+
+Method_declaration:
+	modifiers+=Modifier* type=Type name=ID '(' parameter=Parameter_list? ')' (('['']')|('[]'))* ((statement = Statement_block) | debug=';')
+;
+
+Constructor_declaration:
+	modifiers+=Modifier* name=ID '(' (parameters=Parameter_list)? ')' statement=Statement_block
+;
+
+Parameter_list:
+	parameter=Parameter (',' parameters+=Parameter)*
+;
+
+Parameter:
+	type=Type name=ID (('['']')|('[]'))*
+;
+
+Variable_declaration:
+	modifiers+=Modifier* type=Type name=Variable_declarator (',' names+= Variable_declarator)* ';'
+;
+
+Variable_declarator:
+	name=ID (('['']')|('[]'))* ('=' initializer=Variable_initializer)?
+;
+
+Variable_initializer:
+	expression=Expression
+;
+
+Expression:
+	=>(numericExpression=Numeric_Expression)
+	|=>(testingExpression=Testing_Expression)
+	|(logicalExpression=Logical_Expression)
+	|=>(stringExpression=String_expression)
+	|Expression_no_recursive
+;
+
+String_expression:
+	(=>(numericExpression3=Numeric_Expression)
+	|(logicalExpression3=Logical_Expression)
+	|=>(testingExpression3=Testing_Expression)
+	|Expression_no_recursive) sinal=( PLUS | "+=" ) exp3=Expression 
+;
+
+Testing_Expression :
+	((=>(numericExpression2=Numeric_Expression)
+	|(logicalExpression2=Logical_Expression)
+	|Expression_no_recursive) (sinal2=( PLUS | "+=" ) exp4=Expression)?)
+	sinal3=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) exp2=Expression
+;
+
+Expression_no_recursive :
+	(bitExpression=Bit_Expression)
+	|=>(castExpression=Cast_Expression)
+	|=>(creatingExpression=Creating_Expression)
+	|(literalExpression=Literal_Expression)
+	|(null='null')
+	|(super='super')
+	|(this='this')
+	|(name=ID)
+	|('(' argList+=Arg_List ')')
+	|('[' expression=Expression ']')
+	|('.' expression=Expression)
+	|(',' expression=Expression)
+	|('instanceof' (name=Class_name))
+;
+
+Float_Literal:
+	decimalDigits1=DECIMAL_DIGITS '.' (decimalDigits2=DECIMAL_DIGITS)? (exp=EXPOENT_PART)?/*(expoentPart=Expoent_part)?*/ (floatTypeSufix=FLOAT_TYPE_SUFIX)?
+;
+
+terminal EXPONENTIAL:
+	'e' | 'e+' | 'e-'
+;
+
+Literal_Expression:
+	((exp=HEXA 'l'?) | (exp1=DECIMAL_DIGITS 'l'?))
+	| exp2=Float_Literal
+;
+
+Creating_Expression:
+	'new' (
+		(className=Class_name '(' argList=Arg_List ')')
+		|(typeSpecifier=Type_specifier ('[' expression=Expression ']')? ('['']' | '[]')*)
+		|('(' expression=Expression ')')
+		)
+;
+
+Cast_Expression:
+	('(' type=Type ')' expression=Expression)
+;
+
+Bit_Expression:
+	('~' expression=Expression)
+;
+
+Logical_Expression:
+	('!' expression=Expression)
+	| true=TRUE
+	| false=FALSE
+;
+
+FALSE:
+	'false'
+;
+
+TRUE:
+	'true'
+;
+
+Arg_List:
+	expression=Expression (',' expressions+=Expression)*
+;
+
+Numeric_Expression:
+	sinal_numeric=(MINUS|INCREMENT|DECREMENT) expression=Expression
+	|(((logicalExpression4=Logical_Expression)
+	|Expression_no_recursive) ((sinalString=( PLUS | "+=" ) expString=Expression) | (sinalTesting=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) expTesting=Expression))? 
+	sinal_numeric=(MINUS|INCREMENT|DECREMENT)
+;
+
+terminal DECREMENT:
+	'--'
+;
+
+terminal INCREMENT:
+	'++'
+;
+
+
+Type:
+	name=Type_specifier (('['']')|('[]'))*
+;
+
+Type_specifier:
+	    "boolean" 
+      | "byte" 
+      | "char" 
+      | "short" 
+      | "int" 
+      | "float" 
+      | "long" 
+      | "double" 
+      | Class_name
+;
+
+
+Modifier :
+	MOD | STATIC
+;
+
+terminal STATIC :
+	'static'
+;
+
+Static_initializer:
+	static=STATIC name=Statement_block 
+;
+
+Statement_block:
+	{Statement_block} '{' (statements+=Statement*) '}'
+;
+
+Statement:
+	 (variable = Variable_declaration)
+	|(ifStatement=If_Statement)
+	|(doStatement=Do_Statement)
+	|(whileStatement=While_Statement)
+	|(forStatement=For_Statement)
+	|(switchStatement=Switch_Statement) 
+	|(Statement_block)
+	|(try=Try_statement)
+	|(name=ID ':' statement=Statement) 
+	|{Statement}'break' name=ID? ';'
+	|{Statement}'continue' name=ID? ';'
+	|{Statement}';'
+	
+;
+
+Switch_Statement:{Switch_Statement}
+	'switch' '(' expression=Expression  ')' '{'
+	(('case' expressions+=Expression  ':')|('default' ':')|(statements+=Statement))*
+	'}'
+;
+
+For_Statement:
+	'for' '(' (variable=Variable_declaration| pv=';' | (expression=Expression ';') )
+	(expression2=Expression)? ';'
+	(expression3=Expression)? ';'
+	')' statement=Statement
+;
+
+While_Statement:
+	'while' '(' expression=Expression ')' statement=Statement
+;
+
+Do_Statement:
+	'do' statement=Statement 'while' '(' expression=Expression ')' ';'
+;
+
+If_Statement:
+	'if' '(' expression=Expression  ')' statement=Statement  
+	(=> 'else' elseStatement=Statement)?
+;
+
+Try_statement:
+	try=TRY tryStatement=Statement 
+	(=> catchs+=CATCH '('parameters+=Parameter ')' catchStatements+=Statement )*
+	(=> finally=FINALLY finallyStatement=Statement)?
+;
+
+Package_statement:
+	'package' name=Package_name ';'
+;
+
+
+Package_name:
+	ID Package_name_aux
+;
+
+Package_name_aux:
+	('.' ID)*
+;	
+
+Import_statement:
+	'import' ((classname = Class_name ';') | (packagename=Package_name '.' '*' ';' ';'))  
+;
+
+//Cuidado com Package_name Class_name e Interface_name pq sao iguais - ambiguidade
+Class_name:
+	Package_name
+;
+
+Interface_name:
+	Package_name
+;
+
+
+terminal EXPOENT_PART:
+	EXPONENTIAL (DECIMAL_DIGITS) 
+;
+
+terminal PLUS:
+	'+'
+;
+
+terminal MINUS:
+	'-'
+;
+
+terminal MOD:
+		"public" 
+      | "private" 
+      | "protected"  
+      | "final" 
+      | "native" 
+      | "synchronized" 
+      | "abstract" 
+      | "threadsafe" 
+      | "transient" 	
+;
+
+
+terminal TRY:
+	'try'
+;
+
+terminal CATCH:
+	'catch'
+;
+terminal FINALLY:
+	'finally'
+;
+
+terminal FLOAT_TYPE_SUFIX:
+	('f'|'d')	
+;
+
+terminal ID:
+	('a'..'z'|'A'..'Z'|'_' | '$')('a'..'z'|'A'..'Z'|'_'|'0'..'9' | '$' | '\u00C0'..'\uFFFF')*	
+;
+
+terminal HEXA:
+	//| ('0'..'7')* 
+	('0' 'x' ('0'..'9' 'a'..'f')* )
+;
+
+terminal DECIMAL_DIGITS returns ecore::EInt:
+	('0'..'9')+
+;
+
+terminal ML_COMMENT  : 
+  '/*' -> '*/';
+
+terminal SL_COMMENT : 
+  '//' !('\n'|'\r')* ('\r'? '\n')?;
+ 
+terminal WS  : 
+  (' '|'\t'|'\r'|'\n')+;
+ 
+terminal ANY_OTHER: 
+  .;
+
+terminal DOC_COMMENT :
+	'/**'
+;

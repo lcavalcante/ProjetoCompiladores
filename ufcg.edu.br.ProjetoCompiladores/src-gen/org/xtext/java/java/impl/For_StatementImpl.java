@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.For_Statement;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Statement;
@@ -22,12 +23,15 @@ import org.xtext.java.java.Variable_declaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getPv <em>Pv</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getExpression2 <em>Expression2</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getExpression3 <em>Expression3</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -62,6 +66,36 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
    * @ordered
    */
   protected String pv = PV_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected Expression expression;
+
+  /**
+   * The cached value of the '{@link #getExpression2() <em>Expression2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression2()
+   * @generated
+   * @ordered
+   */
+  protected Expression expression2;
+
+  /**
+   * The cached value of the '{@link #getExpression3() <em>Expression3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression3()
+   * @generated
+   * @ordered
+   */
+  protected Expression expression3;
 
   /**
    * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
@@ -170,6 +204,150 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expression getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  {
+    Expression oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.FOR_STATEMENT__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(Expression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FOR_STATEMENT__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FOR_STATEMENT__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.FOR_STATEMENT__EXPRESSION, newExpression, newExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getExpression2()
+  {
+    return expression2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression2(Expression newExpression2, NotificationChain msgs)
+  {
+    Expression oldExpression2 = expression2;
+    expression2 = newExpression2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.FOR_STATEMENT__EXPRESSION2, oldExpression2, newExpression2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression2(Expression newExpression2)
+  {
+    if (newExpression2 != expression2)
+    {
+      NotificationChain msgs = null;
+      if (expression2 != null)
+        msgs = ((InternalEObject)expression2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FOR_STATEMENT__EXPRESSION2, null, msgs);
+      if (newExpression2 != null)
+        msgs = ((InternalEObject)newExpression2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FOR_STATEMENT__EXPRESSION2, null, msgs);
+      msgs = basicSetExpression2(newExpression2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.FOR_STATEMENT__EXPRESSION2, newExpression2, newExpression2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getExpression3()
+  {
+    return expression3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression3(Expression newExpression3, NotificationChain msgs)
+  {
+    Expression oldExpression3 = expression3;
+    expression3 = newExpression3;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.FOR_STATEMENT__EXPRESSION3, oldExpression3, newExpression3);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression3(Expression newExpression3)
+  {
+    if (newExpression3 != expression3)
+    {
+      NotificationChain msgs = null;
+      if (expression3 != null)
+        msgs = ((InternalEObject)expression3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FOR_STATEMENT__EXPRESSION3, null, msgs);
+      if (newExpression3 != null)
+        msgs = ((InternalEObject)newExpression3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FOR_STATEMENT__EXPRESSION3, null, msgs);
+      msgs = basicSetExpression3(newExpression3, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.FOR_STATEMENT__EXPRESSION3, newExpression3, newExpression3));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Statement getStatement()
   {
     return statement;
@@ -225,6 +403,12 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
     {
       case JavaPackage.FOR_STATEMENT__VARIABLE:
         return basicSetVariable(null, msgs);
+      case JavaPackage.FOR_STATEMENT__EXPRESSION:
+        return basicSetExpression(null, msgs);
+      case JavaPackage.FOR_STATEMENT__EXPRESSION2:
+        return basicSetExpression2(null, msgs);
+      case JavaPackage.FOR_STATEMENT__EXPRESSION3:
+        return basicSetExpression3(null, msgs);
       case JavaPackage.FOR_STATEMENT__STATEMENT:
         return basicSetStatement(null, msgs);
     }
@@ -245,6 +429,12 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
         return getVariable();
       case JavaPackage.FOR_STATEMENT__PV:
         return getPv();
+      case JavaPackage.FOR_STATEMENT__EXPRESSION:
+        return getExpression();
+      case JavaPackage.FOR_STATEMENT__EXPRESSION2:
+        return getExpression2();
+      case JavaPackage.FOR_STATEMENT__EXPRESSION3:
+        return getExpression3();
       case JavaPackage.FOR_STATEMENT__STATEMENT:
         return getStatement();
     }
@@ -266,6 +456,15 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
         return;
       case JavaPackage.FOR_STATEMENT__PV:
         setPv((String)newValue);
+        return;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION:
+        setExpression((Expression)newValue);
+        return;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION2:
+        setExpression2((Expression)newValue);
+        return;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION3:
+        setExpression3((Expression)newValue);
         return;
       case JavaPackage.FOR_STATEMENT__STATEMENT:
         setStatement((Statement)newValue);
@@ -290,6 +489,15 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
       case JavaPackage.FOR_STATEMENT__PV:
         setPv(PV_EDEFAULT);
         return;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION:
+        setExpression((Expression)null);
+        return;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION2:
+        setExpression2((Expression)null);
+        return;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION3:
+        setExpression3((Expression)null);
+        return;
       case JavaPackage.FOR_STATEMENT__STATEMENT:
         setStatement((Statement)null);
         return;
@@ -311,6 +519,12 @@ public class For_StatementImpl extends MinimalEObjectImpl.Container implements F
         return variable != null;
       case JavaPackage.FOR_STATEMENT__PV:
         return PV_EDEFAULT == null ? pv != null : !PV_EDEFAULT.equals(pv);
+      case JavaPackage.FOR_STATEMENT__EXPRESSION:
+        return expression != null;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION2:
+        return expression2 != null;
+      case JavaPackage.FOR_STATEMENT__EXPRESSION3:
+        return expression3 != null;
       case JavaPackage.FOR_STATEMENT__STATEMENT:
         return statement != null;
     }

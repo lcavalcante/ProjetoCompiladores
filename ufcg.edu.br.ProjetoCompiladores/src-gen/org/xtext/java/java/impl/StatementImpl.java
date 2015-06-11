@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.Do_Statement;
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.For_Statement;
 import org.xtext.java.java.If_Statement;
 import org.xtext.java.java.JavaPackage;
@@ -27,8 +28,10 @@ import org.xtext.java.java.While_Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.StatementImpl#getExpressionx <em>Expressionx</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getIfStatement <em>If Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getDoStatement <em>Do Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getWhileStatement <em>While Statement</em>}</li>
@@ -38,7 +41,6 @@ import org.xtext.java.java.While_Statement;
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -53,6 +55,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected Variable_declaration variable;
+
+  /**
+   * The cached value of the '{@link #getExpressionx() <em>Expressionx</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpressionx()
+   * @generated
+   * @ordered
+   */
+  protected Expression expressionx;
 
   /**
    * The cached value of the '{@link #getIfStatement() <em>If Statement</em>}' containment reference.
@@ -211,6 +223,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__VARIABLE, newVariable, newVariable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getExpressionx()
+  {
+    return expressionx;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpressionx(Expression newExpressionx, NotificationChain msgs)
+  {
+    Expression oldExpressionx = expressionx;
+    expressionx = newExpressionx;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__EXPRESSIONX, oldExpressionx, newExpressionx);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpressionx(Expression newExpressionx)
+  {
+    if (newExpressionx != expressionx)
+    {
+      NotificationChain msgs = null;
+      if (expressionx != null)
+        msgs = ((InternalEObject)expressionx).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__EXPRESSIONX, null, msgs);
+      if (newExpressionx != null)
+        msgs = ((InternalEObject)newExpressionx).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__EXPRESSIONX, null, msgs);
+      msgs = basicSetExpressionx(newExpressionx, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__EXPRESSIONX, newExpressionx, newExpressionx));
   }
 
   /**
@@ -584,6 +644,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     {
       case JavaPackage.STATEMENT__VARIABLE:
         return basicSetVariable(null, msgs);
+      case JavaPackage.STATEMENT__EXPRESSIONX:
+        return basicSetExpressionx(null, msgs);
       case JavaPackage.STATEMENT__IF_STATEMENT:
         return basicSetIfStatement(null, msgs);
       case JavaPackage.STATEMENT__DO_STATEMENT:
@@ -614,6 +676,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     {
       case JavaPackage.STATEMENT__VARIABLE:
         return getVariable();
+      case JavaPackage.STATEMENT__EXPRESSIONX:
+        return getExpressionx();
       case JavaPackage.STATEMENT__IF_STATEMENT:
         return getIfStatement();
       case JavaPackage.STATEMENT__DO_STATEMENT:
@@ -646,6 +710,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     {
       case JavaPackage.STATEMENT__VARIABLE:
         setVariable((Variable_declaration)newValue);
+        return;
+      case JavaPackage.STATEMENT__EXPRESSIONX:
+        setExpressionx((Expression)newValue);
         return;
       case JavaPackage.STATEMENT__IF_STATEMENT:
         setIfStatement((If_Statement)newValue);
@@ -688,6 +755,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case JavaPackage.STATEMENT__VARIABLE:
         setVariable((Variable_declaration)null);
         return;
+      case JavaPackage.STATEMENT__EXPRESSIONX:
+        setExpressionx((Expression)null);
+        return;
       case JavaPackage.STATEMENT__IF_STATEMENT:
         setIfStatement((If_Statement)null);
         return;
@@ -728,6 +798,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     {
       case JavaPackage.STATEMENT__VARIABLE:
         return variable != null;
+      case JavaPackage.STATEMENT__EXPRESSIONX:
+        return expressionx != null;
       case JavaPackage.STATEMENT__IF_STATEMENT:
         return ifStatement != null;
       case JavaPackage.STATEMENT__DO_STATEMENT:
