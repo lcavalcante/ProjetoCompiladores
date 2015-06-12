@@ -21,11 +21,11 @@ import org.xtext.java.java.Type;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ParameterImpl#getName <em>Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

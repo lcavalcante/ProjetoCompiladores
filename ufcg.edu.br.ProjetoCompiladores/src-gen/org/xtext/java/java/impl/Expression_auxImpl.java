@@ -29,7 +29,6 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getArgList <em>Arg List</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getAux <em>Aux</em>}</li>
@@ -39,6 +38,7 @@ import org.xtext.java.java.JavaPackage;
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getSinalNumeric <em>Sinal Numeric</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getExp2 <em>Exp2</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

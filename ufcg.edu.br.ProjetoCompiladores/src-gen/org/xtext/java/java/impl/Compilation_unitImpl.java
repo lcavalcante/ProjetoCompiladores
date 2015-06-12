@@ -30,12 +30,12 @@ import org.xtext.java.java.Type_declaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Compilation_unitImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Compilation_unitImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Compilation_unitImpl#getType_declarations <em>Type declarations</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

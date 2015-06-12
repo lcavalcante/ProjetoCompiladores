@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Numeric_Expression_NR#getSinal_numeric <em>Sinal numeric</em>}</li>
  *   <li>{@link org.xtext.java.java.Numeric_Expression_NR#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getNumeric_Expression_NR()
  * @model

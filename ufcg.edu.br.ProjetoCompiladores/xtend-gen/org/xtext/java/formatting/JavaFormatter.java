@@ -3,7 +3,6 @@
  */
 package org.xtext.java.formatting;
 
-import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
 
 /**
@@ -14,9 +13,7 @@ import org.eclipse.xtext.formatting.impl.FormattingConfig;
  * 
  * Also see {@link org.eclipse.xtext.xtext.XtextFormattingTokenSerializer} as an example
  */
-@SuppressWarnings("all")
-public class JavaFormatter extends AbstractDeclarativeFormatter {
-  @Override
+public class JavaFormatter /* implements AbstractDeclarativeFormatter  */{
   protected void configureFormatting(final FormattingConfig c) {
   }
 }

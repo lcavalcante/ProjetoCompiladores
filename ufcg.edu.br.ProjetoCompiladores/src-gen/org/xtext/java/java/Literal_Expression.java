@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Literal_Expression#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.java.java.Literal_Expression#getExp1 <em>Exp1</em>}</li>
@@ -19,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Literal_Expression#getString <em>String</em>}</li>
  *   <li>{@link org.xtext.java.java.Literal_Expression#getChar <em>Char</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getLiteral_Expression()
  * @model

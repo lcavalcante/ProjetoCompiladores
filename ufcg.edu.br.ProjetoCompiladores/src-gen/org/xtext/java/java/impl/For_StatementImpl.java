@@ -23,7 +23,6 @@ import org.xtext.java.java.Variable_declaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getPv <em>Pv</em>}</li>
@@ -32,6 +31,7 @@ import org.xtext.java.java.Variable_declaration;
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getExpression3 <em>Expression3</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.For_StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

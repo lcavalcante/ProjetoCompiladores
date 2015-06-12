@@ -70,10 +70,8 @@ Variable_initializer:
 
 Expression:
 	=>((numericExpression3=Numeric_Expression_NR) ) aux=Expression_aux	
-//	|=>(testingExpression=Testing_Expression) aux=Expression_aux
-//	|(logicalExpression=Logical_Expression) aux=Expression_aux
-//	|=>(stringExpression=String_expression) aux=Expression_aux
-//	|(bitExpression=Bit_Expression) aux=Expression_aux
+	|(logicalExpression=Logical_Expression_NR) aux=Expression_aux
+	|(bitExpression=Bit_Expression_NR) aux=Expression_aux
 	|=>(castExpression=Cast_Expression) aux=Expression_aux
 	|=>(creatingExpression=Creating_Expression) aux=Expression_aux
 	|(literalExpression=Literal_Expression) aux=Expression_aux
@@ -83,36 +81,32 @@ Expression:
 	|(name=ID) aux=Expression_aux	 
 ;
 
-
-//String_expression:
-//	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
-//	|(logicalExpression3=Logical_Expression)
-//	|=>(testingExpression3=Testing_Expression)
-//	|(bitExpression=Bit_Expression)
-//	|expressionNoRecursive=Expression_no_recursive) sinal=( PLUS | "+=" ) exp3=Expression 
-//;
-//
-//Testing_Expression :
-//	((=>(numericExpression2=Numeric_Expression)
-//	|(logicalExpression2=Logical_Expression)
-//	|(bitExpression=Bit_Expression)
-//	|expressionNoRecursive=Expression_no_recursive) (sinal2=( PLUS | "+=" ) exp4=Expression)?)
-//	sinal3=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) exp2=Expression
-//;
-
 Expression_aux :
-	
 	 (('(' argList+=Arg_List ')')) aux=Expression_aux
 	 |(('[' expression2=Expression ']')) aux=Expression_aux
 	 |(('.' expression2=Expression)) aux=Expression_aux
 	 |((',' expression2=Expression)) aux=Expression_aux 
 	 |(('instanceof' (name=Class_name))) aux=Expression_aux
 	 |(sgin=(INCREMENT|DECREMENT) aux=Expression_aux)
-	 |(sinalNumeric= ( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) exp2=Expression aux=Expression_aux)
+	 |(sinalNumeric=( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) exp2=Expression aux=Expression_aux)
+	 |(testingSign=(">"|"<"|">="|"<="|"=="|"!=") exp1=Expression aux=Expression_aux)
+	 |((logicalSign=( "|" | "|=" | "^" | "^=" | "||=" | "%" | "%=") | ampersand=Ampersand_Rule) exp1=Expression aux=Expression_aux)
+	 |(WAT exp1=Expression ":" exp2=Expression aux=Expression_aux)
+	 |(stringSign=(PLUS | "+=") exp1=Expression aux=Expression_aux)
+	 |(bitSign=( ">>=" | "<<" | ">>" | ">>>" ) expressionBit=Expression aux=Expression_aux)
 	 | {Expression_aux}
-
 ;
 
+terminal WAT:
+	"?"
+;
+Ampersand_Rule:
+	(a1=AMPERSAND (a2=AMPERSAND|"=")?)
+;
+
+terminal AMPERSAND:
+	"ampersand"
+;
 Float_Literal:
 	decimalDigits1=DECIMAL_DIGITS '.' (decimalDigits2=DECIMAL_DIGITS)? (exp=EXPOENT_PART)?/*(expoentPart=Expoent_part)?*/ (floatTypeSufix=FLOAT_TYPE_SUFIX)?
 ;
@@ -144,18 +138,15 @@ Cast_Expression:
 	('(' type=Type ')' expression=Expression)
 ;
 
-//Bit_Expression:
-//	('~' expression=Expression)
-//	| (((logicalExpression=Logical_Expression)
-//	|(expressionNoRecursive=Expression_no_recursive)) ((sinalString=( PLUS | "+=" ) expString=Expression) | (sinalTesting=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) expTesting=Expression) | sinalNumeric= ( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) expNumeric=Expression)?) 
-//	( ">>=" | "<<" | ">>" | ">>>" ) expressionBit=Expression
-//;
-//
-//Logical_Expression:
-//	('!' expression=Expression)
-//	| true=TRUE
-//	| false=FALSE
-//;
+Bit_Expression_NR:
+	('~' expression=Expression)
+;
+
+Logical_Expression_NR:
+	('!' expression=Expression)
+	| true=TRUE
+	| false=FALSE
+;
 
 FALSE:
 	'false'
@@ -172,7 +163,6 @@ Arg_List:
 
 Numeric_Expression_NR:
 	sinal_numeric=(MINUS|INCREMENT|DECREMENT) expression=Expression
-	
 ;
 
 

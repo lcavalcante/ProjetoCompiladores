@@ -25,11 +25,28 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INCREMENT", "RULE_DECREMENT", "RULE_PLUS", "RULE_MINUS", "RULE_MOD", "RULE_STATIC", "RULE_ID", "RULE_DOC_COMMENT", "RULE_DECIMAL_DIGITS", "RULE_EXPOENT_PART", "RULE_FLOAT_TYPE_SUFIX", "RULE_HEXA", "RULE_STRING", "RULE_CHAR", "RULE_TRY", "RULE_CATCH", "RULE_FINALLY", "RULE_EXPONENTIAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'[]'", "'+='", "'-='", "'*'", "'*='", "'/'", "'/='", "'%'", "'%='", "'boolean'", "'byte'", "'char'", "'short'", "'int'", "'float'", "'long'", "'double'", "';'", "'interface'", "'{'", "'}'", "'extends'", "','", "'class'", "'implements'", "'('", "')'", "'['", "']'", "'='", "'.'", "'instanceof'", "'l'", "'new'", "':'", "'break'", "'continue'", "'switch'", "'case'", "'default'", "'for'", "'while'", "'do'", "'if'", "'else'", "'package'", "'import'", "'null'", "'super'", "'this'"
     };
-    public static final int T__50=50;
-    public static final int RULE_CATCH=19;
-    public static final int T__59=59;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int RULE_ID=10;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int RULE_DOC_COMMENT=11;
+    public static final int T__29=29;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__62=62;
+    public static final int T__26=26;
+    public static final int T__63=63;
+    public static final int RULE_ANY_OTHER=25;
+    public static final int RULE_HEXA=15;
+    public static final int T__61=61;
+    public static final int RULE_STATIC=9;
+    public static final int EOF=-1;
+    public static final int T__60=60;
+    public static final int RULE_MOD=8;
     public static final int T__55=55;
-    public static final int RULE_CHAR=17;
     public static final int T__56=56;
     public static final int T__57=57;
     public static final int T__58=58;
@@ -37,67 +54,50 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
+    public static final int T__59=59;
+    public static final int RULE_DECREMENT=5;
+    public static final int RULE_CHAR=17;
+    public static final int RULE_FLOAT_TYPE_SUFIX=14;
+    public static final int T__50=50;
+    public static final int T__42=42;
     public static final int RULE_INCREMENT=4;
-    public static final int T__60=60;
-    public static final int T__61=61;
-    public static final int RULE_EXPONENTIAL=21;
-    public static final int RULE_MOD=8;
-    public static final int RULE_ID=10;
-    public static final int RULE_HEXA=15;
-    public static final int RULE_DOC_COMMENT=11;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int RULE_FINALLY=20;
-    public static final int T__28=28;
-    public static final int T__29=29;
-    public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=22;
-    public static final int T__67=67;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__62=62;
-    public static final int T__63=63;
+    public static final int T__43=43;
+    public static final int T__40=40;
     public static final int RULE_EXPOENT_PART=13;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__70=70;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int RULE_STRING=16;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int RULE_EXPONENTIAL=21;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_PLUS=6;
+    public static final int RULE_CATCH=19;
+    public static final int RULE_TRY=18;
     public static final int RULE_SL_COMMENT=23;
+    public static final int RULE_ML_COMMENT=22;
+    public static final int T__30=30;
+    public static final int RULE_MINUS=7;
+    public static final int T__31=31;
+    public static final int RULE_STRING=16;
+    public static final int T__32=32;
+    public static final int T__71=71;
+    public static final int T__33=33;
+    public static final int T__72=72;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__70=70;
+    public static final int T__36=36;
+    public static final int RULE_DECIMAL_DIGITS=12;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int RULE_DECIMAL_DIGITS=12;
-    public static final int T__35=35;
-    public static final int RULE_PLUS=6;
-    public static final int T__36=36;
-    public static final int RULE_DECREMENT=5;
-    public static final int T__73=73;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__74=74;
-    public static final int T__31=31;
-    public static final int T__75=75;
-    public static final int T__32=32;
-    public static final int RULE_FLOAT_TYPE_SUFIX=14;
-    public static final int RULE_TRY=18;
     public static final int RULE_WS=24;
-    public static final int RULE_STATIC=9;
-    public static final int RULE_ANY_OTHER=25;
-    public static final int RULE_MINUS=7;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int RULE_FINALLY=20;
 
     // delegates
     // delegators
@@ -36150,193 +36150,11 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred19_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred19_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred23_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred23_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred22_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred22_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred25_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred25_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred100_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred100_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred69_InternalJava() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred69_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred41_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred41_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred40_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred40_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred20_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred20_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred1_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred21_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred21_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred117_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred117_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred116_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred116_InternalJava_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred56_InternalJava() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred56_InternalJava_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -36360,11 +36178,137 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
+    public final boolean synpred19_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred19_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred105_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred105_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred115_InternalJava() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred115_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred40_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred40_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred1_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred20_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred20_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred41_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred41_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred21_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred21_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred56_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred56_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred22_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred22_InternalJava_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -36388,6 +36332,20 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
+    public final boolean synpred116_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred116_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred37_InternalJava() {
         state.backtracking++;
         int start = input.mark();
@@ -36402,11 +36360,53 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred105_InternalJava() {
+    public final boolean synpred100_InternalJava() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred105_InternalJava_fragment(); // can never throw exception
+            synpred100_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred25_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred25_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred117_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred117_InternalJava_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred23_InternalJava() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_InternalJava_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -36488,7 +36488,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
     static final String DFA4_maxS =
         "\3\52\10\65\1\70\1\66\1\65\1\67\1\12\1\uffff\1\65\2\uffff\1\70";
     static final String DFA4_acceptS =
-        "\20\uffff\1\2\1\uffff\1\3\1\1\1\uffff";
+        "\20\uffff\1\2\1\uffff\1\1\1\3\1\uffff";
     static final String DFA4_specialS =
         "\25\uffff}>";
     static final String[] DFA4_transitionS = {
@@ -36506,8 +36506,8 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
             "\1\16\17\uffff\1\15\30\uffff\1\20\1\uffff\1\14\2\uffff\1\17",
             "\1\21",
             "\1\16\17\uffff\1\15\32\uffff\1\14",
-            "\1\23\20\uffff\1\23\4\uffff\1\23\2\uffff\1\22\1\uffff\1\23"+
-            "\1\uffff\1\23",
+            "\1\22\20\uffff\1\22\4\uffff\1\22\2\uffff\1\23\1\uffff\1\22"+
+            "\1\uffff\1\22",
             "\1\24",
             "",
             "\1\16\17\uffff\1\15\32\uffff\1\14",
@@ -37022,24 +37022,24 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
     static final String DFA22_eofS =
         "\2\uffff\1\3\17\uffff\1\3\11\uffff\1\3\5\uffff\1\3\7\uffff";
     static final String DFA22_minS =
-        "\1\4\1\uffff\1\4\13\uffff\3\4\1\uffff\2\4\1\12\1\4\1\0\2\4\1\12"+
-        "\1\66\12\4\2\0\1\4\2\0";
+        "\1\4\1\uffff\1\4\14\uffff\5\4\1\12\1\4\1\0\2\4\1\12\1\66\12\4\2"+
+        "\0\1\4\2\0";
     static final String DFA22_maxS =
-        "\1\113\1\uffff\1\113\13\uffff\3\113\1\uffff\2\113\1\67\1\113\1"+
-        "\0\2\113\1\67\1\66\12\113\2\0\1\113\2\0";
+        "\1\113\1\uffff\1\113\14\uffff\5\113\1\67\1\113\1\0\2\113\1\67\1"+
+        "\66\12\113\2\0\1\113\2\0";
     static final String DFA22_acceptS =
         "\1\uffff\1\1\1\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\13\1\14"+
-        "\1\15\3\uffff\1\12\30\uffff";
+        "\1\15\1\12\33\uffff";
     static final String DFA22_specialS =
-        "\26\uffff\1\0\16\uffff\1\2\1\1\1\uffff\1\3\1\4}>";
+        "\26\uffff\1\2\16\uffff\1\4\1\1\1\uffff\1\3\1\0}>";
     static final String[] DFA22_transitionS = {
             "\2\3\1\uffff\1\3\2\1\1\2\1\uffff\1\3\2\uffff\3\3\1\12\20\uffff"+
             "\10\1\1\15\1\uffff\1\11\5\uffff\1\3\7\uffff\1\3\1\uffff\1\13"+
             "\1\14\1\10\2\uffff\1\7\1\6\1\5\1\4\3\uffff\3\3",
             "",
-            "\6\3\1\20\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
-            "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\16\2\uffff\1\17\1\3\1"+
-            "\uffff\1\3\1\21\12\3\2\uffff\3\3",
+            "\6\3\1\21\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
+            "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\20\2\uffff\1\17\1\3\1"+
+            "\uffff\1\3\1\16\12\3\2\uffff\3\3",
             "",
             "",
             "",
@@ -37051,15 +37051,15 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
             "",
             "",
             "",
-            "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\2\uffff\3\3\41\uffff"+
-            "\1\3\2\uffff\1\1\4\uffff\1\3\15\uffff\3\3",
+            "",
             "\2\3\1\uffff\1\3\2\uffff\1\22\1\uffff\1\3\2\uffff\3\3\41\uffff"+
             "\1\3\7\uffff\1\3\15\uffff\3\3",
+            "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\2\uffff\3\3\41\uffff"+
+            "\1\3\2\uffff\1\1\4\uffff\1\3\15\uffff\3\3",
             "\7\3\1\uffff\1\3\2\uffff\4\3\7\uffff\1\24\20\3\1\26\1\uffff"+
             "\2\3\1\uffff\1\25\2\uffff\1\3\1\uffff\1\23\1\uffff\1\1\2\3\1"+
             "\uffff\13\3\3\uffff\3\3",
-            "",
-            "\6\3\1\20\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
+            "\6\3\1\21\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
             "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\27\2\uffff\1\30\1\3\1"+
             "\uffff\1\3\1\uffff\12\3\2\uffff\3\3",
             "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\2\uffff\3\3\41\uffff"+
@@ -37079,7 +37079,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
             "\7\3\1\uffff\1\3\2\uffff\4\3\7\uffff\1\1\20\3\1\26\1\uffff"+
             "\2\3\1\uffff\1\36\2\uffff\1\3\1\uffff\1\35\1\uffff\1\1\2\3\1"+
             "\uffff\1\3\1\uffff\11\3\3\uffff\3\3",
-            "\6\3\1\20\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
+            "\6\3\1\21\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
             "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\37\2\uffff\1\40\1\3\1"+
             "\uffff\1\3\1\uffff\12\3\2\uffff\3\3",
             "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\2\uffff\3\3\41\uffff"+
@@ -37093,7 +37093,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
             "\7\3\1\uffff\1\3\2\uffff\4\3\7\uffff\1\1\20\3\1\26\1\uffff"+
             "\2\3\1\uffff\1\44\2\uffff\1\3\1\uffff\1\43\1\uffff\1\1\2\3\1"+
             "\uffff\1\3\1\uffff\11\3\3\uffff\3\3",
-            "\6\3\1\20\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
+            "\6\3\1\21\1\uffff\1\3\2\uffff\6\3\5\uffff\1\1\21\3\1\uffff"+
             "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\45\2\uffff\1\46\1\3\1"+
             "\uffff\1\3\1\uffff\12\3\2\uffff\3\3",
             "\2\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\2\uffff\3\3\41\uffff"+
@@ -37146,10 +37146,10 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA22_22 = input.LA(1);
+                        int LA22_41 = input.LA(1);
 
                          
-                        int index22_22 = input.index();
+                        int index22_41 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred55_InternalJava()) ) {s = 1;}
@@ -37157,7 +37157,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
                         else if ( (synpred56_InternalJava()) ) {s = 3;}
 
                          
-                        input.seek(index22_22);
+                        input.seek(index22_41);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
@@ -37176,10 +37176,10 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA22_37 = input.LA(1);
+                        int LA22_22 = input.LA(1);
 
                          
-                        int index22_37 = input.index();
+                        int index22_22 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred55_InternalJava()) ) {s = 1;}
@@ -37187,7 +37187,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
                         else if ( (synpred56_InternalJava()) ) {s = 3;}
 
                          
-                        input.seek(index22_37);
+                        input.seek(index22_22);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
@@ -37206,10 +37206,10 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA22_41 = input.LA(1);
+                        int LA22_37 = input.LA(1);
 
                          
-                        int index22_41 = input.index();
+                        int index22_37 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred55_InternalJava()) ) {s = 1;}
@@ -37217,7 +37217,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
                         else if ( (synpred56_InternalJava()) ) {s = 3;}
 
                          
-                        input.seek(index22_41);
+                        input.seek(index22_37);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -37240,7 +37240,7 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
     static final String DFA24_acceptS =
         "\1\uffff\1\1\1\uffff\1\2\1\3\13\uffff";
     static final String DFA24_specialS =
-        "\16\uffff\1\1\1\0}>";
+        "\16\uffff\1\0\1\1}>";
     static final String[] DFA24_transitionS = {
             "\2\4\1\uffff\1\4\2\1\1\2\1\uffff\1\4\2\uffff\3\4\21\uffff\10"+
             "\1\1\3\7\uffff\1\4\7\uffff\1\4\15\uffff\3\4",
@@ -37308,21 +37308,6 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA24_15 = input.LA(1);
-
-                         
-                        int index24_15 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred69_InternalJava()) ) {s = 1;}
-
-                        else if ( (true) ) {s = 4;}
-
-                         
-                        input.seek(index24_15);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA24_14 = input.LA(1);
 
                          
@@ -37335,6 +37320,21 @@ public class InternalJavaParser extends AbstractInternalContentAssistParser {
 
                          
                         input.seek(index24_14);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA24_15 = input.LA(1);
+
+                         
+                        int index24_15 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred69_InternalJava()) ) {s = 1;}
+
+                        else if ( (true) ) {s = 4;}
+
+                         
+                        input.seek(index24_15);
                         if ( s>=0 ) return s;
                         break;
             }

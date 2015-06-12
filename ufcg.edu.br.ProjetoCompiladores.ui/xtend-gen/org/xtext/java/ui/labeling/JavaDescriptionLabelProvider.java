@@ -10,6 +10,5 @@ import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider;
  * 
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#label-provider
  */
-@SuppressWarnings("all")
 public class JavaDescriptionLabelProvider extends DefaultDescriptionLabelProvider {
 }

@@ -1043,12 +1043,12 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cExpression_auxAction_7 = (Action)cAlternatives.eContents().get(7);
 		
 		////String_expression:
-		// //	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
+		////	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
 		////	|(logicalExpression3=Logical_Expression)
 		////	|=>(testingExpression3=Testing_Expression)
 		////	|(bitExpression=Bit_Expression)
 		////	|expressionNoRecursive=Expression_no_recursive) sinal=( PLUS | "+=" ) exp3=Expression 
-		// //;
+		////;
 		////
 		////Testing_Expression :
 		////	((=>(numericExpression2=Numeric_Expression)
@@ -2869,12 +2869,12 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////String_expression:
-	// //	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
+	////	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
 	////	|(logicalExpression3=Logical_Expression)
 	////	|=>(testingExpression3=Testing_Expression)
 	////	|(bitExpression=Bit_Expression)
 	////	|expressionNoRecursive=Expression_no_recursive) sinal=( PLUS | "+=" ) exp3=Expression 
-	// //;
+	////;
 	////
 	////Testing_Expression :
 	////	((=>(numericExpression2=Numeric_Expression)

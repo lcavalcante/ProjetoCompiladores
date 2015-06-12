@@ -21,11 +21,11 @@ import org.xtext.java.java.Variable_initializer;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Variable_declaratorImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Variable_declaratorImpl#getInitializer <em>Initializer</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

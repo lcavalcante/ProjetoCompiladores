@@ -28,12 +28,12 @@ import org.xtext.java.java.Variable_initializer;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Variable_initializerImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Variable_initializerImpl#getVariableInitializer1 <em>Variable Initializer1</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Variable_initializerImpl#getVariableIniatializer2 <em>Variable Iniatializer2</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

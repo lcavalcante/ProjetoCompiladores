@@ -10,6 +10,5 @@ import org.xtext.java.validation.AbstractJavaValidator;
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
-@SuppressWarnings("all")
 public class JavaValidator extends AbstractJavaValidator {
 }

@@ -29,7 +29,6 @@ import org.xtext.java.java.Type;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Method_declarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Method_declarationImpl#getType <em>Type</em>}</li>
@@ -38,6 +37,7 @@ import org.xtext.java.java.Type;
  *   <li>{@link org.xtext.java.java.impl.Method_declarationImpl#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Method_declarationImpl#getDebug <em>Debug</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
