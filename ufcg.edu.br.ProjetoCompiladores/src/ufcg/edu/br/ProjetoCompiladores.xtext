@@ -251,20 +251,8 @@ Float_Literal:
 	decimalDigits1=DECIMAL_DIGITS '.' (decimalDigits2=DECIMAL_DIGITS)? (exp=EXPOENT_PART)?/*(expoentPart=Expoent_part)?*/ (floatTypeSufix=FLOAT_TYPE_SUFIX)?
 ;
 
-EXPONENTIAL:
-	(E | EPLUS | EMINUS)
-;
-
-terminal E:
-	"e"
-;
-
-terminal EPLUS:
-	"e+"
-;
-
-terminal EMINUS:
-	"e-"
+terminal EXPONENTIAL:
+	('e'|'e+'|'e-')
 ;
 
 Literal_Expression:
