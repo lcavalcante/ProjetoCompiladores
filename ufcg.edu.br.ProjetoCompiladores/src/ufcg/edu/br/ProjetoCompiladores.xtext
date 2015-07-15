@@ -51,15 +51,20 @@ terminal L_CURLY_BRACE:
 Field_declaration:
 	(doc=DOC_COMMENT? (
 		name=Variable_declaration
-		| name=Constructor_declaration
+		| name=Constructor_declaration 
 		| name=Method_declaration
 	))
 	|(name=Static_initializer) 
+	|(name=Method_call)
 	| debug=EOL
 ;
 
 Method_declaration:
 	modifiers+=Modifier* type=Type name=ID RIGHT_PARENTHESIS parameter=Parameter_list? LEFT_PARENTHESIS ((R_ABS L_ABS)|(ABS))* ((statement = Statement_block) | debug=EOL)
+;
+
+Method_call:
+	name=ID RIGHT_PARENTHESIS parameter=Parameter_list_method_call? LEFT_PARENTHESIS
 ;
 
 terminal ABS:
@@ -74,6 +79,10 @@ terminal L_ABS:
 ;
 Constructor_declaration:
 	modifiers+=Modifier* name=ID RIGHT_PARENTHESIS (parameters=Parameter_list)? LEFT_PARENTHESIS statement=Statement_block
+;
+
+Parameter_list_method_call:
+	name=ID (COMMA parameters+=ID)*
 ;
 
 Parameter_list:
