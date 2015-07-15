@@ -3,6 +3,11 @@
  */
 package org.xtext.java.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.java.java.Field_declaration
+import org.xtext.java.java.Method_declaration
+import org.xtext.java.java.Parameter_list
+
 //import org.eclipse.xtext.validation.Check
 
 /**
@@ -22,4 +27,60 @@ class JavaValidator extends AbstractJavaValidator {
 //					INVALID_NAME)
 //		}
 //	}
+
+	public static List<Method_declaration> metodosDeclarados = new ArrayList<Method_declaration>();
+	
+	@Check 
+	def runChecks(Field_declaration fd) {
+		if (fd.name instanceof Method_declaration) {
+			addMetodos(fd.name as Method_declaration);
+		} else if (fd.name instanceof Method_call) {
+			verificaExistenciaDeMetodo(fd.name as Method_call);
+		}	
+	}
+	
+	def addMetodos(Method_declaration method) {
+		metodosDeclarados.add(method);
+	}
+	
+	def verificaExistenciaDeMetodo(Method_call method) {
+		var Parameter_list_method_scall pc = method.getParameter();
+		var int parametrosChamada;
+		if (pc != null) {
+			parametrosChamada = 1;
+			parametrosChamada += pc.getParameters().size();
+		} else {
+			parametrosChamada = 0;
+		}
+		var boolean existeMetodo = false;
+		var boolean mesmaQuantidadeDeParametros = false;
+		for (Method_declaration m : metodosDeclarados) {
+			if (m.name == method.name) {
+				existeMetodo = true;
+				if (verificaQuantidadeDeParametros(m, parametrosChamada)) {
+					mesmaQuantidadeDeParametros = true;
+				}
+			}
+		}
+		if (!existeMetodo) {
+			error("O método ainda não foi declarado", null);
+			return;
+		}
+		if(!mesmaQuantidadeDeParametros) {
+			error("Números de parâmetros incorreto", null);
+			return;
+		}
+	}
+	
+	def verificaQuantidadeDeParametros(Method_declaration method, int parametrosChamada) {
+		var Parameter_list pd = method.getParameter();
+		var int parametrosDeclaracao;
+		if (pd != null) {
+			parametrosDeclaracao = 1;
+			parametrosDeclaracao += pd.getParameters().size();
+		} else {
+			parametrosDeclaracao = 0;
+		}
+		return parametrosDeclaracao == parametrosChamada;
+	}
 }

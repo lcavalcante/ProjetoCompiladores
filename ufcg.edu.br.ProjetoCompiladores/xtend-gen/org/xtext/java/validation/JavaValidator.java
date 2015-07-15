@@ -3,6 +3,9 @@
  */
 package org.xtext.java.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.java.java.Field_declaration;
+import org.xtext.java.java.Method_declaration;
 import org.xtext.java.validation.AbstractJavaValidator;
 
 /**
@@ -11,4 +14,37 @@ import org.xtext.java.validation.AbstractJavaValidator;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class JavaValidator extends AbstractJavaValidator {
+  public static /* List<Method_declaration> */Object metodosDeclarados /* Skipped initializer because of errors */;
+  
+  @Check
+  public Object runChecks(final Field_declaration fd) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nMethod_call cannot be resolved to a type."
+      + "\nMethod_call cannot be resolved to a type.");
+  }
+  
+  public Object addMetodos(final Method_declaration method) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nadd cannot be resolved");
+  }
+  
+  public void verificaExistenciaDeMetodo(final /* Method_call */Object method) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nParameter_list_method_scall cannot be resolved to a type."
+      + "\nThe method name is undefined for the type JavaValidator"
+      + "\nThe method error is undefined for the type JavaValidator"
+      + "\nThe method error is undefined for the type JavaValidator"
+      + "\ngetParameter cannot be resolved"
+      + "\n!= cannot be resolved"
+      + "\ngetParameters cannot be resolved"
+      + "\nsize cannot be resolved"
+      + "\n== cannot be resolved"
+      + "\nname cannot be resolved");
+  }
+  
+  public boolean verificaQuantidadeDeParametros(final Method_declaration method, final int parametrosChamada) {
+    throw new Error("Unresolved compilation problems:"
+      + "\n!= cannot be resolved."
+      + "\nThe method size is undefined for the type JavaValidator");
+  }
 }
