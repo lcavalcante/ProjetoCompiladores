@@ -4,8 +4,11 @@
 package org.xtext.java.generator
 
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import org.xtext.java.java.Class_declaration
+import org.xtext.java.java.Variable_declaration
+import org.xtext.java.java.Field_declaration
 
 /**
  * Generates code from your model files on save.
@@ -14,11 +17,54 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  */
 class JavaGenerator implements IGenerator {
 	
+	Integer variables = 0;
+	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		for(e: resource.allContents.toIterable.filter(Class_declaration)) {
+    	fsa.generateFile(
+      	e.className.toString() + ".txt",
+      	e.compile)
+  }
+}
+	def compile(Class_declaration cd)  '''
+		«FOR f : cd.fields»
+			«f.compileField»
+		«ENDFOR»
+	'''
+	
+	def compileField(Field_declaration declaration)'''
+		«IF declaration.varD != null»
+			«declaration.varD.compileVariable»
+		«ENDIF»		
+	'''
+	
+	
+	def  compileVariable(Variable_declaration declaration) '''
+		«IF declaration.name.initializer != null»
+			«IF declaration.name.initializer.expression.literalExpression != null»
+				LD R«variables.toString()», #«declaration.name.initializer.expression.literalExpression.exp1»
+				«increment»
+			«ENDIF»
+			«IF declaration.name.initializer.expression.logicalExpression != null»
+				«IF declaration.name.initializer.expression.logicalExpression.le != null»
+					LD R«variables.toString()», «declaration.name.initializer.expression.logicalExpression.le.toString»
+				«ENDIF»
+			«ENDIF»
+			
+			«ELSE»
+				LD R«variables.toString()», «declaration.name.name.toString»
+				«increment»
+		«ENDIF»
+		«IF !declaration.names.isEmpty»
+			«FOR name: declaration.names»
+				LD R«variables.toString()», «name.name.toString»
+				«increment»
+			«ENDFOR»
+		«ENDIF» 	
+	'''
+	
+	def void increment() {
+		variables++;
 	}
+	
 }
