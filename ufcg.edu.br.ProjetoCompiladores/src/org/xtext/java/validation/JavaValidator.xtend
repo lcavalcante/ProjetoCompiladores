@@ -1,7 +1,9 @@
 package org.xtext.java.validation
 
 import java.util.ArrayList
+import java.util.HashMap
 import java.util.List
+import java.util.Map
 import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.validation.Check
 import org.xtext.java.java.Class_declaration
@@ -13,6 +15,8 @@ import org.xtext.java.java.Parameter_list
 import org.xtext.java.java.Parameter_list_method_call
 import org.xtext.java.java.Return_Statement
 import org.xtext.java.java.Statement
+import org.xtext.java.java.Variable_declaration
+import org.xtext.java.java.Type
 
 /**
  * This class contains custom validation rules. 
@@ -34,15 +38,17 @@ class JavaValidator extends AbstractJavaValidator {
 	
 	public List<Method_declaration> metodosDeclarados;
 	
+	public Map<String, Type> tipos;
+	
 	@Check 
 	def runChecks(Class_declaration cd) {
 		metodosDeclarados = new ArrayList<Method_declaration>();
+		tipos = new HashMap<String, Type>();
 		for (Field_declaration fd : cd.fields) {
 			if (fd.name instanceof Method_declaration) {
 				addMetodos(fd.name as Method_declaration);
-//			} else if (fd.name instanceof Method_call) {
-//				verificaExistenciaDeMetodo(fd.name as Method_call);
 			}
+			addTipos(fd, tipos);
 		}
 	}
 	
@@ -71,11 +77,11 @@ class JavaValidator extends AbstractJavaValidator {
 			}
 		}
 		if (!existeMetodo) {
-			error("O método ainda não foi declarado", JavaPackage.Literals.METHOD_CALL__NAME);
+			error("O método ainda não foi declarado", method, JavaPackage.Literals.METHOD_CALL__PARAMETER)
 			return;
 		}
 		if(!mesmaQuantidadeDeParametros) {
-			error("Números de parâmetros incorreto", JavaPackage.Literals.METHOD_CALL__PARAMETER);
+			error("Números de parâmetros incorreto", method, JavaPackage.Literals.METHOD_CALL__PARAMETER);
 			return;
 		}
 	}
@@ -95,15 +101,59 @@ class JavaValidator extends AbstractJavaValidator {
 	@Check
 	def checaRetornoDosMetodos(Method_declaration md) {
 		var EList<Statement> statements = md.statement.statements;
+		var Map<String, Type> tiposMetodo = new HashMap<String, Type>();
+		var boolean temReturn = false;
 		for (Statement smt : statements) {
+			addTiposMetodo(smt, tiposMetodo);
 			if (smt instanceof Return_Statement) {
+				temReturn = true;
 				if (md.type.name.toString == "void") {
-					error("@@@@@@@@@@@@@@@" + smt.toString +" ************ " + smt.returnSmt.rv.name, null);
 					if (smt.returnSmt.rv.name != null) {
-						error("Métodos void não deve retornar nada", JavaPackage.Literals.METHOD_DECLARATION__NAME);
+						error("Métodos void não devem retornar nada", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					}
+				} else {
+					if (smt.returnSmt.rv == null) {
+						error("O método deve retornar " + md.type.name.toString, smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RETURN_SMT);
+					}
+					var retorno = tipos.get(smt.returnSmt.rv.name.toString);
+					var retorno2 = tiposMetodo.get(smt.returnSmt.rv.name.toString);
+					if (retorno == null && retorno2 == null) {
+						error("A variável de retorno ainda não foi declarada", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					} else if ((retorno == null && retorno2.name.toString != md.type.name.toString)
+						|| (retorno2 == null && retorno.name.toString != md.type.name.toString)
+					) {
+						error("O tipo do retorno e o tipo do método são diferentes", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
 					}
 				}	 
 			}
 		}
+		if (!temReturn && md.type.name.toString != "void") {
+			error("O método deve retornar " + md.type.name.toString, md, JavaPackage.Literals.METHOD_DECLARATION__NAME);
+		}
 	} 
+
+	def addTipos(Field_declaration fd, Map<String, Type> tipos) {
+		if (fd.name instanceof Variable_declaration) {
+			var Variable_declaration vd = fd.name as Variable_declaration;
+			var Type nome = tipos.get(vd.name.name.toString);
+			if (nome != null) {
+				error("Já existe uma variável com o mesmo identificador", vd, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
+			} else {
+				tipos.put(vd.name.name.toString, vd.type);				
+			}
+		} else if (fd.name instanceof Method_declaration) {
+			var Method_declaration md = fd.name as Method_declaration;
+			tipos.put(md.name.toString, md.type);
+		} 
+	}
+	
+	def addTiposMetodo(Statement smt, Map<String, Type> tipos) {
+		if (smt.variable instanceof Variable_declaration) {
+			var Type nome = tipos.get(smt.variable.name.name.toString);
+			if (nome != null) {
+				error("Já existe uma variável com o mesmo identificador", smt.variable, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
+			}
+			tipos.put(smt.variable.name.name.toString, smt.variable.type);
+		} 
+	}
 }
