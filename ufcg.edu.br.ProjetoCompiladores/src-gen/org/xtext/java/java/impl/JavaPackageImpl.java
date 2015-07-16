@@ -9,7 +9,9 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.java.java.Ampersand_Rule;
 import org.xtext.java.java.Arg_List;
+import org.xtext.java.java.Bit_Expression_NR;
 import org.xtext.java.java.Cast_Expression;
 import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Compilation_unit;
@@ -28,11 +30,14 @@ import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaFactory;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Literal_Expression;
+import org.xtext.java.java.Logical_Expression_NR;
+import org.xtext.java.java.Method_call;
 import org.xtext.java.java.Method_declaration;
 import org.xtext.java.java.Numeric_Expression_NR;
 import org.xtext.java.java.Package_statement;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
+import org.xtext.java.java.Parameter_list_method_call;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
@@ -107,7 +112,21 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass method_callEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass constructor_declarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parameter_list_method_callEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,6 +182,13 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass ampersand_RuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass float_LiteralEClass = null;
 
   /**
@@ -185,6 +211,20 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * @generated
    */
   private EClass cast_ExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bit_Expression_NREClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass logical_Expression_NREClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -682,6 +722,36 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMethod_call()
+  {
+    return method_callEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMethod_call_Name()
+  {
+    return (EAttribute)method_callEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethod_call_Parameter()
+  {
+    return (EReference)method_callEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getConstructor_declaration()
   {
     return constructor_declarationEClass;
@@ -725,6 +795,36 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
   public EReference getConstructor_declaration_Statement()
   {
     return (EReference)constructor_declarationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParameter_list_method_call()
+  {
+    return parameter_list_method_callEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getParameter_list_method_call_Name()
+  {
+    return (EAttribute)parameter_list_method_callEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getParameter_list_method_call_Parameters()
+  {
+    return (EAttribute)parameter_list_method_callEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -942,7 +1042,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_CastExpression()
+  public EReference getExpression_LogicalExpression()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -952,7 +1052,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_CreatingExpression()
+  public EReference getExpression_BitExpression()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -962,7 +1062,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_LiteralExpression()
+  public EReference getExpression_CastExpression()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(4);
   }
@@ -972,27 +1072,27 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getExpression_CreatingExpression()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_LiteralExpression()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getExpression_Null()
-  {
-    return (EAttribute)expressionEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExpression_Super()
-  {
-    return (EAttribute)expressionEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExpression_This()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(7);
   }
@@ -1002,9 +1102,29 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExpression_Name()
+  public EAttribute getExpression_Super()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_This()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_Name()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -1072,7 +1192,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExpression_aux_SinalNumeric()
+  public EAttribute getExpression_aux_NumericSign()
   {
     return (EAttribute)expression_auxEClass.getEStructuralFeatures().get(5);
   }
@@ -1085,6 +1205,106 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
   public EReference getExpression_aux_Exp2()
   {
     return (EReference)expression_auxEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_aux_TestingSign()
+  {
+    return (EAttribute)expression_auxEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_aux_Exp1()
+  {
+    return (EReference)expression_auxEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_aux_LogicalSign()
+  {
+    return (EAttribute)expression_auxEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_aux_Ampersand()
+  {
+    return (EReference)expression_auxEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_aux_StringSign()
+  {
+    return (EAttribute)expression_auxEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_aux_BitSign()
+  {
+    return (EAttribute)expression_auxEClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_aux_ExpressionBit()
+  {
+    return (EReference)expression_auxEClass.getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAmpersand_Rule()
+  {
+    return ampersand_RuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAmpersand_Rule_A1()
+  {
+    return (EAttribute)ampersand_RuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAmpersand_Rule_A2()
+  {
+    return (EAttribute)ampersand_RuleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1275,6 +1495,66 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
   public EReference getCast_Expression_Expression()
   {
     return (EReference)cast_ExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBit_Expression_NR()
+  {
+    return bit_Expression_NREClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBit_Expression_NR_Expression()
+  {
+    return (EReference)bit_Expression_NREClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLogical_Expression_NR()
+  {
+    return logical_Expression_NREClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLogical_Expression_NR_Expression()
+  {
+    return (EReference)logical_Expression_NREClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLogical_Expression_NR_True()
+  {
+    return (EAttribute)logical_Expression_NREClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLogical_Expression_NR_False()
+  {
+    return (EAttribute)logical_Expression_NREClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1772,7 +2052,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTry_statement_Parameters()
+  public EReference getTry_statement_RIGHT_PARENTHESISparameters()
   {
     return (EReference)try_statementEClass.getEStructuralFeatures().get(3);
   }
@@ -1927,11 +2207,19 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(method_declarationEClass, METHOD_DECLARATION__STATEMENT);
     createEAttribute(method_declarationEClass, METHOD_DECLARATION__DEBUG);
 
+    method_callEClass = createEClass(METHOD_CALL);
+    createEAttribute(method_callEClass, METHOD_CALL__NAME);
+    createEReference(method_callEClass, METHOD_CALL__PARAMETER);
+
     constructor_declarationEClass = createEClass(CONSTRUCTOR_DECLARATION);
     createEAttribute(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__MODIFIERS);
     createEAttribute(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__NAME);
     createEReference(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__PARAMETERS);
     createEReference(constructor_declarationEClass, CONSTRUCTOR_DECLARATION__STATEMENT);
+
+    parameter_list_method_callEClass = createEClass(PARAMETER_LIST_METHOD_CALL);
+    createEAttribute(parameter_list_method_callEClass, PARAMETER_LIST_METHOD_CALL__NAME);
+    createEAttribute(parameter_list_method_callEClass, PARAMETER_LIST_METHOD_CALL__PARAMETERS);
 
     parameter_listEClass = createEClass(PARAMETER_LIST);
     createEReference(parameter_listEClass, PARAMETER_LIST__PARAMETER);
@@ -1959,6 +2247,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__NUMERIC_EXPRESSION3);
     createEReference(expressionEClass, EXPRESSION__AUX);
+    createEReference(expressionEClass, EXPRESSION__LOGICAL_EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__BIT_EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__CAST_EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__CREATING_EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__LITERAL_EXPRESSION);
@@ -1973,8 +2263,19 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(expression_auxEClass, EXPRESSION_AUX__EXPRESSION2);
     createEAttribute(expression_auxEClass, EXPRESSION_AUX__NAME);
     createEAttribute(expression_auxEClass, EXPRESSION_AUX__SGIN);
-    createEAttribute(expression_auxEClass, EXPRESSION_AUX__SINAL_NUMERIC);
+    createEAttribute(expression_auxEClass, EXPRESSION_AUX__NUMERIC_SIGN);
     createEReference(expression_auxEClass, EXPRESSION_AUX__EXP2);
+    createEAttribute(expression_auxEClass, EXPRESSION_AUX__TESTING_SIGN);
+    createEReference(expression_auxEClass, EXPRESSION_AUX__EXP1);
+    createEAttribute(expression_auxEClass, EXPRESSION_AUX__LOGICAL_SIGN);
+    createEReference(expression_auxEClass, EXPRESSION_AUX__AMPERSAND);
+    createEAttribute(expression_auxEClass, EXPRESSION_AUX__STRING_SIGN);
+    createEAttribute(expression_auxEClass, EXPRESSION_AUX__BIT_SIGN);
+    createEReference(expression_auxEClass, EXPRESSION_AUX__EXPRESSION_BIT);
+
+    ampersand_RuleEClass = createEClass(AMPERSAND_RULE);
+    createEAttribute(ampersand_RuleEClass, AMPERSAND_RULE__A1);
+    createEAttribute(ampersand_RuleEClass, AMPERSAND_RULE__A2);
 
     float_LiteralEClass = createEClass(FLOAT_LITERAL);
     createEAttribute(float_LiteralEClass, FLOAT_LITERAL__DECIMAL_DIGITS1);
@@ -1998,6 +2299,14 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     cast_ExpressionEClass = createEClass(CAST_EXPRESSION);
     createEReference(cast_ExpressionEClass, CAST_EXPRESSION__TYPE);
     createEReference(cast_ExpressionEClass, CAST_EXPRESSION__EXPRESSION);
+
+    bit_Expression_NREClass = createEClass(BIT_EXPRESSION_NR);
+    createEReference(bit_Expression_NREClass, BIT_EXPRESSION_NR__EXPRESSION);
+
+    logical_Expression_NREClass = createEClass(LOGICAL_EXPRESSION_NR);
+    createEReference(logical_Expression_NREClass, LOGICAL_EXPRESSION_NR__EXPRESSION);
+    createEAttribute(logical_Expression_NREClass, LOGICAL_EXPRESSION_NR__TRUE);
+    createEAttribute(logical_Expression_NREClass, LOGICAL_EXPRESSION_NR__FALSE);
 
     arg_ListEClass = createEClass(ARG_LIST);
     createEReference(arg_ListEClass, ARG_LIST__EXPRESSION);
@@ -2059,7 +2368,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEAttribute(try_statementEClass, TRY_STATEMENT__TRY);
     createEReference(try_statementEClass, TRY_STATEMENT__TRY_STATEMENT);
     createEAttribute(try_statementEClass, TRY_STATEMENT__CATCHS);
-    createEReference(try_statementEClass, TRY_STATEMENT__PARAMETERS);
+    createEReference(try_statementEClass, TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS);
     createEReference(try_statementEClass, TRY_STATEMENT__CATCH_STATEMENTS);
     createEAttribute(try_statementEClass, TRY_STATEMENT__FINALLY);
     createEReference(try_statementEClass, TRY_STATEMENT__FINALLY_STATEMENT);
@@ -2144,11 +2453,19 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getMethod_declaration_Statement(), this.getStatement_block(), null, "statement", null, 0, 1, Method_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMethod_declaration_Debug(), ecorePackage.getEString(), "debug", null, 0, 1, Method_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(method_callEClass, Method_call.class, "Method_call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMethod_call_Name(), ecorePackage.getEString(), "name", null, 0, 1, Method_call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_call_Parameter(), this.getParameter_list_method_call(), null, "parameter", null, 0, 1, Method_call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(constructor_declarationEClass, Constructor_declaration.class, "Constructor_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstructor_declaration_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstructor_declaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstructor_declaration_Parameters(), this.getParameter_list(), null, "parameters", null, 0, 1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstructor_declaration_Statement(), this.getStatement_block(), null, "statement", null, 0, 1, Constructor_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parameter_list_method_callEClass, Parameter_list_method_call.class, "Parameter_list_method_call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParameter_list_method_call_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter_list_method_call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParameter_list_method_call_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, Parameter_list_method_call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameter_listEClass, Parameter_list.class, "Parameter_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameter_list_Parameter(), this.getParameter(), null, "parameter", null, 0, 1, Parameter_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2176,6 +2493,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_NumericExpression3(), this.getNumeric_Expression_NR(), null, "numericExpression3", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Aux(), this.getExpression_aux(), null, "aux", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_LogicalExpression(), this.getLogical_Expression_NR(), null, "logicalExpression", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_BitExpression(), this.getBit_Expression_NR(), null, "bitExpression", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_CastExpression(), this.getCast_Expression(), null, "castExpression", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_CreatingExpression(), this.getCreating_Expression(), null, "creatingExpression", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_LiteralExpression(), this.getLiteral_Expression(), null, "literalExpression", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2190,8 +2509,19 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getExpression_aux_Expression2(), this.getExpression(), null, "expression2", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExpression_aux_Name(), ecorePackage.getEString(), "name", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExpression_aux_Sgin(), ecorePackage.getEString(), "sgin", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpression_aux_SinalNumeric(), ecorePackage.getEString(), "sinalNumeric", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_aux_NumericSign(), ecorePackage.getEString(), "numericSign", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_aux_Exp2(), this.getExpression(), null, "exp2", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_aux_TestingSign(), ecorePackage.getEString(), "testingSign", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_aux_Exp1(), this.getExpression(), null, "exp1", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_aux_LogicalSign(), ecorePackage.getEString(), "logicalSign", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_aux_Ampersand(), this.getAmpersand_Rule(), null, "ampersand", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_aux_StringSign(), ecorePackage.getEString(), "stringSign", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_aux_BitSign(), ecorePackage.getEString(), "bitSign", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_aux_ExpressionBit(), this.getExpression(), null, "expressionBit", null, 0, 1, Expression_aux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ampersand_RuleEClass, Ampersand_Rule.class, "Ampersand_Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAmpersand_Rule_A1(), ecorePackage.getEString(), "a1", null, 0, 1, Ampersand_Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAmpersand_Rule_A2(), ecorePackage.getEString(), "a2", null, 0, 1, Ampersand_Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(float_LiteralEClass, Float_Literal.class, "Float_Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFloat_Literal_DecimalDigits1(), ecorePackage.getEInt(), "decimalDigits1", null, 0, 1, Float_Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2215,6 +2545,14 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEClass(cast_ExpressionEClass, Cast_Expression.class, "Cast_Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCast_Expression_Type(), this.getType(), null, "type", null, 0, 1, Cast_Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCast_Expression_Expression(), this.getExpression(), null, "expression", null, 0, 1, Cast_Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bit_Expression_NREClass, Bit_Expression_NR.class, "Bit_Expression_NR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBit_Expression_NR_Expression(), this.getExpression(), null, "expression", null, 0, 1, Bit_Expression_NR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(logical_Expression_NREClass, Logical_Expression_NR.class, "Logical_Expression_NR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLogical_Expression_NR_Expression(), this.getExpression(), null, "expression", null, 0, 1, Logical_Expression_NR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLogical_Expression_NR_True(), ecorePackage.getEString(), "true", null, 0, 1, Logical_Expression_NR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLogical_Expression_NR_False(), ecorePackage.getEString(), "false", null, 0, 1, Logical_Expression_NR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arg_ListEClass, Arg_List.class, "Arg_List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArg_List_Expression(), this.getExpression(), null, "expression", null, 0, 1, Arg_List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2276,7 +2614,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEAttribute(getTry_statement_Try(), ecorePackage.getEString(), "try", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTry_statement_TryStatement(), this.getStatement(), null, "tryStatement", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTry_statement_Catchs(), ecorePackage.getEString(), "catchs", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTry_statement_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTry_statement_RIGHT_PARENTHESISparameters(), this.getParameter(), null, "RIGHT_PARENTHESISparameters", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTry_statement_CatchStatements(), this.getStatement(), null, "catchStatements", null, 0, -1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTry_statement_Finally(), ecorePackage.getEString(), "finally", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTry_statement_FinallyStatement(), this.getStatement(), null, "finallyStatement", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

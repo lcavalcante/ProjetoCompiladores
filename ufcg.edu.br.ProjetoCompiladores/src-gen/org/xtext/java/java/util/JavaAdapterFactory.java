@@ -110,9 +110,19 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createMethod_declarationAdapter();
       }
       @Override
+      public Adapter caseMethod_call(Method_call object)
+      {
+        return createMethod_callAdapter();
+      }
+      @Override
       public Adapter caseConstructor_declaration(Constructor_declaration object)
       {
         return createConstructor_declarationAdapter();
+      }
+      @Override
+      public Adapter caseParameter_list_method_call(Parameter_list_method_call object)
+      {
+        return createParameter_list_method_callAdapter();
       }
       @Override
       public Adapter caseParameter_list(Parameter_list object)
@@ -150,6 +160,11 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createExpression_auxAdapter();
       }
       @Override
+      public Adapter caseAmpersand_Rule(Ampersand_Rule object)
+      {
+        return createAmpersand_RuleAdapter();
+      }
+      @Override
       public Adapter caseFloat_Literal(Float_Literal object)
       {
         return createFloat_LiteralAdapter();
@@ -168,6 +183,16 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCast_Expression(Cast_Expression object)
       {
         return createCast_ExpressionAdapter();
+      }
+      @Override
+      public Adapter caseBit_Expression_NR(Bit_Expression_NR object)
+      {
+        return createBit_Expression_NRAdapter();
+      }
+      @Override
+      public Adapter caseLogical_Expression_NR(Logical_Expression_NR object)
+      {
+        return createLogical_Expression_NRAdapter();
       }
       @Override
       public Adapter caseArg_List(Arg_List object)
@@ -367,6 +392,21 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Method_call <em>Method call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Method_call
+   * @generated
+   */
+  public Adapter createMethod_callAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.java.java.Constructor_declaration <em>Constructor declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -377,6 +417,21 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstructor_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Parameter_list_method_call <em>Parameter list method call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Parameter_list_method_call
+   * @generated
+   */
+  public Adapter createParameter_list_method_callAdapter()
   {
     return null;
   }
@@ -487,6 +542,21 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Ampersand_Rule <em>Ampersand Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Ampersand_Rule
+   * @generated
+   */
+  public Adapter createAmpersand_RuleAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.java.java.Float_Literal <em>Float Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -542,6 +612,36 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCast_ExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Bit_Expression_NR <em>Bit Expression NR</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Bit_Expression_NR
+   * @generated
+   */
+  public Adapter createBit_Expression_NRAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Logical_Expression_NR <em>Logical Expression NR</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Logical_Expression_NR
+   * @generated
+   */
+  public Adapter createLogical_Expression_NRAdapter()
   {
     return null;
   }

@@ -424,6 +424,43 @@ public interface JavaPackage extends EPackage
   int METHOD_DECLARATION_FEATURE_COUNT = 6;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Method_callImpl <em>Method call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Method_callImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getMethod_call()
+   * @generated
+   */
+  int METHOD_CALL = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL__PARAMETER = 1;
+
+  /**
+   * The number of structural features of the '<em>Method call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -431,7 +468,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getConstructor_declaration()
    * @generated
    */
-  int CONSTRUCTOR_DECLARATION = 7;
+  int CONSTRUCTOR_DECLARATION = 8;
 
   /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -479,6 +516,43 @@ public interface JavaPackage extends EPackage
   int CONSTRUCTOR_DECLARATION_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Parameter_list_method_callImpl <em>Parameter list method call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Parameter_list_method_callImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter_list_method_call()
+   * @generated
+   */
+  int PARAMETER_LIST_METHOD_CALL = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST_METHOD_CALL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST_METHOD_CALL__PARAMETERS = 1;
+
+  /**
+   * The number of structural features of the '<em>Parameter list method call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_LIST_METHOD_CALL_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Parameter_listImpl <em>Parameter list</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -486,7 +560,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter_list()
    * @generated
    */
-  int PARAMETER_LIST = 8;
+  int PARAMETER_LIST = 10;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -523,7 +597,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 9;
+  int PARAMETER = 11;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -560,7 +634,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 10;
+  int VARIABLE_DECLARATION = 12;
 
   /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -615,7 +689,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_declarator()
    * @generated
    */
-  int VARIABLE_DECLARATOR = 11;
+  int VARIABLE_DECLARATOR = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -652,7 +726,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getVariable_initializer()
    * @generated
    */
-  int VARIABLE_INITIALIZER = 12;
+  int VARIABLE_INITIALIZER = 14;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -698,7 +772,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 13;
+  int EXPRESSION = 15;
 
   /**
    * The feature id for the '<em><b>Numeric Expression3</b></em>' containment reference.
@@ -719,13 +793,31 @@ public interface JavaPackage extends EPackage
   int EXPRESSION__AUX = 1;
 
   /**
+   * The feature id for the '<em><b>Logical Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__LOGICAL_EXPRESSION = 2;
+
+  /**
+   * The feature id for the '<em><b>Bit Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__BIT_EXPRESSION = 3;
+
+  /**
    * The feature id for the '<em><b>Cast Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__CAST_EXPRESSION = 2;
+  int EXPRESSION__CAST_EXPRESSION = 4;
 
   /**
    * The feature id for the '<em><b>Creating Expression</b></em>' containment reference.
@@ -734,7 +826,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__CREATING_EXPRESSION = 3;
+  int EXPRESSION__CREATING_EXPRESSION = 5;
 
   /**
    * The feature id for the '<em><b>Literal Expression</b></em>' containment reference.
@@ -743,7 +835,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__LITERAL_EXPRESSION = 4;
+  int EXPRESSION__LITERAL_EXPRESSION = 6;
 
   /**
    * The feature id for the '<em><b>Null</b></em>' attribute.
@@ -752,7 +844,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__NULL = 5;
+  int EXPRESSION__NULL = 7;
 
   /**
    * The feature id for the '<em><b>Super</b></em>' attribute.
@@ -761,7 +853,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__SUPER = 6;
+  int EXPRESSION__SUPER = 8;
 
   /**
    * The feature id for the '<em><b>This</b></em>' attribute.
@@ -770,7 +862,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__THIS = 7;
+  int EXPRESSION__THIS = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -779,7 +871,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__NAME = 8;
+  int EXPRESSION__NAME = 10;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -788,7 +880,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 9;
+  int EXPRESSION_FEATURE_COUNT = 11;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Expression_auxImpl <em>Expression aux</em>}' class.
@@ -798,7 +890,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getExpression_aux()
    * @generated
    */
-  int EXPRESSION_AUX = 14;
+  int EXPRESSION_AUX = 16;
 
   /**
    * The feature id for the '<em><b>Arg List</b></em>' containment reference list.
@@ -846,13 +938,13 @@ public interface JavaPackage extends EPackage
   int EXPRESSION_AUX__SGIN = 4;
 
   /**
-   * The feature id for the '<em><b>Sinal Numeric</b></em>' attribute.
+   * The feature id for the '<em><b>Numeric Sign</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_AUX__SINAL_NUMERIC = 5;
+  int EXPRESSION_AUX__NUMERIC_SIGN = 5;
 
   /**
    * The feature id for the '<em><b>Exp2</b></em>' containment reference.
@@ -864,13 +956,113 @@ public interface JavaPackage extends EPackage
   int EXPRESSION_AUX__EXP2 = 6;
 
   /**
+   * The feature id for the '<em><b>Testing Sign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__TESTING_SIGN = 7;
+
+  /**
+   * The feature id for the '<em><b>Exp1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__EXP1 = 8;
+
+  /**
+   * The feature id for the '<em><b>Logical Sign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__LOGICAL_SIGN = 9;
+
+  /**
+   * The feature id for the '<em><b>Ampersand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__AMPERSAND = 10;
+
+  /**
+   * The feature id for the '<em><b>String Sign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__STRING_SIGN = 11;
+
+  /**
+   * The feature id for the '<em><b>Bit Sign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__BIT_SIGN = 12;
+
+  /**
+   * The feature id for the '<em><b>Expression Bit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_AUX__EXPRESSION_BIT = 13;
+
+  /**
    * The number of structural features of the '<em>Expression aux</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_AUX_FEATURE_COUNT = 7;
+  int EXPRESSION_AUX_FEATURE_COUNT = 14;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Ampersand_RuleImpl <em>Ampersand Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Ampersand_RuleImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getAmpersand_Rule()
+   * @generated
+   */
+  int AMPERSAND_RULE = 17;
+
+  /**
+   * The feature id for the '<em><b>A1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AMPERSAND_RULE__A1 = 0;
+
+  /**
+   * The feature id for the '<em><b>A2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AMPERSAND_RULE__A2 = 1;
+
+  /**
+   * The number of structural features of the '<em>Ampersand Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AMPERSAND_RULE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Float_LiteralImpl <em>Float Literal</em>}' class.
@@ -880,7 +1072,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getFloat_Literal()
    * @generated
    */
-  int FLOAT_LITERAL = 15;
+  int FLOAT_LITERAL = 18;
 
   /**
    * The feature id for the '<em><b>Decimal Digits1</b></em>' attribute.
@@ -935,7 +1127,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getLiteral_Expression()
    * @generated
    */
-  int LITERAL_EXPRESSION = 16;
+  int LITERAL_EXPRESSION = 19;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' attribute.
@@ -999,7 +1191,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getCreating_Expression()
    * @generated
    */
-  int CREATING_EXPRESSION = 17;
+  int CREATING_EXPRESSION = 20;
 
   /**
    * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -1054,7 +1246,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getCast_Expression()
    * @generated
    */
-  int CAST_EXPRESSION = 18;
+  int CAST_EXPRESSION = 21;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1084,6 +1276,80 @@ public interface JavaPackage extends EPackage
   int CAST_EXPRESSION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Bit_Expression_NRImpl <em>Bit Expression NR</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Bit_Expression_NRImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getBit_Expression_NR()
+   * @generated
+   */
+  int BIT_EXPRESSION_NR = 22;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BIT_EXPRESSION_NR__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>Bit Expression NR</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BIT_EXPRESSION_NR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Logical_Expression_NRImpl <em>Logical Expression NR</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Logical_Expression_NRImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getLogical_Expression_NR()
+   * @generated
+   */
+  int LOGICAL_EXPRESSION_NR = 23;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_EXPRESSION_NR__EXPRESSION = 0;
+
+  /**
+   * The feature id for the '<em><b>True</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_EXPRESSION_NR__TRUE = 1;
+
+  /**
+   * The feature id for the '<em><b>False</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_EXPRESSION_NR__FALSE = 2;
+
+  /**
+   * The number of structural features of the '<em>Logical Expression NR</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_EXPRESSION_NR_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Arg_ListImpl <em>Arg List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1091,7 +1357,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getArg_List()
    * @generated
    */
-  int ARG_LIST = 19;
+  int ARG_LIST = 24;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1128,7 +1394,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getNumeric_Expression_NR()
    * @generated
    */
-  int NUMERIC_EXPRESSION_NR = 20;
+  int NUMERIC_EXPRESSION_NR = 25;
 
   /**
    * The feature id for the '<em><b>Sinal numeric</b></em>' attribute.
@@ -1165,7 +1431,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getType()
    * @generated
    */
-  int TYPE = 21;
+  int TYPE = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1193,7 +1459,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatic_initializer()
    * @generated
    */
-  int STATIC_INITIALIZER = 22;
+  int STATIC_INITIALIZER = 27;
 
   /**
    * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -1230,7 +1496,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 24;
+  int STATEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -1339,7 +1605,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getStatement_block()
    * @generated
    */
-  int STATEMENT_BLOCK = 23;
+  int STATEMENT_BLOCK = 28;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -1457,7 +1723,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getSwitch_Statement()
    * @generated
    */
-  int SWITCH_STATEMENT = 25;
+  int SWITCH_STATEMENT = 30;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1503,7 +1769,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getFor_Statement()
    * @generated
    */
-  int FOR_STATEMENT = 26;
+  int FOR_STATEMENT = 31;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -1576,7 +1842,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getWhile_Statement()
    * @generated
    */
-  int WHILE_STATEMENT = 27;
+  int WHILE_STATEMENT = 32;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1613,7 +1879,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getDo_Statement()
    * @generated
    */
-  int DO_STATEMENT = 28;
+  int DO_STATEMENT = 33;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -1650,7 +1916,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getIf_Statement()
    * @generated
    */
-  int IF_STATEMENT = 29;
+  int IF_STATEMENT = 34;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1696,7 +1962,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getTry_statement()
    * @generated
    */
-  int TRY_STATEMENT = 30;
+  int TRY_STATEMENT = 35;
 
   /**
    * The feature id for the '<em><b>Try</b></em>' attribute.
@@ -1726,13 +1992,13 @@ public interface JavaPackage extends EPackage
   int TRY_STATEMENT__CATCHS = 2;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * The feature id for the '<em><b>RIGHT PARENTHESI Sparameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRY_STATEMENT__PARAMETERS = 3;
+  int TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS = 3;
 
   /**
    * The feature id for the '<em><b>Catch Statements</b></em>' containment reference list.
@@ -1778,7 +2044,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 31;
+  int PACKAGE_STATEMENT = 36;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1806,7 +2072,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 32;
+  int IMPORT_STATEMENT = 37;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -2193,6 +2459,38 @@ public interface JavaPackage extends EPackage
   EAttribute getMethod_declaration_Debug();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Method_call <em>Method call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method call</em>'.
+   * @see org.xtext.java.java.Method_call
+   * @generated
+   */
+  EClass getMethod_call();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Method_call#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Method_call#getName()
+   * @see #getMethod_call()
+   * @generated
+   */
+  EAttribute getMethod_call_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Method_call#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see org.xtext.java.java.Method_call#getParameter()
+   * @see #getMethod_call()
+   * @generated
+   */
+  EReference getMethod_call_Parameter();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.java.java.Constructor_declaration <em>Constructor declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2245,6 +2543,38 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EReference getConstructor_declaration_Statement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Parameter_list_method_call <em>Parameter list method call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parameter list method call</em>'.
+   * @see org.xtext.java.java.Parameter_list_method_call
+   * @generated
+   */
+  EClass getParameter_list_method_call();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Parameter_list_method_call#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Parameter_list_method_call#getName()
+   * @see #getParameter_list_method_call()
+   * @generated
+   */
+  EAttribute getParameter_list_method_call_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.java.java.Parameter_list_method_call#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Parameters</em>'.
+   * @see org.xtext.java.java.Parameter_list_method_call#getParameters()
+   * @see #getParameter_list_method_call()
+   * @generated
+   */
+  EAttribute getParameter_list_method_call_Parameters();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Parameter_list <em>Parameter list</em>}'.
@@ -2472,6 +2802,28 @@ public interface JavaPackage extends EPackage
   EReference getExpression_Aux();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression#getLogicalExpression <em>Logical Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Logical Expression</em>'.
+   * @see org.xtext.java.java.Expression#getLogicalExpression()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_LogicalExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression#getBitExpression <em>Bit Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bit Expression</em>'.
+   * @see org.xtext.java.java.Expression#getBitExpression()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_BitExpression();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression#getCastExpression <em>Cast Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2614,15 +2966,15 @@ public interface JavaPackage extends EPackage
   EAttribute getExpression_aux_Sgin();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.java.java.Expression_aux#getSinalNumeric <em>Sinal Numeric</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Expression_aux#getNumericSign <em>Numeric Sign</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Sinal Numeric</em>'.
-   * @see org.xtext.java.java.Expression_aux#getSinalNumeric()
+   * @return the meta object for the attribute '<em>Numeric Sign</em>'.
+   * @see org.xtext.java.java.Expression_aux#getNumericSign()
    * @see #getExpression_aux()
    * @generated
    */
-  EAttribute getExpression_aux_SinalNumeric();
+  EAttribute getExpression_aux_NumericSign();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression_aux#getExp2 <em>Exp2</em>}'.
@@ -2634,6 +2986,115 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EReference getExpression_aux_Exp2();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Expression_aux#getTestingSign <em>Testing Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Testing Sign</em>'.
+   * @see org.xtext.java.java.Expression_aux#getTestingSign()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EAttribute getExpression_aux_TestingSign();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression_aux#getExp1 <em>Exp1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp1</em>'.
+   * @see org.xtext.java.java.Expression_aux#getExp1()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EReference getExpression_aux_Exp1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Expression_aux#getLogicalSign <em>Logical Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Logical Sign</em>'.
+   * @see org.xtext.java.java.Expression_aux#getLogicalSign()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EAttribute getExpression_aux_LogicalSign();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression_aux#getAmpersand <em>Ampersand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ampersand</em>'.
+   * @see org.xtext.java.java.Expression_aux#getAmpersand()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EReference getExpression_aux_Ampersand();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Expression_aux#getStringSign <em>String Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String Sign</em>'.
+   * @see org.xtext.java.java.Expression_aux#getStringSign()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EAttribute getExpression_aux_StringSign();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Expression_aux#getBitSign <em>Bit Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bit Sign</em>'.
+   * @see org.xtext.java.java.Expression_aux#getBitSign()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EAttribute getExpression_aux_BitSign();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Expression_aux#getExpressionBit <em>Expression Bit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression Bit</em>'.
+   * @see org.xtext.java.java.Expression_aux#getExpressionBit()
+   * @see #getExpression_aux()
+   * @generated
+   */
+  EReference getExpression_aux_ExpressionBit();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Ampersand_Rule <em>Ampersand Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ampersand Rule</em>'.
+   * @see org.xtext.java.java.Ampersand_Rule
+   * @generated
+   */
+  EClass getAmpersand_Rule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Ampersand_Rule#getA1 <em>A1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>A1</em>'.
+   * @see org.xtext.java.java.Ampersand_Rule#getA1()
+   * @see #getAmpersand_Rule()
+   * @generated
+   */
+  EAttribute getAmpersand_Rule_A1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Ampersand_Rule#getA2 <em>A2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>A2</em>'.
+   * @see org.xtext.java.java.Ampersand_Rule#getA2()
+   * @see #getAmpersand_Rule()
+   * @generated
+   */
+  EAttribute getAmpersand_Rule_A2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Float_Literal <em>Float Literal</em>}'.
@@ -2839,6 +3300,70 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EReference getCast_Expression_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Bit_Expression_NR <em>Bit Expression NR</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bit Expression NR</em>'.
+   * @see org.xtext.java.java.Bit_Expression_NR
+   * @generated
+   */
+  EClass getBit_Expression_NR();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Bit_Expression_NR#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.java.java.Bit_Expression_NR#getExpression()
+   * @see #getBit_Expression_NR()
+   * @generated
+   */
+  EReference getBit_Expression_NR_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Logical_Expression_NR <em>Logical Expression NR</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logical Expression NR</em>'.
+   * @see org.xtext.java.java.Logical_Expression_NR
+   * @generated
+   */
+  EClass getLogical_Expression_NR();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Logical_Expression_NR#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.java.java.Logical_Expression_NR#getExpression()
+   * @see #getLogical_Expression_NR()
+   * @generated
+   */
+  EReference getLogical_Expression_NR_Expression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Logical_Expression_NR#getTrue <em>True</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>True</em>'.
+   * @see org.xtext.java.java.Logical_Expression_NR#getTrue()
+   * @see #getLogical_Expression_NR()
+   * @generated
+   */
+  EAttribute getLogical_Expression_NR_True();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Logical_Expression_NR#getFalse <em>False</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>False</em>'.
+   * @see org.xtext.java.java.Logical_Expression_NR#getFalse()
+   * @see #getLogical_Expression_NR()
+   * @generated
+   */
+  EAttribute getLogical_Expression_NR_False();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Arg_List <em>Arg List</em>}'.
@@ -3368,15 +3893,15 @@ public interface JavaPackage extends EPackage
   EAttribute getTry_statement_Catchs();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Try_statement#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Try_statement#getRIGHT_PARENTHESISparameters <em>RIGHT PARENTHESI Sparameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see org.xtext.java.java.Try_statement#getParameters()
+   * @return the meta object for the containment reference list '<em>RIGHT PARENTHESI Sparameters</em>'.
+   * @see org.xtext.java.java.Try_statement#getRIGHT_PARENTHESISparameters()
    * @see #getTry_statement()
    * @generated
    */
-  EReference getTry_statement_Parameters();
+  EReference getTry_statement_RIGHT_PARENTHESISparameters();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.java.java.Try_statement#getCatchStatements <em>Catch Statements</em>}'.
@@ -3766,6 +4291,32 @@ public interface JavaPackage extends EPackage
     EAttribute METHOD_DECLARATION__DEBUG = eINSTANCE.getMethod_declaration_Debug();
 
     /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Method_callImpl <em>Method call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Method_callImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getMethod_call()
+     * @generated
+     */
+    EClass METHOD_CALL = eINSTANCE.getMethod_call();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METHOD_CALL__NAME = eINSTANCE.getMethod_call_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_CALL__PARAMETER = eINSTANCE.getMethod_call_Parameter();
+
+    /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3806,6 +4357,32 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference CONSTRUCTOR_DECLARATION__STATEMENT = eINSTANCE.getConstructor_declaration_Statement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Parameter_list_method_callImpl <em>Parameter list method call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Parameter_list_method_callImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getParameter_list_method_call()
+     * @generated
+     */
+    EClass PARAMETER_LIST_METHOD_CALL = eINSTANCE.getParameter_list_method_call();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER_LIST_METHOD_CALL__NAME = eINSTANCE.getParameter_list_method_call_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER_LIST_METHOD_CALL__PARAMETERS = eINSTANCE.getParameter_list_method_call_Parameters();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Parameter_listImpl <em>Parameter list</em>}' class.
@@ -3988,6 +4565,22 @@ public interface JavaPackage extends EPackage
     EReference EXPRESSION__AUX = eINSTANCE.getExpression_Aux();
 
     /**
+     * The meta object literal for the '<em><b>Logical Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__LOGICAL_EXPRESSION = eINSTANCE.getExpression_LogicalExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Bit Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__BIT_EXPRESSION = eINSTANCE.getExpression_BitExpression();
+
+    /**
      * The meta object literal for the '<em><b>Cast Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4094,12 +4687,12 @@ public interface JavaPackage extends EPackage
     EAttribute EXPRESSION_AUX__SGIN = eINSTANCE.getExpression_aux_Sgin();
 
     /**
-     * The meta object literal for the '<em><b>Sinal Numeric</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Numeric Sign</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION_AUX__SINAL_NUMERIC = eINSTANCE.getExpression_aux_SinalNumeric();
+    EAttribute EXPRESSION_AUX__NUMERIC_SIGN = eINSTANCE.getExpression_aux_NumericSign();
 
     /**
      * The meta object literal for the '<em><b>Exp2</b></em>' containment reference feature.
@@ -4108,6 +4701,88 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference EXPRESSION_AUX__EXP2 = eINSTANCE.getExpression_aux_Exp2();
+
+    /**
+     * The meta object literal for the '<em><b>Testing Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_AUX__TESTING_SIGN = eINSTANCE.getExpression_aux_TestingSign();
+
+    /**
+     * The meta object literal for the '<em><b>Exp1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_AUX__EXP1 = eINSTANCE.getExpression_aux_Exp1();
+
+    /**
+     * The meta object literal for the '<em><b>Logical Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_AUX__LOGICAL_SIGN = eINSTANCE.getExpression_aux_LogicalSign();
+
+    /**
+     * The meta object literal for the '<em><b>Ampersand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_AUX__AMPERSAND = eINSTANCE.getExpression_aux_Ampersand();
+
+    /**
+     * The meta object literal for the '<em><b>String Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_AUX__STRING_SIGN = eINSTANCE.getExpression_aux_StringSign();
+
+    /**
+     * The meta object literal for the '<em><b>Bit Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_AUX__BIT_SIGN = eINSTANCE.getExpression_aux_BitSign();
+
+    /**
+     * The meta object literal for the '<em><b>Expression Bit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_AUX__EXPRESSION_BIT = eINSTANCE.getExpression_aux_ExpressionBit();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Ampersand_RuleImpl <em>Ampersand Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Ampersand_RuleImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getAmpersand_Rule()
+     * @generated
+     */
+    EClass AMPERSAND_RULE = eINSTANCE.getAmpersand_Rule();
+
+    /**
+     * The meta object literal for the '<em><b>A1</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AMPERSAND_RULE__A1 = eINSTANCE.getAmpersand_Rule_A1();
+
+    /**
+     * The meta object literal for the '<em><b>A2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AMPERSAND_RULE__A2 = eINSTANCE.getAmpersand_Rule_A2();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Float_LiteralImpl <em>Float Literal</em>}' class.
@@ -4268,6 +4943,58 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference CAST_EXPRESSION__EXPRESSION = eINSTANCE.getCast_Expression_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Bit_Expression_NRImpl <em>Bit Expression NR</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Bit_Expression_NRImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getBit_Expression_NR()
+     * @generated
+     */
+    EClass BIT_EXPRESSION_NR = eINSTANCE.getBit_Expression_NR();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BIT_EXPRESSION_NR__EXPRESSION = eINSTANCE.getBit_Expression_NR_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Logical_Expression_NRImpl <em>Logical Expression NR</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Logical_Expression_NRImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getLogical_Expression_NR()
+     * @generated
+     */
+    EClass LOGICAL_EXPRESSION_NR = eINSTANCE.getLogical_Expression_NR();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOGICAL_EXPRESSION_NR__EXPRESSION = eINSTANCE.getLogical_Expression_NR_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>True</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOGICAL_EXPRESSION_NR__TRUE = eINSTANCE.getLogical_Expression_NR_True();
+
+    /**
+     * The meta object literal for the '<em><b>False</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOGICAL_EXPRESSION_NR__FALSE = eINSTANCE.getLogical_Expression_NR_False();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Arg_ListImpl <em>Arg List</em>}' class.
@@ -4686,12 +5413,12 @@ public interface JavaPackage extends EPackage
     EAttribute TRY_STATEMENT__CATCHS = eINSTANCE.getTry_statement_Catchs();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>RIGHT PARENTHESI Sparameters</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRY_STATEMENT__PARAMETERS = eINSTANCE.getTry_statement_Parameters();
+    EReference TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS = eINSTANCE.getTry_statement_RIGHT_PARENTHESISparameters();
 
     /**
      * The meta object literal for the '<em><b>Catch Statements</b></em>' containment reference list feature.

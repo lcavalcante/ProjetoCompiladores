@@ -47,11 +47,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Method_declaration/statement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Method_declaration/debug"/>
     </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Method_call">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Method_call/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Method_call/parameter"/>
+    </genClasses>
     <genClasses ecoreClass="Java.ecore#//Constructor_declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Constructor_declaration/modifiers"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Constructor_declaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Constructor_declaration/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Constructor_declaration/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Parameter_list_method_call">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Parameter_list_method_call/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Parameter_list_method_call/parameters"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Parameter_list">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Parameter_list/parameter"/>
@@ -79,6 +87,8 @@
     <genClasses ecoreClass="Java.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/numericExpression3"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/aux"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/logicalExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/bitExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/castExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/creatingExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression/literalExpression"/>
@@ -93,8 +103,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression_aux/expression2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/sgin"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/sinalNumeric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/numericSign"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression_aux/exp2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/testingSign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression_aux/exp1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/logicalSign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression_aux/ampersand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/stringSign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Expression_aux/bitSign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Expression_aux/expressionBit"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Ampersand_Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Ampersand_Rule/a1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Ampersand_Rule/a2"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Float_Literal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Float_Literal/decimalDigits1"/>
@@ -118,6 +139,14 @@
     <genClasses ecoreClass="Java.ecore#//Cast_Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Cast_Expression/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Cast_Expression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Bit_Expression_NR">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Bit_Expression_NR/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Logical_Expression_NR">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Logical_Expression_NR/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Logical_Expression_NR/true"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Logical_Expression_NR/false"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Arg_List">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Arg_List/expression"/>
@@ -179,7 +208,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/try"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/tryStatement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/catchs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/RIGHT_PARENTHESISparameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/catchStatements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/finally"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/finallyStatement"/>

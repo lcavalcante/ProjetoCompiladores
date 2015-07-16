@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Try_statement#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getTryStatement <em>Try Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getCatchs <em>Catchs</em>}</li>
- *   <li>{@link org.xtext.java.java.Try_statement#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.java.java.Try_statement#getRIGHT_PARENTHESISparameters <em>RIGHT PARENTHESI Sparameters</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getCatchStatements <em>Catch Statements</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getFinally <em>Finally</em>}</li>
  *   <li>{@link org.xtext.java.java.Try_statement#getFinallyStatement <em>Finally Statement</em>}</li>
@@ -99,20 +99,20 @@ public interface Try_statement extends EObject
   EList<String> getCatchs();
 
   /**
-   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * Returns the value of the '<em><b>RIGHT PARENTHESI Sparameters</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.java.java.Parameter}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>RIGHT PARENTHESI Sparameters</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameters</em>' containment reference list.
-   * @see org.xtext.java.java.JavaPackage#getTry_statement_Parameters()
+   * @return the value of the '<em>RIGHT PARENTHESI Sparameters</em>' containment reference list.
+   * @see org.xtext.java.java.JavaPackage#getTry_statement_RIGHT_PARENTHESISparameters()
    * @model containment="true"
    * @generated
    */
-  EList<Parameter> getParameters();
+  EList<Parameter> getRIGHT_PARENTHESISparameters();
 
   /**
    * Returns the value of the '<em><b>Catch Statements</b></em>' containment reference list.

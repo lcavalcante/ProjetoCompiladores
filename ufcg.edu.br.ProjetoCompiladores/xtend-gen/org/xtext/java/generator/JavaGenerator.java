@@ -12,7 +12,9 @@ import org.eclipse.xtext.generator.IGenerator;
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
+@SuppressWarnings("all")
 public class JavaGenerator implements IGenerator {
+  @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
   }
 }

@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.java.java.Expression#getNumericExpression3 <em>Numeric Expression3</em>}</li>
  *   <li>{@link org.xtext.java.java.Expression#getAux <em>Aux</em>}</li>
+ *   <li>{@link org.xtext.java.java.Expression#getLogicalExpression <em>Logical Expression</em>}</li>
+ *   <li>{@link org.xtext.java.java.Expression#getBitExpression <em>Bit Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.Expression#getCastExpression <em>Cast Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.Expression#getCreatingExpression <em>Creating Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.Expression#getLiteralExpression <em>Literal Expression</em>}</li>
@@ -81,6 +83,58 @@ public interface Expression extends EObject
    * @generated
    */
   void setAux(Expression_aux value);
+
+  /**
+   * Returns the value of the '<em><b>Logical Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Logical Expression</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Logical Expression</em>' containment reference.
+   * @see #setLogicalExpression(Logical_Expression_NR)
+   * @see org.xtext.java.java.JavaPackage#getExpression_LogicalExpression()
+   * @model containment="true"
+   * @generated
+   */
+  Logical_Expression_NR getLogicalExpression();
+
+  /**
+   * Sets the value of the '{@link org.xtext.java.java.Expression#getLogicalExpression <em>Logical Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Logical Expression</em>' containment reference.
+   * @see #getLogicalExpression()
+   * @generated
+   */
+  void setLogicalExpression(Logical_Expression_NR value);
+
+  /**
+   * Returns the value of the '<em><b>Bit Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bit Expression</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bit Expression</em>' containment reference.
+   * @see #setBitExpression(Bit_Expression_NR)
+   * @see org.xtext.java.java.JavaPackage#getExpression_BitExpression()
+   * @model containment="true"
+   * @generated
+   */
+  Bit_Expression_NR getBitExpression();
+
+  /**
+   * Sets the value of the '{@link org.xtext.java.java.Expression#getBitExpression <em>Bit Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bit Expression</em>' containment reference.
+   * @see #getBitExpression()
+   * @generated
+   */
+  void setBitExpression(Bit_Expression_NR value);
 
   /**
    * Returns the value of the '<em><b>Cast Expression</b></em>' containment reference.

@@ -11,12 +11,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.java.java.Bit_Expression_NR;
 import org.xtext.java.java.Cast_Expression;
 import org.xtext.java.java.Creating_Expression;
 import org.xtext.java.java.Expression;
 import org.xtext.java.java.Expression_aux;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Literal_Expression;
+import org.xtext.java.java.Logical_Expression_NR;
 import org.xtext.java.java.Numeric_Expression_NR;
 
 /**
@@ -28,6 +30,8 @@ import org.xtext.java.java.Numeric_Expression_NR;
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getNumericExpression3 <em>Numeric Expression3</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getAux <em>Aux</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getLogicalExpression <em>Logical Expression</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getBitExpression <em>Bit Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getCastExpression <em>Cast Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getCreatingExpression <em>Creating Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getLiteralExpression <em>Literal Expression</em>}</li>
@@ -61,6 +65,26 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * @ordered
    */
   protected Expression_aux aux;
+
+  /**
+   * The cached value of the '{@link #getLogicalExpression() <em>Logical Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLogicalExpression()
+   * @generated
+   * @ordered
+   */
+  protected Logical_Expression_NR logicalExpression;
+
+  /**
+   * The cached value of the '{@link #getBitExpression() <em>Bit Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBitExpression()
+   * @generated
+   * @ordered
+   */
+  protected Bit_Expression_NR bitExpression;
 
   /**
    * The cached value of the '{@link #getCastExpression() <em>Cast Expression</em>}' containment reference.
@@ -287,6 +311,102 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.EXPRESSION__AUX, newAux, newAux));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Logical_Expression_NR getLogicalExpression()
+  {
+    return logicalExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLogicalExpression(Logical_Expression_NR newLogicalExpression, NotificationChain msgs)
+  {
+    Logical_Expression_NR oldLogicalExpression = logicalExpression;
+    logicalExpression = newLogicalExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.EXPRESSION__LOGICAL_EXPRESSION, oldLogicalExpression, newLogicalExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLogicalExpression(Logical_Expression_NR newLogicalExpression)
+  {
+    if (newLogicalExpression != logicalExpression)
+    {
+      NotificationChain msgs = null;
+      if (logicalExpression != null)
+        msgs = ((InternalEObject)logicalExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.EXPRESSION__LOGICAL_EXPRESSION, null, msgs);
+      if (newLogicalExpression != null)
+        msgs = ((InternalEObject)newLogicalExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.EXPRESSION__LOGICAL_EXPRESSION, null, msgs);
+      msgs = basicSetLogicalExpression(newLogicalExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.EXPRESSION__LOGICAL_EXPRESSION, newLogicalExpression, newLogicalExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Bit_Expression_NR getBitExpression()
+  {
+    return bitExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBitExpression(Bit_Expression_NR newBitExpression, NotificationChain msgs)
+  {
+    Bit_Expression_NR oldBitExpression = bitExpression;
+    bitExpression = newBitExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.EXPRESSION__BIT_EXPRESSION, oldBitExpression, newBitExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBitExpression(Bit_Expression_NR newBitExpression)
+  {
+    if (newBitExpression != bitExpression)
+    {
+      NotificationChain msgs = null;
+      if (bitExpression != null)
+        msgs = ((InternalEObject)bitExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.EXPRESSION__BIT_EXPRESSION, null, msgs);
+      if (newBitExpression != null)
+        msgs = ((InternalEObject)newBitExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.EXPRESSION__BIT_EXPRESSION, null, msgs);
+      msgs = basicSetBitExpression(newBitExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.EXPRESSION__BIT_EXPRESSION, newBitExpression, newBitExpression));
   }
 
   /**
@@ -539,6 +659,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return basicSetNumericExpression3(null, msgs);
       case JavaPackage.EXPRESSION__AUX:
         return basicSetAux(null, msgs);
+      case JavaPackage.EXPRESSION__LOGICAL_EXPRESSION:
+        return basicSetLogicalExpression(null, msgs);
+      case JavaPackage.EXPRESSION__BIT_EXPRESSION:
+        return basicSetBitExpression(null, msgs);
       case JavaPackage.EXPRESSION__CAST_EXPRESSION:
         return basicSetCastExpression(null, msgs);
       case JavaPackage.EXPRESSION__CREATING_EXPRESSION:
@@ -563,6 +687,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return getNumericExpression3();
       case JavaPackage.EXPRESSION__AUX:
         return getAux();
+      case JavaPackage.EXPRESSION__LOGICAL_EXPRESSION:
+        return getLogicalExpression();
+      case JavaPackage.EXPRESSION__BIT_EXPRESSION:
+        return getBitExpression();
       case JavaPackage.EXPRESSION__CAST_EXPRESSION:
         return getCastExpression();
       case JavaPackage.EXPRESSION__CREATING_EXPRESSION:
@@ -596,6 +724,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return;
       case JavaPackage.EXPRESSION__AUX:
         setAux((Expression_aux)newValue);
+        return;
+      case JavaPackage.EXPRESSION__LOGICAL_EXPRESSION:
+        setLogicalExpression((Logical_Expression_NR)newValue);
+        return;
+      case JavaPackage.EXPRESSION__BIT_EXPRESSION:
+        setBitExpression((Bit_Expression_NR)newValue);
         return;
       case JavaPackage.EXPRESSION__CAST_EXPRESSION:
         setCastExpression((Cast_Expression)newValue);
@@ -638,6 +772,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case JavaPackage.EXPRESSION__AUX:
         setAux((Expression_aux)null);
         return;
+      case JavaPackage.EXPRESSION__LOGICAL_EXPRESSION:
+        setLogicalExpression((Logical_Expression_NR)null);
+        return;
+      case JavaPackage.EXPRESSION__BIT_EXPRESSION:
+        setBitExpression((Bit_Expression_NR)null);
+        return;
       case JavaPackage.EXPRESSION__CAST_EXPRESSION:
         setCastExpression((Cast_Expression)null);
         return;
@@ -677,6 +817,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return numericExpression3 != null;
       case JavaPackage.EXPRESSION__AUX:
         return aux != null;
+      case JavaPackage.EXPRESSION__LOGICAL_EXPRESSION:
+        return logicalExpression != null;
+      case JavaPackage.EXPRESSION__BIT_EXPRESSION:
+        return bitExpression != null;
       case JavaPackage.EXPRESSION__CAST_EXPRESSION:
         return castExpression != null;
       case JavaPackage.EXPRESSION__CREATING_EXPRESSION:

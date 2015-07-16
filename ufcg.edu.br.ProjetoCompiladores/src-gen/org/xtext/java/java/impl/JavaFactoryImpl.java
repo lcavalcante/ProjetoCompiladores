@@ -71,7 +71,9 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.CLASS_DECLARATION: return createClass_declaration();
       case JavaPackage.FIELD_DECLARATION: return createField_declaration();
       case JavaPackage.METHOD_DECLARATION: return createMethod_declaration();
+      case JavaPackage.METHOD_CALL: return createMethod_call();
       case JavaPackage.CONSTRUCTOR_DECLARATION: return createConstructor_declaration();
+      case JavaPackage.PARAMETER_LIST_METHOD_CALL: return createParameter_list_method_call();
       case JavaPackage.PARAMETER_LIST: return createParameter_list();
       case JavaPackage.PARAMETER: return createParameter();
       case JavaPackage.VARIABLE_DECLARATION: return createVariable_declaration();
@@ -79,10 +81,13 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.VARIABLE_INITIALIZER: return createVariable_initializer();
       case JavaPackage.EXPRESSION: return createExpression();
       case JavaPackage.EXPRESSION_AUX: return createExpression_aux();
+      case JavaPackage.AMPERSAND_RULE: return createAmpersand_Rule();
       case JavaPackage.FLOAT_LITERAL: return createFloat_Literal();
       case JavaPackage.LITERAL_EXPRESSION: return createLiteral_Expression();
       case JavaPackage.CREATING_EXPRESSION: return createCreating_Expression();
       case JavaPackage.CAST_EXPRESSION: return createCast_Expression();
+      case JavaPackage.BIT_EXPRESSION_NR: return createBit_Expression_NR();
+      case JavaPackage.LOGICAL_EXPRESSION_NR: return createLogical_Expression_NR();
       case JavaPackage.ARG_LIST: return createArg_List();
       case JavaPackage.NUMERIC_EXPRESSION_NR: return createNumeric_Expression_NR();
       case JavaPackage.TYPE: return createType();
@@ -184,10 +189,32 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Method_call createMethod_call()
+  {
+    Method_callImpl method_call = new Method_callImpl();
+    return method_call;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Constructor_declaration createConstructor_declaration()
   {
     Constructor_declarationImpl constructor_declaration = new Constructor_declarationImpl();
     return constructor_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Parameter_list_method_call createParameter_list_method_call()
+  {
+    Parameter_list_method_callImpl parameter_list_method_call = new Parameter_list_method_callImpl();
+    return parameter_list_method_call;
   }
 
   /**
@@ -272,6 +299,17 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Ampersand_Rule createAmpersand_Rule()
+  {
+    Ampersand_RuleImpl ampersand_Rule = new Ampersand_RuleImpl();
+    return ampersand_Rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Float_Literal createFloat_Literal()
   {
     Float_LiteralImpl float_Literal = new Float_LiteralImpl();
@@ -309,6 +347,28 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     Cast_ExpressionImpl cast_Expression = new Cast_ExpressionImpl();
     return cast_Expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Bit_Expression_NR createBit_Expression_NR()
+  {
+    Bit_Expression_NRImpl bit_Expression_NR = new Bit_Expression_NRImpl();
+    return bit_Expression_NR;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Logical_Expression_NR createLogical_Expression_NR()
+  {
+    Logical_Expression_NRImpl logical_Expression_NR = new Logical_Expression_NRImpl();
+    return logical_Expression_NR;
   }
 
   /**

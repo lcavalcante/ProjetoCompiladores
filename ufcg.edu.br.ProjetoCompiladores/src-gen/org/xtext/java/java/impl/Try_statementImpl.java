@@ -34,7 +34,7 @@ import org.xtext.java.java.Try_statement;
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getTryStatement <em>Try Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getCatchs <em>Catchs</em>}</li>
- *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getRIGHT_PARENTHESISparameters <em>RIGHT PARENTHESI Sparameters</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getCatchStatements <em>Catch Statements</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getFinally <em>Finally</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getFinallyStatement <em>Finally Statement</em>}</li>
@@ -86,14 +86,14 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
   protected EList<String> catchs;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+   * The cached value of the '{@link #getRIGHT_PARENTHESISparameters() <em>RIGHT PARENTHESI Sparameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
+   * @see #getRIGHT_PARENTHESISparameters()
    * @generated
    * @ordered
    */
-  protected EList<Parameter> parameters;
+  protected EList<Parameter> righT_PARENTHESISparameters;
 
   /**
    * The cached value of the '{@link #getCatchStatements() <em>Catch Statements</em>}' containment reference list.
@@ -246,13 +246,13 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Parameter> getParameters()
+  public EList<Parameter> getRIGHT_PARENTHESISparameters()
   {
-    if (parameters == null)
+    if (righT_PARENTHESISparameters == null)
     {
-      parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, JavaPackage.TRY_STATEMENT__PARAMETERS);
+      righT_PARENTHESISparameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, JavaPackage.TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS);
     }
-    return parameters;
+    return righT_PARENTHESISparameters;
   }
 
   /**
@@ -352,8 +352,8 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
     {
       case JavaPackage.TRY_STATEMENT__TRY_STATEMENT:
         return basicSetTryStatement(null, msgs);
-      case JavaPackage.TRY_STATEMENT__PARAMETERS:
-        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+      case JavaPackage.TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS:
+        return ((InternalEList<?>)getRIGHT_PARENTHESISparameters()).basicRemove(otherEnd, msgs);
       case JavaPackage.TRY_STATEMENT__CATCH_STATEMENTS:
         return ((InternalEList<?>)getCatchStatements()).basicRemove(otherEnd, msgs);
       case JavaPackage.TRY_STATEMENT__FINALLY_STATEMENT:
@@ -378,8 +378,8 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
         return getTryStatement();
       case JavaPackage.TRY_STATEMENT__CATCHS:
         return getCatchs();
-      case JavaPackage.TRY_STATEMENT__PARAMETERS:
-        return getParameters();
+      case JavaPackage.TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS:
+        return getRIGHT_PARENTHESISparameters();
       case JavaPackage.TRY_STATEMENT__CATCH_STATEMENTS:
         return getCatchStatements();
       case JavaPackage.TRY_STATEMENT__FINALLY:
@@ -411,9 +411,9 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
         getCatchs().clear();
         getCatchs().addAll((Collection<? extends String>)newValue);
         return;
-      case JavaPackage.TRY_STATEMENT__PARAMETERS:
-        getParameters().clear();
-        getParameters().addAll((Collection<? extends Parameter>)newValue);
+      case JavaPackage.TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS:
+        getRIGHT_PARENTHESISparameters().clear();
+        getRIGHT_PARENTHESISparameters().addAll((Collection<? extends Parameter>)newValue);
         return;
       case JavaPackage.TRY_STATEMENT__CATCH_STATEMENTS:
         getCatchStatements().clear();
@@ -448,8 +448,8 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
       case JavaPackage.TRY_STATEMENT__CATCHS:
         getCatchs().clear();
         return;
-      case JavaPackage.TRY_STATEMENT__PARAMETERS:
-        getParameters().clear();
+      case JavaPackage.TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS:
+        getRIGHT_PARENTHESISparameters().clear();
         return;
       case JavaPackage.TRY_STATEMENT__CATCH_STATEMENTS:
         getCatchStatements().clear();
@@ -480,8 +480,8 @@ public class Try_statementImpl extends MinimalEObjectImpl.Container implements T
         return tryStatement != null;
       case JavaPackage.TRY_STATEMENT__CATCHS:
         return catchs != null && !catchs.isEmpty();
-      case JavaPackage.TRY_STATEMENT__PARAMETERS:
-        return parameters != null && !parameters.isEmpty();
+      case JavaPackage.TRY_STATEMENT__RIGHT_PARENTHESI_SPARAMETERS:
+        return righT_PARENTHESISparameters != null && !righT_PARENTHESISparameters.isEmpty();
       case JavaPackage.TRY_STATEMENT__CATCH_STATEMENTS:
         return catchStatements != null && !catchStatements.isEmpty();
       case JavaPackage.TRY_STATEMENT__FINALLY:

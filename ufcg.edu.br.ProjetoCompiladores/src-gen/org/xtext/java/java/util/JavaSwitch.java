@@ -121,10 +121,24 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.METHOD_CALL:
+      {
+        Method_call method_call = (Method_call)theEObject;
+        T result = caseMethod_call(method_call);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.CONSTRUCTOR_DECLARATION:
       {
         Constructor_declaration constructor_declaration = (Constructor_declaration)theEObject;
         T result = caseConstructor_declaration(constructor_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.PARAMETER_LIST_METHOD_CALL:
+      {
+        Parameter_list_method_call parameter_list_method_call = (Parameter_list_method_call)theEObject;
+        T result = caseParameter_list_method_call(parameter_list_method_call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -177,6 +191,13 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.AMPERSAND_RULE:
+      {
+        Ampersand_Rule ampersand_Rule = (Ampersand_Rule)theEObject;
+        T result = caseAmpersand_Rule(ampersand_Rule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.FLOAT_LITERAL:
       {
         Float_Literal float_Literal = (Float_Literal)theEObject;
@@ -202,6 +223,20 @@ public class JavaSwitch<T> extends Switch<T>
       {
         Cast_Expression cast_Expression = (Cast_Expression)theEObject;
         T result = caseCast_Expression(cast_Expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.BIT_EXPRESSION_NR:
+      {
+        Bit_Expression_NR bit_Expression_NR = (Bit_Expression_NR)theEObject;
+        T result = caseBit_Expression_NR(bit_Expression_NR);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.LOGICAL_EXPRESSION_NR:
+      {
+        Logical_Expression_NR logical_Expression_NR = (Logical_Expression_NR)theEObject;
+        T result = caseLogical_Expression_NR(logical_Expression_NR);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -421,6 +456,22 @@ public class JavaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Method call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethod_call(Method_call object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Constructor declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -432,6 +483,22 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstructor_declaration(Constructor_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter list method call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter list method call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameter_list_method_call(Parameter_list_method_call object)
   {
     return null;
   }
@@ -549,6 +616,22 @@ public class JavaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Ampersand Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ampersand Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAmpersand_Rule(Ampersand_Rule object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Float Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -608,6 +691,38 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCast_Expression(Cast_Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Bit Expression NR</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bit Expression NR</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBit_Expression_NR(Bit_Expression_NR object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Logical Expression NR</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Logical Expression NR</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLogical_Expression_NR(Logical_Expression_NR object)
   {
     return null;
   }

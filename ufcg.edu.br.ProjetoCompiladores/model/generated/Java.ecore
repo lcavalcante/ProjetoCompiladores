@@ -56,6 +56,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="debug" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method_call">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter_list_method_call"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constructor_declaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -64,6 +69,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement_block"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter_list_method_call">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter_list">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter"
@@ -102,6 +112,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="aux" eType="#//Expression_aux"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalExpression" eType="#//Logical_Expression_NR"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bitExpression" eType="#//Bit_Expression_NR"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="castExpression" eType="#//Cast_Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="creatingExpression" eType="#//Creating_Expression"
@@ -122,9 +136,23 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sgin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sinalNumeric" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numericSign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp2" eType="#//Expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testingSign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp1" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalSign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ampersand" eType="#//Ampersand_Rule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringSign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitSign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionBit" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ampersand_Rule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Float_Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="decimalDigits1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -152,6 +180,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bit_Expression_NR">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Logical_Expression_NR">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="true" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Arg_List">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
@@ -244,8 +282,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="catchs" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RIGHT_PARENTHESISparameters"
+        upperBound="-1" eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="catchStatements" upperBound="-1"
         eType="#//Statement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="finally" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

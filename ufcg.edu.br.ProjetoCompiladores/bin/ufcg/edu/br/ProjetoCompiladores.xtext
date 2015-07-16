@@ -12,120 +12,267 @@ Compilation_unit:
 ;
 
 Type_declaration:
-	doc=DOC_COMMENT? (name=Class_declaration | name=Interface_declaration) ';'
+	doc=DOC_COMMENT? (name=Class_declaration | name=Interface_declaration) EOL
+;
+
+terminal INTERFACE:
+	"interface"
+;
+
+terminal EXTENDS:
+	"extends"
+;
+
+terminal COMMA:
+	","
 ;
 
 Interface_declaration:
-	modifiers+=Modifier* 'interface' interfaceName=ID
-	('extends' extend=Interface_name (',' extends+=(Interface_name))*)? 
-	'{'(fields+=Field_declaration*) '}'
+	modifiers+=Modifier* INTERFACE interfaceName=ID
+	(EXTENDS extend=Interface_name (COMMA extends+=(Interface_name))*)? 
+	R_CURLY_BRACE(fields+=Field_declaration*) L_CURLY_BRACE
 ;
 
 Class_declaration:
 	modifiers+=Modifier* 'class' className=ID 
-	('extends' extend=Class_name)?
-	('implements' implement=Interface_name (',' implements+=(Interface_name))*)? 
-	'{' (fields+=Field_declaration*)'}'
+	(EXTENDS extend=Class_name)?
+	('implements' implement=Interface_name (COMMA implements+=(Interface_name))*)? 
+	R_CURLY_BRACE (fields+=Field_declaration*)L_CURLY_BRACE
+;
+
+terminal R_CURLY_BRACE:
+	"{"
+;
+
+terminal L_CURLY_BRACE:
+	"}"
 ;
 
 Field_declaration:
 	(doc=DOC_COMMENT? (
 		name=Variable_declaration
-		| name=Constructor_declaration
+		| name=Constructor_declaration 
 		| name=Method_declaration
 	))
 	|(name=Static_initializer) 
-	| debug=';'
+	|(name=Method_call)
+	| debug=EOL
 ;
 
 Method_declaration:
-	modifiers+=Modifier* type=Type name=ID '(' parameter=Parameter_list? ')' (('['']')|('[]'))* ((statement = Statement_block) | debug=';')
+	modifiers+=Modifier* type=Type name=ID RIGHT_PARENTHESIS parameter=Parameter_list? LEFT_PARENTHESIS ((R_ABS L_ABS)|(ABS))* ((statement = Statement_block) | debug=EOL)
 ;
 
+Method_call:
+	name=ID RIGHT_PARENTHESIS parameter=Parameter_list_method_call? LEFT_PARENTHESIS
+;
+
+terminal ABS:
+	"[]"
+;
+
+terminal R_ABS:
+	"["
+;
+terminal L_ABS:
+	"]"
+;
 Constructor_declaration:
-	modifiers+=Modifier* name=ID '(' (parameters=Parameter_list)? ')' statement=Statement_block
+	modifiers+=Modifier* name=ID RIGHT_PARENTHESIS (parameters=Parameter_list)? LEFT_PARENTHESIS statement=Statement_block
+;
+
+Parameter_list_method_call:
+	name=ID (COMMA parameters+=ID)*
 ;
 
 Parameter_list:
-	parameter=Parameter (',' parameters+=Parameter)*
+	parameter=Parameter (COMMA parameters+=Parameter)*
 ;
 
 Parameter:
-	type=Type name=ID (('['']')|('[]'))*
+	type=Type name=ID ((R_ABS L_ABS)|(ABS))*
 ;
 
 Variable_declaration:
-	modifiers+=Modifier* type=Type name=Variable_declarator (',' names+= Variable_declarator)* ';'
+	modifiers+=Modifier* type=Type name=Variable_declarator (COMMA names+= Variable_declarator)* EOL
 ;
 
 Variable_declarator:
-	name=ID (('['']')|('[]'))* ('=' initializer=Variable_initializer)?
+	name=ID ((R_ABS L_ABS)|(ABS))* (EQUAL initializer=Variable_initializer)?
+;
+
+terminal EQUAL:
+	"="
 ;
 
 Variable_initializer:
 	(expression=Expression)
-	|({Variable_initializer}=>'{' (variableInitializer1=Variable_initializer (',' variableIniatializer2+=Variable_initializer)* (',')?)? '}')
-	
+	|({Variable_initializer}=>R_CURLY_BRACE (variableInitializer1=Variable_initializer (COMMA variableIniatializer2+=Variable_initializer)* (COMMA)?)? L_CURLY_BRACE)
 ;
 
 Expression:
 	=>((numericExpression3=Numeric_Expression_NR) ) aux=Expression_aux	
-//	|=>(testingExpression=Testing_Expression) aux=Expression_aux
-//	|(logicalExpression=Logical_Expression) aux=Expression_aux
-//	|=>(stringExpression=String_expression) aux=Expression_aux
-//	|(bitExpression=Bit_Expression) aux=Expression_aux
+	|(logicalExpression=Logical_Expression_NR) aux=Expression_aux
+	|(bitExpression=Bit_Expression_NR) aux=Expression_aux
 	|=>(castExpression=Cast_Expression) aux=Expression_aux
 	|=>(creatingExpression=Creating_Expression) aux=Expression_aux
 	|(literalExpression=Literal_Expression) aux=Expression_aux
-	|(null='null') aux=Expression_aux 
-	|(super='super') aux=Expression_aux
-	|(this='this') aux=Expression_aux
+	|(null=NULL) aux=Expression_aux 
+	|(super=SUPER) aux=Expression_aux
+	|(this=THIS) aux=Expression_aux
 	|(name=ID) aux=Expression_aux	 
 ;
 
-
-//String_expression:
-//	(=>((numericExpression3=Numeric_Expression_NR) | exp=Expression sgin=(INCREMENT|DECREMENT) 	 )
-//	|(logicalExpression3=Logical_Expression)
-//	|=>(testingExpression3=Testing_Expression)
-//	|(bitExpression=Bit_Expression)
-//	|expressionNoRecursive=Expression_no_recursive) sinal=( PLUS | "+=" ) exp3=Expression 
-//;
-//
-//Testing_Expression :
-//	((=>(numericExpression2=Numeric_Expression)
-//	|(logicalExpression2=Logical_Expression)
-//	|(bitExpression=Bit_Expression)
-//	|expressionNoRecursive=Expression_no_recursive) (sinal2=( PLUS | "+=" ) exp4=Expression)?)
-//	sinal3=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) exp2=Expression
-//;
-
-Expression_aux :
-	
-	 (('(' argList+=Arg_List ')')) aux=Expression_aux
-	 |(('[' expression2=Expression ']')) aux=Expression_aux
-	 |(('.' expression2=Expression)) aux=Expression_aux
-	 |((',' expression2=Expression)) aux=Expression_aux 
-	 |(('instanceof' (name=Class_name))) aux=Expression_aux
-	 |(sgin=(INCREMENT|DECREMENT) aux=Expression_aux)
-	 |(sinalNumeric= ( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) exp2=Expression aux=Expression_aux)
-	 | {Expression_aux}
-
+terminal NULL:
+	"NULL"
+;
+terminal THIS:
+	"this"
 ;
 
+terminal SUPER:
+	"super"
+;
+
+Expression_aux :
+	 ((RIGHT_PARENTHESIS argList+=Arg_List LEFT_PARENTHESIS)) aux=Expression_aux
+	 |((R_ABS expression2=Expression L_ABS)) aux=Expression_aux
+	 |(('.' expression2=Expression)) aux=Expression_aux
+	 |((COMMA expression2=Expression)) aux=Expression_aux 
+	 |((INSTANCEOF (name=Class_name))) aux=Expression_aux
+	 |(sgin=(INCREMENT|DECREMENT) aux=Expression_aux)
+	 |(numericSign=( PLUS | PLUS_EQUAL | MINUS | MINUS_EQUAL | MULTIPLY | MULTIPLY_EQUAL | DIVIDE | DIVIDE_EQUAL | MODULE | MODULE_EQUAL) exp2=Expression aux=Expression_aux)
+	 |(testingSign=( BT | ST | BE | SE | DOUBLE_EQUAL | DIFFERENT ) exp1=Expression aux=Expression_aux)
+	 |((logicalSign=( OR | OR_EQUAL | EXP | EXP_EQUAL | DOUBLE_OR_EQUAL | MODULE | MODULE_EQUAL ) | ampersand=Ampersand_Rule) exp1=Expression aux=Expression_aux)
+	 |(WAT exp1=Expression COLON exp2=Expression aux=Expression_aux)
+	 |(stringSign=(PLUS | PLUS_EQUAL) exp1=Expression aux=Expression_aux)
+	 |(bitSign=( R_SHIFT_EQUAL | L_SHIFT | R_SHIFT | SUPER_SHIFT ) expressionBit=Expression aux=Expression_aux)
+	 | {Expression_aux}
+;
+
+terminal INSTANCEOF:
+	"instanceof"
+;
+
+terminal L_SHIFT:
+	"<<"	
+;
+
+terminal R_SHIFT:
+	">>"
+;
+
+terminal SUPER_SHIFT:
+	">>>"
+;
+
+terminal R_SHIFT_EQUAL:
+	">>="
+;
+
+terminal DOUBLE_OR_EQUAL:
+	"||="
+;
+
+terminal OR:
+	"|"
+;
+
+terminal OR_EQUAL:
+	"|="
+;
+
+terminal EXP:
+	"^"
+;
+
+terminal EXP_EQUAL:
+	"^="
+;
+
+terminal DOUBLE_EQUAL:
+	"=="
+;
+
+terminal DIFFERENT:
+	"!="
+;
+
+terminal BT:
+	">"
+;
+
+terminal ST:
+	"<"
+;
+
+terminal BE:
+	">="
+;
+
+terminal SE:
+	"<="
+;
+
+terminal DIVIDE:
+	"/"
+;
+
+terminal DIVIDE_EQUAL:
+	"/="
+;
+
+terminal MODULE:
+	"%"
+;
+
+terminal MODULE_EQUAL:
+	"%="
+;
+
+terminal PLUS_EQUAL:
+	"+="
+;
+
+terminal MINUS_EQUAL:
+	"-="
+;
+
+terminal MULTIPLY:
+	"*"	
+;
+
+terminal MULTIPLY_EQUAL:
+	"*="	
+;
+
+terminal WAT:
+	"?"
+;
+Ampersand_Rule:
+	(a1=AMPERSAND (a2=AMPERSAND | EQUAL)?)
+;
+
+terminal AMPERSAND:
+	"ampersand"
+;
 Float_Literal:
 	decimalDigits1=DECIMAL_DIGITS '.' (decimalDigits2=DECIMAL_DIGITS)? (exp=EXPOENT_PART)?/*(expoentPart=Expoent_part)?*/ (floatTypeSufix=FLOAT_TYPE_SUFIX)?
 ;
 
 terminal EXPONENTIAL:
-	'e' | 'e+' | 'e-'
+	('e'|'e+'|'e-')
 ;
 
 Literal_Expression:
-	((exp=HEXA 'l'?) | (exp1=DECIMAL_DIGITS 'l'?))
+	((exp=HEXA LONG?) | (exp1=DECIMAL_DIGITS LONG?))
 	| exp2=Float_Literal
 	| (string = STRING)
 	| (char=CHAR)
+;
+
+terminal LONG:
+	"l"
 ;
 
 terminal STRING:
@@ -133,46 +280,58 @@ terminal STRING:
 ;
 
 Creating_Expression:
-	'new' (
-		(className=Class_name '(' argList=Arg_List ')')
-		|(typeSpecifier=Type_specifier ('[' expression=Expression ']')? ('['']' | '[]')*)
-		|('(' expression=Expression ')')
+	NEW (
+		(className=Class_name RIGHT_PARENTHESIS argList=Arg_List LEFT_PARENTHESIS)
+		|(typeSpecifier=Type_specifier (R_ABS expression=Expression L_ABS)? (R_ABS L_ABS | ABS)*)
+		|(RIGHT_PARENTHESIS expression=Expression LEFT_PARENTHESIS)
 		)
 ;
 
-Cast_Expression:
-	('(' type=Type ')' expression=Expression)
+terminal COLON:
+	":"
 ;
 
-//Bit_Expression:
-//	('~' expression=Expression)
-//	| (((logicalExpression=Logical_Expression)
-//	|(expressionNoRecursive=Expression_no_recursive)) ((sinalString=( PLUS | "+=" ) expString=Expression) | (sinalTesting=( ">" | "<" | ">=" | "<=" | "==" | "!=" ) expTesting=Expression) | sinalNumeric= ( PLUS | "+=" | MINUS | "-=" | "*" | "*=" | "/" | "/=" | "%" | "%=" ) expNumeric=Expression)?) 
-//	( ">>=" | "<<" | ">>" | ">>>" ) expressionBit=Expression
-//;
-//
-//Logical_Expression:
-//	('!' expression=Expression)
-//	| true=TRUE
-//	| false=FALSE
-//;
+terminal NEW:
+	"new"	
+;
 
-FALSE:
+Cast_Expression:
+	(RIGHT_PARENTHESIS type=Type LEFT_PARENTHESIS expression=Expression)
+;
+
+Bit_Expression_NR:
+	(NOT expression=Expression)
+;
+
+terminal NOT:
+	"~"
+;
+
+Logical_Expression_NR:
+	(EXCLAMATION expression=Expression)
+	| true=TRUE
+	| false=FALSE
+;
+
+terminal EXCLAMATION:
+	"!"
+;
+
+terminal FALSE:
 	'false'
 ;
 
-TRUE:
+terminal TRUE:
 	'true'
 ;
 
 Arg_List:
-	expression=Expression (',' expressions+=Expression)*
+	expression=Expression (COMMA expressions+=Expression)*
 ;
 
 
 Numeric_Expression_NR:
 	sinal_numeric=(MINUS|INCREMENT|DECREMENT) expression=Expression
-	
 ;
 
 
@@ -185,7 +344,7 @@ terminal INCREMENT:
 ;
 
 Type:
-	name=Type_specifier (('['']')|('[]'))*
+	name=Type_specifier ((R_ABS L_ABS)|(ABS))*
 ;
 
 Type_specifier:
@@ -214,7 +373,7 @@ Static_initializer:
 ;
 
 Statement_block:
-	{Statement_block} '{' (statements+=Statement*) '}'
+	{Statement_block} R_CURLY_BRACE (statements+=Statement*) L_CURLY_BRACE
 ;
 
 Statement:
@@ -227,48 +386,94 @@ Statement:
 	|(switchStatement=Switch_Statement) 
 	|(Statement_block)
 	|(try=Try_statement)
-	|(name=ID ':' statement=Statement) 
-	|{Statement}'break' name=ID? ';'
-	|{Statement}'continue' name=ID? ';'
-	|{Statement}';'
+	|(name=ID COLON statement=Statement) 
+	|{Statement}'break' name=ID? EOL
+	|{Statement}'continue' name=ID? EOL
+	|{Statement}EOL
 ;
 
 Switch_Statement:{Switch_Statement}
-	'switch' '(' expression=Expression  ')' '{'
-	(('case' expressions+=Expression  ':')|('default' ':')|(statements+=Statement))*
-	'}'
+	SWITCH RIGHT_PARENTHESIS expression=Expression  LEFT_PARENTHESIS R_CURLY_BRACE
+	((CASE expressions+=Expression COLON)|(DEFAULT COLON)|(statements+=Statement))*
+	L_CURLY_BRACE
 ;
 
 For_Statement:
-	'for' '(' (variable=Variable_declaration| pv=';' | (expression=Expression ';') )
-	(expression2=Expression)? ';'
-	(expression3=Expression)? ';'
-	')' statement=Statement
+	FOR RIGHT_PARENTHESIS (variable=Variable_declaration| pv=EOL | (expression=Expression EOL) )
+	(expression2=Expression)? EOL
+	(expression3=Expression)? EOL
+	LEFT_PARENTHESIS statement=Statement
 ;
 
 While_Statement:
-	'while' '(' expression=Expression ')' statement=Statement
+	WHILE RIGHT_PARENTHESIS expression=Expression LEFT_PARENTHESIS statement=Statement
 ;
 
 Do_Statement:
-	'do' statement=Statement 'while' '(' expression=Expression ')' ';'
-;
+	DO statement=Statement WHILE RIGHT_PARENTHESIS expression=Expression LEFT_PARENTHESIS EOL;
 
 If_Statement:
-	'if' '(' expression=Expression  ')' statement=Statement  
-	(=> 'else' elseStatement=Statement)?
+	IF RIGHT_PARENTHESIS expression=Expression  LEFT_PARENTHESIS statement=Statement  
+	(=> ELSE elseStatement=Statement)?
+;
+
+terminal DEFAULT:
+	"default"
+;
+
+terminal CASE:
+	"case"	
+;
+
+terminal SWITCH:
+	"switch"
+;
+
+terminal FOR:
+	"for"
+;
+
+terminal RIGHT_PARENTHESIS:
+	"("
+;
+
+terminal LEFT_PARENTHESIS:
+	")"
+;
+
+terminal EOL:
+	";"
+;
+
+terminal IF:
+	"if"
+;
+
+terminal ELSE:
+	"else"
+;
+
+terminal DO:
+	"do"
+;
+
+terminal WHILE:
+	"while"
 ;
 
 Try_statement:
 	try=TRY tryStatement=Statement 
-	(=> catchs+=CATCH '('parameters+=Parameter ')' catchStatements+=Statement )*
+	(=> catchs+=CATCH RIGHT_PARENTHESISparameters+=Parameter LEFT_PARENTHESIS catchStatements+=Statement )*
 	(=> finally=FINALLY finallyStatement=Statement)?
 ;
 
 Package_statement:
-	'package' name=Package_name ';'
+	PACKAGE name=Package_name EOL
 ;
 
+terminal PACKAGE:
+	"package"
+;
 
 Package_name:
 	ID Package_name_aux
@@ -278,8 +483,12 @@ Package_name_aux:
 	('.' ID)*
 ;	
 
+terminal IMPORT:
+	"import"
+;
+
 Import_statement:
-	'import' ((classname = Class_name ';') | (packagename=Package_name '.' '*' ';' ';'))  
+	IMPORT ((classname = Class_name EOL) | (packagename=Package_name '.' MULTIPLY EOL EOL))  
 ;
 
 //Cuidado com Package_name Class_name e Interface_name pq sao iguais - ambiguidade
@@ -292,7 +501,7 @@ Interface_name:
 ;
 
 
-terminal EXPOENT_PART:
+EXPOENT_PART:
 	EXPONENTIAL (DECIMAL_DIGITS) 
 ;
 

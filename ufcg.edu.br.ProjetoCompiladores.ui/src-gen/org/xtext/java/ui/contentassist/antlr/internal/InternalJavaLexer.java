@@ -12,79 +12,99 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalJavaLexer extends Lexer {
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int RULE_ID=10;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__29=29;
-    public static final int RULE_DOC_COMMENT=11;
-    public static final int T__28=28;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__27=27;
-    public static final int T__63=63;
-    public static final int T__26=26;
-    public static final int RULE_ANY_OTHER=25;
-    public static final int RULE_HEXA=15;
-    public static final int T__61=61;
+    public static final int RULE_DIFFERENT=22;
+    public static final int RULE_EXP_EQUAL=26;
+    public static final int RULE_ID=61;
+    public static final int RULE_ANY_OTHER=82;
+    public static final int RULE_HEXA=71;
+    public static final int RULE_OR=23;
+    public static final int RULE_INSTANCEOF=45;
+    public static final int RULE_MODULE=15;
+    public static final int RULE_OR_EQUAL=24;
     public static final int EOF=-1;
-    public static final int RULE_STATIC=9;
-    public static final int T__60=60;
-    public static final int RULE_MOD=8;
-    public static final int T__55=55;
-    public static final int T__56=56;
-    public static final int T__57=57;
-    public static final int T__58=58;
-    public static final int T__51=51;
-    public static final int T__52=52;
-    public static final int T__53=53;
-    public static final int T__54=54;
-    public static final int T__59=59;
-    public static final int RULE_DECREMENT=5;
-    public static final int RULE_CHAR=17;
-    public static final int RULE_FLOAT_TYPE_SUFIX=14;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int RULE_INCREMENT=4;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int RULE_EXPOENT_PART=13;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int RULE_EXPONENTIAL=21;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_PLUS=6;
-    public static final int RULE_CATCH=19;
-    public static final int RULE_TRY=18;
-    public static final int RULE_SL_COMMENT=23;
-    public static final int RULE_ML_COMMENT=22;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int RULE_MINUS=7;
-    public static final int T__32=32;
-    public static final int RULE_STRING=16;
-    public static final int T__33=33;
-    public static final int T__71=71;
-    public static final int T__34=34;
-    public static final int T__72=72;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int T__70=70;
-    public static final int T__37=37;
-    public static final int RULE_DECIMAL_DIGITS=12;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int RULE_WS=24;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int RULE_FINALLY=20;
+    public static final int RULE_STATIC=34;
+    public static final int T__93=93;
+    public static final int RULE_MOD=33;
+    public static final int T__94=94;
+    public static final int T__91=91;
+    public static final int RULE_PACKAGE=60;
+    public static final int T__92=92;
+    public static final int T__90=90;
+    public static final int RULE_EXCLAMATION=51;
+    public static final int RULE_EXTENDS=39;
+    public static final int RULE_MULTIPLY_EQUAL=12;
+    public static final int RULE_WAT=46;
+    public static final int RULE_CHAR=73;
+    public static final int RULE_LEFT_PARENTHESIS=42;
+    public static final int RULE_RIGHT_PARENTHESIS=41;
+    public static final int RULE_R_ABS=43;
+    public static final int RULE_AMPERSAND=69;
+    public static final int RULE_INTERFACE=36;
+    public static final int T__95=95;
+    public static final int RULE_DIVIDE_EQUAL=14;
+    public static final int RULE_INCREMENT=5;
+    public static final int RULE_SUPER=67;
+    public static final int T__83=83;
+    public static final int RULE_EXPONENTIAL=63;
+    public static final int RULE_BE=19;
+    public static final int RULE_COMMA=40;
+    public static final int RULE_TRY=76;
+    public static final int T__85=85;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
+    public static final int RULE_ML_COMMENT=79;
+    public static final int RULE_BT=17;
+    public static final int RULE_MINUS=9;
+    public static final int RULE_STRING=72;
+    public static final int RULE_DECIMAL_DIGITS=64;
+    public static final int RULE_MULTIPLY=11;
+    public static final int RULE_IMPORT=62;
+    public static final int RULE_L_ABS=44;
+    public static final int RULE_ABS=4;
+    public static final int RULE_SE=20;
+    public static final int RULE_IF=58;
+    public static final int RULE_THIS=68;
+    public static final int RULE_EXP=25;
+    public static final int RULE_ST=18;
+    public static final int RULE_DOC_COMMENT=65;
+    public static final int RULE_SWITCH=52;
+    public static final int RULE_DO=57;
+    public static final int RULE_FOR=55;
+    public static final int RULE_EOL=35;
+    public static final int RULE_MODULE_EQUAL=16;
+    public static final int RULE_DIVIDE=13;
+    public static final int RULE_NOT=50;
+    public static final int RULE_WHILE=56;
+    public static final int RULE_FALSE=75;
+    public static final int RULE_L_SHIFT=29;
+    public static final int RULE_PLUS_EQUAL=8;
+    public static final int RULE_DECREMENT=6;
+    public static final int RULE_R_SHIFT=30;
+    public static final int RULE_FLOAT_TYPE_SUFIX=70;
+    public static final int RULE_SUPER_SHIFT=31;
+    public static final int RULE_DOUBLE_OR_EQUAL=27;
+    public static final int RULE_R_CURLY_BRACE=37;
+    public static final int RULE_LONG=48;
+    public static final int RULE_PLUS=7;
+    public static final int RULE_CASE=53;
+    public static final int RULE_CATCH=77;
+    public static final int RULE_EQUAL=32;
+    public static final int RULE_R_SHIFT_EQUAL=28;
+    public static final int RULE_SL_COMMENT=80;
+    public static final int RULE_L_CURLY_BRACE=38;
+    public static final int RULE_DEFAULT=54;
+    public static final int RULE_NULL=66;
+    public static final int RULE_TRUE=74;
+    public static final int RULE_COLON=47;
+    public static final int RULE_NEW=49;
+    public static final int RULE_DOUBLE_EQUAL=21;
+    public static final int RULE_MINUS_EQUAL=10;
+    public static final int RULE_WS=81;
+    public static final int RULE_ELSE=59;
+    public static final int RULE_FINALLY=78;
 
     // delegates
     // delegators
@@ -99,199 +119,13 @@ public class InternalJavaLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g"; }
 
-    // $ANTLR start "T__26"
-    public final void mT__26() throws RecognitionException {
+    // $ANTLR start "T__83"
+    public final void mT__83() throws RecognitionException {
         try {
-            int _type = T__26;
+            int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:11:7: ( '[]' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:11:9: '[]'
-            {
-            match("[]"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__26"
-
-    // $ANTLR start "T__27"
-    public final void mT__27() throws RecognitionException {
-        try {
-            int _type = T__27;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12:7: ( '+=' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12:9: '+='
-            {
-            match("+="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__27"
-
-    // $ANTLR start "T__28"
-    public final void mT__28() throws RecognitionException {
-        try {
-            int _type = T__28;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:13:7: ( '-=' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:13:9: '-='
-            {
-            match("-="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__28"
-
-    // $ANTLR start "T__29"
-    public final void mT__29() throws RecognitionException {
-        try {
-            int _type = T__29;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14:7: ( '*' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14:9: '*'
-            {
-            match('*'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__29"
-
-    // $ANTLR start "T__30"
-    public final void mT__30() throws RecognitionException {
-        try {
-            int _type = T__30;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:15:7: ( '*=' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:15:9: '*='
-            {
-            match("*="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__30"
-
-    // $ANTLR start "T__31"
-    public final void mT__31() throws RecognitionException {
-        try {
-            int _type = T__31;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:16:7: ( '/' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:16:9: '/'
-            {
-            match('/'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__31"
-
-    // $ANTLR start "T__32"
-    public final void mT__32() throws RecognitionException {
-        try {
-            int _type = T__32;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:17:7: ( '/=' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:17:9: '/='
-            {
-            match("/="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__32"
-
-    // $ANTLR start "T__33"
-    public final void mT__33() throws RecognitionException {
-        try {
-            int _type = T__33;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:18:7: ( '%' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:18:9: '%'
-            {
-            match('%'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__33"
-
-    // $ANTLR start "T__34"
-    public final void mT__34() throws RecognitionException {
-        try {
-            int _type = T__34;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:19:7: ( '%=' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:19:9: '%='
-            {
-            match("%="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__34"
-
-    // $ANTLR start "T__35"
-    public final void mT__35() throws RecognitionException {
-        try {
-            int _type = T__35;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:20:7: ( 'boolean' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:20:9: 'boolean'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:11:7: ( 'boolean' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:11:9: 'boolean'
             {
             match("boolean"); 
 
@@ -304,15 +138,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__35"
+    // $ANTLR end "T__83"
 
-    // $ANTLR start "T__36"
-    public final void mT__36() throws RecognitionException {
+    // $ANTLR start "T__84"
+    public final void mT__84() throws RecognitionException {
         try {
-            int _type = T__36;
+            int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:21:7: ( 'byte' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:21:9: 'byte'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12:7: ( 'byte' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12:9: 'byte'
             {
             match("byte"); 
 
@@ -325,15 +159,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__36"
+    // $ANTLR end "T__84"
 
-    // $ANTLR start "T__37"
-    public final void mT__37() throws RecognitionException {
+    // $ANTLR start "T__85"
+    public final void mT__85() throws RecognitionException {
         try {
-            int _type = T__37;
+            int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:22:7: ( 'char' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:22:9: 'char'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:13:7: ( 'char' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:13:9: 'char'
             {
             match("char"); 
 
@@ -346,15 +180,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__37"
+    // $ANTLR end "T__85"
 
-    // $ANTLR start "T__38"
-    public final void mT__38() throws RecognitionException {
+    // $ANTLR start "T__86"
+    public final void mT__86() throws RecognitionException {
         try {
-            int _type = T__38;
+            int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:23:7: ( 'short' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:23:9: 'short'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14:7: ( 'short' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14:9: 'short'
             {
             match("short"); 
 
@@ -367,15 +201,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__38"
+    // $ANTLR end "T__86"
 
-    // $ANTLR start "T__39"
-    public final void mT__39() throws RecognitionException {
+    // $ANTLR start "T__87"
+    public final void mT__87() throws RecognitionException {
         try {
-            int _type = T__39;
+            int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:24:7: ( 'int' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:24:9: 'int'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:15:7: ( 'int' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:15:9: 'int'
             {
             match("int"); 
 
@@ -388,15 +222,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__39"
+    // $ANTLR end "T__87"
 
-    // $ANTLR start "T__40"
-    public final void mT__40() throws RecognitionException {
+    // $ANTLR start "T__88"
+    public final void mT__88() throws RecognitionException {
         try {
-            int _type = T__40;
+            int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:25:7: ( 'float' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:25:9: 'float'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:16:7: ( 'float' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:16:9: 'float'
             {
             match("float"); 
 
@@ -409,15 +243,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__40"
+    // $ANTLR end "T__88"
 
-    // $ANTLR start "T__41"
-    public final void mT__41() throws RecognitionException {
+    // $ANTLR start "T__89"
+    public final void mT__89() throws RecognitionException {
         try {
-            int _type = T__41;
+            int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:26:7: ( 'long' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:26:9: 'long'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:17:7: ( 'long' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:17:9: 'long'
             {
             match("long"); 
 
@@ -430,15 +264,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__41"
+    // $ANTLR end "T__89"
 
-    // $ANTLR start "T__42"
-    public final void mT__42() throws RecognitionException {
+    // $ANTLR start "T__90"
+    public final void mT__90() throws RecognitionException {
         try {
-            int _type = T__42;
+            int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:27:7: ( 'double' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:27:9: 'double'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:18:7: ( 'double' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:18:9: 'double'
             {
             match("double"); 
 
@@ -451,137 +285,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__42"
+    // $ANTLR end "T__90"
 
-    // $ANTLR start "T__43"
-    public final void mT__43() throws RecognitionException {
+    // $ANTLR start "T__91"
+    public final void mT__91() throws RecognitionException {
         try {
-            int _type = T__43;
+            int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:28:7: ( ';' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:28:9: ';'
-            {
-            match(';'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__43"
-
-    // $ANTLR start "T__44"
-    public final void mT__44() throws RecognitionException {
-        try {
-            int _type = T__44;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:29:7: ( 'interface' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:29:9: 'interface'
-            {
-            match("interface"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__44"
-
-    // $ANTLR start "T__45"
-    public final void mT__45() throws RecognitionException {
-        try {
-            int _type = T__45;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:30:7: ( '{' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:30:9: '{'
-            {
-            match('{'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__45"
-
-    // $ANTLR start "T__46"
-    public final void mT__46() throws RecognitionException {
-        try {
-            int _type = T__46;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:31:7: ( '}' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:31:9: '}'
-            {
-            match('}'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__46"
-
-    // $ANTLR start "T__47"
-    public final void mT__47() throws RecognitionException {
-        try {
-            int _type = T__47;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:32:7: ( 'extends' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:32:9: 'extends'
-            {
-            match("extends"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__47"
-
-    // $ANTLR start "T__48"
-    public final void mT__48() throws RecognitionException {
-        try {
-            int _type = T__48;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:33:7: ( ',' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:33:9: ','
-            {
-            match(','); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__48"
-
-    // $ANTLR start "T__49"
-    public final void mT__49() throws RecognitionException {
-        try {
-            int _type = T__49;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:34:7: ( 'class' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:34:9: 'class'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:19:7: ( 'class' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:19:9: 'class'
             {
             match("class"); 
 
@@ -594,15 +306,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__49"
+    // $ANTLR end "T__91"
 
-    // $ANTLR start "T__50"
-    public final void mT__50() throws RecognitionException {
+    // $ANTLR start "T__92"
+    public final void mT__92() throws RecognitionException {
         try {
-            int _type = T__50;
+            int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:35:7: ( 'implements' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:35:9: 'implements'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:20:7: ( 'implements' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:20:9: 'implements'
             {
             match("implements"); 
 
@@ -615,115 +327,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__50"
+    // $ANTLR end "T__92"
 
-    // $ANTLR start "T__51"
-    public final void mT__51() throws RecognitionException {
+    // $ANTLR start "T__93"
+    public final void mT__93() throws RecognitionException {
         try {
-            int _type = T__51;
+            int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:36:7: ( '(' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:36:9: '('
-            {
-            match('('); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__51"
-
-    // $ANTLR start "T__52"
-    public final void mT__52() throws RecognitionException {
-        try {
-            int _type = T__52;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:37:7: ( ')' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:37:9: ')'
-            {
-            match(')'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__52"
-
-    // $ANTLR start "T__53"
-    public final void mT__53() throws RecognitionException {
-        try {
-            int _type = T__53;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:38:7: ( '[' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:38:9: '['
-            {
-            match('['); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__53"
-
-    // $ANTLR start "T__54"
-    public final void mT__54() throws RecognitionException {
-        try {
-            int _type = T__54;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:39:7: ( ']' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:39:9: ']'
-            {
-            match(']'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__54"
-
-    // $ANTLR start "T__55"
-    public final void mT__55() throws RecognitionException {
-        try {
-            int _type = T__55;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:40:7: ( '=' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:40:9: '='
-            {
-            match('='); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__55"
-
-    // $ANTLR start "T__56"
-    public final void mT__56() throws RecognitionException {
-        try {
-            int _type = T__56;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:41:7: ( '.' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:41:9: '.'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:21:7: ( '.' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:21:9: '.'
             {
             match('.'); 
 
@@ -735,97 +347,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__56"
+    // $ANTLR end "T__93"
 
-    // $ANTLR start "T__57"
-    public final void mT__57() throws RecognitionException {
+    // $ANTLR start "T__94"
+    public final void mT__94() throws RecognitionException {
         try {
-            int _type = T__57;
+            int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:42:7: ( 'instanceof' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:42:9: 'instanceof'
-            {
-            match("instanceof"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__57"
-
-    // $ANTLR start "T__58"
-    public final void mT__58() throws RecognitionException {
-        try {
-            int _type = T__58;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:43:7: ( 'l' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:43:9: 'l'
-            {
-            match('l'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__58"
-
-    // $ANTLR start "T__59"
-    public final void mT__59() throws RecognitionException {
-        try {
-            int _type = T__59;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:44:7: ( 'new' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:44:9: 'new'
-            {
-            match("new"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__59"
-
-    // $ANTLR start "T__60"
-    public final void mT__60() throws RecognitionException {
-        try {
-            int _type = T__60;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:45:7: ( ':' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:45:9: ':'
-            {
-            match(':'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__60"
-
-    // $ANTLR start "T__61"
-    public final void mT__61() throws RecognitionException {
-        try {
-            int _type = T__61;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:46:7: ( 'break' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:46:9: 'break'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:22:7: ( 'break' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:22:9: 'break'
             {
             match("break"); 
 
@@ -838,15 +368,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__61"
+    // $ANTLR end "T__94"
 
-    // $ANTLR start "T__62"
-    public final void mT__62() throws RecognitionException {
+    // $ANTLR start "T__95"
+    public final void mT__95() throws RecognitionException {
         try {
-            int _type = T__62;
+            int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:47:7: ( 'continue' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:47:9: 'continue'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:23:7: ( 'continue' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:23:9: 'continue'
             {
             match("continue"); 
 
@@ -859,17 +389,17 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__62"
+    // $ANTLR end "T__95"
 
-    // $ANTLR start "T__63"
-    public final void mT__63() throws RecognitionException {
+    // $ANTLR start "RULE_INTERFACE"
+    public final void mRULE_INTERFACE() throws RecognitionException {
         try {
-            int _type = T__63;
+            int _type = RULE_INTERFACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:48:7: ( 'switch' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:48:9: 'switch'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14098:16: ( 'interface' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14098:18: 'interface'
             {
-            match("switch"); 
+            match("interface"); 
 
 
             }
@@ -880,17 +410,17 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__63"
+    // $ANTLR end "RULE_INTERFACE"
 
-    // $ANTLR start "T__64"
-    public final void mT__64() throws RecognitionException {
+    // $ANTLR start "RULE_EXTENDS"
+    public final void mRULE_EXTENDS() throws RecognitionException {
         try {
-            int _type = T__64;
+            int _type = RULE_EXTENDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:49:7: ( 'case' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:49:9: 'case'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14100:14: ( 'extends' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14100:16: 'extends'
             {
-            match("case"); 
+            match("extends"); 
 
 
             }
@@ -901,17 +431,77 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__64"
+    // $ANTLR end "RULE_EXTENDS"
 
-    // $ANTLR start "T__65"
-    public final void mT__65() throws RecognitionException {
+    // $ANTLR start "RULE_COMMA"
+    public final void mRULE_COMMA() throws RecognitionException {
         try {
-            int _type = T__65;
+            int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:50:7: ( 'default' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:50:9: 'default'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14102:12: ( ',' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14102:14: ','
             {
-            match("default"); 
+            match(','); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_COMMA"
+
+    // $ANTLR start "RULE_R_CURLY_BRACE"
+    public final void mRULE_R_CURLY_BRACE() throws RecognitionException {
+        try {
+            int _type = RULE_R_CURLY_BRACE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14104:20: ( '{' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14104:22: '{'
+            {
+            match('{'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_R_CURLY_BRACE"
+
+    // $ANTLR start "RULE_L_CURLY_BRACE"
+    public final void mRULE_L_CURLY_BRACE() throws RecognitionException {
+        try {
+            int _type = RULE_L_CURLY_BRACE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14106:20: ( '}' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14106:22: '}'
+            {
+            match('}'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_L_CURLY_BRACE"
+
+    // $ANTLR start "RULE_ABS"
+    public final void mRULE_ABS() throws RecognitionException {
+        try {
+            int _type = RULE_ABS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14108:10: ( '[]' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14108:12: '[]'
+            {
+            match("[]"); 
 
 
             }
@@ -922,17 +512,77 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__65"
+    // $ANTLR end "RULE_ABS"
 
-    // $ANTLR start "T__66"
-    public final void mT__66() throws RecognitionException {
+    // $ANTLR start "RULE_R_ABS"
+    public final void mRULE_R_ABS() throws RecognitionException {
         try {
-            int _type = T__66;
+            int _type = RULE_R_ABS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:51:7: ( 'for' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:51:9: 'for'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14110:12: ( '[' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14110:14: '['
             {
-            match("for"); 
+            match('['); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_R_ABS"
+
+    // $ANTLR start "RULE_L_ABS"
+    public final void mRULE_L_ABS() throws RecognitionException {
+        try {
+            int _type = RULE_L_ABS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14112:12: ( ']' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14112:14: ']'
+            {
+            match(']'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_L_ABS"
+
+    // $ANTLR start "RULE_EQUAL"
+    public final void mRULE_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14114:12: ( '=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14114:14: '='
+            {
+            match('='); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EQUAL"
+
+    // $ANTLR start "RULE_NULL"
+    public final void mRULE_NULL() throws RecognitionException {
+        try {
+            int _type = RULE_NULL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14116:11: ( 'NULL' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14116:13: 'NULL'
+            {
+            match("NULL"); 
 
 
             }
@@ -943,183 +593,15 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__66"
+    // $ANTLR end "RULE_NULL"
 
-    // $ANTLR start "T__67"
-    public final void mT__67() throws RecognitionException {
+    // $ANTLR start "RULE_THIS"
+    public final void mRULE_THIS() throws RecognitionException {
         try {
-            int _type = T__67;
+            int _type = RULE_THIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:52:7: ( 'while' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:52:9: 'while'
-            {
-            match("while"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__67"
-
-    // $ANTLR start "T__68"
-    public final void mT__68() throws RecognitionException {
-        try {
-            int _type = T__68;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:53:7: ( 'do' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:53:9: 'do'
-            {
-            match("do"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__68"
-
-    // $ANTLR start "T__69"
-    public final void mT__69() throws RecognitionException {
-        try {
-            int _type = T__69;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:54:7: ( 'if' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:54:9: 'if'
-            {
-            match("if"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__69"
-
-    // $ANTLR start "T__70"
-    public final void mT__70() throws RecognitionException {
-        try {
-            int _type = T__70;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:55:7: ( 'else' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:55:9: 'else'
-            {
-            match("else"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__70"
-
-    // $ANTLR start "T__71"
-    public final void mT__71() throws RecognitionException {
-        try {
-            int _type = T__71;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:56:7: ( 'package' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:56:9: 'package'
-            {
-            match("package"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__71"
-
-    // $ANTLR start "T__72"
-    public final void mT__72() throws RecognitionException {
-        try {
-            int _type = T__72;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:57:7: ( 'import' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:57:9: 'import'
-            {
-            match("import"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__72"
-
-    // $ANTLR start "T__73"
-    public final void mT__73() throws RecognitionException {
-        try {
-            int _type = T__73;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:58:7: ( 'null' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:58:9: 'null'
-            {
-            match("null"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__73"
-
-    // $ANTLR start "T__74"
-    public final void mT__74() throws RecognitionException {
-        try {
-            int _type = T__74;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:59:7: ( 'super' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:59:9: 'super'
-            {
-            match("super"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__74"
-
-    // $ANTLR start "T__75"
-    public final void mT__75() throws RecognitionException {
-        try {
-            int _type = T__75;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:60:7: ( 'this' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:60:9: 'this'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14118:11: ( 'this' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14118:13: 'this'
             {
             match("this"); 
 
@@ -1132,17 +614,576 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__75"
+    // $ANTLR end "RULE_THIS"
+
+    // $ANTLR start "RULE_SUPER"
+    public final void mRULE_SUPER() throws RecognitionException {
+        try {
+            int _type = RULE_SUPER;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14120:12: ( 'super' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14120:14: 'super'
+            {
+            match("super"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_SUPER"
+
+    // $ANTLR start "RULE_INSTANCEOF"
+    public final void mRULE_INSTANCEOF() throws RecognitionException {
+        try {
+            int _type = RULE_INSTANCEOF;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14122:17: ( 'instanceof' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14122:19: 'instanceof'
+            {
+            match("instanceof"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_INSTANCEOF"
+
+    // $ANTLR start "RULE_L_SHIFT"
+    public final void mRULE_L_SHIFT() throws RecognitionException {
+        try {
+            int _type = RULE_L_SHIFT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14124:14: ( '<<' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14124:16: '<<'
+            {
+            match("<<"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_L_SHIFT"
+
+    // $ANTLR start "RULE_R_SHIFT"
+    public final void mRULE_R_SHIFT() throws RecognitionException {
+        try {
+            int _type = RULE_R_SHIFT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14126:14: ( '>>' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14126:16: '>>'
+            {
+            match(">>"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_R_SHIFT"
+
+    // $ANTLR start "RULE_SUPER_SHIFT"
+    public final void mRULE_SUPER_SHIFT() throws RecognitionException {
+        try {
+            int _type = RULE_SUPER_SHIFT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14128:18: ( '>>>' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14128:20: '>>>'
+            {
+            match(">>>"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_SUPER_SHIFT"
+
+    // $ANTLR start "RULE_R_SHIFT_EQUAL"
+    public final void mRULE_R_SHIFT_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_R_SHIFT_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14130:20: ( '>>=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14130:22: '>>='
+            {
+            match(">>="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_R_SHIFT_EQUAL"
+
+    // $ANTLR start "RULE_DOUBLE_OR_EQUAL"
+    public final void mRULE_DOUBLE_OR_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_DOUBLE_OR_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14132:22: ( '||=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14132:24: '||='
+            {
+            match("||="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DOUBLE_OR_EQUAL"
+
+    // $ANTLR start "RULE_OR"
+    public final void mRULE_OR() throws RecognitionException {
+        try {
+            int _type = RULE_OR;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14134:9: ( '|' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14134:11: '|'
+            {
+            match('|'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_OR"
+
+    // $ANTLR start "RULE_OR_EQUAL"
+    public final void mRULE_OR_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_OR_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14136:15: ( '|=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14136:17: '|='
+            {
+            match("|="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_OR_EQUAL"
+
+    // $ANTLR start "RULE_EXP"
+    public final void mRULE_EXP() throws RecognitionException {
+        try {
+            int _type = RULE_EXP;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14138:10: ( '^' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14138:12: '^'
+            {
+            match('^'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EXP"
+
+    // $ANTLR start "RULE_EXP_EQUAL"
+    public final void mRULE_EXP_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_EXP_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14140:16: ( '^=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14140:18: '^='
+            {
+            match("^="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EXP_EQUAL"
+
+    // $ANTLR start "RULE_DOUBLE_EQUAL"
+    public final void mRULE_DOUBLE_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_DOUBLE_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14142:19: ( '==' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14142:21: '=='
+            {
+            match("=="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DOUBLE_EQUAL"
+
+    // $ANTLR start "RULE_DIFFERENT"
+    public final void mRULE_DIFFERENT() throws RecognitionException {
+        try {
+            int _type = RULE_DIFFERENT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14144:16: ( '!=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14144:18: '!='
+            {
+            match("!="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DIFFERENT"
+
+    // $ANTLR start "RULE_BT"
+    public final void mRULE_BT() throws RecognitionException {
+        try {
+            int _type = RULE_BT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14146:9: ( '>' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14146:11: '>'
+            {
+            match('>'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_BT"
+
+    // $ANTLR start "RULE_ST"
+    public final void mRULE_ST() throws RecognitionException {
+        try {
+            int _type = RULE_ST;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14148:9: ( '<' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14148:11: '<'
+            {
+            match('<'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_ST"
+
+    // $ANTLR start "RULE_BE"
+    public final void mRULE_BE() throws RecognitionException {
+        try {
+            int _type = RULE_BE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14150:9: ( '>=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14150:11: '>='
+            {
+            match(">="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_BE"
+
+    // $ANTLR start "RULE_SE"
+    public final void mRULE_SE() throws RecognitionException {
+        try {
+            int _type = RULE_SE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14152:9: ( '<=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14152:11: '<='
+            {
+            match("<="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_SE"
+
+    // $ANTLR start "RULE_DIVIDE"
+    public final void mRULE_DIVIDE() throws RecognitionException {
+        try {
+            int _type = RULE_DIVIDE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14154:13: ( '/' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14154:15: '/'
+            {
+            match('/'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DIVIDE"
+
+    // $ANTLR start "RULE_DIVIDE_EQUAL"
+    public final void mRULE_DIVIDE_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_DIVIDE_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14156:19: ( '/=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14156:21: '/='
+            {
+            match("/="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DIVIDE_EQUAL"
+
+    // $ANTLR start "RULE_MODULE"
+    public final void mRULE_MODULE() throws RecognitionException {
+        try {
+            int _type = RULE_MODULE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14158:13: ( '%' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14158:15: '%'
+            {
+            match('%'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_MODULE"
+
+    // $ANTLR start "RULE_MODULE_EQUAL"
+    public final void mRULE_MODULE_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_MODULE_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14160:19: ( '%=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14160:21: '%='
+            {
+            match("%="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_MODULE_EQUAL"
+
+    // $ANTLR start "RULE_PLUS_EQUAL"
+    public final void mRULE_PLUS_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_PLUS_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14162:17: ( '+=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14162:19: '+='
+            {
+            match("+="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_PLUS_EQUAL"
+
+    // $ANTLR start "RULE_MINUS_EQUAL"
+    public final void mRULE_MINUS_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_MINUS_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14164:18: ( '-=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14164:20: '-='
+            {
+            match("-="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_MINUS_EQUAL"
+
+    // $ANTLR start "RULE_MULTIPLY"
+    public final void mRULE_MULTIPLY() throws RecognitionException {
+        try {
+            int _type = RULE_MULTIPLY;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14166:15: ( '*' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14166:17: '*'
+            {
+            match('*'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_MULTIPLY"
+
+    // $ANTLR start "RULE_MULTIPLY_EQUAL"
+    public final void mRULE_MULTIPLY_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_MULTIPLY_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14168:21: ( '*=' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14168:23: '*='
+            {
+            match("*="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_MULTIPLY_EQUAL"
+
+    // $ANTLR start "RULE_WAT"
+    public final void mRULE_WAT() throws RecognitionException {
+        try {
+            int _type = RULE_WAT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14170:10: ( '?' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14170:12: '?'
+            {
+            match('?'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_WAT"
+
+    // $ANTLR start "RULE_AMPERSAND"
+    public final void mRULE_AMPERSAND() throws RecognitionException {
+        try {
+            int _type = RULE_AMPERSAND;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14172:16: ( 'ampersand' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14172:18: 'ampersand'
+            {
+            match("ampersand"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_AMPERSAND"
 
     // $ANTLR start "RULE_EXPONENTIAL"
     public final void mRULE_EXPONENTIAL() throws RecognitionException {
         try {
             int _type = RULE_EXPONENTIAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12347:18: ( ( 'e' | 'e+' | 'e-' ) )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12347:20: ( 'e' | 'e+' | 'e-' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14174:18: ( ( 'e' | 'e+' | 'e-' ) )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14174:20: ( 'e' | 'e+' | 'e-' )
             {
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12347:20: ( 'e' | 'e+' | 'e-' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14174:20: ( 'e' | 'e+' | 'e-' )
             int alt1=3;
             int LA1_0 = input.LA(1);
 
@@ -1170,14 +1211,14 @@ public class InternalJavaLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12347:21: 'e'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14174:21: 'e'
                     {
                     match('e'); 
 
                     }
                     break;
                 case 2 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12347:25: 'e+'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14174:25: 'e+'
                     {
                     match("e+"); 
 
@@ -1185,7 +1226,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12347:30: 'e-'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14174:30: 'e-'
                     {
                     match("e-"); 
 
@@ -1206,16 +1247,36 @@ public class InternalJavaLexer extends Lexer {
     }
     // $ANTLR end "RULE_EXPONENTIAL"
 
+    // $ANTLR start "RULE_LONG"
+    public final void mRULE_LONG() throws RecognitionException {
+        try {
+            int _type = RULE_LONG;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14176:11: ( 'l' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14176:13: 'l'
+            {
+            match('l'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_LONG"
+
     // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12349:13: ( '\"' ( options {greedy=false; } : . )* '\"' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12349:15: '\"' ( options {greedy=false; } : . )* '\"'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14178:13: ( '\"' ( options {greedy=false; } : . )* '\"' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14178:15: '\"' ( options {greedy=false; } : . )* '\"'
             {
             match('\"'); 
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12349:19: ( options {greedy=false; } : . )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14178:19: ( options {greedy=false; } : . )*
             loop2:
             do {
                 int alt2=2;
@@ -1231,7 +1292,7 @@ public class InternalJavaLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12349:47: .
+            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14178:47: .
             	    {
             	    matchAny(); 
 
@@ -1255,13 +1316,136 @@ public class InternalJavaLexer extends Lexer {
     }
     // $ANTLR end "RULE_STRING"
 
+    // $ANTLR start "RULE_COLON"
+    public final void mRULE_COLON() throws RecognitionException {
+        try {
+            int _type = RULE_COLON;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14180:12: ( ':' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14180:14: ':'
+            {
+            match(':'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_COLON"
+
+    // $ANTLR start "RULE_NEW"
+    public final void mRULE_NEW() throws RecognitionException {
+        try {
+            int _type = RULE_NEW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14182:10: ( 'new' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14182:12: 'new'
+            {
+            match("new"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_NEW"
+
+    // $ANTLR start "RULE_NOT"
+    public final void mRULE_NOT() throws RecognitionException {
+        try {
+            int _type = RULE_NOT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14184:10: ( '~' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14184:12: '~'
+            {
+            match('~'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_NOT"
+
+    // $ANTLR start "RULE_EXCLAMATION"
+    public final void mRULE_EXCLAMATION() throws RecognitionException {
+        try {
+            int _type = RULE_EXCLAMATION;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14186:18: ( '!' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14186:20: '!'
+            {
+            match('!'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EXCLAMATION"
+
+    // $ANTLR start "RULE_FALSE"
+    public final void mRULE_FALSE() throws RecognitionException {
+        try {
+            int _type = RULE_FALSE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14188:12: ( 'false' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14188:14: 'false'
+            {
+            match("false"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_FALSE"
+
+    // $ANTLR start "RULE_TRUE"
+    public final void mRULE_TRUE() throws RecognitionException {
+        try {
+            int _type = RULE_TRUE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14190:11: ( 'true' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14190:13: 'true'
+            {
+            match("true"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_TRUE"
+
     // $ANTLR start "RULE_DECREMENT"
     public final void mRULE_DECREMENT() throws RecognitionException {
         try {
             int _type = RULE_DECREMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12351:16: ( '--' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12351:18: '--'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14192:16: ( '--' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14192:18: '--'
             {
             match("--"); 
 
@@ -1281,8 +1465,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_INCREMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12353:16: ( '++' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12353:18: '++'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14194:16: ( '++' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14194:18: '++'
             {
             match("++"); 
 
@@ -1302,8 +1486,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_STATIC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12355:13: ( 'static' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12355:15: 'static'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14196:13: ( 'static' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14196:15: 'static'
             {
             match("static"); 
 
@@ -1318,16 +1502,16 @@ public class InternalJavaLexer extends Lexer {
     }
     // $ANTLR end "RULE_STATIC"
 
-    // $ANTLR start "RULE_EXPOENT_PART"
-    public final void mRULE_EXPOENT_PART() throws RecognitionException {
+    // $ANTLR start "RULE_DEFAULT"
+    public final void mRULE_DEFAULT() throws RecognitionException {
         try {
-            int _type = RULE_EXPOENT_PART;
+            int _type = RULE_DEFAULT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12357:19: ( RULE_EXPONENTIAL RULE_DECIMAL_DIGITS )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12357:21: RULE_EXPONENTIAL RULE_DECIMAL_DIGITS
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14198:14: ( 'default' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14198:16: 'default'
             {
-            mRULE_EXPONENTIAL(); 
-            mRULE_DECIMAL_DIGITS(); 
+            match("default"); 
+
 
             }
 
@@ -1337,15 +1521,264 @@ public class InternalJavaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_EXPOENT_PART"
+    // $ANTLR end "RULE_DEFAULT"
+
+    // $ANTLR start "RULE_CASE"
+    public final void mRULE_CASE() throws RecognitionException {
+        try {
+            int _type = RULE_CASE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14200:11: ( 'case' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14200:13: 'case'
+            {
+            match("case"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_CASE"
+
+    // $ANTLR start "RULE_SWITCH"
+    public final void mRULE_SWITCH() throws RecognitionException {
+        try {
+            int _type = RULE_SWITCH;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14202:13: ( 'switch' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14202:15: 'switch'
+            {
+            match("switch"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_SWITCH"
+
+    // $ANTLR start "RULE_FOR"
+    public final void mRULE_FOR() throws RecognitionException {
+        try {
+            int _type = RULE_FOR;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14204:10: ( 'for' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14204:12: 'for'
+            {
+            match("for"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_FOR"
+
+    // $ANTLR start "RULE_RIGHT_PARENTHESIS"
+    public final void mRULE_RIGHT_PARENTHESIS() throws RecognitionException {
+        try {
+            int _type = RULE_RIGHT_PARENTHESIS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14206:24: ( '(' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14206:26: '('
+            {
+            match('('); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_RIGHT_PARENTHESIS"
+
+    // $ANTLR start "RULE_LEFT_PARENTHESIS"
+    public final void mRULE_LEFT_PARENTHESIS() throws RecognitionException {
+        try {
+            int _type = RULE_LEFT_PARENTHESIS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14208:23: ( ')' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14208:25: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_LEFT_PARENTHESIS"
+
+    // $ANTLR start "RULE_EOL"
+    public final void mRULE_EOL() throws RecognitionException {
+        try {
+            int _type = RULE_EOL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14210:10: ( ';' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14210:12: ';'
+            {
+            match(';'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EOL"
+
+    // $ANTLR start "RULE_IF"
+    public final void mRULE_IF() throws RecognitionException {
+        try {
+            int _type = RULE_IF;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14212:9: ( 'if' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14212:11: 'if'
+            {
+            match("if"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_IF"
+
+    // $ANTLR start "RULE_ELSE"
+    public final void mRULE_ELSE() throws RecognitionException {
+        try {
+            int _type = RULE_ELSE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14214:11: ( 'else' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14214:13: 'else'
+            {
+            match("else"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_ELSE"
+
+    // $ANTLR start "RULE_DO"
+    public final void mRULE_DO() throws RecognitionException {
+        try {
+            int _type = RULE_DO;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14216:9: ( 'do' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14216:11: 'do'
+            {
+            match("do"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DO"
+
+    // $ANTLR start "RULE_WHILE"
+    public final void mRULE_WHILE() throws RecognitionException {
+        try {
+            int _type = RULE_WHILE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14218:12: ( 'while' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14218:14: 'while'
+            {
+            match("while"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_WHILE"
+
+    // $ANTLR start "RULE_PACKAGE"
+    public final void mRULE_PACKAGE() throws RecognitionException {
+        try {
+            int _type = RULE_PACKAGE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14220:14: ( 'package' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14220:16: 'package'
+            {
+            match("package"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_PACKAGE"
+
+    // $ANTLR start "RULE_IMPORT"
+    public final void mRULE_IMPORT() throws RecognitionException {
+        try {
+            int _type = RULE_IMPORT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14222:13: ( 'import' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14222:15: 'import'
+            {
+            match("import"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_IMPORT"
 
     // $ANTLR start "RULE_CHAR"
     public final void mRULE_CHAR() throws RecognitionException {
         try {
             int _type = RULE_CHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12359:11: ( '\\'' . '\\'' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12359:13: '\\'' . '\\''
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14224:11: ( '\\'' . '\\'' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14224:13: '\\'' . '\\''
             {
             match('\''); 
             matchAny(); 
@@ -1366,8 +1799,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12361:11: ( '+' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12361:13: '+'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14226:11: ( '+' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14226:13: '+'
             {
             match('+'); 
 
@@ -1386,8 +1819,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12363:12: ( '-' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12363:14: '-'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14228:12: ( '-' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14228:14: '-'
             {
             match('-'); 
 
@@ -1406,15 +1839,15 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:10: ( ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' ) )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:12: ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:10: ( ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' ) )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:12: ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' )
             {
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:12: ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:12: ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' )
             int alt3=9;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:13: 'public'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:13: 'public'
                     {
                     match("public"); 
 
@@ -1422,7 +1855,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:22: 'private'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:22: 'private'
                     {
                     match("private"); 
 
@@ -1430,7 +1863,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:32: 'protected'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:32: 'protected'
                     {
                     match("protected"); 
 
@@ -1438,7 +1871,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:44: 'final'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:44: 'final'
                     {
                     match("final"); 
 
@@ -1446,7 +1879,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:52: 'native'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:52: 'native'
                     {
                     match("native"); 
 
@@ -1454,7 +1887,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:61: 'synchronized'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:61: 'synchronized'
                     {
                     match("synchronized"); 
 
@@ -1462,7 +1895,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:76: 'abstract'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:76: 'abstract'
                     {
                     match("abstract"); 
 
@@ -1470,7 +1903,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:87: 'threadsafe'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:87: 'threadsafe'
                     {
                     match("threadsafe"); 
 
@@ -1478,7 +1911,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12365:100: 'transient'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14230:100: 'transient'
                     {
                     match("transient"); 
 
@@ -1504,8 +1937,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_TRY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12367:10: ( 'try' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12367:12: 'try'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14232:10: ( 'try' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14232:12: 'try'
             {
             match("try"); 
 
@@ -1525,8 +1958,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_CATCH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12369:12: ( 'catch' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12369:14: 'catch'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14234:12: ( 'catch' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14234:14: 'catch'
             {
             match("catch"); 
 
@@ -1546,8 +1979,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_FINALLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12371:14: ( 'finally' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12371:16: 'finally'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14236:14: ( 'finally' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14236:16: 'finally'
             {
             match("finally"); 
 
@@ -1567,8 +2000,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_FLOAT_TYPE_SUFIX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12373:23: ( ( 'f' | 'd' ) )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12373:25: ( 'f' | 'd' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14238:23: ( ( 'f' | 'd' ) )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14238:25: ( 'f' | 'd' )
             {
             if ( input.LA(1)=='d'||input.LA(1)=='f' ) {
                 input.consume();
@@ -1595,8 +2028,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12375:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '$' | '\\u00C0' .. '\\uFFFF' )* )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12375:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '$' | '\\u00C0' .. '\\uFFFF' )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14240:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '$' | '\\u00C0' .. '\\uFFFF' )* )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14240:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '$' | '\\u00C0' .. '\\uFFFF' )*
             {
             if ( input.LA(1)=='$'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1607,7 +2040,7 @@ public class InternalJavaLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12375:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '$' | '\\u00C0' .. '\\uFFFF' )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14240:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '$' | '\\u00C0' .. '\\uFFFF' )*
             loop4:
             do {
                 int alt4=2;
@@ -1656,12 +2089,12 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_HEXA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12377:11: ( '0' 'x' ( '0' .. '9' 'a' .. 'f' )* )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12377:13: '0' 'x' ( '0' .. '9' 'a' .. 'f' )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14242:11: ( '0' 'x' ( '0' .. '9' 'a' .. 'f' )* )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14242:13: '0' 'x' ( '0' .. '9' 'a' .. 'f' )*
             {
             match('0'); 
             match('x'); 
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12377:21: ( '0' .. '9' 'a' .. 'f' )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14242:21: ( '0' .. '9' 'a' .. 'f' )*
             loop5:
             do {
                 int alt5=2;
@@ -1674,7 +2107,7 @@ public class InternalJavaLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12377:22: '0' .. '9' 'a' .. 'f'
+            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14242:22: '0' .. '9' 'a' .. 'f'
             	    {
             	    matchRange('0','9'); 
             	    matchRange('a','f'); 
@@ -1703,10 +2136,10 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL_DIGITS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12379:21: ( ( '0' .. '9' )+ )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12379:23: ( '0' .. '9' )+
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14244:21: ( ( '0' .. '9' )+ )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14244:23: ( '0' .. '9' )+
             {
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12379:23: ( '0' .. '9' )+
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14244:23: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -1720,7 +2153,7 @@ public class InternalJavaLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12379:24: '0' .. '9'
+            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14244:24: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1752,12 +2185,12 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12381:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12381:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14246:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14246:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12381:24: ( options {greedy=false; } : . )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14246:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1782,7 +2215,7 @@ public class InternalJavaLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12381:52: .
+            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14246:52: .
             	    {
             	    matchAny(); 
 
@@ -1812,12 +2245,12 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1830,7 +2263,7 @@ public class InternalJavaLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1850,7 +2283,7 @@ public class InternalJavaLexer extends Lexer {
                 }
             } while (true);
 
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:40: ( ( '\\r' )? '\\n' )?
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1859,9 +2292,9 @@ public class InternalJavaLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:41: ( '\\r' )? '\\n'
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:41: ( '\\r' )? '\\n'
                     {
-                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:41: ( '\\r' )?
+                    // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1870,7 +2303,7 @@ public class InternalJavaLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12383:41: '\\r'
+                            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14248:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1902,10 +2335,10 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12385:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12385:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14250:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14250:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12385:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14250:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1959,8 +2392,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12387:16: ( . )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12387:18: .
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14252:16: ( . )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14252:18: .
             {
             matchAny(); 
 
@@ -1979,8 +2412,8 @@ public class InternalJavaLexer extends Lexer {
         try {
             int _type = RULE_DOC_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12389:18: ( '/**' )
-            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:12389:20: '/**'
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14254:18: ( '/**' )
+            // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:14254:20: '/**'
             {
             match("/**"); 
 
@@ -1996,509 +2429,649 @@ public class InternalJavaLexer extends Lexer {
     // $ANTLR end "RULE_DOC_COMMENT"
 
     public void mTokens() throws RecognitionException {
-        // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:8: ( T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | RULE_EXPONENTIAL | RULE_STRING | RULE_DECREMENT | RULE_INCREMENT | RULE_STATIC | RULE_EXPOENT_PART | RULE_CHAR | RULE_PLUS | RULE_MINUS | RULE_MOD | RULE_TRY | RULE_CATCH | RULE_FINALLY | RULE_FLOAT_TYPE_SUFIX | RULE_ID | RULE_HEXA | RULE_DECIMAL_DIGITS | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER | RULE_DOC_COMMENT )
-        int alt12=72;
+        // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:8: ( T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | RULE_INTERFACE | RULE_EXTENDS | RULE_COMMA | RULE_R_CURLY_BRACE | RULE_L_CURLY_BRACE | RULE_ABS | RULE_R_ABS | RULE_L_ABS | RULE_EQUAL | RULE_NULL | RULE_THIS | RULE_SUPER | RULE_INSTANCEOF | RULE_L_SHIFT | RULE_R_SHIFT | RULE_SUPER_SHIFT | RULE_R_SHIFT_EQUAL | RULE_DOUBLE_OR_EQUAL | RULE_OR | RULE_OR_EQUAL | RULE_EXP | RULE_EXP_EQUAL | RULE_DOUBLE_EQUAL | RULE_DIFFERENT | RULE_BT | RULE_ST | RULE_BE | RULE_SE | RULE_DIVIDE | RULE_DIVIDE_EQUAL | RULE_MODULE | RULE_MODULE_EQUAL | RULE_PLUS_EQUAL | RULE_MINUS_EQUAL | RULE_MULTIPLY | RULE_MULTIPLY_EQUAL | RULE_WAT | RULE_AMPERSAND | RULE_EXPONENTIAL | RULE_LONG | RULE_STRING | RULE_COLON | RULE_NEW | RULE_NOT | RULE_EXCLAMATION | RULE_FALSE | RULE_TRUE | RULE_DECREMENT | RULE_INCREMENT | RULE_STATIC | RULE_DEFAULT | RULE_CASE | RULE_SWITCH | RULE_FOR | RULE_RIGHT_PARENTHESIS | RULE_LEFT_PARENTHESIS | RULE_EOL | RULE_IF | RULE_ELSE | RULE_DO | RULE_WHILE | RULE_PACKAGE | RULE_IMPORT | RULE_CHAR | RULE_PLUS | RULE_MINUS | RULE_MOD | RULE_TRY | RULE_CATCH | RULE_FINALLY | RULE_FLOAT_TYPE_SUFIX | RULE_ID | RULE_HEXA | RULE_DECIMAL_DIGITS | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER | RULE_DOC_COMMENT )
+        int alt12=92;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:10: T__26
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:10: T__83
                 {
-                mT__26(); 
+                mT__83(); 
 
                 }
                 break;
             case 2 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:16: T__27
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:16: T__84
                 {
-                mT__27(); 
+                mT__84(); 
 
                 }
                 break;
             case 3 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:22: T__28
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:22: T__85
                 {
-                mT__28(); 
+                mT__85(); 
 
                 }
                 break;
             case 4 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:28: T__29
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:28: T__86
                 {
-                mT__29(); 
+                mT__86(); 
 
                 }
                 break;
             case 5 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:34: T__30
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:34: T__87
                 {
-                mT__30(); 
+                mT__87(); 
 
                 }
                 break;
             case 6 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:40: T__31
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:40: T__88
                 {
-                mT__31(); 
+                mT__88(); 
 
                 }
                 break;
             case 7 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:46: T__32
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:46: T__89
                 {
-                mT__32(); 
+                mT__89(); 
 
                 }
                 break;
             case 8 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:52: T__33
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:52: T__90
                 {
-                mT__33(); 
+                mT__90(); 
 
                 }
                 break;
             case 9 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:58: T__34
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:58: T__91
                 {
-                mT__34(); 
+                mT__91(); 
 
                 }
                 break;
             case 10 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:64: T__35
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:64: T__92
                 {
-                mT__35(); 
+                mT__92(); 
 
                 }
                 break;
             case 11 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:70: T__36
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:70: T__93
                 {
-                mT__36(); 
+                mT__93(); 
 
                 }
                 break;
             case 12 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:76: T__37
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:76: T__94
                 {
-                mT__37(); 
+                mT__94(); 
 
                 }
                 break;
             case 13 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:82: T__38
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:82: T__95
                 {
-                mT__38(); 
+                mT__95(); 
 
                 }
                 break;
             case 14 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:88: T__39
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:88: RULE_INTERFACE
                 {
-                mT__39(); 
+                mRULE_INTERFACE(); 
 
                 }
                 break;
             case 15 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:94: T__40
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:103: RULE_EXTENDS
                 {
-                mT__40(); 
+                mRULE_EXTENDS(); 
 
                 }
                 break;
             case 16 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:100: T__41
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:116: RULE_COMMA
                 {
-                mT__41(); 
+                mRULE_COMMA(); 
 
                 }
                 break;
             case 17 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:106: T__42
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:127: RULE_R_CURLY_BRACE
                 {
-                mT__42(); 
+                mRULE_R_CURLY_BRACE(); 
 
                 }
                 break;
             case 18 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:112: T__43
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:146: RULE_L_CURLY_BRACE
                 {
-                mT__43(); 
+                mRULE_L_CURLY_BRACE(); 
 
                 }
                 break;
             case 19 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:118: T__44
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:165: RULE_ABS
                 {
-                mT__44(); 
+                mRULE_ABS(); 
 
                 }
                 break;
             case 20 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:124: T__45
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:174: RULE_R_ABS
                 {
-                mT__45(); 
+                mRULE_R_ABS(); 
 
                 }
                 break;
             case 21 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:130: T__46
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:185: RULE_L_ABS
                 {
-                mT__46(); 
+                mRULE_L_ABS(); 
 
                 }
                 break;
             case 22 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:136: T__47
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:196: RULE_EQUAL
                 {
-                mT__47(); 
+                mRULE_EQUAL(); 
 
                 }
                 break;
             case 23 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:142: T__48
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:207: RULE_NULL
                 {
-                mT__48(); 
+                mRULE_NULL(); 
 
                 }
                 break;
             case 24 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:148: T__49
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:217: RULE_THIS
                 {
-                mT__49(); 
+                mRULE_THIS(); 
 
                 }
                 break;
             case 25 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:154: T__50
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:227: RULE_SUPER
                 {
-                mT__50(); 
+                mRULE_SUPER(); 
 
                 }
                 break;
             case 26 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:160: T__51
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:238: RULE_INSTANCEOF
                 {
-                mT__51(); 
+                mRULE_INSTANCEOF(); 
 
                 }
                 break;
             case 27 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:166: T__52
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:254: RULE_L_SHIFT
                 {
-                mT__52(); 
+                mRULE_L_SHIFT(); 
 
                 }
                 break;
             case 28 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:172: T__53
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:267: RULE_R_SHIFT
                 {
-                mT__53(); 
+                mRULE_R_SHIFT(); 
 
                 }
                 break;
             case 29 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:178: T__54
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:280: RULE_SUPER_SHIFT
                 {
-                mT__54(); 
+                mRULE_SUPER_SHIFT(); 
 
                 }
                 break;
             case 30 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:184: T__55
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:297: RULE_R_SHIFT_EQUAL
                 {
-                mT__55(); 
+                mRULE_R_SHIFT_EQUAL(); 
 
                 }
                 break;
             case 31 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:190: T__56
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:316: RULE_DOUBLE_OR_EQUAL
                 {
-                mT__56(); 
+                mRULE_DOUBLE_OR_EQUAL(); 
 
                 }
                 break;
             case 32 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:196: T__57
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:337: RULE_OR
                 {
-                mT__57(); 
+                mRULE_OR(); 
 
                 }
                 break;
             case 33 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:202: T__58
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:345: RULE_OR_EQUAL
                 {
-                mT__58(); 
+                mRULE_OR_EQUAL(); 
 
                 }
                 break;
             case 34 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:208: T__59
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:359: RULE_EXP
                 {
-                mT__59(); 
+                mRULE_EXP(); 
 
                 }
                 break;
             case 35 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:214: T__60
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:368: RULE_EXP_EQUAL
                 {
-                mT__60(); 
+                mRULE_EXP_EQUAL(); 
 
                 }
                 break;
             case 36 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:220: T__61
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:383: RULE_DOUBLE_EQUAL
                 {
-                mT__61(); 
+                mRULE_DOUBLE_EQUAL(); 
 
                 }
                 break;
             case 37 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:226: T__62
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:401: RULE_DIFFERENT
                 {
-                mT__62(); 
+                mRULE_DIFFERENT(); 
 
                 }
                 break;
             case 38 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:232: T__63
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:416: RULE_BT
                 {
-                mT__63(); 
+                mRULE_BT(); 
 
                 }
                 break;
             case 39 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:238: T__64
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:424: RULE_ST
                 {
-                mT__64(); 
+                mRULE_ST(); 
 
                 }
                 break;
             case 40 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:244: T__65
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:432: RULE_BE
                 {
-                mT__65(); 
+                mRULE_BE(); 
 
                 }
                 break;
             case 41 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:250: T__66
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:440: RULE_SE
                 {
-                mT__66(); 
+                mRULE_SE(); 
 
                 }
                 break;
             case 42 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:256: T__67
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:448: RULE_DIVIDE
                 {
-                mT__67(); 
+                mRULE_DIVIDE(); 
 
                 }
                 break;
             case 43 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:262: T__68
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:460: RULE_DIVIDE_EQUAL
                 {
-                mT__68(); 
+                mRULE_DIVIDE_EQUAL(); 
 
                 }
                 break;
             case 44 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:268: T__69
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:478: RULE_MODULE
                 {
-                mT__69(); 
+                mRULE_MODULE(); 
 
                 }
                 break;
             case 45 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:274: T__70
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:490: RULE_MODULE_EQUAL
                 {
-                mT__70(); 
+                mRULE_MODULE_EQUAL(); 
 
                 }
                 break;
             case 46 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:280: T__71
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:508: RULE_PLUS_EQUAL
                 {
-                mT__71(); 
+                mRULE_PLUS_EQUAL(); 
 
                 }
                 break;
             case 47 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:286: T__72
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:524: RULE_MINUS_EQUAL
                 {
-                mT__72(); 
+                mRULE_MINUS_EQUAL(); 
 
                 }
                 break;
             case 48 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:292: T__73
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:541: RULE_MULTIPLY
                 {
-                mT__73(); 
+                mRULE_MULTIPLY(); 
 
                 }
                 break;
             case 49 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:298: T__74
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:555: RULE_MULTIPLY_EQUAL
                 {
-                mT__74(); 
+                mRULE_MULTIPLY_EQUAL(); 
 
                 }
                 break;
             case 50 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:304: T__75
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:575: RULE_WAT
                 {
-                mT__75(); 
+                mRULE_WAT(); 
 
                 }
                 break;
             case 51 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:310: RULE_EXPONENTIAL
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:584: RULE_AMPERSAND
+                {
+                mRULE_AMPERSAND(); 
+
+                }
+                break;
+            case 52 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:599: RULE_EXPONENTIAL
                 {
                 mRULE_EXPONENTIAL(); 
 
                 }
                 break;
-            case 52 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:327: RULE_STRING
+            case 53 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:616: RULE_LONG
+                {
+                mRULE_LONG(); 
+
+                }
+                break;
+            case 54 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:626: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 53 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:339: RULE_DECREMENT
+            case 55 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:638: RULE_COLON
+                {
+                mRULE_COLON(); 
+
+                }
+                break;
+            case 56 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:649: RULE_NEW
+                {
+                mRULE_NEW(); 
+
+                }
+                break;
+            case 57 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:658: RULE_NOT
+                {
+                mRULE_NOT(); 
+
+                }
+                break;
+            case 58 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:667: RULE_EXCLAMATION
+                {
+                mRULE_EXCLAMATION(); 
+
+                }
+                break;
+            case 59 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:684: RULE_FALSE
+                {
+                mRULE_FALSE(); 
+
+                }
+                break;
+            case 60 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:695: RULE_TRUE
+                {
+                mRULE_TRUE(); 
+
+                }
+                break;
+            case 61 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:705: RULE_DECREMENT
                 {
                 mRULE_DECREMENT(); 
 
                 }
                 break;
-            case 54 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:354: RULE_INCREMENT
+            case 62 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:720: RULE_INCREMENT
                 {
                 mRULE_INCREMENT(); 
 
                 }
                 break;
-            case 55 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:369: RULE_STATIC
+            case 63 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:735: RULE_STATIC
                 {
                 mRULE_STATIC(); 
 
                 }
                 break;
-            case 56 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:381: RULE_EXPOENT_PART
+            case 64 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:747: RULE_DEFAULT
                 {
-                mRULE_EXPOENT_PART(); 
+                mRULE_DEFAULT(); 
 
                 }
                 break;
-            case 57 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:399: RULE_CHAR
+            case 65 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:760: RULE_CASE
+                {
+                mRULE_CASE(); 
+
+                }
+                break;
+            case 66 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:770: RULE_SWITCH
+                {
+                mRULE_SWITCH(); 
+
+                }
+                break;
+            case 67 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:782: RULE_FOR
+                {
+                mRULE_FOR(); 
+
+                }
+                break;
+            case 68 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:791: RULE_RIGHT_PARENTHESIS
+                {
+                mRULE_RIGHT_PARENTHESIS(); 
+
+                }
+                break;
+            case 69 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:814: RULE_LEFT_PARENTHESIS
+                {
+                mRULE_LEFT_PARENTHESIS(); 
+
+                }
+                break;
+            case 70 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:836: RULE_EOL
+                {
+                mRULE_EOL(); 
+
+                }
+                break;
+            case 71 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:845: RULE_IF
+                {
+                mRULE_IF(); 
+
+                }
+                break;
+            case 72 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:853: RULE_ELSE
+                {
+                mRULE_ELSE(); 
+
+                }
+                break;
+            case 73 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:863: RULE_DO
+                {
+                mRULE_DO(); 
+
+                }
+                break;
+            case 74 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:871: RULE_WHILE
+                {
+                mRULE_WHILE(); 
+
+                }
+                break;
+            case 75 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:882: RULE_PACKAGE
+                {
+                mRULE_PACKAGE(); 
+
+                }
+                break;
+            case 76 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:895: RULE_IMPORT
+                {
+                mRULE_IMPORT(); 
+
+                }
+                break;
+            case 77 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:907: RULE_CHAR
                 {
                 mRULE_CHAR(); 
 
                 }
                 break;
-            case 58 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:409: RULE_PLUS
+            case 78 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:917: RULE_PLUS
                 {
                 mRULE_PLUS(); 
 
                 }
                 break;
-            case 59 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:419: RULE_MINUS
+            case 79 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:927: RULE_MINUS
                 {
                 mRULE_MINUS(); 
 
                 }
                 break;
-            case 60 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:430: RULE_MOD
+            case 80 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:938: RULE_MOD
                 {
                 mRULE_MOD(); 
 
                 }
                 break;
-            case 61 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:439: RULE_TRY
+            case 81 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:947: RULE_TRY
                 {
                 mRULE_TRY(); 
 
                 }
                 break;
-            case 62 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:448: RULE_CATCH
+            case 82 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:956: RULE_CATCH
                 {
                 mRULE_CATCH(); 
 
                 }
                 break;
-            case 63 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:459: RULE_FINALLY
+            case 83 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:967: RULE_FINALLY
                 {
                 mRULE_FINALLY(); 
 
                 }
                 break;
-            case 64 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:472: RULE_FLOAT_TYPE_SUFIX
+            case 84 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:980: RULE_FLOAT_TYPE_SUFIX
                 {
                 mRULE_FLOAT_TYPE_SUFIX(); 
 
                 }
                 break;
-            case 65 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:494: RULE_ID
+            case 85 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1002: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 66 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:502: RULE_HEXA
+            case 86 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1010: RULE_HEXA
                 {
                 mRULE_HEXA(); 
 
                 }
                 break;
-            case 67 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:512: RULE_DECIMAL_DIGITS
+            case 87 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1020: RULE_DECIMAL_DIGITS
                 {
                 mRULE_DECIMAL_DIGITS(); 
 
                 }
                 break;
-            case 68 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:532: RULE_ML_COMMENT
+            case 88 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1040: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 69 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:548: RULE_SL_COMMENT
+            case 89 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1056: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 70 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:564: RULE_WS
+            case 90 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1072: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 71 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:572: RULE_ANY_OTHER
+            case 91 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1080: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
                 }
                 break;
-            case 72 :
-                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:587: RULE_DOC_COMMENT
+            case 92 :
+                // ../ufcg.edu.br.ProjetoCompiladores.ui/src-gen/org/xtext/java/ui/contentassist/antlr/internal/InternalJava.g:1:1095: RULE_DOC_COMMENT
                 {
                 mRULE_DOC_COMMENT(); 
 
@@ -2570,251 +3143,248 @@ public class InternalJavaLexer extends Lexer {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "12365:12: ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' )";
+            return "14230:12: ( 'public' | 'private' | 'protected' | 'final' | 'native' | 'synchronized' | 'abstract' | 'threadsafe' | 'transient' )";
         }
     }
     static final String DFA12_eotS =
-        "\1\uffff\1\46\1\51\1\54\1\56\1\62\1\64\4\70\1\110\1\112\1\110\3"+
-        "\uffff\1\124\6\uffff\1\70\1\uffff\3\70\2\44\1\70\1\uffff\1\152\23"+
-        "\uffff\3\70\1\uffff\13\70\1\176\3\70\1\uffff\1\70\1\uffff\1\u0084"+
-        "\1\70\3\uffff\2\70\2\124\1\uffff\1\u0088\6\uffff\3\70\1\uffff\6"+
-        "\70\2\uffff\1\70\3\uffff\1\u0096\1\uffff\15\70\1\u00a5\2\70\1\uffff"+
-        "\1\70\1\u00aa\3\70\1\uffff\3\70\1\uffff\1\u00b1\12\70\1\u00bc\1"+
-        "\70\1\uffff\1\70\1\u00bf\1\70\1\u00c1\2\70\1\u00c4\7\70\1\uffff"+
-        "\4\70\1\uffff\1\70\1\u00d1\3\70\1\u00d5\1\uffff\1\u00d6\6\70\1\u00dd"+
-        "\2\70\1\uffff\2\70\1\uffff\1\u00e2\1\uffff\1\u00e3\1\70\1\uffff"+
-        "\1\u00e5\1\u00e6\1\70\1\u00e8\6\70\1\u00ef\1\u00f1\1\uffff\3\70"+
-        "\2\uffff\1\70\1\u00f6\4\70\1\uffff\4\70\2\uffff\1\70\2\uffff\1\u0100"+
-        "\1\uffff\1\u0101\4\70\1\u0106\1\uffff\1\70\1\uffff\1\u0108\2\70"+
-        "\1\u00f1\1\uffff\1\70\1\u00f1\5\70\1\u0111\1\70\2\uffff\4\70\1\uffff"+
-        "\1\u0117\1\uffff\1\u0118\1\u0119\1\u011a\1\u00f1\4\70\1\uffff\1"+
-        "\u011f\4\70\4\uffff\3\70\1\u00f1\1\uffff\1\70\1\u0128\2\70\1\u00f1"+
-        "\1\70\1\u00f1\1\70\1\uffff\1\u012d\1\u012e\1\u00f1\1\70\2\uffff"+
-        "\1\u00f1";
+        "\1\uffff\4\60\1\101\1\103\1\101\1\uffff\1\110\3\uffff\1\116\1\uffff"+
+        "\1\121\2\60\1\127\1\132\1\135\1\137\1\141\1\145\1\147\1\152\1\155"+
+        "\1\157\1\uffff\1\60\1\54\1\uffff\1\60\4\uffff\2\60\1\54\1\uffff"+
+        "\1\u0081\3\uffff\3\60\1\uffff\13\60\1\u0093\4\60\1\uffff\1\60\1"+
+        "\uffff\1\u009a\1\60\1\uffff\1\60\1\uffff\1\60\10\uffff\3\60\3\uffff"+
+        "\1\u00a6\30\uffff\2\60\2\uffff\2\60\4\uffff\4\60\4\uffff\15\60\1"+
+        "\u00c0\2\60\1\uffff\2\60\1\u00c6\3\60\1\uffff\10\60\1\u00d2\3\uffff"+
+        "\1\u00d3\1\uffff\2\60\1\u00d6\7\60\1\u00de\1\60\1\u00e0\2\60\1\u00e3"+
+        "\7\60\1\uffff\5\60\1\uffff\1\60\1\u00f1\3\60\1\u00f5\1\u00f6\1\u00f7"+
+        "\1\60\1\u00f9\1\60\2\uffff\2\60\1\uffff\7\60\1\uffff\1\u0104\1\uffff"+
+        "\1\u0105\1\60\1\uffff\1\u0107\1\u0108\1\u0109\7\60\1\u0111\1\u0112"+
+        "\1\u0114\1\uffff\3\60\3\uffff\1\60\1\uffff\4\60\1\u011d\5\60\2\uffff"+
+        "\1\60\3\uffff\1\u0124\1\u0125\4\60\1\u012a\2\uffff\1\60\1\uffff"+
+        "\1\u012c\6\60\1\u0114\1\uffff\1\60\1\u0114\2\60\1\u0136\1\60\2\uffff"+
+        "\4\60\1\uffff\1\u013c\1\uffff\1\u013d\1\u013e\4\60\1\u0143\1\u0114"+
+        "\1\60\1\uffff\1\u0145\4\60\3\uffff\3\60\1\u0114\1\uffff\1\60\1\uffff"+
+        "\1\60\1\u014f\3\60\1\u0114\1\u0153\1\u0114\1\60\1\uffff\1\u0155"+
+        "\1\u0156\1\u0114\1\uffff\1\60\2\uffff\1\u0114";
     static final String DFA12_eofS =
-        "\u0130\uffff";
+        "\u0158\uffff";
     static final String DFA12_minS =
-        "\1\0\1\135\1\53\1\55\1\75\1\52\1\75\1\157\1\141\1\150\1\146\3\44"+
-        "\3\uffff\1\44\6\uffff\1\141\1\uffff\1\150\1\141\1\150\2\0\1\142"+
-        "\1\uffff\1\170\16\uffff\1\0\4\uffff\1\157\1\164\1\145\1\uffff\2"+
-        "\141\1\156\1\163\1\157\1\151\1\160\1\141\1\156\1\163\1\160\1\44"+
-        "\1\157\1\162\1\156\1\uffff\1\156\1\uffff\1\44\1\146\3\uffff\1\164"+
-        "\1\163\2\60\1\uffff\1\44\6\uffff\1\167\1\154\1\164\1\uffff\1\151"+
-        "\1\143\1\142\2\151\1\141\2\uffff\1\163\3\uffff\1\0\1\uffff\1\154"+
-        "\1\145\1\141\1\162\1\163\1\164\1\145\1\143\1\162\1\164\1\145\1\164"+
-        "\1\143\1\44\1\164\1\154\1\uffff\1\141\1\44\1\141\1\147\1\142\1\uffff"+
-        "\1\141\2\145\1\uffff\1\44\1\154\1\151\1\154\1\153\1\154\1\166\1"+
-        "\164\1\163\1\145\1\156\1\44\1\164\1\uffff\1\145\1\44\1\153\1\44"+
-        "\1\163\1\151\1\44\1\150\1\164\1\143\1\162\1\151\1\150\1\162\1\uffff"+
-        "\1\141\1\145\1\162\1\164\1\uffff\1\154\1\44\1\154\1\165\1\156\1"+
-        "\44\1\uffff\1\44\1\166\1\145\1\141\1\151\1\141\1\145\1\44\1\141"+
-        "\1\163\1\uffff\1\162\1\141\1\uffff\1\44\1\uffff\1\44\1\156\1\uffff"+
-        "\2\44\1\150\1\44\1\143\1\162\1\146\1\156\1\155\1\164\2\44\1\uffff"+
-        "\1\145\1\154\1\144\2\uffff\1\145\1\44\1\147\1\143\1\164\1\143\1"+
-        "\uffff\1\144\1\151\1\141\1\156\2\uffff\1\165\2\uffff\1\44\1\uffff"+
-        "\1\44\1\157\1\141\1\143\1\145\1\44\1\uffff\1\171\1\uffff\1\44\1"+
-        "\164\1\163\1\44\1\uffff\1\145\1\44\1\145\1\164\1\163\1\145\1\143"+
+        "\1\0\1\157\1\141\1\150\1\146\3\44\1\uffff\1\44\3\uffff\1\135\1"+
+        "\uffff\1\75\1\125\1\150\1\74\4\75\1\52\1\75\1\53\1\55\1\75\1\uffff"+
+        "\1\142\1\0\1\uffff\1\141\4\uffff\1\150\1\141\1\0\1\uffff\1\170\3"+
+        "\uffff\1\157\1\164\1\145\1\uffff\2\141\1\156\1\163\1\157\1\160\1"+
+        "\141\1\151\1\156\1\163\1\160\1\44\1\157\1\154\1\162\1\156\1\uffff"+
+        "\1\156\1\uffff\1\44\1\146\1\uffff\1\164\1\uffff\1\163\10\uffff\1"+
+        "\114\1\151\1\141\3\uffff\1\75\12\uffff\1\0\15\uffff\1\160\1\163"+
+        "\2\uffff\1\167\1\164\4\uffff\1\151\1\143\1\142\1\151\4\uffff\1\154"+
+        "\1\145\1\141\1\162\1\163\1\164\1\145\1\143\1\162\1\145\2\164\1\143"+
+        "\1\44\1\164\1\154\1\uffff\1\141\1\163\1\44\1\141\1\147\1\142\1\uffff"+
+        "\1\141\2\145\1\114\1\163\2\145\1\156\1\44\3\uffff\1\0\1\uffff\1"+
+        "\145\1\164\1\44\1\151\1\154\1\153\1\154\1\166\1\164\1\145\1\44\1"+
+        "\153\1\44\1\163\1\151\1\44\1\150\1\164\1\162\1\151\1\143\1\150\1"+
+        "\162\1\uffff\1\141\1\145\1\162\1\164\1\145\1\uffff\1\154\1\44\1"+
+        "\154\1\165\1\156\3\44\1\141\1\44\1\163\2\uffff\2\162\1\uffff\1\166"+
+        "\1\145\1\141\1\151\1\141\1\145\1\141\1\uffff\1\44\1\uffff\1\44\1"+
+        "\156\1\uffff\3\44\1\143\1\150\1\162\1\146\1\156\1\155\1\164\3\44"+
+        "\1\uffff\1\145\1\154\1\144\3\uffff\1\144\1\uffff\1\151\1\163\1\141"+
+        "\1\145\1\44\1\147\1\143\1\164\1\143\1\156\2\uffff\1\165\3\uffff"+
+        "\2\44\1\157\1\141\1\143\1\145\1\44\2\uffff\1\171\1\uffff\1\44\1"+
+        "\164\2\163\1\145\1\141\1\143\1\44\1\uffff\1\145\1\44\1\145\1\164"+
         "\1\44\1\145\2\uffff\1\156\1\143\1\145\1\156\1\uffff\1\44\1\uffff"+
-        "\4\44\1\145\1\141\1\156\1\164\1\uffff\1\44\1\151\1\145\1\157\1\164"+
-        "\4\uffff\1\144\1\146\1\164\1\44\1\uffff\1\172\1\44\1\146\1\163\1"+
-        "\44\1\145\1\44\1\145\1\uffff\3\44\1\144\2\uffff\1\44";
+        "\2\44\1\141\2\156\1\164\2\44\1\145\1\uffff\1\44\1\151\1\145\1\157"+
+        "\1\164\3\uffff\1\146\1\164\1\144\1\44\1\uffff\1\144\1\uffff\1\172"+
+        "\1\44\1\146\1\163\1\145\3\44\1\145\1\uffff\3\44\1\uffff\1\144\2"+
+        "\uffff\1\44";
     static final String DFA12_maxS =
-        "\1\uffff\1\135\5\75\1\171\1\157\1\171\1\156\3\uffff\3\uffff\1\uffff"+
-        "\6\uffff\1\165\1\uffff\1\150\1\165\1\162\2\uffff\1\142\1\uffff\1"+
-        "\170\16\uffff\1\uffff\4\uffff\1\157\1\164\1\145\1\uffff\2\141\1"+
-        "\156\1\164\1\157\1\151\1\160\1\141\1\156\1\164\1\160\1\uffff\1\157"+
-        "\1\162\1\156\1\uffff\1\156\1\uffff\1\uffff\1\146\3\uffff\1\164\1"+
-        "\163\2\71\1\uffff\1\uffff\6\uffff\1\167\1\154\1\164\1\uffff\1\151"+
-        "\1\143\1\142\1\157\1\162\1\171\2\uffff\1\163\3\uffff\1\uffff\1\uffff"+
-        "\1\154\1\145\1\141\1\162\1\163\1\164\1\145\1\143\1\162\1\164\1\145"+
-        "\1\164\1\143\1\uffff\1\164\1\157\1\uffff\1\141\1\uffff\1\141\1\147"+
-        "\1\142\1\uffff\1\141\2\145\1\uffff\1\uffff\1\154\1\151\1\154\1\153"+
-        "\1\154\1\166\1\164\1\163\1\145\1\156\1\uffff\1\164\1\uffff\1\145"+
-        "\1\uffff\1\153\1\uffff\1\163\1\151\1\uffff\1\150\1\164\1\143\1\162"+
-        "\1\151\1\150\1\162\1\uffff\1\141\1\145\1\162\1\164\1\uffff\1\154"+
-        "\1\uffff\1\154\1\165\1\156\1\uffff\1\uffff\1\uffff\1\166\1\145\1"+
-        "\141\1\151\1\141\1\145\1\uffff\1\141\1\163\1\uffff\1\162\1\141\1"+
-        "\uffff\1\uffff\1\uffff\1\uffff\1\156\1\uffff\2\uffff\1\150\1\uffff"+
-        "\1\143\1\162\1\146\1\156\1\155\1\164\2\uffff\1\uffff\1\145\1\154"+
-        "\1\144\2\uffff\1\145\1\uffff\1\147\1\143\1\164\1\143\1\uffff\1\144"+
-        "\1\151\1\141\1\156\2\uffff\1\165\2\uffff\1\uffff\1\uffff\1\uffff"+
-        "\1\157\1\141\1\143\1\145\1\uffff\1\uffff\1\171\1\uffff\1\uffff\1"+
-        "\164\1\163\1\uffff\1\uffff\1\145\1\uffff\1\145\1\164\1\163\1\145"+
-        "\1\143\1\uffff\1\145\2\uffff\1\156\1\143\1\145\1\156\1\uffff\1\uffff"+
-        "\1\uffff\4\uffff\1\145\1\141\1\156\1\164\1\uffff\1\uffff\1\151\1"+
-        "\145\1\157\1\164\4\uffff\1\144\1\146\1\164\1\uffff\1\uffff\1\172"+
-        "\1\uffff\1\146\1\163\1\uffff\1\145\1\uffff\1\145\1\uffff\3\uffff"+
-        "\1\144\2\uffff\1\uffff";
+        "\1\uffff\1\171\1\157\1\171\1\156\3\uffff\1\uffff\1\uffff\3\uffff"+
+        "\1\135\1\uffff\1\75\1\125\1\162\1\75\1\76\1\174\7\75\1\uffff\1\155"+
+        "\1\uffff\1\uffff\1\145\4\uffff\1\150\1\165\1\uffff\1\uffff\1\170"+
+        "\3\uffff\1\157\1\164\1\145\1\uffff\2\141\1\156\1\164\1\157\1\160"+
+        "\1\141\1\151\1\156\1\164\1\160\1\uffff\1\157\1\154\1\162\1\156\1"+
+        "\uffff\1\156\1\uffff\1\uffff\1\146\1\uffff\1\164\1\uffff\1\163\10"+
+        "\uffff\1\114\1\162\1\171\3\uffff\1\76\12\uffff\1\uffff\15\uffff"+
+        "\1\160\1\163\2\uffff\1\167\1\164\4\uffff\1\151\1\143\1\142\1\157"+
+        "\4\uffff\1\154\1\145\1\141\1\162\1\163\1\164\1\145\1\143\1\162\1"+
+        "\145\2\164\1\143\1\uffff\1\164\1\157\1\uffff\1\141\1\163\1\uffff"+
+        "\1\141\1\147\1\142\1\uffff\1\141\2\145\1\114\1\163\2\145\1\156\1"+
+        "\uffff\3\uffff\1\uffff\1\uffff\1\145\1\164\1\uffff\1\151\1\154\1"+
+        "\153\1\154\1\166\1\164\1\145\1\uffff\1\153\1\uffff\1\163\1\151\1"+
+        "\uffff\1\150\1\164\1\162\1\151\1\143\1\150\1\162\1\uffff\1\141\1"+
+        "\145\1\162\1\164\1\145\1\uffff\1\154\1\uffff\1\154\1\165\1\156\3"+
+        "\uffff\1\141\1\uffff\1\163\2\uffff\2\162\1\uffff\1\166\1\145\1\141"+
+        "\1\151\1\141\1\145\1\141\1\uffff\1\uffff\1\uffff\1\uffff\1\156\1"+
+        "\uffff\3\uffff\1\143\1\150\1\162\1\146\1\156\1\155\1\164\3\uffff"+
+        "\1\uffff\1\145\1\154\1\144\3\uffff\1\144\1\uffff\1\151\1\163\1\141"+
+        "\1\145\1\uffff\1\147\1\143\1\164\1\143\1\156\2\uffff\1\165\3\uffff"+
+        "\2\uffff\1\157\1\141\1\143\1\145\1\uffff\2\uffff\1\171\1\uffff\1"+
+        "\uffff\1\164\2\163\1\145\1\141\1\143\1\uffff\1\uffff\1\145\1\uffff"+
+        "\1\145\1\164\1\uffff\1\145\2\uffff\1\156\1\143\1\145\1\156\1\uffff"+
+        "\1\uffff\1\uffff\2\uffff\1\141\2\156\1\164\2\uffff\1\145\1\uffff"+
+        "\1\uffff\1\151\1\145\1\157\1\164\3\uffff\1\146\1\164\1\144\1\uffff"+
+        "\1\uffff\1\144\1\uffff\1\172\1\uffff\1\146\1\163\1\145\3\uffff\1"+
+        "\145\1\uffff\3\uffff\1\uffff\1\144\2\uffff\1\uffff";
     static final String DFA12_acceptS =
-        "\16\uffff\1\22\1\24\1\25\1\uffff\1\27\1\32\1\33\1\35\1\36\1\37"+
-        "\1\uffff\1\43\6\uffff\1\101\1\uffff\1\103\1\106\1\107\1\1\1\34\1"+
-        "\2\1\66\1\72\1\3\1\65\1\73\1\5\1\4\1\7\1\uffff\1\105\1\6\1\11\1"+
-        "\10\3\uffff\1\101\17\uffff\1\100\1\uffff\1\41\2\uffff\1\22\1\24"+
-        "\1\25\4\uffff\1\63\1\uffff\1\27\1\32\1\33\1\35\1\36\1\37\3\uffff"+
-        "\1\43\6\uffff\1\64\1\71\1\uffff\1\102\1\103\1\106\1\uffff\1\104"+
-        "\20\uffff\1\54\5\uffff\1\53\3\uffff\1\70\15\uffff\1\110\16\uffff"+
-        "\1\16\4\uffff\1\51\6\uffff\1\42\12\uffff\1\75\2\uffff\1\13\1\uffff"+
-        "\1\14\2\uffff\1\47\14\uffff\1\20\3\uffff\1\55\1\60\6\uffff\1\62"+
-        "\4\uffff\1\44\1\30\1\uffff\1\76\1\15\1\uffff\1\61\6\uffff\1\17\1"+
-        "\uffff\1\74\4\uffff\1\52\11\uffff\1\46\1\67\4\uffff\1\57\1\uffff"+
-        "\1\21\10\uffff\1\12\5\uffff\1\77\1\50\1\26\1\56\4\uffff\1\45\10"+
-        "\uffff\1\23\4\uffff\1\40\1\31\1\uffff";
+        "\10\uffff\1\13\1\uffff\1\20\1\21\1\22\1\uffff\1\25\15\uffff\1\62"+
+        "\2\uffff\1\67\1\uffff\1\71\1\104\1\105\1\106\3\uffff\1\125\1\uffff"+
+        "\1\127\1\132\1\133\3\uffff\1\125\20\uffff\1\124\1\uffff\1\65\2\uffff"+
+        "\1\13\1\uffff\1\64\1\uffff\1\20\1\21\1\22\1\23\1\24\1\25\1\44\1"+
+        "\26\3\uffff\1\33\1\51\1\47\1\uffff\1\50\1\46\1\37\1\41\1\40\1\43"+
+        "\1\42\1\45\1\72\1\53\1\uffff\1\131\1\52\1\55\1\54\1\56\1\76\1\116"+
+        "\1\57\1\75\1\117\1\61\1\60\1\62\2\uffff\1\66\1\67\2\uffff\1\71\1"+
+        "\104\1\105\1\106\4\uffff\1\115\1\126\1\127\1\132\20\uffff\1\107"+
+        "\6\uffff\1\111\11\uffff\1\35\1\36\1\34\1\uffff\1\130\27\uffff\1"+
+        "\5\5\uffff\1\103\13\uffff\1\121\1\134\2\uffff\1\70\7\uffff\1\2\1"+
+        "\uffff\1\3\2\uffff\1\101\15\uffff\1\7\3\uffff\1\110\1\27\1\30\1"+
+        "\uffff\1\74\12\uffff\1\14\1\11\1\uffff\1\122\1\4\1\31\7\uffff\1"+
+        "\6\1\73\1\uffff\1\120\10\uffff\1\112\6\uffff\1\77\1\102\4\uffff"+
+        "\1\114\1\uffff\1\10\11\uffff\1\1\5\uffff\1\123\1\100\1\17\4\uffff"+
+        "\1\113\1\uffff\1\15\11\uffff\1\16\3\uffff\1\63\1\uffff\1\32\1\12"+
+        "\1\uffff";
     static final String DFA12_specialS =
-        "\1\2\34\uffff\1\0\1\4\21\uffff\1\1\73\uffff\1\3\u00c3\uffff}>";
+        "\1\1\35\uffff\1\4\10\uffff\1\3\73\uffff\1\0\103\uffff\1\2\u00b0"+
+        "\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\44\2\43\2\44\1\43\22\44\1\43\1\44\1\35\1\44\1\40\1\6\1"+
-            "\44\1\36\1\23\1\24\1\4\1\2\1\22\1\3\1\27\1\5\1\41\11\42\1\31"+
-            "\1\16\1\44\1\26\3\44\32\40\1\1\1\44\1\25\1\44\1\40\1\44\1\37"+
-            "\1\7\1\10\1\15\1\21\1\13\2\40\1\12\2\40\1\14\1\40\1\30\1\40"+
-            "\1\33\2\40\1\11\1\34\2\40\1\32\3\40\1\17\1\44\1\20\uff82\44",
-            "\1\45",
-            "\1\50\21\uffff\1\47",
-            "\1\53\17\uffff\1\52",
-            "\1\55",
-            "\1\60\4\uffff\1\61\15\uffff\1\57",
-            "\1\63",
-            "\1\65\2\uffff\1\67\6\uffff\1\66",
-            "\1\74\6\uffff\1\71\3\uffff\1\72\2\uffff\1\73",
-            "\1\75\13\uffff\1\100\1\77\1\uffff\1\76\1\uffff\1\101",
-            "\1\104\6\uffff\1\103\1\102",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\10"+
-            "\70\1\107\2\70\1\105\2\70\1\106\13\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\16"+
-            "\70\1\111\13\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\4"+
-            "\70\1\114\11\70\1\113\13\70\105\uffff\uff40\70",
+            "\11\54\2\53\2\54\1\53\22\54\1\53\1\26\1\36\1\54\1\50\1\30\1"+
+            "\54\1\47\1\42\1\43\1\33\1\31\1\12\1\32\1\10\1\27\1\51\11\52"+
+            "\1\37\1\44\1\22\1\17\1\23\1\34\1\54\15\50\1\20\14\50\1\15\1"+
+            "\54\1\16\1\25\1\50\1\54\1\35\1\1\1\2\1\7\1\11\1\5\2\50\1\4\2"+
+            "\50\1\6\1\50\1\40\1\50\1\46\2\50\1\3\1\21\2\50\1\45\3\50\1\13"+
+            "\1\24\1\14\1\41\uff81\54",
+            "\1\55\2\uffff\1\57\6\uffff\1\56",
+            "\1\64\6\uffff\1\61\3\uffff\1\62\2\uffff\1\63",
+            "\1\65\13\uffff\1\67\1\66\1\uffff\1\70\1\uffff\1\71",
+            "\1\74\6\uffff\1\73\1\72",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1"+
+            "\76\7\60\1\100\2\60\1\75\2\60\1\77\13\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16"+
+            "\60\1\102\13\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4"+
+            "\60\1\105\11\60\1\104\13\60\105\uffff\uff40\60",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13"+
+            "\60\1\111\13\60\1\107\2\60\105\uffff\uff40\60",
             "",
             "",
             "",
-            "\1\70\6\uffff\1\122\1\uffff\1\123\2\uffff\12\125\7\uffff\32"+
-            "\70\4\uffff\1\70\1\uffff\13\70\1\121\13\70\1\120\2\70\105\uffff"+
-            "\uff40\70",
+            "\1\115",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\136\3\uffff\1\134\17\uffff\1\135",
-            "",
+            "\1\120",
+            "\1\122",
+            "\1\123\11\uffff\1\124",
+            "\1\125\1\126",
+            "\1\131\1\130",
+            "\1\134\76\uffff\1\133",
+            "\1\136",
             "\1\140",
-            "\1\141\20\uffff\1\143\2\uffff\1\142",
-            "\1\144\11\uffff\1\145",
-            "\0\146",
-            "\0\147",
-            "\1\150",
-            "",
-            "\1\151",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\52\155\1\154\uffd5\155",
-            "",
-            "",
-            "",
-            "",
+            "\1\143\4\uffff\1\144\15\uffff\1\142",
+            "\1\146",
+            "\1\151\21\uffff\1\150",
+            "\1\154\17\uffff\1\153",
             "\1\156",
-            "\1\157",
-            "\1\160",
             "",
-            "\1\161",
-            "\1\162",
-            "\1\163",
-            "\1\164\1\165",
-            "\1\166",
-            "\1\167",
-            "\1\170",
-            "\1\171",
-            "\1\172",
-            "\1\174\1\173",
-            "\1\175",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\177",
+            "\1\162\12\uffff\1\161",
+            "\0\163",
+            "",
+            "\1\166\3\uffff\1\165",
+            "",
+            "",
+            "",
+            "",
+            "\1\173",
+            "\1\174\20\uffff\1\176\2\uffff\1\175",
+            "\0\177",
+            "",
             "\1\u0080",
-            "\1\u0081",
             "",
-            "\1\u0082",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\24"+
-            "\70\1\u0083\5\70\105\uffff\uff40\70",
+            "",
+            "\1\u0083",
+            "\1\u0084",
             "\1\u0085",
-            "",
-            "",
             "",
             "\1\u0086",
             "\1\u0087",
-            "\12\u0088",
-            "\12\u0088",
-            "",
-            "\1\70\13\uffff\12\125\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0089",
-            "\1\u008a",
+            "\1\u0088",
+            "\1\u0089\1\u008a",
             "\1\u008b",
-            "",
             "\1\u008c",
             "\1\u008d",
             "\1\u008e",
-            "\1\u008f\5\uffff\1\u0090",
-            "\1\u0091\10\uffff\1\u0092",
-            "\1\u0093\27\uffff\1\u0094",
-            "",
-            "",
+            "\1\u008f",
+            "\1\u0091\1\u0090",
+            "\1\u0092",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0094",
             "\1\u0095",
-            "",
-            "",
-            "",
-            "\0\155",
-            "",
+            "\1\u0096",
             "\1\u0097",
+            "",
             "\1\u0098",
-            "\1\u0099",
-            "\1\u009a",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24"+
+            "\60\1\u0099\5\60\105\uffff\uff40\60",
             "\1\u009b",
+            "",
             "\1\u009c",
+            "",
             "\1\u009d",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u009e",
-            "\1\u009f",
-            "\1\u00a0",
-            "\1\u00a1",
-            "\1\u00a2",
-            "\1\u00a3",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\4"+
-            "\70\1\u00a4\25\70\105\uffff\uff40\70",
-            "\1\u00a6",
-            "\1\u00a7\2\uffff\1\u00a8",
+            "\1\u009f\10\uffff\1\u00a0",
+            "\1\u00a2\23\uffff\1\u00a1\3\uffff\1\u00a3",
+            "",
+            "",
+            "",
+            "\1\u00a5\1\u00a4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\52\u00a8\1\u00a7\uffd5\u00a8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "\1\u00a9",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u00aa",
+            "",
+            "",
             "\1\u00ab",
             "\1\u00ac",
-            "\1\u00ad",
             "",
+            "",
+            "",
+            "",
+            "\1\u00ad",
             "\1\u00ae",
             "\1\u00af",
-            "\1\u00b0",
+            "\1\u00b0\5\uffff\1\u00b1",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "",
+            "",
+            "",
             "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
@@ -2825,199 +3395,252 @@ public class InternalJavaLexer extends Lexer {
             "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u00bc",
             "\1\u00bd",
-            "",
             "\1\u00be",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u00c0",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u00c2",
-            "\1\u00c3",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4"+
+            "\60\1\u00bf\25\60\105\uffff\uff40\60",
+            "\1\u00c1",
+            "\1\u00c2\2\uffff\1\u00c3",
+            "",
+            "\1\u00c4",
             "\1\u00c5",
-            "\1\u00c6",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00c7",
             "\1\u00c8",
             "\1\u00c9",
+            "",
             "\1\u00ca",
             "\1\u00cb",
-            "",
             "\1\u00cc",
             "\1\u00cd",
             "\1\u00ce",
             "\1\u00cf",
-            "",
             "\1\u00d0",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u00d2",
-            "\1\u00d3",
-            "\1\u00d4",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u00d1",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "",
+            "",
+            "\0\u00a8",
+            "",
+            "\1\u00d4",
+            "\1\u00d5",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00d7",
             "\1\u00d8",
             "\1\u00d9",
             "\1\u00da",
             "\1\u00db",
             "\1\u00dc",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u00de",
+            "\1\u00dd",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00df",
-            "",
-            "\1\u00e0",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00e1",
-            "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u00e2",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00e4",
-            "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u00e5",
+            "\1\u00e6",
             "\1\u00e7",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u00e8",
             "\1\u00e9",
             "\1\u00ea",
+            "",
             "\1\u00eb",
             "\1\u00ec",
             "\1\u00ed",
             "\1\u00ee",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\13"+
-            "\70\1\u00f0\16\70\105\uffff\uff40\70",
+            "\1\u00ef",
             "",
+            "\1\u00f0",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00f2",
             "\1\u00f3",
             "\1\u00f4",
-            "",
-            "",
-            "\1\u00f5",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u00f7",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00f8",
-            "\1\u00f9",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u00fa",
+            "",
             "",
             "\1\u00fb",
             "\1\u00fc",
+            "",
             "\1\u00fd",
             "\1\u00fe",
-            "",
-            "",
             "\1\u00ff",
-            "",
-            "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u0100",
+            "\1\u0101",
             "\1\u0102",
             "\1\u0103",
-            "\1\u0104",
-            "\1\u0105",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
             "",
-            "\1\u0107",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u0109",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0106",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u010a",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "",
             "\1\u010b",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
             "\1\u010c",
             "\1\u010d",
             "\1\u010e",
             "\1\u010f",
             "\1\u0110",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u0112",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13"+
+            "\60\1\u0113\16\60\105\uffff\uff40\60",
             "",
-            "",
-            "\1\u0113",
-            "\1\u0114",
             "\1\u0115",
             "\1\u0116",
+            "\1\u0117",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "",
+            "\1\u0118",
+            "",
+            "\1\u0119",
+            "\1\u011a",
             "\1\u011b",
             "\1\u011c",
-            "\1\u011d",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u011e",
-            "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u011f",
             "\1\u0120",
             "\1\u0121",
             "\1\u0122",
+            "",
+            "",
             "\1\u0123",
             "",
             "",
             "",
-            "",
-            "\1\u0124",
-            "\1\u0125",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
             "\1\u0126",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "",
             "\1\u0127",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\u0128",
             "\1\u0129",
-            "\1\u012a",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "",
+            "",
             "\1\u012b",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\u012c",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u012d",
+            "\1\u012e",
             "\1\u012f",
+            "\1\u0130",
+            "\1\u0131",
+            "\1\u0132",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "",
+            "\1\u0133",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0134",
+            "\1\u0135",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0137",
             "",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70\105\uffff\uff40\70"
+            "\1\u0138",
+            "\1\u0139",
+            "\1\u013a",
+            "\1\u013b",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u013f",
+            "\1\u0140",
+            "\1\u0141",
+            "\1\u0142",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0144",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0146",
+            "\1\u0147",
+            "\1\u0148",
+            "\1\u0149",
+            "",
+            "",
+            "",
+            "\1\u014a",
+            "\1\u014b",
+            "\1\u014c",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "",
+            "\1\u014d",
+            "",
+            "\1\u014e",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0150",
+            "\1\u0151",
+            "\1\u0152",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\u0154",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60",
+            "",
+            "\1\u0157",
+            "",
+            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
+            "\60\105\uffff\uff40\60"
     };
 
     static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
@@ -3050,117 +3673,133 @@ public class InternalJavaLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | RULE_EXPONENTIAL | RULE_STRING | RULE_DECREMENT | RULE_INCREMENT | RULE_STATIC | RULE_EXPOENT_PART | RULE_CHAR | RULE_PLUS | RULE_MINUS | RULE_MOD | RULE_TRY | RULE_CATCH | RULE_FINALLY | RULE_FLOAT_TYPE_SUFIX | RULE_ID | RULE_HEXA | RULE_DECIMAL_DIGITS | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER | RULE_DOC_COMMENT );";
+            return "1:1: Tokens : ( T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | RULE_INTERFACE | RULE_EXTENDS | RULE_COMMA | RULE_R_CURLY_BRACE | RULE_L_CURLY_BRACE | RULE_ABS | RULE_R_ABS | RULE_L_ABS | RULE_EQUAL | RULE_NULL | RULE_THIS | RULE_SUPER | RULE_INSTANCEOF | RULE_L_SHIFT | RULE_R_SHIFT | RULE_SUPER_SHIFT | RULE_R_SHIFT_EQUAL | RULE_DOUBLE_OR_EQUAL | RULE_OR | RULE_OR_EQUAL | RULE_EXP | RULE_EXP_EQUAL | RULE_DOUBLE_EQUAL | RULE_DIFFERENT | RULE_BT | RULE_ST | RULE_BE | RULE_SE | RULE_DIVIDE | RULE_DIVIDE_EQUAL | RULE_MODULE | RULE_MODULE_EQUAL | RULE_PLUS_EQUAL | RULE_MINUS_EQUAL | RULE_MULTIPLY | RULE_MULTIPLY_EQUAL | RULE_WAT | RULE_AMPERSAND | RULE_EXPONENTIAL | RULE_LONG | RULE_STRING | RULE_COLON | RULE_NEW | RULE_NOT | RULE_EXCLAMATION | RULE_FALSE | RULE_TRUE | RULE_DECREMENT | RULE_INCREMENT | RULE_STATIC | RULE_DEFAULT | RULE_CASE | RULE_SWITCH | RULE_FOR | RULE_RIGHT_PARENTHESIS | RULE_LEFT_PARENTHESIS | RULE_EOL | RULE_IF | RULE_ELSE | RULE_DO | RULE_WHILE | RULE_PACKAGE | RULE_IMPORT | RULE_CHAR | RULE_PLUS | RULE_MINUS | RULE_MOD | RULE_TRY | RULE_CATCH | RULE_FINALLY | RULE_FLOAT_TYPE_SUFIX | RULE_ID | RULE_HEXA | RULE_DECIMAL_DIGITS | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER | RULE_DOC_COMMENT );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_29 = input.LA(1);
+                        int LA12_99 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_29>='\u0000' && LA12_29<='\uFFFF')) ) {s = 102;}
+                        if ( (LA12_99=='*') ) {s = 167;}
 
-                        else s = 36;
+                        else if ( ((LA12_99>='\u0000' && LA12_99<=')')||(LA12_99>='+' && LA12_99<='\uFFFF')) ) {s = 168;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_48 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_48=='*') ) {s = 108;}
+                        if ( (LA12_0=='b') ) {s = 1;}
 
-                        else if ( ((LA12_48>='\u0000' && LA12_48<=')')||(LA12_48>='+' && LA12_48<='\uFFFF')) ) {s = 109;}
+                        else if ( (LA12_0=='c') ) {s = 2;}
+
+                        else if ( (LA12_0=='s') ) {s = 3;}
+
+                        else if ( (LA12_0=='i') ) {s = 4;}
+
+                        else if ( (LA12_0=='f') ) {s = 5;}
+
+                        else if ( (LA12_0=='l') ) {s = 6;}
+
+                        else if ( (LA12_0=='d') ) {s = 7;}
+
+                        else if ( (LA12_0=='.') ) {s = 8;}
+
+                        else if ( (LA12_0=='e') ) {s = 9;}
+
+                        else if ( (LA12_0==',') ) {s = 10;}
+
+                        else if ( (LA12_0=='{') ) {s = 11;}
+
+                        else if ( (LA12_0=='}') ) {s = 12;}
+
+                        else if ( (LA12_0=='[') ) {s = 13;}
+
+                        else if ( (LA12_0==']') ) {s = 14;}
+
+                        else if ( (LA12_0=='=') ) {s = 15;}
+
+                        else if ( (LA12_0=='N') ) {s = 16;}
+
+                        else if ( (LA12_0=='t') ) {s = 17;}
+
+                        else if ( (LA12_0=='<') ) {s = 18;}
+
+                        else if ( (LA12_0=='>') ) {s = 19;}
+
+                        else if ( (LA12_0=='|') ) {s = 20;}
+
+                        else if ( (LA12_0=='^') ) {s = 21;}
+
+                        else if ( (LA12_0=='!') ) {s = 22;}
+
+                        else if ( (LA12_0=='/') ) {s = 23;}
+
+                        else if ( (LA12_0=='%') ) {s = 24;}
+
+                        else if ( (LA12_0=='+') ) {s = 25;}
+
+                        else if ( (LA12_0=='-') ) {s = 26;}
+
+                        else if ( (LA12_0=='*') ) {s = 27;}
+
+                        else if ( (LA12_0=='?') ) {s = 28;}
+
+                        else if ( (LA12_0=='a') ) {s = 29;}
+
+                        else if ( (LA12_0=='\"') ) {s = 30;}
+
+                        else if ( (LA12_0==':') ) {s = 31;}
+
+                        else if ( (LA12_0=='n') ) {s = 32;}
+
+                        else if ( (LA12_0=='~') ) {s = 33;}
+
+                        else if ( (LA12_0=='(') ) {s = 34;}
+
+                        else if ( (LA12_0==')') ) {s = 35;}
+
+                        else if ( (LA12_0==';') ) {s = 36;}
+
+                        else if ( (LA12_0=='w') ) {s = 37;}
+
+                        else if ( (LA12_0=='p') ) {s = 38;}
+
+                        else if ( (LA12_0=='\'') ) {s = 39;}
+
+                        else if ( (LA12_0=='$'||(LA12_0>='A' && LA12_0<='M')||(LA12_0>='O' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='g' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='m'||LA12_0=='o'||(LA12_0>='q' && LA12_0<='r')||(LA12_0>='u' && LA12_0<='v')||(LA12_0>='x' && LA12_0<='z')) ) {s = 40;}
+
+                        else if ( (LA12_0=='0') ) {s = 41;}
+
+                        else if ( ((LA12_0>='1' && LA12_0<='9')) ) {s = 42;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 43;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='#'||LA12_0=='&'||LA12_0=='@'||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='\u007F' && LA12_0<='\uFFFF')) ) {s = 44;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_167 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='[') ) {s = 1;}
+                        if ( ((LA12_167>='\u0000' && LA12_167<='\uFFFF')) ) {s = 168;}
 
-                        else if ( (LA12_0=='+') ) {s = 2;}
-
-                        else if ( (LA12_0=='-') ) {s = 3;}
-
-                        else if ( (LA12_0=='*') ) {s = 4;}
-
-                        else if ( (LA12_0=='/') ) {s = 5;}
-
-                        else if ( (LA12_0=='%') ) {s = 6;}
-
-                        else if ( (LA12_0=='b') ) {s = 7;}
-
-                        else if ( (LA12_0=='c') ) {s = 8;}
-
-                        else if ( (LA12_0=='s') ) {s = 9;}
-
-                        else if ( (LA12_0=='i') ) {s = 10;}
-
-                        else if ( (LA12_0=='f') ) {s = 11;}
-
-                        else if ( (LA12_0=='l') ) {s = 12;}
-
-                        else if ( (LA12_0=='d') ) {s = 13;}
-
-                        else if ( (LA12_0==';') ) {s = 14;}
-
-                        else if ( (LA12_0=='{') ) {s = 15;}
-
-                        else if ( (LA12_0=='}') ) {s = 16;}
-
-                        else if ( (LA12_0=='e') ) {s = 17;}
-
-                        else if ( (LA12_0==',') ) {s = 18;}
-
-                        else if ( (LA12_0=='(') ) {s = 19;}
-
-                        else if ( (LA12_0==')') ) {s = 20;}
-
-                        else if ( (LA12_0==']') ) {s = 21;}
-
-                        else if ( (LA12_0=='=') ) {s = 22;}
-
-                        else if ( (LA12_0=='.') ) {s = 23;}
-
-                        else if ( (LA12_0=='n') ) {s = 24;}
-
-                        else if ( (LA12_0==':') ) {s = 25;}
-
-                        else if ( (LA12_0=='w') ) {s = 26;}
-
-                        else if ( (LA12_0=='p') ) {s = 27;}
-
-                        else if ( (LA12_0=='t') ) {s = 28;}
-
-                        else if ( (LA12_0=='\"') ) {s = 29;}
-
-                        else if ( (LA12_0=='\'') ) {s = 30;}
-
-                        else if ( (LA12_0=='a') ) {s = 31;}
-
-                        else if ( (LA12_0=='$'||(LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='g' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='m'||LA12_0=='o'||(LA12_0>='q' && LA12_0<='r')||(LA12_0>='u' && LA12_0<='v')||(LA12_0>='x' && LA12_0<='z')) ) {s = 32;}
-
-                        else if ( (LA12_0=='0') ) {s = 33;}
-
-                        else if ( ((LA12_0>='1' && LA12_0<='9')) ) {s = 34;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 35;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||LA12_0=='#'||LA12_0=='&'||LA12_0=='<'||(LA12_0>='>' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='^'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 36;}
+                        else s = 211;
 
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA12_108 = input.LA(1);
+                        int LA12_39 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_108>='\u0000' && LA12_108<='\uFFFF')) ) {s = 109;}
+                        if ( ((LA12_39>='\u0000' && LA12_39<='\uFFFF')) ) {s = 127;}
 
-                        else s = 150;
+                        else s = 44;
 
                         if ( s>=0 ) return s;
                         break;
@@ -3168,9 +3807,9 @@ public class InternalJavaLexer extends Lexer {
                         int LA12_30 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_30>='\u0000' && LA12_30<='\uFFFF')) ) {s = 103;}
+                        if ( ((LA12_30>='\u0000' && LA12_30<='\uFFFF')) ) {s = 115;}
 
-                        else s = 36;
+                        else s = 44;
 
                         if ( s>=0 ) return s;
                         break;

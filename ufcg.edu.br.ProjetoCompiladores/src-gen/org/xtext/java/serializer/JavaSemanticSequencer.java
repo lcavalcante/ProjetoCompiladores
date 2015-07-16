@@ -16,7 +16,9 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.java.java.Ampersand_Rule;
 import org.xtext.java.java.Arg_List;
+import org.xtext.java.java.Bit_Expression_NR;
 import org.xtext.java.java.Cast_Expression;
 import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Compilation_unit;
@@ -34,11 +36,14 @@ import org.xtext.java.java.Import_statement;
 import org.xtext.java.java.Interface_declaration;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Literal_Expression;
+import org.xtext.java.java.Logical_Expression_NR;
+import org.xtext.java.java.Method_call;
 import org.xtext.java.java.Method_declaration;
 import org.xtext.java.java.Numeric_Expression_NR;
 import org.xtext.java.java.Package_statement;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
+import org.xtext.java.java.Parameter_list_method_call;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
@@ -61,8 +66,14 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == JavaPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case JavaPackage.AMPERSAND_RULE:
+				sequence_Ampersand_Rule(context, (Ampersand_Rule) semanticObject); 
+				return; 
 			case JavaPackage.ARG_LIST:
 				sequence_Arg_List(context, (Arg_List) semanticObject); 
+				return; 
+			case JavaPackage.BIT_EXPRESSION_NR:
+				sequence_Bit_Expression_NR(context, (Bit_Expression_NR) semanticObject); 
 				return; 
 			case JavaPackage.CAST_EXPRESSION:
 				sequence_Cast_Expression(context, (Cast_Expression) semanticObject); 
@@ -112,6 +123,12 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case JavaPackage.LITERAL_EXPRESSION:
 				sequence_Literal_Expression(context, (Literal_Expression) semanticObject); 
 				return; 
+			case JavaPackage.LOGICAL_EXPRESSION_NR:
+				sequence_Logical_Expression_NR(context, (Logical_Expression_NR) semanticObject); 
+				return; 
+			case JavaPackage.METHOD_CALL:
+				sequence_Method_call(context, (Method_call) semanticObject); 
+				return; 
 			case JavaPackage.METHOD_DECLARATION:
 				sequence_Method_declaration(context, (Method_declaration) semanticObject); 
 				return; 
@@ -126,6 +143,9 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case JavaPackage.PARAMETER_LIST:
 				sequence_Parameter_list(context, (Parameter_list) semanticObject); 
+				return; 
+			case JavaPackage.PARAMETER_LIST_METHOD_CALL:
+				sequence_Parameter_list_method_call(context, (Parameter_list_method_call) semanticObject); 
 				return; 
 			case JavaPackage.STATEMENT:
 				sequence_Statement(context, (Statement) semanticObject); 
@@ -166,10 +186,35 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (a1=AMPERSAND a2=AMPERSAND?)
+	 */
+	protected void sequence_Ampersand_Rule(EObject context, Ampersand_Rule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (expression=Expression expressions+=Expression*)
 	 */
 	protected void sequence_Arg_List(EObject context, Arg_List semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     expression=Expression
+	 */
+	protected void sequence_Bit_Expression_NR(EObject context, Bit_Expression_NR semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JavaPackage.Literals.BIT_EXPRESSION_NR__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JavaPackage.Literals.BIT_EXPRESSION_NR__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBit_Expression_NRAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	
@@ -251,12 +296,14 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         (numericExpression3=Numeric_Expression_NR aux=Expression_aux) | 
+	 *         (logicalExpression=Logical_Expression_NR aux=Expression_aux) | 
+	 *         (bitExpression=Bit_Expression_NR aux=Expression_aux) | 
 	 *         (castExpression=Cast_Expression aux=Expression_aux) | 
 	 *         (creatingExpression=Creating_Expression aux=Expression_aux) | 
 	 *         (literalExpression=Literal_Expression aux=Expression_aux) | 
-	 *         (null='null' aux=Expression_aux) | 
-	 *         (super='super' aux=Expression_aux) | 
-	 *         (this='this' aux=Expression_aux) | 
+	 *         (null=NULL aux=Expression_aux) | 
+	 *         (super=SUPER aux=Expression_aux) | 
+	 *         (this=THIS aux=Expression_aux) | 
 	 *         (name=ID aux=Expression_aux)
 	 *     )
 	 */
@@ -276,7 +323,12 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)) | name=Static_initializer | debug=';')
+	 *     (
+	 *         (doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)) | 
+	 *         name=Static_initializer | 
+	 *         name=Method_call | 
+	 *         debug=EOL
+	 *     )
 	 */
 	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -294,7 +346,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((variable=Variable_declaration | pv=';' | expression=Expression) expression2=Expression? expression3=Expression? statement=Statement)
+	 *     ((variable=Variable_declaration | pv=EOL | expression=Expression) expression2=Expression? expression3=Expression? statement=Statement)
 	 */
 	protected void sequence_For_Statement(EObject context, For_Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -348,7 +400,25 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (modifiers+=Modifier* type=Type name=ID parameter=Parameter_list? (statement=Statement_block | debug=';'))
+	 *     (expression=Expression | true=TRUE | false=FALSE)
+	 */
+	protected void sequence_Logical_Expression_NR(EObject context, Logical_Expression_NR semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID parameter=Parameter_list_method_call?)
+	 */
+	protected void sequence_Method_call(EObject context, Method_call semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (modifiers+=Modifier* type=Type name=ID parameter=Parameter_list? (statement=Statement_block | debug=EOL))
 	 */
 	protected void sequence_Method_declaration(EObject context, Method_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -410,6 +480,15 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (name=ID parameters+=ID*)
+	 */
+	protected void sequence_Parameter_list_method_call(EObject context, Parameter_list_method_call semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     ((name=ID?) | (name=ID?))
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
@@ -456,7 +535,12 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (try=TRY tryStatement=Statement (catchs+=CATCH parameters+=Parameter catchStatements+=Statement)* (finally=FINALLY finallyStatement=Statement)?)
+	 *     (
+	 *         try=TRY 
+	 *         tryStatement=Statement 
+	 *         (catchs+=CATCH RIGHT_PARENTHESISparameters+=Parameter catchStatements+=Statement)* 
+	 *         (finally=FINALLY finallyStatement=Statement)?
+	 *     )
 	 */
 	protected void sequence_Try_statement(EObject context, Try_statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

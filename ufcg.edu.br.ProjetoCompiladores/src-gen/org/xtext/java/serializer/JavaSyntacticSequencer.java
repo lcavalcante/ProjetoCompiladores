@@ -22,37 +22,428 @@ import org.xtext.java.services.JavaGrammarAccess;
 public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JavaGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Creating_Expression___LeftSquareBracketRightSquareBracketKeyword_1_1_2_1_q___LeftSquareBracketKeyword_1_1_2_0_0_RightSquareBracketKeyword_1_1_2_0_1__q__p;
-	protected AbstractElementAlias match_Literal_Expression_LKeyword_0_0_1_q;
-	protected AbstractElementAlias match_Literal_Expression_LKeyword_0_1_1_q;
-	protected AbstractElementAlias match_Method_declaration___LeftSquareBracketRightSquareBracketKeyword_6_1_q___LeftSquareBracketKeyword_6_0_0_RightSquareBracketKeyword_6_0_1__q__p;
-	protected AbstractElementAlias match_Parameter___LeftSquareBracketRightSquareBracketKeyword_2_1_q___LeftSquareBracketKeyword_2_0_0_RightSquareBracketKeyword_2_0_1__q__p;
-	protected AbstractElementAlias match_Statement_SemicolonKeyword_12_1_or___BreakKeyword_10_1_SemicolonKeyword_10_3___or___ContinueKeyword_11_1_SemicolonKeyword_11_3__;
-	protected AbstractElementAlias match_Switch_Statement___DefaultKeyword_6_1_0_ColonKeyword_6_1_1__a;
-	protected AbstractElementAlias match_Type___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p;
-	protected AbstractElementAlias match_Variable_declarator___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p;
-	protected AbstractElementAlias match_Variable_initializer_CommaKeyword_1_2_2_q;
+	protected AbstractElementAlias match_Ampersand_Rule_EQUALTerminalRuleCall_1_1_q;
+	protected AbstractElementAlias match_Creating_Expression___ABSTerminalRuleCall_1_1_2_1_q___R_ABSTerminalRuleCall_1_1_2_0_0_L_ABSTerminalRuleCall_1_1_2_0_1__q__p;
+	protected AbstractElementAlias match_Literal_Expression_LONGTerminalRuleCall_0_0_1_q;
+	protected AbstractElementAlias match_Literal_Expression_LONGTerminalRuleCall_0_1_1_q;
+	protected AbstractElementAlias match_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p;
+	protected AbstractElementAlias match_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p;
+	protected AbstractElementAlias match_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__;
+	protected AbstractElementAlias match_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a;
+	protected AbstractElementAlias match_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p;
+	protected AbstractElementAlias match_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p;
+	protected AbstractElementAlias match_Variable_initializer_COMMATerminalRuleCall_1_2_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JavaGrammarAccess) access;
-		match_Creating_Expression___LeftSquareBracketRightSquareBracketKeyword_1_1_2_1_q___LeftSquareBracketKeyword_1_1_2_0_0_RightSquareBracketKeyword_1_1_2_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getCreating_ExpressionAccess().getLeftSquareBracketRightSquareBracketKeyword_1_1_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreating_ExpressionAccess().getLeftSquareBracketKeyword_1_1_2_0_0()), new TokenAlias(false, false, grammarAccess.getCreating_ExpressionAccess().getRightSquareBracketKeyword_1_1_2_0_1())));
-		match_Literal_Expression_LKeyword_0_0_1_q = new TokenAlias(false, true, grammarAccess.getLiteral_ExpressionAccess().getLKeyword_0_0_1());
-		match_Literal_Expression_LKeyword_0_1_1_q = new TokenAlias(false, true, grammarAccess.getLiteral_ExpressionAccess().getLKeyword_0_1_1());
-		match_Method_declaration___LeftSquareBracketRightSquareBracketKeyword_6_1_q___LeftSquareBracketKeyword_6_0_0_RightSquareBracketKeyword_6_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getMethod_declarationAccess().getLeftSquareBracketRightSquareBracketKeyword_6_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMethod_declarationAccess().getLeftSquareBracketKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getMethod_declarationAccess().getRightSquareBracketKeyword_6_0_1())));
-		match_Parameter___LeftSquareBracketRightSquareBracketKeyword_2_1_q___LeftSquareBracketKeyword_2_0_0_RightSquareBracketKeyword_2_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getParameterAccess().getLeftSquareBracketRightSquareBracketKeyword_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParameterAccess().getLeftSquareBracketKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getParameterAccess().getRightSquareBracketKeyword_2_0_1())));
-		match_Statement_SemicolonKeyword_12_1_or___BreakKeyword_10_1_SemicolonKeyword_10_3___or___ContinueKeyword_11_1_SemicolonKeyword_11_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_10_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_11_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_11_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getSemicolonKeyword_12_1()));
-		match_Switch_Statement___DefaultKeyword_6_1_0_ColonKeyword_6_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getSwitch_StatementAccess().getDefaultKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSwitch_StatementAccess().getColonKeyword_6_1_1()));
-		match_Type___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_1_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeAccess().getLeftSquareBracketKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getTypeAccess().getRightSquareBracketKeyword_1_0_1())));
-		match_Variable_declarator___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getVariable_declaratorAccess().getLeftSquareBracketRightSquareBracketKeyword_1_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getVariable_declaratorAccess().getLeftSquareBracketKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getVariable_declaratorAccess().getRightSquareBracketKeyword_1_0_1())));
-		match_Variable_initializer_CommaKeyword_1_2_2_q = new TokenAlias(false, true, grammarAccess.getVariable_initializerAccess().getCommaKeyword_1_2_2());
+		match_Ampersand_Rule_EQUALTerminalRuleCall_1_1_q = new TokenAlias(false, true, grammarAccess.getAmpersand_RuleAccess().getEQUALTerminalRuleCall_1_1());
+		match_Creating_Expression___ABSTerminalRuleCall_1_1_2_1_q___R_ABSTerminalRuleCall_1_1_2_0_0_L_ABSTerminalRuleCall_1_1_2_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getCreating_ExpressionAccess().getABSTerminalRuleCall_1_1_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreating_ExpressionAccess().getR_ABSTerminalRuleCall_1_1_2_0_0()), new TokenAlias(false, false, grammarAccess.getCreating_ExpressionAccess().getL_ABSTerminalRuleCall_1_1_2_0_1())));
+		match_Literal_Expression_LONGTerminalRuleCall_0_0_1_q = new TokenAlias(false, true, grammarAccess.getLiteral_ExpressionAccess().getLONGTerminalRuleCall_0_0_1());
+		match_Literal_Expression_LONGTerminalRuleCall_0_1_1_q = new TokenAlias(false, true, grammarAccess.getLiteral_ExpressionAccess().getLONGTerminalRuleCall_0_1_1());
+		match_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getMethod_declarationAccess().getABSTerminalRuleCall_6_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMethod_declarationAccess().getR_ABSTerminalRuleCall_6_0_0()), new TokenAlias(false, false, grammarAccess.getMethod_declarationAccess().getL_ABSTerminalRuleCall_6_0_1())));
+		match_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getParameterAccess().getABSTerminalRuleCall_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParameterAccess().getR_ABSTerminalRuleCall_2_0_0()), new TokenAlias(false, false, grammarAccess.getParameterAccess().getL_ABSTerminalRuleCall_2_0_1())));
+		match_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_10_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_11_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_11_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_12_1()));
+		match_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getSwitch_StatementAccess().getDEFAULTTerminalRuleCall_6_1_0()), new TokenAlias(false, false, grammarAccess.getSwitch_StatementAccess().getCOLONTerminalRuleCall_6_1_1()));
+		match_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getTypeAccess().getABSTerminalRuleCall_1_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeAccess().getR_ABSTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getTypeAccess().getL_ABSTerminalRuleCall_1_0_1())));
+		match_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getVariable_declaratorAccess().getABSTerminalRuleCall_1_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getVariable_declaratorAccess().getR_ABSTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getVariable_declaratorAccess().getL_ABSTerminalRuleCall_1_0_1())));
+		match_Variable_initializer_COMMATerminalRuleCall_1_2_2_q = new TokenAlias(false, true, grammarAccess.getVariable_initializerAccess().getCOMMATerminalRuleCall_1_2_2());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getABSRule())
+			return getABSToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getCASERule())
+			return getCASEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getCOLONRule())
+			return getCOLONToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getCOMMARule())
+			return getCOMMAToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getDEFAULTRule())
+			return getDEFAULTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getDORule())
+			return getDOToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getELSERule())
+			return getELSEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getEOLRule())
+			return getEOLToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getEQUALRule())
+			return getEQUALToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getEXCLAMATIONRule())
+			return getEXCLAMATIONToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getEXTENDSRule())
+			return getEXTENDSToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getFORRule())
+			return getFORToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getIFRule())
+			return getIFToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getIMPORTRule())
+			return getIMPORTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getINSTANCEOFRule())
+			return getINSTANCEOFToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getINTERFACERule())
+			return getINTERFACEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getLEFT_PARENTHESISRule())
+			return getLEFT_PARENTHESISToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getLONGRule())
+			return getLONGToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getL_ABSRule())
+			return getL_ABSToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getL_CURLY_BRACERule())
+			return getL_CURLY_BRACEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getMULTIPLYRule())
+			return getMULTIPLYToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getNEWRule())
+			return getNEWToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getNOTRule())
+			return getNOTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getPACKAGERule())
+			return getPACKAGEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getRIGHT_PARENTHESISRule())
+			return getRIGHT_PARENTHESISToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getR_ABSRule())
+			return getR_ABSToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getR_CURLY_BRACERule())
+			return getR_CURLY_BRACEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getSWITCHRule())
+			return getSWITCHToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getWATRule())
+			return getWATToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getWHILERule())
+			return getWHILEToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal ABS:
+	 * 	"[]"
+	 * ;
+	 */
+	protected String getABSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "[]";
+	}
+	
+	/**
+	 * terminal CASE:
+	 * 	"case"	
+	 * ;
+	 */
+	protected String getCASEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "case";
+	}
+	
+	/**
+	 * terminal COLON:
+	 * 	":"
+	 * ;
+	 */
+	protected String getCOLONToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ":";
+	}
+	
+	/**
+	 * terminal COMMA:
+	 * 	","
+	 * ;
+	 */
+	protected String getCOMMAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ",";
+	}
+	
+	/**
+	 * terminal DEFAULT:
+	 * 	"default"
+	 * ;
+	 */
+	protected String getDEFAULTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "default";
+	}
+	
+	/**
+	 * terminal DO:
+	 * 	"do"
+	 * ;
+	 */
+	protected String getDOToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "do";
+	}
+	
+	/**
+	 * terminal ELSE:
+	 * 	"else"
+	 * ;
+	 */
+	protected String getELSEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "else";
+	}
+	
+	/**
+	 * terminal EOL:
+	 * 	";"
+	 * ;
+	 */
+	protected String getEOLToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ";";
+	}
+	
+	/**
+	 * terminal EQUAL:
+	 * 	"="
+	 * ;
+	 */
+	protected String getEQUALToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "=";
+	}
+	
+	/**
+	 * terminal EXCLAMATION:
+	 * 	"!"
+	 * ;
+	 */
+	protected String getEXCLAMATIONToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "!";
+	}
+	
+	/**
+	 * terminal EXTENDS:
+	 * 	"extends"
+	 * ;
+	 */
+	protected String getEXTENDSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "extends";
+	}
+	
+	/**
+	 * terminal FOR:
+	 * 	"for"
+	 * ;
+	 */
+	protected String getFORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "for";
+	}
+	
+	/**
+	 * terminal IF:
+	 * 	"if"
+	 * ;
+	 */
+	protected String getIFToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "if";
+	}
+	
+	/**
+	 * terminal IMPORT:
+	 * 	"import"
+	 * ;
+	 */
+	protected String getIMPORTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "import";
+	}
+	
+	/**
+	 * terminal INSTANCEOF:
+	 * 	"instanceof"
+	 * ;
+	 */
+	protected String getINSTANCEOFToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "instanceof";
+	}
+	
+	/**
+	 * terminal INTERFACE:
+	 * 	"interface"
+	 * ;
+	 */
+	protected String getINTERFACEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "interface";
+	}
+	
+	/**
+	 * terminal LEFT_PARENTHESIS:
+	 * 	")"
+	 * ;
+	 */
+	protected String getLEFT_PARENTHESISToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ")";
+	}
+	
+	/**
+	 * terminal LONG:
+	 * 	"l"
+	 * ;
+	 */
+	protected String getLONGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "l";
+	}
+	
+	/**
+	 * terminal L_ABS:
+	 * 	"]"
+	 * ;
+	 */
+	protected String getL_ABSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "]";
+	}
+	
+	/**
+	 * terminal L_CURLY_BRACE:
+	 * 	"}"
+	 * ;
+	 */
+	protected String getL_CURLY_BRACEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "}";
+	}
+	
+	/**
+	 * terminal MULTIPLY:
+	 * 	"*"	
+	 * ;
+	 */
+	protected String getMULTIPLYToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "*";
+	}
+	
+	/**
+	 * terminal NEW:
+	 * 	"new"	
+	 * ;
+	 */
+	protected String getNEWToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "new";
+	}
+	
+	/**
+	 * terminal NOT:
+	 * 	"~"
+	 * ;
+	 */
+	protected String getNOTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "~";
+	}
+	
+	/**
+	 * terminal PACKAGE:
+	 * 	"package"
+	 * ;
+	 */
+	protected String getPACKAGEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "package";
+	}
+	
+	/**
+	 * terminal RIGHT_PARENTHESIS:
+	 * 	"("
+	 * ;
+	 */
+	protected String getRIGHT_PARENTHESISToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "(";
+	}
+	
+	/**
+	 * terminal R_ABS:
+	 * 	"["
+	 * ;
+	 */
+	protected String getR_ABSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "[";
+	}
+	
+	/**
+	 * terminal R_CURLY_BRACE:
+	 * 	"{"
+	 * ;
+	 */
+	protected String getR_CURLY_BRACEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "{";
+	}
+	
+	/**
+	 * terminal SWITCH:
+	 * 	"switch"
+	 * ;
+	 */
+	protected String getSWITCHToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "switch";
+	}
+	
+	/**
+	 * terminal WAT:
+	 * 	"?"
+	 * ;
+	 */
+	protected String getWATToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "?";
+	}
+	
+	/**
+	 * terminal WHILE:
+	 * 	"while"
+	 * ;
+	 */
+	protected String getWHILEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "while";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -60,151 +451,164 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Creating_Expression___LeftSquareBracketRightSquareBracketKeyword_1_1_2_1_q___LeftSquareBracketKeyword_1_1_2_0_0_RightSquareBracketKeyword_1_1_2_0_1__q__p.equals(syntax))
-				emit_Creating_Expression___LeftSquareBracketRightSquareBracketKeyword_1_1_2_1_q___LeftSquareBracketKeyword_1_1_2_0_0_RightSquareBracketKeyword_1_1_2_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Literal_Expression_LKeyword_0_0_1_q.equals(syntax))
-				emit_Literal_Expression_LKeyword_0_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Literal_Expression_LKeyword_0_1_1_q.equals(syntax))
-				emit_Literal_Expression_LKeyword_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Method_declaration___LeftSquareBracketRightSquareBracketKeyword_6_1_q___LeftSquareBracketKeyword_6_0_0_RightSquareBracketKeyword_6_0_1__q__p.equals(syntax))
-				emit_Method_declaration___LeftSquareBracketRightSquareBracketKeyword_6_1_q___LeftSquareBracketKeyword_6_0_0_RightSquareBracketKeyword_6_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Parameter___LeftSquareBracketRightSquareBracketKeyword_2_1_q___LeftSquareBracketKeyword_2_0_0_RightSquareBracketKeyword_2_0_1__q__p.equals(syntax))
-				emit_Parameter___LeftSquareBracketRightSquareBracketKeyword_2_1_q___LeftSquareBracketKeyword_2_0_0_RightSquareBracketKeyword_2_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Statement_SemicolonKeyword_12_1_or___BreakKeyword_10_1_SemicolonKeyword_10_3___or___ContinueKeyword_11_1_SemicolonKeyword_11_3__.equals(syntax))
-				emit_Statement_SemicolonKeyword_12_1_or___BreakKeyword_10_1_SemicolonKeyword_10_3___or___ContinueKeyword_11_1_SemicolonKeyword_11_3__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Switch_Statement___DefaultKeyword_6_1_0_ColonKeyword_6_1_1__a.equals(syntax))
-				emit_Switch_Statement___DefaultKeyword_6_1_0_ColonKeyword_6_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Type___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p.equals(syntax))
-				emit_Type___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Variable_declarator___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p.equals(syntax))
-				emit_Variable_declarator___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Variable_initializer_CommaKeyword_1_2_2_q.equals(syntax))
-				emit_Variable_initializer_CommaKeyword_1_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Ampersand_Rule_EQUALTerminalRuleCall_1_1_q.equals(syntax))
+				emit_Ampersand_Rule_EQUALTerminalRuleCall_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Creating_Expression___ABSTerminalRuleCall_1_1_2_1_q___R_ABSTerminalRuleCall_1_1_2_0_0_L_ABSTerminalRuleCall_1_1_2_0_1__q__p.equals(syntax))
+				emit_Creating_Expression___ABSTerminalRuleCall_1_1_2_1_q___R_ABSTerminalRuleCall_1_1_2_0_0_L_ABSTerminalRuleCall_1_1_2_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Literal_Expression_LONGTerminalRuleCall_0_0_1_q.equals(syntax))
+				emit_Literal_Expression_LONGTerminalRuleCall_0_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Literal_Expression_LONGTerminalRuleCall_0_1_1_q.equals(syntax))
+				emit_Literal_Expression_LONGTerminalRuleCall_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p.equals(syntax))
+				emit_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p.equals(syntax))
+				emit_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__.equals(syntax))
+				emit_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a.equals(syntax))
+				emit_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p.equals(syntax))
+				emit_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p.equals(syntax))
+				emit_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Variable_initializer_COMMATerminalRuleCall_1_2_2_q.equals(syntax))
+				emit_Variable_initializer_COMMATerminalRuleCall_1_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     ('[]'? ('[' ']')?)+
+	 *     EQUAL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expression=Expression ']' (ambiguity) (rule end)
-	 *     typeSpecifier=Type_specifier (ambiguity) (rule end)
+	 *     a1=AMPERSAND (ambiguity) (rule end)
 	 */
-	protected void emit_Creating_Expression___LeftSquareBracketRightSquareBracketKeyword_1_1_2_1_q___LeftSquareBracketKeyword_1_1_2_0_0_RightSquareBracketKeyword_1_1_2_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Ampersand_Rule_EQUALTerminalRuleCall_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'l'?
+	 *     (ABS? (R_ABS L_ABS)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     expression=Expression L_ABS (ambiguity) (rule end)
+	 *     typeSpecifier=Type_specifier (ambiguity) (rule end)
+	 */
+	protected void emit_Creating_Expression___ABSTerminalRuleCall_1_1_2_1_q___R_ABSTerminalRuleCall_1_1_2_0_0_L_ABSTerminalRuleCall_1_1_2_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     LONG?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     exp=HEXA (ambiguity) (rule end)
 	 */
-	protected void emit_Literal_Expression_LKeyword_0_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Literal_Expression_LONGTerminalRuleCall_0_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'l'?
+	 *     LONG?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     exp1=DECIMAL_DIGITS (ambiguity) (rule end)
 	 */
-	protected void emit_Literal_Expression_LKeyword_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Literal_Expression_LONGTerminalRuleCall_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('[]'? ('[' ']')?)+
+	 *     (ABS? (R_ABS L_ABS)?)+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID '(' ')' (ambiguity) debug=';'
-	 *     name=ID '(' ')' (ambiguity) statement=Statement_block
-	 *     parameter=Parameter_list ')' (ambiguity) debug=';'
-	 *     parameter=Parameter_list ')' (ambiguity) statement=Statement_block
+	 *     name=ID RIGHT_PARENTHESIS LEFT_PARENTHESIS (ambiguity) debug=EOL
+	 *     name=ID RIGHT_PARENTHESIS LEFT_PARENTHESIS (ambiguity) statement=Statement_block
+	 *     parameter=Parameter_list LEFT_PARENTHESIS (ambiguity) debug=EOL
+	 *     parameter=Parameter_list LEFT_PARENTHESIS (ambiguity) statement=Statement_block
 	 */
-	protected void emit_Method_declaration___LeftSquareBracketRightSquareBracketKeyword_6_1_q___LeftSquareBracketKeyword_6_0_0_RightSquareBracketKeyword_6_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('[]'? ('[' ']')?)+
+	 *     (ABS? (R_ABS L_ABS)?)+
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=ID (ambiguity) (rule end)
 	 */
-	protected void emit_Parameter___LeftSquareBracketRightSquareBracketKeyword_2_1_q___LeftSquareBracketKeyword_2_0_0_RightSquareBracketKeyword_2_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ';' | ('break' ';') | ('continue' ';')
+	 *     EOL | ('break' EOL) | ('continue' EOL)
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Statement_SemicolonKeyword_12_1_or___BreakKeyword_10_1_SemicolonKeyword_10_3___or___ContinueKeyword_11_1_SemicolonKeyword_11_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('default' ':')*
+	 *     (DEFAULT COLON)*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expression=Expression ')' '{' (ambiguity) 'case' expressions+=Expression
-	 *     expression=Expression ')' '{' (ambiguity) '}' (rule end)
-	 *     expression=Expression ')' '{' (ambiguity) statements+=Statement
-	 *     expressions+=Expression ':' (ambiguity) 'case' expressions+=Expression
-	 *     expressions+=Expression ':' (ambiguity) '}' (rule end)
-	 *     expressions+=Expression ':' (ambiguity) statements+=Statement
-	 *     statements+=Statement (ambiguity) 'case' expressions+=Expression
-	 *     statements+=Statement (ambiguity) '}' (rule end)
+	 *     expression=Expression LEFT_PARENTHESIS R_CURLY_BRACE (ambiguity) CASE expressions+=Expression
+	 *     expression=Expression LEFT_PARENTHESIS R_CURLY_BRACE (ambiguity) L_CURLY_BRACE (rule end)
+	 *     expression=Expression LEFT_PARENTHESIS R_CURLY_BRACE (ambiguity) statements+=Statement
+	 *     expressions+=Expression COLON (ambiguity) CASE expressions+=Expression
+	 *     expressions+=Expression COLON (ambiguity) L_CURLY_BRACE (rule end)
+	 *     expressions+=Expression COLON (ambiguity) statements+=Statement
+	 *     statements+=Statement (ambiguity) CASE expressions+=Expression
+	 *     statements+=Statement (ambiguity) L_CURLY_BRACE (rule end)
 	 *     statements+=Statement (ambiguity) statements+=Statement
 	 */
-	protected void emit_Switch_Statement___DefaultKeyword_6_1_0_ColonKeyword_6_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('[]'? ('[' ']')?)+
+	 *     (ABS? (R_ABS L_ABS)?)+
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=Type_specifier (ambiguity) (rule end)
 	 */
-	protected void emit_Type___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('[]'? ('[' ']')?)+
+	 *     (ABS? (R_ABS L_ABS)?)+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) '=' initializer=Variable_initializer
 	 *     name=ID (ambiguity) (rule end)
+	 *     name=ID (ambiguity) EQUAL initializer=Variable_initializer
 	 */
-	protected void emit_Variable_declarator___LeftSquareBracketRightSquareBracketKeyword_1_1_q___LeftSquareBracketKeyword_1_0_0_RightSquareBracketKeyword_1_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ','?
+	 *     COMMA?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     variableIniatializer2+=Variable_initializer (ambiguity) '}' (rule end)
-	 *     variableInitializer1=Variable_initializer (ambiguity) '}' (rule end)
+	 *     variableIniatializer2+=Variable_initializer (ambiguity) L_CURLY_BRACE (rule end)
+	 *     variableInitializer1=Variable_initializer (ambiguity) L_CURLY_BRACE (rule end)
 	 */
-	protected void emit_Variable_initializer_CommaKeyword_1_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Variable_initializer_COMMATerminalRuleCall_1_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

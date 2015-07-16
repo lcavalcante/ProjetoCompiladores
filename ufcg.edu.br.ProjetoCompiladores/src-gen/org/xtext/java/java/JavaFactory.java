@@ -86,6 +86,15 @@ public interface JavaFactory extends EFactory
   Method_declaration createMethod_declaration();
 
   /**
+   * Returns a new object of class '<em>Method call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method call</em>'.
+   * @generated
+   */
+  Method_call createMethod_call();
+
+  /**
    * Returns a new object of class '<em>Constructor declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,6 +102,15 @@ public interface JavaFactory extends EFactory
    * @generated
    */
   Constructor_declaration createConstructor_declaration();
+
+  /**
+   * Returns a new object of class '<em>Parameter list method call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter list method call</em>'.
+   * @generated
+   */
+  Parameter_list_method_call createParameter_list_method_call();
 
   /**
    * Returns a new object of class '<em>Parameter list</em>'.
@@ -158,6 +176,15 @@ public interface JavaFactory extends EFactory
   Expression_aux createExpression_aux();
 
   /**
+   * Returns a new object of class '<em>Ampersand Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ampersand Rule</em>'.
+   * @generated
+   */
+  Ampersand_Rule createAmpersand_Rule();
+
+  /**
    * Returns a new object of class '<em>Float Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -192,6 +219,24 @@ public interface JavaFactory extends EFactory
    * @generated
    */
   Cast_Expression createCast_Expression();
+
+  /**
+   * Returns a new object of class '<em>Bit Expression NR</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bit Expression NR</em>'.
+   * @generated
+   */
+  Bit_Expression_NR createBit_Expression_NR();
+
+  /**
+   * Returns a new object of class '<em>Logical Expression NR</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logical Expression NR</em>'.
+   * @generated
+   */
+  Logical_Expression_NR createLogical_Expression_NR();
 
   /**
    * Returns a new object of class '<em>Arg List</em>'.
