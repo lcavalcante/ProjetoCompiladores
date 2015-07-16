@@ -334,10 +334,8 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIf_StatementAccess().getExpressionAssignment_2(), "rule__If_Statement__ExpressionAssignment_2");
 					put(grammarAccess.getIf_StatementAccess().getStatementAssignment_4(), "rule__If_Statement__StatementAssignment_4");
 					put(grammarAccess.getIf_StatementAccess().getElseStatementAssignment_5_1(), "rule__If_Statement__ElseStatementAssignment_5_1");
-					put(grammarAccess.getReturn_StatementAccess().getValueAssignment_2(), "rule__Return_Statement__ValueAssignment_2");
+					put(grammarAccess.getReturn_StatementAccess().getRvAssignment_2(), "rule__Return_Statement__RvAssignment_2");
 					put(grammarAccess.getReturn_valueAccess().getNameAssignment_0(), "rule__Return_value__NameAssignment_0");
-					put(grammarAccess.getReturn_valueAccess().getName2Assignment_1(), "rule__Return_value__Name2Assignment_1");
-					put(grammarAccess.getReturn_valueAccess().getName2Assignment_2(), "rule__Return_value__Name2Assignment_2");
 					put(grammarAccess.getTry_statementAccess().getTryAssignment_0(), "rule__Try_statement__TryAssignment_0");
 					put(grammarAccess.getTry_statementAccess().getTryStatementAssignment_1(), "rule__Try_statement__TryStatementAssignment_1");
 					put(grammarAccess.getTry_statementAccess().getCatchsAssignment_2_0(), "rule__Try_statement__CatchsAssignment_2_0");

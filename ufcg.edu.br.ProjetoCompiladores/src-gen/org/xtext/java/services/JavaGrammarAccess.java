@@ -928,8 +928,8 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//=> (numericExpression3=Numeric_Expression_NR) aux=Expression_aux | logicalExpression=Logical_Expression_NR
 		//aux=Expression_aux | bitExpression=Bit_Expression_NR aux=Expression_aux | => (castExpression=Cast_Expression)
 		//aux=Expression_aux | => (creatingExpression=Creating_Expression) aux=Expression_aux |
-		//literalExpression=Literal_Expression aux=Expression_aux | null=NULL aux=Expression_aux | super=SUPER
-		//aux=Expression_aux | this=THIS aux=Expression_aux | name=ID aux=Expression_aux
+		//literalExpression=Literal_Expression aux=Expression_aux | null=NULL aux=Expression_aux | super=SUPER aux=Expression_aux
+		//| this=THIS aux=Expression_aux | name=ID aux=Expression_aux
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//=> (numericExpression3=Numeric_Expression_NR) aux=Expression_aux
@@ -1220,14 +1220,14 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression_aux:
 		//	(RIGHT_PARENTHESIS argList+=Arg_List LEFT_PARENTHESIS) aux=Expression_aux | (R_ABS expression2=Expression L_ABS)
 		//	aux=Expression_aux | ("." expression2=Expression) aux=Expression_aux | (COMMA expression2=Expression)
-		//	aux=Expression_aux | (INSTANCEOF name=Class_name) aux=Expression_aux | sgin=(INCREMENT | DECREMENT)
-		//	aux=Expression_aux | numericSign=(PLUS | PLUS_EQUAL | MINUS | MINUS_EQUAL | MULTIPLY | MULTIPLY_EQUAL | DIVIDE |
-		//	DIVIDE_EQUAL | MODULE | MODULE_EQUAL) exp2=Expression aux=Expression_aux | testingSign=(BT | ST | BE | SE |
-		//	DOUBLE_EQUAL | DIFFERENT) exp1=Expression aux=Expression_aux | (logicalSign=(OR | OR_EQUAL | EXP | EXP_EQUAL |
-		//	DOUBLE_OR_EQUAL | MODULE | MODULE_EQUAL) | ampersand=Ampersand_Rule) exp1=Expression aux=Expression_aux | WAT
-		//	exp1=Expression COLON exp2=Expression aux=Expression_aux | stringSign=(PLUS | PLUS_EQUAL) exp1=Expression
-		//	aux=Expression_aux | bitSign=(R_SHIFT_EQUAL | L_SHIFT | R_SHIFT | SUPER_SHIFT) expressionBit=Expression
-		//	aux=Expression_aux | {Expression_aux};
+		//	aux=Expression_aux | (INSTANCEOF name=Class_name) aux=Expression_aux | sgin=(INCREMENT | DECREMENT) aux=Expression_aux
+		//	| numericSign=(PLUS | PLUS_EQUAL | MINUS | MINUS_EQUAL | MULTIPLY | MULTIPLY_EQUAL | DIVIDE | DIVIDE_EQUAL | MODULE |
+		//	MODULE_EQUAL) exp2=Expression aux=Expression_aux | testingSign=(BT | ST | BE | SE | DOUBLE_EQUAL | DIFFERENT)
+		//	exp1=Expression aux=Expression_aux | (logicalSign=(OR | OR_EQUAL | EXP | EXP_EQUAL | DOUBLE_OR_EQUAL | MODULE |
+		//	MODULE_EQUAL) | ampersand=Ampersand_Rule) exp1=Expression aux=Expression_aux | WAT exp1=Expression COLON
+		//	exp2=Expression aux=Expression_aux | stringSign=(PLUS | PLUS_EQUAL) exp1=Expression aux=Expression_aux |
+		//	bitSign=(R_SHIFT_EQUAL | L_SHIFT | R_SHIFT | SUPER_SHIFT) expressionBit=Expression aux=Expression_aux |
+		//	{Expression_aux};
 		@Override public ParserRule getRule() { return rule; }
 
 		//(RIGHT_PARENTHESIS argList+=Arg_List LEFT_PARENTHESIS) aux=Expression_aux | (R_ABS expression2=Expression L_ABS)
@@ -2543,8 +2543,8 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStatementStatementParserRuleCall_8_0 = (RuleCall)cStatementAssignment_8.eContents().get(0);
 		
 		//For_Statement:
-		//	FOR RIGHT_PARENTHESIS (variable=Variable_declaration | pv=EOL | expression=Expression EOL) expression2=Expression?
-		//	EOL expression3=Expression? EOL LEFT_PARENTHESIS statement=Statement;
+		//	FOR RIGHT_PARENTHESIS (variable=Variable_declaration | pv=EOL | expression=Expression EOL) expression2=Expression? EOL
+		//	expression3=Expression? EOL LEFT_PARENTHESIS statement=Statement;
 		@Override public ParserRule getRule() { return rule; }
 
 		//FOR RIGHT_PARENTHESIS (variable=Variable_declaration | pv=EOL | expression=Expression EOL) expression2=Expression? EOL
@@ -2761,15 +2761,15 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReturn_StatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final RuleCall cRETURNTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueReturn_valueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Assignment cRvAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRvReturn_valueParserRuleCall_2_0 = (RuleCall)cRvAssignment_2.eContents().get(0);
 		private final RuleCall cEOLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Return_Statement:
-		//	{Return_Statement} RETURN value=Return_value? EOL;
+		//	{Return_Statement} RETURN rv=Return_value? EOL;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Return_Statement} RETURN value=Return_value? EOL
+		//{Return_Statement} RETURN rv=Return_value? EOL
 		public Group getGroup() { return cGroup; }
 
 		//{Return_Statement}
@@ -2778,11 +2778,11 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//RETURN
 		public RuleCall getRETURNTerminalRuleCall_1() { return cRETURNTerminalRuleCall_1; }
 
-		//value=Return_value?
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		//rv=Return_value?
+		public Assignment getRvAssignment_2() { return cRvAssignment_2; }
 
 		//Return_value
-		public RuleCall getValueReturn_valueParserRuleCall_2_0() { return cValueReturn_valueParserRuleCall_2_0; }
+		public RuleCall getRvReturn_valueParserRuleCall_2_0() { return cRvReturn_valueParserRuleCall_2_0; }
 
 		//EOL
 		public RuleCall getEOLTerminalRuleCall_3() { return cEOLTerminalRuleCall_3; }
@@ -2793,16 +2793,14 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cName2Assignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cName2Method_callParserRuleCall_1_0 = (RuleCall)cName2Assignment_1.eContents().get(0);
-		private final Assignment cName2Assignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cName2Literal_ExpressionParserRuleCall_2_0 = (RuleCall)cName2Assignment_2.eContents().get(0);
+		private final RuleCall cMethod_callParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cLiteral_ExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Return_value:
-		//	name=ID | name2=Method_call | name2=Literal_Expression;
+		//	name=ID | Method_call | Literal_Expression;
 		@Override public ParserRule getRule() { return rule; }
 
-		//name=ID | name2=Method_call | name2=Literal_Expression
+		//name=ID | Method_call | Literal_Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//name=ID
@@ -2811,17 +2809,11 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
-		//name2=Method_call
-		public Assignment getName2Assignment_1() { return cName2Assignment_1; }
-
 		//Method_call
-		public RuleCall getName2Method_callParserRuleCall_1_0() { return cName2Method_callParserRuleCall_1_0; }
-
-		//name2=Literal_Expression
-		public Assignment getName2Assignment_2() { return cName2Assignment_2; }
+		public RuleCall getMethod_callParserRuleCall_1() { return cMethod_callParserRuleCall_1; }
 
 		//Literal_Expression
-		public RuleCall getName2Literal_ExpressionParserRuleCall_2_0() { return cName2Literal_ExpressionParserRuleCall_2_0; }
+		public RuleCall getLiteral_ExpressionParserRuleCall_2() { return cLiteral_ExpressionParserRuleCall_2; }
 	}
 
 	public class Try_statementElements extends AbstractParserRuleElementFinder {
@@ -3613,14 +3605,14 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	//Expression_aux:
 	//	(RIGHT_PARENTHESIS argList+=Arg_List LEFT_PARENTHESIS) aux=Expression_aux | (R_ABS expression2=Expression L_ABS)
 	//	aux=Expression_aux | ("." expression2=Expression) aux=Expression_aux | (COMMA expression2=Expression)
-	//	aux=Expression_aux | (INSTANCEOF name=Class_name) aux=Expression_aux | sgin=(INCREMENT | DECREMENT)
-	//	aux=Expression_aux | numericSign=(PLUS | PLUS_EQUAL | MINUS | MINUS_EQUAL | MULTIPLY | MULTIPLY_EQUAL | DIVIDE |
-	//	DIVIDE_EQUAL | MODULE | MODULE_EQUAL) exp2=Expression aux=Expression_aux | testingSign=(BT | ST | BE | SE |
-	//	DOUBLE_EQUAL | DIFFERENT) exp1=Expression aux=Expression_aux | (logicalSign=(OR | OR_EQUAL | EXP | EXP_EQUAL |
-	//	DOUBLE_OR_EQUAL | MODULE | MODULE_EQUAL) | ampersand=Ampersand_Rule) exp1=Expression aux=Expression_aux | WAT
-	//	exp1=Expression COLON exp2=Expression aux=Expression_aux | stringSign=(PLUS | PLUS_EQUAL) exp1=Expression
-	//	aux=Expression_aux | bitSign=(R_SHIFT_EQUAL | L_SHIFT | R_SHIFT | SUPER_SHIFT) expressionBit=Expression
-	//	aux=Expression_aux | {Expression_aux};
+	//	aux=Expression_aux | (INSTANCEOF name=Class_name) aux=Expression_aux | sgin=(INCREMENT | DECREMENT) aux=Expression_aux
+	//	| numericSign=(PLUS | PLUS_EQUAL | MINUS | MINUS_EQUAL | MULTIPLY | MULTIPLY_EQUAL | DIVIDE | DIVIDE_EQUAL | MODULE |
+	//	MODULE_EQUAL) exp2=Expression aux=Expression_aux | testingSign=(BT | ST | BE | SE | DOUBLE_EQUAL | DIFFERENT)
+	//	exp1=Expression aux=Expression_aux | (logicalSign=(OR | OR_EQUAL | EXP | EXP_EQUAL | DOUBLE_OR_EQUAL | MODULE |
+	//	MODULE_EQUAL) | ampersand=Ampersand_Rule) exp1=Expression aux=Expression_aux | WAT exp1=Expression COLON
+	//	exp2=Expression aux=Expression_aux | stringSign=(PLUS | PLUS_EQUAL) exp1=Expression aux=Expression_aux |
+	//	bitSign=(R_SHIFT_EQUAL | L_SHIFT | R_SHIFT | SUPER_SHIFT) expressionBit=Expression aux=Expression_aux |
+	//	{Expression_aux};
 	public Expression_auxElements getExpression_auxAccess() {
 		return pExpression_aux;
 	}
@@ -4024,8 +4016,8 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//For_Statement:
-	//	FOR RIGHT_PARENTHESIS (variable=Variable_declaration | pv=EOL | expression=Expression EOL) expression2=Expression?
-	//	EOL expression3=Expression? EOL LEFT_PARENTHESIS statement=Statement;
+	//	FOR RIGHT_PARENTHESIS (variable=Variable_declaration | pv=EOL | expression=Expression EOL) expression2=Expression? EOL
+	//	expression3=Expression? EOL LEFT_PARENTHESIS statement=Statement;
 	public For_StatementElements getFor_StatementAccess() {
 		return pFor_Statement;
 	}
@@ -4065,7 +4057,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Return_Statement:
-	//	{Return_Statement} RETURN value=Return_value? EOL;
+	//	{Return_Statement} RETURN rv=Return_value? EOL;
 	public Return_StatementElements getReturn_StatementAccess() {
 		return pReturn_Statement;
 	}
@@ -4075,7 +4067,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Return_value:
-	//	name=ID | name2=Method_call | name2=Literal_Expression;
+	//	name=ID | Method_call | Literal_Expression;
 	public Return_valueElements getReturn_valueAccess() {
 		return pReturn_value;
 	}

@@ -21,11 +21,11 @@ import org.xtext.java.java.Numeric_Expression_NR;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Numeric_Expression_NRImpl#getSinal_numeric <em>Sinal numeric</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Numeric_Expression_NRImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

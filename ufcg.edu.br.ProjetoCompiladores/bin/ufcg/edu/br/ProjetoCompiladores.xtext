@@ -420,14 +420,14 @@ If_Statement:
 ;
 
 Return_Statement:
-	{Return_Statement} RETURN value=Return_value? EOL
+	{Return_Statement} RETURN rv=Return_value? EOL
 ; 
 
 Return_value:
-	(name=ID
-		| name2=Method_call
-		| name2=Literal_Expression
-	)
+	(name=ID)
+	| (Method_call)
+	| (Literal_Expression)
+	
 ;
 
 terminal DEFAULT:

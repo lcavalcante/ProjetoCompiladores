@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Parameter_list_method_call#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Parameter_list_method_call#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getParameter_list_method_call()
  * @model

@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.Float_Literal;
 import org.xtext.java.java.JavaPackage;
@@ -21,6 +20,7 @@ import org.xtext.java.java.Literal_Expression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getExp1 <em>Exp1</em>}</li>
@@ -28,11 +28,10 @@ import org.xtext.java.java.Literal_Expression;
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getString <em>String</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getChar <em>Char</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class Literal_ExpressionImpl extends MinimalEObjectImpl.Container implements Literal_Expression
+public class Literal_ExpressionImpl extends Return_valueImpl implements Literal_Expression
 {
   /**
    * The default value of the '{@link #getExp() <em>Exp</em>}' attribute.

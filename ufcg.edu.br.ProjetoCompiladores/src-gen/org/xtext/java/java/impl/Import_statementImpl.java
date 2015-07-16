@@ -18,11 +18,11 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Import_statementImpl#getClassname <em>Classname</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Import_statementImpl#getPackagename <em>Packagename</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

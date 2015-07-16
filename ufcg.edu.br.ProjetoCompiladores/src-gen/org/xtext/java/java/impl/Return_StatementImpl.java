@@ -20,11 +20,11 @@ import org.xtext.java.java.Return_value;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Return_StatementImpl#getReturnSmt <em>Return Smt</em>}</li>
- *   <li>{@link org.xtext.java.java.impl.Return_StatementImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.Return_StatementImpl#getRv <em>Rv</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -41,14 +41,14 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
   protected Return_Statement returnSmt;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getRv() <em>Rv</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getRv()
    * @generated
    * @ordered
    */
-  protected Return_value value;
+  protected Return_value rv;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,9 +124,9 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Return_value getValue()
+  public Return_value getRv()
   {
-    return value;
+    return rv;
   }
 
   /**
@@ -134,13 +134,13 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(Return_value newValue, NotificationChain msgs)
+  public NotificationChain basicSetRv(Return_value newRv, NotificationChain msgs)
   {
-    Return_value oldValue = value;
-    value = newValue;
+    Return_value oldRv = rv;
+    rv = newRv;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.RETURN_STATEMENT__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.RETURN_STATEMENT__RV, oldRv, newRv);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -151,20 +151,20 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Return_value newValue)
+  public void setRv(Return_value newRv)
   {
-    if (newValue != value)
+    if (newRv != rv)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.RETURN_STATEMENT__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.RETURN_STATEMENT__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (rv != null)
+        msgs = ((InternalEObject)rv).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.RETURN_STATEMENT__RV, null, msgs);
+      if (newRv != null)
+        msgs = ((InternalEObject)newRv).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.RETURN_STATEMENT__RV, null, msgs);
+      msgs = basicSetRv(newRv, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.RETURN_STATEMENT__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.RETURN_STATEMENT__RV, newRv, newRv));
   }
 
   /**
@@ -179,8 +179,8 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
     {
       case JavaPackage.RETURN_STATEMENT__RETURN_SMT:
         return basicSetReturnSmt(null, msgs);
-      case JavaPackage.RETURN_STATEMENT__VALUE:
-        return basicSetValue(null, msgs);
+      case JavaPackage.RETURN_STATEMENT__RV:
+        return basicSetRv(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,8 +197,8 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
     {
       case JavaPackage.RETURN_STATEMENT__RETURN_SMT:
         return getReturnSmt();
-      case JavaPackage.RETURN_STATEMENT__VALUE:
-        return getValue();
+      case JavaPackage.RETURN_STATEMENT__RV:
+        return getRv();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,8 +216,8 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
       case JavaPackage.RETURN_STATEMENT__RETURN_SMT:
         setReturnSmt((Return_Statement)newValue);
         return;
-      case JavaPackage.RETURN_STATEMENT__VALUE:
-        setValue((Return_value)newValue);
+      case JavaPackage.RETURN_STATEMENT__RV:
+        setRv((Return_value)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,8 +236,8 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
       case JavaPackage.RETURN_STATEMENT__RETURN_SMT:
         setReturnSmt((Return_Statement)null);
         return;
-      case JavaPackage.RETURN_STATEMENT__VALUE:
-        setValue((Return_value)null);
+      case JavaPackage.RETURN_STATEMENT__RV:
+        setRv((Return_value)null);
         return;
     }
     super.eUnset(featureID);
@@ -255,8 +255,8 @@ public class Return_StatementImpl extends StatementImpl implements Return_Statem
     {
       case JavaPackage.RETURN_STATEMENT__RETURN_SMT:
         return returnSmt != null;
-      case JavaPackage.RETURN_STATEMENT__VALUE:
-        return value != null;
+      case JavaPackage.RETURN_STATEMENT__RV:
+        return rv != null;
     }
     return super.eIsSet(featureID);
   }

@@ -13,7 +13,6 @@ import org.xtext.java.java.Method_call;
 import org.xtext.java.java.Method_declaration;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
-import org.xtext.java.java.Parameter_list_method_call;
 import org.xtext.java.java.Return_Statement;
 import org.xtext.java.java.Return_value;
 import org.xtext.java.java.Statement;
@@ -50,40 +49,8 @@ public class JavaValidator extends AbstractJavaValidator {
   
   @Check
   public void verificaExistenciaDeMetodo(final Method_call method) {
-    Parameter_list_method_call pc = method.getParameter();
-    int parametrosChamada = 0;
-    boolean _notEquals = (!Objects.equal(pc, null));
-    if (_notEquals) {
-      parametrosChamada = 1;
-      int _parametrosChamada = parametrosChamada;
-      EList<String> _parameters = pc.getParameters();
-      int _size = _parameters.size();
-      parametrosChamada = (_parametrosChamada + _size);
-    } else {
-      parametrosChamada = 0;
-    }
-    boolean existeMetodo = false;
-    boolean mesmaQuantidadeDeParametros = false;
-    for (final Method_declaration m : this.metodosDeclarados) {
-      String _name = m.getName();
-      String _name_1 = method.getName();
-      boolean _equals = Objects.equal(_name, _name_1);
-      if (_equals) {
-        existeMetodo = true;
-        boolean _verificaQuantidadeDeParametros = this.verificaQuantidadeDeParametros(m, parametrosChamada);
-        if (_verificaQuantidadeDeParametros) {
-          mesmaQuantidadeDeParametros = true;
-        }
-      }
-    }
-    if ((!existeMetodo)) {
-      this.error("O método ainda não foi declarado", JavaPackage.Literals.METHOD_CALL__NAME);
-      return;
-    }
-    if ((!mesmaQuantidadeDeParametros)) {
-      this.error("Números de parâmetros incorreto", JavaPackage.Literals.METHOD_CALL__PARAMETER);
-      return;
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method METHOD_CALL__NAME is undefined for the type JavaValidator");
   }
   
   public boolean verificaQuantidadeDeParametros(final Method_declaration method, final int parametrosChamada) {
@@ -116,11 +83,15 @@ public class JavaValidator extends AbstractJavaValidator {
           String _string_1 = ((Return_Statement)smt).toString();
           String _plus = ("@@@@@@@@@@@@@@@" + _string_1);
           String _plus_1 = (_plus + " ************ ");
-          Return_value _value = ((Return_Statement)smt).getValue();
-          String _plus_2 = (_plus_1 + _value);
+          Return_Statement _returnSmt = ((Return_Statement)smt).getReturnSmt();
+          Return_value _rv = _returnSmt.getRv();
+          String _name_1 = _rv.getName();
+          String _plus_2 = (_plus_1 + _name_1);
           this.error(_plus_2, null);
-          Return_value _value_1 = ((Return_Statement)smt).getValue();
-          boolean _notEquals = (!Objects.equal(_value_1, null));
+          Return_Statement _returnSmt_1 = ((Return_Statement)smt).getReturnSmt();
+          Return_value _rv_1 = _returnSmt_1.getRv();
+          String _name_2 = _rv_1.getName();
+          boolean _notEquals = (!Objects.equal(_name_2, null));
           if (_notEquals) {
             this.error("Métodos void não deve retornar nada", JavaPackage.Literals.METHOD_DECLARATION__NAME);
           }

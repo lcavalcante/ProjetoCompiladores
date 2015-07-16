@@ -56,8 +56,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="debug" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Method_call">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Method_call" eSuperTypes="#//Return_value">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter_list_method_call"
         containment="true"/>
   </eClassifiers>
@@ -160,7 +159,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="floatTypeSufix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Literal_Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Literal_Expression" eSuperTypes="#//Return_value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exp1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp2" eType="#//Float_Literal"
@@ -279,13 +278,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Return_Statement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnSmt" eType="#//Return_Statement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Return_value"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rv" eType="#//Return_value"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Return_value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name2" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Try_statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="try" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

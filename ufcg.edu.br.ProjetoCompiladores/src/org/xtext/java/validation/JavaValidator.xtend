@@ -98,8 +98,8 @@ class JavaValidator extends AbstractJavaValidator {
 		for (Statement smt : statements) {
 			if (smt instanceof Return_Statement) {
 				if (md.type.name.toString == "void") {
-					error("@@@@@@@@@@@@@@@" + smt.toString +" ************ " + smt.value, null);
-					if (smt.value != null) {
+					error("@@@@@@@@@@@@@@@" + smt.toString +" ************ " + smt.returnSmt.rv.name, null);
+					if (smt.returnSmt.rv.name != null) {
 						error("Métodos void não deve retornar nada", JavaPackage.Literals.METHOD_DECLARATION__NAME);
 					}
 				}	 

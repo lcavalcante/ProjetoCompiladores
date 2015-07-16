@@ -18,13 +18,13 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Float_LiteralImpl#getDecimalDigits1 <em>Decimal Digits1</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Float_LiteralImpl#getDecimalDigits2 <em>Decimal Digits2</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Float_LiteralImpl#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Float_LiteralImpl#getFloatTypeSufix <em>Float Type Sufix</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

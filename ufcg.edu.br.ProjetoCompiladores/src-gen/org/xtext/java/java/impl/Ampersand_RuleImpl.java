@@ -18,11 +18,11 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Ampersand_RuleImpl#getA1 <em>A1</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Ampersand_RuleImpl#getA2 <em>A2</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -28,11 +28,11 @@ import org.xtext.java.java.Parameter_list;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Parameter_listImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Parameter_listImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

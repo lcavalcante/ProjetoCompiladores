@@ -748,19 +748,9 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMethod_call_Name()
-  {
-    return (EAttribute)method_callEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMethod_call_Parameter()
   {
-    return (EReference)method_callEClass.getEStructuralFeatures().get(1);
+    return (EReference)method_callEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2048,7 +2038,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReturn_Statement_Value()
+  public EReference getReturn_Statement_Rv()
   {
     return (EReference)return_StatementEClass.getEStructuralFeatures().get(1);
   }
@@ -2071,16 +2061,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
   public EAttribute getReturn_value_Name()
   {
     return (EAttribute)return_valueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReturn_value_Name2()
-  {
-    return (EReference)return_valueEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2284,7 +2264,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEAttribute(method_declarationEClass, METHOD_DECLARATION__DEBUG);
 
     method_callEClass = createEClass(METHOD_CALL);
-    createEAttribute(method_callEClass, METHOD_CALL__NAME);
     createEReference(method_callEClass, METHOD_CALL__PARAMETER);
 
     constructor_declarationEClass = createEClass(CONSTRUCTOR_DECLARATION);
@@ -2442,11 +2421,10 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
 
     return_StatementEClass = createEClass(RETURN_STATEMENT);
     createEReference(return_StatementEClass, RETURN_STATEMENT__RETURN_SMT);
-    createEReference(return_StatementEClass, RETURN_STATEMENT__VALUE);
+    createEReference(return_StatementEClass, RETURN_STATEMENT__RV);
 
     return_valueEClass = createEClass(RETURN_VALUE);
     createEAttribute(return_valueEClass, RETURN_VALUE__NAME);
-    createEReference(return_valueEClass, RETURN_VALUE__NAME2);
 
     try_statementEClass = createEClass(TRY_STATEMENT);
     createEAttribute(try_statementEClass, TRY_STATEMENT__TRY);
@@ -2494,6 +2472,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    method_callEClass.getESuperTypes().add(this.getReturn_value());
+    literal_ExpressionEClass.getESuperTypes().add(this.getReturn_value());
     statement_blockEClass.getESuperTypes().add(this.getStatement());
     return_StatementEClass.getESuperTypes().add(this.getStatement());
 
@@ -2539,7 +2519,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEAttribute(getMethod_declaration_Debug(), ecorePackage.getEString(), "debug", null, 0, 1, Method_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(method_callEClass, Method_call.class, "Method_call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMethod_call_Name(), ecorePackage.getEString(), "name", null, 0, 1, Method_call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMethod_call_Parameter(), this.getParameter_list_method_call(), null, "parameter", null, 0, 1, Method_call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constructor_declarationEClass, Constructor_declaration.class, "Constructor_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2697,11 +2676,10 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
 
     initEClass(return_StatementEClass, Return_Statement.class, "Return_Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReturn_Statement_ReturnSmt(), this.getReturn_Statement(), null, "returnSmt", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReturn_Statement_Value(), this.getReturn_value(), null, "value", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReturn_Statement_Rv(), this.getReturn_value(), null, "rv", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(return_valueEClass, Return_value.class, "Return_value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReturn_value_Name(), ecorePackage.getEString(), "name", null, 0, 1, Return_value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReturn_value_Name2(), ecorePackage.getEObject(), null, "name2", null, 0, 1, Return_value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(try_statementEClass, Try_statement.class, "Try_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTry_statement_Try(), ecorePackage.getEString(), "try", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

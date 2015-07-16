@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Method_call;
@@ -21,36 +20,15 @@ import org.xtext.java.java.Parameter_list_method_call;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link org.xtext.java.java.impl.Method_callImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Method_callImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class Method_callImpl extends MinimalEObjectImpl.Container implements Method_call
+public class Method_callImpl extends Return_valueImpl implements Method_call
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -80,29 +58,6 @@ public class Method_callImpl extends MinimalEObjectImpl.Container implements Met
   protected EClass eStaticClass()
   {
     return JavaPackage.Literals.METHOD_CALL;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.METHOD_CALL__NAME, oldName, name));
   }
 
   /**
@@ -179,8 +134,6 @@ public class Method_callImpl extends MinimalEObjectImpl.Container implements Met
   {
     switch (featureID)
     {
-      case JavaPackage.METHOD_CALL__NAME:
-        return getName();
       case JavaPackage.METHOD_CALL__PARAMETER:
         return getParameter();
     }
@@ -197,9 +150,6 @@ public class Method_callImpl extends MinimalEObjectImpl.Container implements Met
   {
     switch (featureID)
     {
-      case JavaPackage.METHOD_CALL__NAME:
-        setName((String)newValue);
-        return;
       case JavaPackage.METHOD_CALL__PARAMETER:
         setParameter((Parameter_list_method_call)newValue);
         return;
@@ -217,9 +167,6 @@ public class Method_callImpl extends MinimalEObjectImpl.Container implements Met
   {
     switch (featureID)
     {
-      case JavaPackage.METHOD_CALL__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case JavaPackage.METHOD_CALL__PARAMETER:
         setParameter((Parameter_list_method_call)null);
         return;
@@ -237,29 +184,10 @@ public class Method_callImpl extends MinimalEObjectImpl.Container implements Met
   {
     switch (featureID)
     {
-      case JavaPackage.METHOD_CALL__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case JavaPackage.METHOD_CALL__PARAMETER:
         return parameter != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //Method_callImpl

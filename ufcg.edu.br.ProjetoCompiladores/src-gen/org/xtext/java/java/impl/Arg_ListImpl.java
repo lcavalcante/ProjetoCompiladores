@@ -28,11 +28,11 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Arg_ListImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Arg_ListImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

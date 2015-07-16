@@ -24,11 +24,11 @@ import org.xtext.java.java.Parameter_list_method_call;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Parameter_list_method_callImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Parameter_list_method_callImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

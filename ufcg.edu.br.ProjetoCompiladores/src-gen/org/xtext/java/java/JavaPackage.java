@@ -424,6 +424,34 @@ public interface JavaPackage extends EPackage
   int METHOD_DECLARATION_FEATURE_COUNT = 6;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Return_valueImpl <em>Return value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Return_valueImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getReturn_value()
+   * @generated
+   */
+  int RETURN_VALUE = 36;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_VALUE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Return value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_VALUE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Method_callImpl <em>Method call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -440,7 +468,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METHOD_CALL__NAME = 0;
+  int METHOD_CALL__NAME = RETURN_VALUE__NAME;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -449,7 +477,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METHOD_CALL__PARAMETER = 1;
+  int METHOD_CALL__PARAMETER = RETURN_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Method call</em>' class.
@@ -458,7 +486,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METHOD_CALL_FEATURE_COUNT = 2;
+  int METHOD_CALL_FEATURE_COUNT = RETURN_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Constructor_declarationImpl <em>Constructor declaration</em>}' class.
@@ -1130,13 +1158,22 @@ public interface JavaPackage extends EPackage
   int LITERAL_EXPRESSION = 19;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_EXPRESSION__NAME = RETURN_VALUE__NAME;
+
+  /**
    * The feature id for the '<em><b>Exp</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LITERAL_EXPRESSION__EXP = 0;
+  int LITERAL_EXPRESSION__EXP = RETURN_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Exp1</b></em>' attribute.
@@ -1145,7 +1182,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_EXPRESSION__EXP1 = 1;
+  int LITERAL_EXPRESSION__EXP1 = RETURN_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Exp2</b></em>' containment reference.
@@ -1154,7 +1191,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_EXPRESSION__EXP2 = 2;
+  int LITERAL_EXPRESSION__EXP2 = RETURN_VALUE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>String</b></em>' attribute.
@@ -1163,7 +1200,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_EXPRESSION__STRING = 3;
+  int LITERAL_EXPRESSION__STRING = RETURN_VALUE_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Char</b></em>' attribute.
@@ -1172,7 +1209,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_EXPRESSION__CHAR = 4;
+  int LITERAL_EXPRESSION__CHAR = RETURN_VALUE_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Literal Expression</em>' class.
@@ -1181,7 +1218,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_EXPRESSION_FEATURE_COUNT = 5;
+  int LITERAL_EXPRESSION_FEATURE_COUNT = RETURN_VALUE_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Creating_ExpressionImpl <em>Creating Expression</em>}' class.
@@ -2064,13 +2101,13 @@ public interface JavaPackage extends EPackage
   int RETURN_STATEMENT__RETURN_SMT = STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The feature id for the '<em><b>Rv</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT__VALUE = STATEMENT_FEATURE_COUNT + 1;
+  int RETURN_STATEMENT__RV = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Return Statement</em>' class.
@@ -2080,43 +2117,6 @@ public interface JavaPackage extends EPackage
    * @ordered
    */
   int RETURN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.java.java.impl.Return_valueImpl <em>Return value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.java.java.impl.Return_valueImpl
-   * @see org.xtext.java.java.impl.JavaPackageImpl#getReturn_value()
-   * @generated
-   */
-  int RETURN_VALUE = 36;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_VALUE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Name2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_VALUE__NAME2 = 1;
-
-  /**
-   * The number of structural features of the '<em>Return value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_VALUE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.
@@ -2631,17 +2631,6 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EClass getMethod_call();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.java.java.Method_call#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.java.java.Method_call#getName()
-   * @see #getMethod_call()
-   * @generated
-   */
-  EAttribute getMethod_call_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Method_call#getParameter <em>Parameter</em>}'.
@@ -4035,15 +4024,15 @@ public interface JavaPackage extends EPackage
   EReference getReturn_Statement_ReturnSmt();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_Statement#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_Statement#getRv <em>Rv</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.xtext.java.java.Return_Statement#getValue()
+   * @return the meta object for the containment reference '<em>Rv</em>'.
+   * @see org.xtext.java.java.Return_Statement#getRv()
    * @see #getReturn_Statement()
    * @generated
    */
-  EReference getReturn_Statement_Value();
+  EReference getReturn_Statement_Rv();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Return_value <em>Return value</em>}'.
@@ -4065,17 +4054,6 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EAttribute getReturn_value_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_value#getName2 <em>Name2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name2</em>'.
-   * @see org.xtext.java.java.Return_value#getName2()
-   * @see #getReturn_value()
-   * @generated
-   */
-  EReference getReturn_value_Name2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Try_statement <em>Try statement</em>}'.
@@ -4527,14 +4505,6 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EClass METHOD_CALL = eINSTANCE.getMethod_call();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute METHOD_CALL__NAME = eINSTANCE.getMethod_call_Name();
 
     /**
      * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
@@ -5625,12 +5595,12 @@ public interface JavaPackage extends EPackage
     EReference RETURN_STATEMENT__RETURN_SMT = eINSTANCE.getReturn_Statement_ReturnSmt();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Rv</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RETURN_STATEMENT__VALUE = eINSTANCE.getReturn_Statement_Value();
+    EReference RETURN_STATEMENT__RV = eINSTANCE.getReturn_Statement_Rv();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Return_valueImpl <em>Return value</em>}' class.
@@ -5649,14 +5619,6 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EAttribute RETURN_VALUE__NAME = eINSTANCE.getReturn_value_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Name2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RETURN_VALUE__NAME2 = eINSTANCE.getReturn_value_Name2();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.

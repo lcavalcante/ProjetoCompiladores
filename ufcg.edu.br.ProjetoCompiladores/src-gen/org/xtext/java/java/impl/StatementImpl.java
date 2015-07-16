@@ -28,6 +28,7 @@ import org.xtext.java.java.While_Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getExpressionx <em>Expressionx</em>}</li>
@@ -40,7 +41,6 @@ import org.xtext.java.java.While_Statement;
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

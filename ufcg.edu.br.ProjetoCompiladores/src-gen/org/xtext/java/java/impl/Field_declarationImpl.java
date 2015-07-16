@@ -21,12 +21,12 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getDebug <em>Debug</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
