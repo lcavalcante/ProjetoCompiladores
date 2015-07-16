@@ -99,6 +99,8 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
       case JavaPackage.WHILE_STATEMENT: return createWhile_Statement();
       case JavaPackage.DO_STATEMENT: return createDo_Statement();
       case JavaPackage.IF_STATEMENT: return createIf_Statement();
+      case JavaPackage.RETURN_STATEMENT: return createReturn_Statement();
+      case JavaPackage.RETURN_VALUE: return createReturn_value();
       case JavaPackage.TRY_STATEMENT: return createTry_statement();
       case JavaPackage.PACKAGE_STATEMENT: return createPackage_statement();
       case JavaPackage.IMPORT_STATEMENT: return createImport_statement();
@@ -490,6 +492,28 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory
   {
     If_StatementImpl if_Statement = new If_StatementImpl();
     return if_Statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return_Statement createReturn_Statement()
+  {
+    Return_StatementImpl return_Statement = new Return_StatementImpl();
+    return return_Statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return_value createReturn_value()
+  {
+    Return_valueImpl return_value = new Return_valueImpl();
+    return return_value;
   }
 
   /**

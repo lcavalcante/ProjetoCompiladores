@@ -338,6 +338,24 @@ public interface JavaFactory extends EFactory
   If_Statement createIf_Statement();
 
   /**
+   * Returns a new object of class '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Statement</em>'.
+   * @generated
+   */
+  Return_Statement createReturn_Statement();
+
+  /**
+   * Returns a new object of class '<em>Return value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return value</em>'.
+   * @generated
+   */
+  Return_value createReturn_value();
+
+  /**
    * Returns a new object of class '<em>Try statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

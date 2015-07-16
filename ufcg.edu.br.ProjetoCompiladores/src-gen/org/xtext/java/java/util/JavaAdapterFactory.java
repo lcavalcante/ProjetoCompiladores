@@ -250,6 +250,16 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
         return createIf_StatementAdapter();
       }
       @Override
+      public Adapter caseReturn_Statement(Return_Statement object)
+      {
+        return createReturn_StatementAdapter();
+      }
+      @Override
+      public Adapter caseReturn_value(Return_value object)
+      {
+        return createReturn_valueAdapter();
+      }
+      @Override
       public Adapter caseTry_statement(Try_statement object)
       {
         return createTry_statementAdapter();
@@ -807,6 +817,36 @@ public class JavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIf_StatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Return_Statement <em>Return Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Return_Statement
+   * @generated
+   */
+  public Adapter createReturn_StatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.java.java.Return_value <em>Return value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.java.java.Return_value
+   * @generated
+   */
+  public Adapter createReturn_valueAdapter()
   {
     return null;
   }

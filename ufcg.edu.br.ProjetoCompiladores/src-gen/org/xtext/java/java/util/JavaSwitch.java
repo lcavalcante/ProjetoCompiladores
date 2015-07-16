@@ -318,6 +318,21 @@ public class JavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JavaPackage.RETURN_STATEMENT:
+      {
+        Return_Statement return_Statement = (Return_Statement)theEObject;
+        T result = caseReturn_Statement(return_Statement);
+        if (result == null) result = caseStatement(return_Statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JavaPackage.RETURN_VALUE:
+      {
+        Return_value return_value = (Return_value)theEObject;
+        T result = caseReturn_value(return_value);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JavaPackage.TRY_STATEMENT:
       {
         Try_statement try_statement = (Try_statement)theEObject;
@@ -899,6 +914,38 @@ public class JavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIf_Statement(If_Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturn_Statement(Return_Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturn_value(Return_value object)
   {
     return null;
   }

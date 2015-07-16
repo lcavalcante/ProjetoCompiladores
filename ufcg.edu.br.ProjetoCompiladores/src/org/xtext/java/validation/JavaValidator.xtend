@@ -2,6 +2,7 @@ package org.xtext.java.validation
 
 import java.util.ArrayList
 import java.util.List
+import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.validation.Check
 import org.xtext.java.java.Class_declaration
 import org.xtext.java.java.Field_declaration
@@ -10,6 +11,8 @@ import org.xtext.java.java.Method_call
 import org.xtext.java.java.Method_declaration
 import org.xtext.java.java.Parameter_list
 import org.xtext.java.java.Parameter_list_method_call
+import org.xtext.java.java.Return_Statement
+import org.xtext.java.java.Statement
 
 /**
  * This class contains custom validation rules. 
@@ -88,4 +91,19 @@ class JavaValidator extends AbstractJavaValidator {
 		}
 		return parametrosDeclaracao == parametrosChamada;
 	}
+	
+	@Check
+	def checaRetornoDosMetodos(Method_declaration md) {
+		var EList<Statement> statements = md.statement.statements;
+		for (Statement smt : statements) {
+			if (smt instanceof Return_Statement) {
+				if (md.type.name.toString == "void") {
+					error("@@@@@@@@@@@@@@@" + smt.toString +" ************ " + smt.value, null);
+					if (smt.value != null) {
+						error("Métodos void não deve retornar nada", JavaPackage.Literals.METHOD_DECLARATION__NAME);
+					}
+				}	 
+			}
+		}
+	} 
 }

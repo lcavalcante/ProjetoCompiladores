@@ -38,6 +38,8 @@ import org.xtext.java.java.Package_statement;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Parameter_list_method_call;
+import org.xtext.java.java.Return_Statement;
+import org.xtext.java.java.Return_value;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
@@ -302,6 +304,20 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * @generated
    */
   private EClass if_StatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass return_StatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass return_valueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2012,6 +2028,66 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getReturn_Statement()
+  {
+    return return_StatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturn_Statement_ReturnSmt()
+  {
+    return (EReference)return_StatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturn_Statement_Value()
+  {
+    return (EReference)return_StatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturn_value()
+  {
+    return return_valueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getReturn_value_Name()
+  {
+    return (EAttribute)return_valueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturn_value_Name2()
+  {
+    return (EReference)return_valueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTry_statement()
   {
     return try_statementEClass;
@@ -2364,6 +2440,14 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(if_StatementEClass, IF_STATEMENT__STATEMENT);
     createEReference(if_StatementEClass, IF_STATEMENT__ELSE_STATEMENT);
 
+    return_StatementEClass = createEClass(RETURN_STATEMENT);
+    createEReference(return_StatementEClass, RETURN_STATEMENT__RETURN_SMT);
+    createEReference(return_StatementEClass, RETURN_STATEMENT__VALUE);
+
+    return_valueEClass = createEClass(RETURN_VALUE);
+    createEAttribute(return_valueEClass, RETURN_VALUE__NAME);
+    createEReference(return_valueEClass, RETURN_VALUE__NAME2);
+
     try_statementEClass = createEClass(TRY_STATEMENT);
     createEAttribute(try_statementEClass, TRY_STATEMENT__TRY);
     createEReference(try_statementEClass, TRY_STATEMENT__TRY_STATEMENT);
@@ -2411,6 +2495,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
 
     // Add supertypes to classes
     statement_blockEClass.getESuperTypes().add(this.getStatement());
+    return_StatementEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2609,6 +2694,14 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getIf_Statement_Expression(), this.getExpression(), null, "expression", null, 0, 1, If_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIf_Statement_Statement(), this.getStatement(), null, "statement", null, 0, 1, If_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIf_Statement_ElseStatement(), this.getStatement(), null, "elseStatement", null, 0, 1, If_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(return_StatementEClass, Return_Statement.class, "Return_Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturn_Statement_ReturnSmt(), this.getReturn_Statement(), null, "returnSmt", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReturn_Statement_Value(), this.getReturn_value(), null, "value", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(return_valueEClass, Return_value.class, "Return_value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReturn_value_Name(), ecorePackage.getEString(), "name", null, 0, 1, Return_value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReturn_value_Name2(), ecorePackage.getEObject(), null, "name2", null, 0, 1, Return_value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(try_statementEClass, Try_statement.class, "Try_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTry_statement_Try(), ecorePackage.getEString(), "try", null, 0, 1, Try_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

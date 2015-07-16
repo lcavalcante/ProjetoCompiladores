@@ -2121,13 +2121,14 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFloatKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		private final Keyword cLongKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		private final Keyword cDoubleKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
-		private final RuleCall cClass_nameParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final Keyword cVoidKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final RuleCall cClass_nameParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//Type_specifier:
-		//	"boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" | Class_name;
+		//	"boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" | "void" | Class_name;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" | Class_name
+		//"boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" | "void" | Class_name
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"boolean"
@@ -2154,8 +2155,11 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//"double"
 		public Keyword getDoubleKeyword_7() { return cDoubleKeyword_7; }
 
+		//"void"
+		public Keyword getVoidKeyword_8() { return cVoidKeyword_8; }
+
 		//Class_name
-		public RuleCall getClass_nameParserRuleCall_8() { return cClass_nameParserRuleCall_8; }
+		public RuleCall getClass_nameParserRuleCall_9() { return cClass_nameParserRuleCall_9; }
 	}
 
 	public class ModifierElements extends AbstractParserRuleElementFinder {
@@ -2241,153 +2245,151 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Statement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cVariableAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cVariableVariable_declarationParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
-		private final Assignment cExpressionxAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cExpressionxExpressionParserRuleCall_1_0 = (RuleCall)cExpressionxAssignment_1.eContents().get(0);
-		private final Assignment cIfStatementAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cIfStatementIf_StatementParserRuleCall_2_0 = (RuleCall)cIfStatementAssignment_2.eContents().get(0);
-		private final Assignment cDoStatementAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cDoStatementDo_StatementParserRuleCall_3_0 = (RuleCall)cDoStatementAssignment_3.eContents().get(0);
-		private final Assignment cWhileStatementAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cWhileStatementWhile_StatementParserRuleCall_4_0 = (RuleCall)cWhileStatementAssignment_4.eContents().get(0);
-		private final Assignment cForStatementAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final RuleCall cForStatementFor_StatementParserRuleCall_5_0 = (RuleCall)cForStatementAssignment_5.eContents().get(0);
-		private final Assignment cSwitchStatementAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final RuleCall cSwitchStatementSwitch_StatementParserRuleCall_6_0 = (RuleCall)cSwitchStatementAssignment_6.eContents().get(0);
-		private final RuleCall cStatement_blockParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final Assignment cTryAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final RuleCall cTryTry_statementParserRuleCall_8_0 = (RuleCall)cTryAssignment_8.eContents().get(0);
-		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Assignment cNameAssignment_9_0 = (Assignment)cGroup_9.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_9_0_0 = (RuleCall)cNameAssignment_9_0.eContents().get(0);
-		private final RuleCall cCOLONTerminalRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
-		private final Assignment cStatementAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cStatementStatementParserRuleCall_9_2_0 = (RuleCall)cStatementAssignment_9_2.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cReturn_StatementAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cReturnSmtAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cReturnSmtReturn_StatementParserRuleCall_0_1_0 = (RuleCall)cReturnSmtAssignment_0_1.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cVariableVariable_declarationParserRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
+		private final Assignment cExpressionxAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cExpressionxExpressionParserRuleCall_2_0 = (RuleCall)cExpressionxAssignment_2.eContents().get(0);
+		private final Assignment cIfStatementAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cIfStatementIf_StatementParserRuleCall_3_0 = (RuleCall)cIfStatementAssignment_3.eContents().get(0);
+		private final Assignment cDoStatementAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cDoStatementDo_StatementParserRuleCall_4_0 = (RuleCall)cDoStatementAssignment_4.eContents().get(0);
+		private final Assignment cWhileStatementAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cWhileStatementWhile_StatementParserRuleCall_5_0 = (RuleCall)cWhileStatementAssignment_5.eContents().get(0);
+		private final Assignment cForStatementAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cForStatementFor_StatementParserRuleCall_6_0 = (RuleCall)cForStatementAssignment_6.eContents().get(0);
+		private final Assignment cSwitchStatementAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cSwitchStatementSwitch_StatementParserRuleCall_7_0 = (RuleCall)cSwitchStatementAssignment_7.eContents().get(0);
+		private final RuleCall cStatement_blockParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final Assignment cTryAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final RuleCall cTryTry_statementParserRuleCall_9_0 = (RuleCall)cTryAssignment_9.eContents().get(0);
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Action cStatementAction_10_0 = (Action)cGroup_10.eContents().get(0);
-		private final Keyword cBreakKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cNameAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_10_2_0 = (RuleCall)cNameAssignment_10_2.eContents().get(0);
-		private final RuleCall cEOLTerminalRuleCall_10_3 = (RuleCall)cGroup_10.eContents().get(3);
+		private final Assignment cNameAssignment_10_0 = (Assignment)cGroup_10.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_10_0_0 = (RuleCall)cNameAssignment_10_0.eContents().get(0);
+		private final RuleCall cCOLONTerminalRuleCall_10_1 = (RuleCall)cGroup_10.eContents().get(1);
+		private final Assignment cStatementAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cStatementStatementParserRuleCall_10_2_0 = (RuleCall)cStatementAssignment_10_2.eContents().get(0);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
 		private final Action cStatementAction_11_0 = (Action)cGroup_11.eContents().get(0);
-		private final Keyword cContinueKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cBreakKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		private final Assignment cNameAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_11_2_0 = (RuleCall)cNameAssignment_11_2.eContents().get(0);
 		private final RuleCall cEOLTerminalRuleCall_11_3 = (RuleCall)cGroup_11.eContents().get(3);
 		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
 		private final Action cStatementAction_12_0 = (Action)cGroup_12.eContents().get(0);
-		private final RuleCall cEOLTerminalRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
+		private final Keyword cContinueKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Assignment cNameAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_12_2_0 = (RuleCall)cNameAssignment_12_2.eContents().get(0);
+		private final RuleCall cEOLTerminalRuleCall_12_3 = (RuleCall)cGroup_12.eContents().get(3);
+		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
+		private final Action cStatementAction_13_0 = (Action)cGroup_13.eContents().get(0);
+		private final RuleCall cEOLTerminalRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
 		
 		//Statement:
-		//	variable=Variable_declaration | expressionx=Expression | ifStatement=If_Statement | doStatement=Do_Statement |
-		//	whileStatement=While_Statement | forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block |
-		//	try=Try_statement | name=ID COLON statement=Statement | {Statement} "break" name=ID? EOL | {Statement} "continue"
-		//	name=ID? EOL | {Statement} EOL;
+		//	{Return_Statement} returnSmt=Return_Statement | variable=Variable_declaration | expressionx=Expression |
+		//	ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement | forStatement=For_Statement |
+		//	switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID COLON statement=Statement |
+		//	{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL;
 		@Override public ParserRule getRule() { return rule; }
 
-		//variable=Variable_declaration | expressionx=Expression | ifStatement=If_Statement | doStatement=Do_Statement |
-		//whileStatement=While_Statement | forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block |
-		//try=Try_statement | name=ID COLON statement=Statement | {Statement} "break" name=ID? EOL | {Statement} "continue"
-		//name=ID? EOL | {Statement} EOL
+		//{Return_Statement} returnSmt=Return_Statement | variable=Variable_declaration | expressionx=Expression |
+		//ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement | forStatement=For_Statement |
+		//switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID COLON statement=Statement |
+		//{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//{Return_Statement} returnSmt=Return_Statement
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{Return_Statement}
+		public Action getReturn_StatementAction_0_0() { return cReturn_StatementAction_0_0; }
+
+		//returnSmt=Return_Statement
+		public Assignment getReturnSmtAssignment_0_1() { return cReturnSmtAssignment_0_1; }
+
+		//Return_Statement
+		public RuleCall getReturnSmtReturn_StatementParserRuleCall_0_1_0() { return cReturnSmtReturn_StatementParserRuleCall_0_1_0; }
+
 		//variable=Variable_declaration
-		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
 
 		//Variable_declaration
-		public RuleCall getVariableVariable_declarationParserRuleCall_0_0() { return cVariableVariable_declarationParserRuleCall_0_0; }
+		public RuleCall getVariableVariable_declarationParserRuleCall_1_0() { return cVariableVariable_declarationParserRuleCall_1_0; }
 
 		//expressionx=Expression
-		public Assignment getExpressionxAssignment_1() { return cExpressionxAssignment_1; }
+		public Assignment getExpressionxAssignment_2() { return cExpressionxAssignment_2; }
 
 		//Expression
-		public RuleCall getExpressionxExpressionParserRuleCall_1_0() { return cExpressionxExpressionParserRuleCall_1_0; }
+		public RuleCall getExpressionxExpressionParserRuleCall_2_0() { return cExpressionxExpressionParserRuleCall_2_0; }
 
 		//ifStatement=If_Statement
-		public Assignment getIfStatementAssignment_2() { return cIfStatementAssignment_2; }
+		public Assignment getIfStatementAssignment_3() { return cIfStatementAssignment_3; }
 
 		//If_Statement
-		public RuleCall getIfStatementIf_StatementParserRuleCall_2_0() { return cIfStatementIf_StatementParserRuleCall_2_0; }
+		public RuleCall getIfStatementIf_StatementParserRuleCall_3_0() { return cIfStatementIf_StatementParserRuleCall_3_0; }
 
 		//doStatement=Do_Statement
-		public Assignment getDoStatementAssignment_3() { return cDoStatementAssignment_3; }
+		public Assignment getDoStatementAssignment_4() { return cDoStatementAssignment_4; }
 
 		//Do_Statement
-		public RuleCall getDoStatementDo_StatementParserRuleCall_3_0() { return cDoStatementDo_StatementParserRuleCall_3_0; }
+		public RuleCall getDoStatementDo_StatementParserRuleCall_4_0() { return cDoStatementDo_StatementParserRuleCall_4_0; }
 
 		//whileStatement=While_Statement
-		public Assignment getWhileStatementAssignment_4() { return cWhileStatementAssignment_4; }
+		public Assignment getWhileStatementAssignment_5() { return cWhileStatementAssignment_5; }
 
 		//While_Statement
-		public RuleCall getWhileStatementWhile_StatementParserRuleCall_4_0() { return cWhileStatementWhile_StatementParserRuleCall_4_0; }
+		public RuleCall getWhileStatementWhile_StatementParserRuleCall_5_0() { return cWhileStatementWhile_StatementParserRuleCall_5_0; }
 
 		//forStatement=For_Statement
-		public Assignment getForStatementAssignment_5() { return cForStatementAssignment_5; }
+		public Assignment getForStatementAssignment_6() { return cForStatementAssignment_6; }
 
 		//For_Statement
-		public RuleCall getForStatementFor_StatementParserRuleCall_5_0() { return cForStatementFor_StatementParserRuleCall_5_0; }
+		public RuleCall getForStatementFor_StatementParserRuleCall_6_0() { return cForStatementFor_StatementParserRuleCall_6_0; }
 
 		//switchStatement=Switch_Statement
-		public Assignment getSwitchStatementAssignment_6() { return cSwitchStatementAssignment_6; }
+		public Assignment getSwitchStatementAssignment_7() { return cSwitchStatementAssignment_7; }
 
 		//Switch_Statement
-		public RuleCall getSwitchStatementSwitch_StatementParserRuleCall_6_0() { return cSwitchStatementSwitch_StatementParserRuleCall_6_0; }
+		public RuleCall getSwitchStatementSwitch_StatementParserRuleCall_7_0() { return cSwitchStatementSwitch_StatementParserRuleCall_7_0; }
 
 		//Statement_block
-		public RuleCall getStatement_blockParserRuleCall_7() { return cStatement_blockParserRuleCall_7; }
+		public RuleCall getStatement_blockParserRuleCall_8() { return cStatement_blockParserRuleCall_8; }
 
 		//try=Try_statement
-		public Assignment getTryAssignment_8() { return cTryAssignment_8; }
+		public Assignment getTryAssignment_9() { return cTryAssignment_9; }
 
 		//Try_statement
-		public RuleCall getTryTry_statementParserRuleCall_8_0() { return cTryTry_statementParserRuleCall_8_0; }
+		public RuleCall getTryTry_statementParserRuleCall_9_0() { return cTryTry_statementParserRuleCall_9_0; }
 
 		//name=ID COLON statement=Statement
-		public Group getGroup_9() { return cGroup_9; }
-
-		//name=ID
-		public Assignment getNameAssignment_9_0() { return cNameAssignment_9_0; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_9_0_0() { return cNameIDTerminalRuleCall_9_0_0; }
-
-		//COLON
-		public RuleCall getCOLONTerminalRuleCall_9_1() { return cCOLONTerminalRuleCall_9_1; }
-
-		//statement=Statement
-		public Assignment getStatementAssignment_9_2() { return cStatementAssignment_9_2; }
-
-		//Statement
-		public RuleCall getStatementStatementParserRuleCall_9_2_0() { return cStatementStatementParserRuleCall_9_2_0; }
-
-		//{Statement} "break" name=ID? EOL
 		public Group getGroup_10() { return cGroup_10; }
 
-		//{Statement}
-		public Action getStatementAction_10_0() { return cStatementAction_10_0; }
-
-		//"break"
-		public Keyword getBreakKeyword_10_1() { return cBreakKeyword_10_1; }
-
-		//name=ID?
-		public Assignment getNameAssignment_10_2() { return cNameAssignment_10_2; }
+		//name=ID
+		public Assignment getNameAssignment_10_0() { return cNameAssignment_10_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_10_2_0() { return cNameIDTerminalRuleCall_10_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_10_0_0() { return cNameIDTerminalRuleCall_10_0_0; }
 
-		//EOL
-		public RuleCall getEOLTerminalRuleCall_10_3() { return cEOLTerminalRuleCall_10_3; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_10_1() { return cCOLONTerminalRuleCall_10_1; }
 
-		//{Statement} "continue" name=ID? EOL
+		//statement=Statement
+		public Assignment getStatementAssignment_10_2() { return cStatementAssignment_10_2; }
+
+		//Statement
+		public RuleCall getStatementStatementParserRuleCall_10_2_0() { return cStatementStatementParserRuleCall_10_2_0; }
+
+		//{Statement} "break" name=ID? EOL
 		public Group getGroup_11() { return cGroup_11; }
 
 		//{Statement}
 		public Action getStatementAction_11_0() { return cStatementAction_11_0; }
 
-		//"continue"
-		public Keyword getContinueKeyword_11_1() { return cContinueKeyword_11_1; }
+		//"break"
+		public Keyword getBreakKeyword_11_1() { return cBreakKeyword_11_1; }
 
 		//name=ID?
 		public Assignment getNameAssignment_11_2() { return cNameAssignment_11_2; }
@@ -2398,14 +2400,32 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//EOL
 		public RuleCall getEOLTerminalRuleCall_11_3() { return cEOLTerminalRuleCall_11_3; }
 
-		//{Statement} EOL
+		//{Statement} "continue" name=ID? EOL
 		public Group getGroup_12() { return cGroup_12; }
 
 		//{Statement}
 		public Action getStatementAction_12_0() { return cStatementAction_12_0; }
 
+		//"continue"
+		public Keyword getContinueKeyword_12_1() { return cContinueKeyword_12_1; }
+
+		//name=ID?
+		public Assignment getNameAssignment_12_2() { return cNameAssignment_12_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_12_2_0() { return cNameIDTerminalRuleCall_12_2_0; }
+
 		//EOL
-		public RuleCall getEOLTerminalRuleCall_12_1() { return cEOLTerminalRuleCall_12_1; }
+		public RuleCall getEOLTerminalRuleCall_12_3() { return cEOLTerminalRuleCall_12_3; }
+
+		//{Statement} EOL
+		public Group getGroup_13() { return cGroup_13; }
+
+		//{Statement}
+		public Action getStatementAction_13_0() { return cStatementAction_13_0; }
+
+		//EOL
+		public RuleCall getEOLTerminalRuleCall_13_1() { return cEOLTerminalRuleCall_13_1; }
 	}
 
 	public class Switch_StatementElements extends AbstractParserRuleElementFinder {
@@ -2734,6 +2754,74 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Statement
 		public RuleCall getElseStatementStatementParserRuleCall_5_1_0() { return cElseStatementStatementParserRuleCall_5_1_0; }
+	}
+
+	public class Return_StatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Return_Statement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cReturn_StatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cRETURNTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueReturn_valueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cEOLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//Return_Statement:
+		//	{Return_Statement} RETURN value=Return_value? EOL;
+		@Override public ParserRule getRule() { return rule; }
+
+		//{Return_Statement} RETURN value=Return_value? EOL
+		public Group getGroup() { return cGroup; }
+
+		//{Return_Statement}
+		public Action getReturn_StatementAction_0() { return cReturn_StatementAction_0; }
+
+		//RETURN
+		public RuleCall getRETURNTerminalRuleCall_1() { return cRETURNTerminalRuleCall_1; }
+
+		//value=Return_value?
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//Return_value
+		public RuleCall getValueReturn_valueParserRuleCall_2_0() { return cValueReturn_valueParserRuleCall_2_0; }
+
+		//EOL
+		public RuleCall getEOLTerminalRuleCall_3() { return cEOLTerminalRuleCall_3; }
+	}
+
+	public class Return_valueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Return_value");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cName2Assignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cName2Method_callParserRuleCall_1_0 = (RuleCall)cName2Assignment_1.eContents().get(0);
+		private final Assignment cName2Assignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cName2Literal_ExpressionParserRuleCall_2_0 = (RuleCall)cName2Assignment_2.eContents().get(0);
+		
+		//Return_value:
+		//	name=ID | name2=Method_call | name2=Literal_Expression;
+		@Override public ParserRule getRule() { return rule; }
+
+		//name=ID | name2=Method_call | name2=Literal_Expression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+
+		//name2=Method_call
+		public Assignment getName2Assignment_1() { return cName2Assignment_1; }
+
+		//Method_call
+		public RuleCall getName2Method_callParserRuleCall_1_0() { return cName2Method_callParserRuleCall_1_0; }
+
+		//name2=Literal_Expression
+		public Assignment getName2Assignment_2() { return cName2Assignment_2; }
+
+		//Literal_Expression
+		public RuleCall getName2Literal_ExpressionParserRuleCall_2_0() { return cName2Literal_ExpressionParserRuleCall_2_0; }
 	}
 
 	public class Try_statementElements extends AbstractParserRuleElementFinder {
@@ -3083,10 +3171,13 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	private final While_StatementElements pWhile_Statement;
 	private final Do_StatementElements pDo_Statement;
 	private final If_StatementElements pIf_Statement;
+	private final Return_StatementElements pReturn_Statement;
+	private final Return_valueElements pReturn_value;
 	private final TerminalRule tDEFAULT;
 	private final TerminalRule tCASE;
 	private final TerminalRule tSWITCH;
 	private final TerminalRule tFOR;
+	private final TerminalRule tRETURN;
 	private final TerminalRule tRIGHT_PARENTHESIS;
 	private final TerminalRule tLEFT_PARENTHESIS;
 	private final TerminalRule tEOL;
@@ -3213,10 +3304,13 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		this.pWhile_Statement = new While_StatementElements();
 		this.pDo_Statement = new Do_StatementElements();
 		this.pIf_Statement = new If_StatementElements();
+		this.pReturn_Statement = new Return_StatementElements();
+		this.pReturn_value = new Return_valueElements();
 		this.tDEFAULT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DEFAULT");
 		this.tCASE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CASE");
 		this.tSWITCH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SWITCH");
 		this.tFOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FOR");
+		this.tRETURN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RETURN");
 		this.tRIGHT_PARENTHESIS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RIGHT_PARENTHESIS");
 		this.tLEFT_PARENTHESIS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LEFT_PARENTHESIS");
 		this.tEOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EOL");
@@ -3860,7 +3954,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Type_specifier:
-	//	"boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" | Class_name;
+	//	"boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" | "void" | Class_name;
 	public Type_specifierElements getType_specifierAccess() {
 		return pType_specifier;
 	}
@@ -3906,10 +4000,10 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Statement:
-	//	variable=Variable_declaration | expressionx=Expression | ifStatement=If_Statement | doStatement=Do_Statement |
-	//	whileStatement=While_Statement | forStatement=For_Statement | switchStatement=Switch_Statement | Statement_block |
-	//	try=Try_statement | name=ID COLON statement=Statement | {Statement} "break" name=ID? EOL | {Statement} "continue"
-	//	name=ID? EOL | {Statement} EOL;
+	//	{Return_Statement} returnSmt=Return_Statement | variable=Variable_declaration | expressionx=Expression |
+	//	ifStatement=If_Statement | doStatement=Do_Statement | whileStatement=While_Statement | forStatement=For_Statement |
+	//	switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID COLON statement=Statement |
+	//	{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -3970,6 +4064,26 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		return getIf_StatementAccess().getRule();
 	}
 
+	//Return_Statement:
+	//	{Return_Statement} RETURN value=Return_value? EOL;
+	public Return_StatementElements getReturn_StatementAccess() {
+		return pReturn_Statement;
+	}
+	
+	public ParserRule getReturn_StatementRule() {
+		return getReturn_StatementAccess().getRule();
+	}
+
+	//Return_value:
+	//	name=ID | name2=Method_call | name2=Literal_Expression;
+	public Return_valueElements getReturn_valueAccess() {
+		return pReturn_value;
+	}
+	
+	public ParserRule getReturn_valueRule() {
+		return getReturn_valueAccess().getRule();
+	}
+
 	//terminal DEFAULT:
 	//	"default";
 	public TerminalRule getDEFAULTRule() {
@@ -3992,6 +4106,12 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	//	"for";
 	public TerminalRule getFORRule() {
 		return tFOR;
+	} 
+
+	//terminal RETURN:
+	//	"return";
+	public TerminalRule getRETURNRule() {
+		return tRETURN;
 	} 
 
 	//terminal RIGHT_PARENTHESIS:

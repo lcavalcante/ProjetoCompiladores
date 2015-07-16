@@ -1955,6 +1955,170 @@ public interface JavaPackage extends EPackage
   int IF_STATEMENT_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Return_StatementImpl <em>Return Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Return_StatementImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getReturn_Statement()
+   * @generated
+   */
+  int RETURN_STATEMENT = 35;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__VARIABLE = STATEMENT__VARIABLE;
+
+  /**
+   * The feature id for the '<em><b>Expressionx</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__EXPRESSIONX = STATEMENT__EXPRESSIONX;
+
+  /**
+   * The feature id for the '<em><b>If Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__IF_STATEMENT = STATEMENT__IF_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Do Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__DO_STATEMENT = STATEMENT__DO_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>While Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__WHILE_STATEMENT = STATEMENT__WHILE_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>For Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__FOR_STATEMENT = STATEMENT__FOR_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Switch Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__SWITCH_STATEMENT = STATEMENT__SWITCH_STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Try</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__TRY = STATEMENT__TRY;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__NAME = STATEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__STATEMENT = STATEMENT__STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Return Smt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__RETURN_SMT = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__VALUE = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Return Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.java.java.impl.Return_valueImpl <em>Return value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.java.java.impl.Return_valueImpl
+   * @see org.xtext.java.java.impl.JavaPackageImpl#getReturn_value()
+   * @generated
+   */
+  int RETURN_VALUE = 36;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_VALUE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_VALUE__NAME2 = 1;
+
+  /**
+   * The number of structural features of the '<em>Return value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_VALUE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1962,7 +2126,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getTry_statement()
    * @generated
    */
-  int TRY_STATEMENT = 35;
+  int TRY_STATEMENT = 37;
 
   /**
    * The feature id for the '<em><b>Try</b></em>' attribute.
@@ -2044,7 +2208,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getPackage_statement()
    * @generated
    */
-  int PACKAGE_STATEMENT = 36;
+  int PACKAGE_STATEMENT = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2072,7 +2236,7 @@ public interface JavaPackage extends EPackage
    * @see org.xtext.java.java.impl.JavaPackageImpl#getImport_statement()
    * @generated
    */
-  int IMPORT_STATEMENT = 37;
+  int IMPORT_STATEMENT = 39;
 
   /**
    * The feature id for the '<em><b>Classname</b></em>' attribute.
@@ -3850,6 +4014,70 @@ public interface JavaPackage extends EPackage
   EReference getIf_Statement_ElseStatement();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Return_Statement <em>Return Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Return Statement</em>'.
+   * @see org.xtext.java.java.Return_Statement
+   * @generated
+   */
+  EClass getReturn_Statement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_Statement#getReturnSmt <em>Return Smt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Smt</em>'.
+   * @see org.xtext.java.java.Return_Statement#getReturnSmt()
+   * @see #getReturn_Statement()
+   * @generated
+   */
+  EReference getReturn_Statement_ReturnSmt();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_Statement#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.java.java.Return_Statement#getValue()
+   * @see #getReturn_Statement()
+   * @generated
+   */
+  EReference getReturn_Statement_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.java.java.Return_value <em>Return value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Return value</em>'.
+   * @see org.xtext.java.java.Return_value
+   * @generated
+   */
+  EClass getReturn_value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.java.java.Return_value#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.java.java.Return_value#getName()
+   * @see #getReturn_value()
+   * @generated
+   */
+  EAttribute getReturn_value_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_value#getName2 <em>Name2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name2</em>'.
+   * @see org.xtext.java.java.Return_value#getName2()
+   * @see #getReturn_value()
+   * @generated
+   */
+  EReference getReturn_value_Name2();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.java.java.Try_statement <em>Try statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5377,6 +5605,58 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference IF_STATEMENT__ELSE_STATEMENT = eINSTANCE.getIf_Statement_ElseStatement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Return_StatementImpl <em>Return Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Return_StatementImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getReturn_Statement()
+     * @generated
+     */
+    EClass RETURN_STATEMENT = eINSTANCE.getReturn_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Return Smt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN_STATEMENT__RETURN_SMT = eINSTANCE.getReturn_Statement_ReturnSmt();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN_STATEMENT__VALUE = eINSTANCE.getReturn_Statement_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.java.java.impl.Return_valueImpl <em>Return value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.java.java.impl.Return_valueImpl
+     * @see org.xtext.java.java.impl.JavaPackageImpl#getReturn_value()
+     * @generated
+     */
+    EClass RETURN_VALUE = eINSTANCE.getReturn_value();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RETURN_VALUE__NAME = eINSTANCE.getReturn_value_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Name2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN_VALUE__NAME2 = eINSTANCE.getReturn_value_Name2();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.

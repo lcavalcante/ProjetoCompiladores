@@ -48,7 +48,7 @@ terminal L_CURLY_BRACE:
 	"}"
 ;
 
-Field_declaration:
+Field_declaration returns Field_declaration:
 	(doc=DOC_COMMENT? (
 		name=Variable_declaration
 		| name=Constructor_declaration 
@@ -356,6 +356,7 @@ Type_specifier:
       | "float" 
       | "long" 
       | "double" 
+      | "void"
       | Class_name
 ;
 
@@ -377,7 +378,8 @@ Statement_block:
 ;
 
 Statement:
-	 (variable = Variable_declaration)
+	({Return_Statement} returnSmt=Return_Statement)
+	|(variable = Variable_declaration)
 	|(expressionx=Expression)
 	|(ifStatement=If_Statement)
 	|(doStatement=Do_Statement)
@@ -417,6 +419,17 @@ If_Statement:
 	(=> ELSE elseStatement=Statement)?
 ;
 
+Return_Statement:
+	{Return_Statement} RETURN value=Return_value? EOL
+; 
+
+Return_value:
+	(name=ID
+		| name2=Method_call
+		| name2=Literal_Expression
+	)
+;
+
 terminal DEFAULT:
 	"default"
 ;
@@ -431,6 +444,10 @@ terminal SWITCH:
 
 terminal FOR:
 	"for"
+;
+
+terminal RETURN:
+	"return"
 ;
 
 terminal RIGHT_PARENTHESIS:

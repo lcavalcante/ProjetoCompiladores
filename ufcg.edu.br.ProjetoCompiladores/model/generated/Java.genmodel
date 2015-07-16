@@ -204,6 +204,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//If_Statement/statement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//If_Statement/elseStatement"/>
     </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Return_Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Return_Statement/returnSmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Return_Statement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Java.ecore#//Return_value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Return_value/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Return_value/name2"/>
+    </genClasses>
     <genClasses ecoreClass="Java.ecore#//Try_statement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Try_statement/try"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Try_statement/tryStatement"/>

@@ -14,6 +14,11 @@ import org.xtext.java.java.Method_declaration;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Parameter_list_method_call;
+import org.xtext.java.java.Return_Statement;
+import org.xtext.java.java.Return_value;
+import org.xtext.java.java.Statement;
+import org.xtext.java.java.Statement_block;
+import org.xtext.java.java.Type;
 import org.xtext.java.validation.AbstractJavaValidator;
 
 /**
@@ -95,5 +100,32 @@ public class JavaValidator extends AbstractJavaValidator {
       parametrosDeclaracao = 0;
     }
     return (parametrosDeclaracao == parametrosChamada);
+  }
+  
+  @Check
+  public void checaRetornoDosMetodos(final Method_declaration md) {
+    Statement_block _statement = md.getStatement();
+    EList<Statement> statements = _statement.getStatements();
+    for (final Statement smt : statements) {
+      if ((smt instanceof Return_Statement)) {
+        Type _type = md.getType();
+        String _name = _type.getName();
+        String _string = _name.toString();
+        boolean _equals = Objects.equal(_string, "void");
+        if (_equals) {
+          String _string_1 = ((Return_Statement)smt).toString();
+          String _plus = ("@@@@@@@@@@@@@@@" + _string_1);
+          String _plus_1 = (_plus + " ************ ");
+          Return_value _value = ((Return_Statement)smt).getValue();
+          String _plus_2 = (_plus_1 + _value);
+          this.error(_plus_2, null);
+          Return_value _value_1 = ((Return_Statement)smt).getValue();
+          boolean _notEquals = (!Objects.equal(_value_1, null));
+          if (_notEquals) {
+            this.error("Métodos void não deve retornar nada", JavaPackage.Literals.METHOD_DECLARATION__NAME);
+          }
+        }
+      }
+    }
   }
 }

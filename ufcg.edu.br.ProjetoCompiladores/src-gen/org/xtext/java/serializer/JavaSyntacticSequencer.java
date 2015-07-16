@@ -28,7 +28,7 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Literal_Expression_LONGTerminalRuleCall_0_1_1_q;
 	protected AbstractElementAlias match_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p;
 	protected AbstractElementAlias match_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p;
-	protected AbstractElementAlias match_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__;
+	protected AbstractElementAlias match_Statement_EOLTerminalRuleCall_13_1_or___BreakKeyword_11_1_EOLTerminalRuleCall_11_3___or___ContinueKeyword_12_1_EOLTerminalRuleCall_12_3__;
 	protected AbstractElementAlias match_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a;
 	protected AbstractElementAlias match_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p;
 	protected AbstractElementAlias match_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p;
@@ -43,7 +43,7 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Literal_Expression_LONGTerminalRuleCall_0_1_1_q = new TokenAlias(false, true, grammarAccess.getLiteral_ExpressionAccess().getLONGTerminalRuleCall_0_1_1());
 		match_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getMethod_declarationAccess().getABSTerminalRuleCall_6_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMethod_declarationAccess().getR_ABSTerminalRuleCall_6_0_0()), new TokenAlias(false, false, grammarAccess.getMethod_declarationAccess().getL_ABSTerminalRuleCall_6_0_1())));
 		match_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getParameterAccess().getABSTerminalRuleCall_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParameterAccess().getR_ABSTerminalRuleCall_2_0_0()), new TokenAlias(false, false, grammarAccess.getParameterAccess().getL_ABSTerminalRuleCall_2_0_1())));
-		match_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_10_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_11_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_11_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_12_1()));
+		match_Statement_EOLTerminalRuleCall_13_1_or___BreakKeyword_11_1_EOLTerminalRuleCall_11_3___or___ContinueKeyword_12_1_EOLTerminalRuleCall_12_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_11_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_11_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getContinueKeyword_12_1()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_12_3())), new TokenAlias(false, false, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_13_1()));
 		match_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getSwitch_StatementAccess().getDEFAULTTerminalRuleCall_6_1_0()), new TokenAlias(false, false, grammarAccess.getSwitch_StatementAccess().getCOLONTerminalRuleCall_6_1_1()));
 		match_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getTypeAccess().getABSTerminalRuleCall_1_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeAccess().getR_ABSTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getTypeAccess().getL_ABSTerminalRuleCall_1_0_1())));
 		match_Variable_declarator___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getVariable_declaratorAccess().getABSTerminalRuleCall_1_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getVariable_declaratorAccess().getR_ABSTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getVariable_declaratorAccess().getL_ABSTerminalRuleCall_1_0_1())));
@@ -100,6 +100,8 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getNOTToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getPACKAGERule())
 			return getPACKAGEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getRETURNRule())
+			return getRETURNToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getRIGHT_PARENTHESISRule())
 			return getRIGHT_PARENTHESISToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getR_ABSRule())
@@ -380,6 +382,17 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * terminal RETURN:
+	 * 	"return"
+	 * ;
+	 */
+	protected String getRETURNToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "return";
+	}
+	
+	/**
 	 * terminal RIGHT_PARENTHESIS:
 	 * 	"("
 	 * ;
@@ -463,8 +476,8 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Method_declaration___ABSTerminalRuleCall_6_1_q___R_ABSTerminalRuleCall_6_0_0_L_ABSTerminalRuleCall_6_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p.equals(syntax))
 				emit_Parameter___ABSTerminalRuleCall_2_1_q___R_ABSTerminalRuleCall_2_0_0_L_ABSTerminalRuleCall_2_0_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__.equals(syntax))
-				emit_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Statement_EOLTerminalRuleCall_13_1_or___BreakKeyword_11_1_EOLTerminalRuleCall_11_3___or___ContinueKeyword_12_1_EOLTerminalRuleCall_12_3__.equals(syntax))
+				emit_Statement_EOLTerminalRuleCall_13_1_or___BreakKeyword_11_1_EOLTerminalRuleCall_11_3___or___ContinueKeyword_12_1_EOLTerminalRuleCall_12_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a.equals(syntax))
 				emit_Switch_Statement___DEFAULTTerminalRuleCall_6_1_0_COLONTerminalRuleCall_6_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Type___ABSTerminalRuleCall_1_1_q___R_ABSTerminalRuleCall_1_0_0_L_ABSTerminalRuleCall_1_0_1__q__p.equals(syntax))
@@ -554,7 +567,7 @@ public class JavaSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Statement_EOLTerminalRuleCall_12_1_or___BreakKeyword_10_1_EOLTerminalRuleCall_10_3___or___ContinueKeyword_11_1_EOLTerminalRuleCall_11_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Statement_EOLTerminalRuleCall_13_1_or___BreakKeyword_11_1_EOLTerminalRuleCall_11_3___or___ContinueKeyword_12_1_EOLTerminalRuleCall_12_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

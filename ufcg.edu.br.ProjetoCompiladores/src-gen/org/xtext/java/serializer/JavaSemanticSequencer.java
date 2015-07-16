@@ -44,6 +44,8 @@ import org.xtext.java.java.Package_statement;
 import org.xtext.java.java.Parameter;
 import org.xtext.java.java.Parameter_list;
 import org.xtext.java.java.Parameter_list_method_call;
+import org.xtext.java.java.Return_Statement;
+import org.xtext.java.java.Return_value;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Static_initializer;
@@ -146,6 +148,19 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case JavaPackage.PARAMETER_LIST_METHOD_CALL:
 				sequence_Parameter_list_method_call(context, (Parameter_list_method_call) semanticObject); 
+				return; 
+			case JavaPackage.RETURN_STATEMENT:
+				if(context == grammarAccess.getReturn_StatementRule()) {
+					sequence_Return_Statement(context, (Return_Statement) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getStatementRule()) {
+					sequence_Statement(context, (Return_Statement) semanticObject); 
+					return; 
+				}
+				else break;
+			case JavaPackage.RETURN_VALUE:
+				sequence_Return_value(context, (Return_value) semanticObject); 
 				return; 
 			case JavaPackage.STATEMENT:
 				sequence_Statement(context, (Statement) semanticObject); 
@@ -483,6 +498,33 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (name=ID parameters+=ID*)
 	 */
 	protected void sequence_Parameter_list_method_call(EObject context, Parameter_list_method_call semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (value=Return_value?)
+	 */
+	protected void sequence_Return_Statement(EObject context, Return_Statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID | name2=Method_call | name2=Literal_Expression)
+	 */
+	protected void sequence_Return_value(EObject context, Return_value semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     returnSmt=Return_Statement
+	 */
+	protected void sequence_Statement(EObject context, Return_Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
