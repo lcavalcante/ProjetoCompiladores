@@ -206,6 +206,43 @@ public class JavaValidator extends AbstractJavaValidator {
               if (_or) {
                 Return_Statement _returnSmt_7 = ((Return_Statement)smt).getReturnSmt();
                 this.error("O tipo do retorno e o tipo do método são diferentes", _returnSmt_7, JavaPackage.Literals.RETURN_STATEMENT__RV);
+              } else {
+                boolean _and_3 = false;
+                boolean _and_4 = false;
+                boolean _and_5 = false;
+                boolean _notEquals_3 = (!Objects.equal(retorno2, null));
+                if (!_notEquals_3) {
+                  _and_5 = false;
+                } else {
+                  boolean _notEquals_4 = (!Objects.equal(retorno, null));
+                  _and_5 = _notEquals_4;
+                }
+                if (!_and_5) {
+                  _and_4 = false;
+                } else {
+                  String _name_9 = retorno2.getName();
+                  String _string_8 = _name_9.toString();
+                  Type _type_4 = md.getType();
+                  String _name_10 = _type_4.getName();
+                  String _string_9 = _name_10.toString();
+                  boolean _notEquals_5 = (!Objects.equal(_string_8, _string_9));
+                  _and_4 = _notEquals_5;
+                }
+                if (!_and_4) {
+                  _and_3 = false;
+                } else {
+                  String _name_11 = retorno.getName();
+                  String _string_10 = _name_11.toString();
+                  Type _type_5 = md.getType();
+                  String _name_12 = _type_5.getName();
+                  String _string_11 = _name_12.toString();
+                  boolean _notEquals_6 = (!Objects.equal(_string_10, _string_11));
+                  _and_3 = _notEquals_6;
+                }
+                if (_and_3) {
+                  Return_Statement _returnSmt_8 = ((Return_Statement)smt).getReturnSmt();
+                  this.error("O tipo do retorno e o tipo do método são diferentes", _returnSmt_8, JavaPackage.Literals.RETURN_STATEMENT__RV);
+                }
               }
             }
           }

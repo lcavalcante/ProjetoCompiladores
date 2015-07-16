@@ -123,6 +123,11 @@ class JavaValidator extends AbstractJavaValidator {
 						|| (retorno2 == null && retorno.name.toString != md.type.name.toString)
 					) {
 						error("O tipo do retorno e o tipo do método são diferentes", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					} else if (retorno2 != null && retorno != null
+						&& retorno2.name.toString != md.type.name.toString
+						&& retorno.name.toString != md.type.name.toString
+					) {
+						error("O tipo do retorno e o tipo do método são diferentes", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
 					}
 				}	 
 			}
@@ -156,4 +161,6 @@ class JavaValidator extends AbstractJavaValidator {
 			tipos.put(smt.variable.name.name.toString, smt.variable.type);
 		} 
 	}
+	
+	
 }
