@@ -267,7 +267,7 @@ terminal EXPONENTIAL:
 Literal_Expression:
 	((exp=HEXA LONG?) | (exp1=DECIMAL_DIGITS LONG?))
 	| exp2=Float_Literal
-	| (string = STRING)
+	| (string=STRING)
 	| (char=CHAR)
 ;
 
@@ -378,7 +378,7 @@ Statement_block:
 ;
 
 Statement:
-	({Return_Statement} returnSmt=Return_Statement)
+	(returnSmt=Return_Statement)
 	|(variable = Variable_declaration)
 	|(expressionx=Expression)
 	|(ifStatement=If_Statement)

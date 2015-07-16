@@ -150,15 +150,8 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Parameter_list_method_call(context, (Parameter_list_method_call) semanticObject); 
 				return; 
 			case JavaPackage.RETURN_STATEMENT:
-				if(context == grammarAccess.getReturn_StatementRule()) {
-					sequence_Return_Statement(context, (Return_Statement) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getStatementRule()) {
-					sequence_Statement(context, (Return_Statement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Return_Statement(context, (Return_Statement) semanticObject); 
+				return; 
 			case JavaPackage.RETURN_VALUE:
 				sequence_Return_value(context, (Return_value) semanticObject); 
 				return; 
@@ -524,15 +517,6 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getReturn_valueAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     returnSmt=Return_Statement
-	 */
-	protected void sequence_Statement(EObject context, Return_Statement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

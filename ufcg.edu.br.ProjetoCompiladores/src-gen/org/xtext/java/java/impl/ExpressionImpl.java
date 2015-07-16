@@ -27,7 +27,6 @@ import org.xtext.java.java.Numeric_Expression_NR;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getNumericExpression3 <em>Numeric Expression3</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getAux <em>Aux</em>}</li>
@@ -41,6 +40,7 @@ import org.xtext.java.java.Numeric_Expression_NR;
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getThis <em>This</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.ExpressionImpl#getName <em>Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

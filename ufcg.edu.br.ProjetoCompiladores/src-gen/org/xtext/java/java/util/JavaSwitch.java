@@ -50,7 +50,7 @@ public class JavaSwitch<T> extends Switch<T>
    * Checks whether this is a switch for the given package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param ePackage the package in question.
+   * @parameter ePackage the package in question.
    * @return whether this is a switch for the given package.
    * @generated
    */
@@ -324,7 +324,6 @@ public class JavaSwitch<T> extends Switch<T>
       {
         Return_Statement return_Statement = (Return_Statement)theEObject;
         T result = caseReturn_Statement(return_Statement);
-        if (result == null) result = caseStatement(return_Statement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

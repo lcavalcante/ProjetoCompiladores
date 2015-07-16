@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.Statement#getReturnSmt <em>Return Smt</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getExpressionx <em>Expressionx</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getIfStatement <em>If Statement</em>}</li>
@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Statement#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Statement#getStatement <em>Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getStatement()
  * @model
@@ -31,6 +32,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Statement extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Return Smt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Return Smt</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Return Smt</em>' containment reference.
+   * @see #setReturnSmt(Return_Statement)
+   * @see org.xtext.java.java.JavaPackage#getStatement_ReturnSmt()
+   * @model containment="true"
+   * @generated
+   */
+  Return_Statement getReturnSmt();
+
+  /**
+   * Sets the value of the '{@link org.xtext.java.java.Statement#getReturnSmt <em>Return Smt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Return Smt</em>' containment reference.
+   * @see #getReturnSmt()
+   * @generated
+   */
+  void setReturnSmt(Return_Statement value);
+
   /**
    * Returns the value of the '<em><b>Variable</b></em>' containment reference.
    * <!-- begin-user-doc -->

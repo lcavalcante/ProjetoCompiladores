@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Ampersand_Rule#getA1 <em>A1</em>}</li>
  *   <li>{@link org.xtext.java.java.Ampersand_Rule#getA2 <em>A2</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getAmpersand_Rule()
  * @model

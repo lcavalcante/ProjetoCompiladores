@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Field_declaration#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.xtext.java.java.Field_declaration#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Field_declaration#getDebug <em>Debug</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getField_declaration()
  * @model

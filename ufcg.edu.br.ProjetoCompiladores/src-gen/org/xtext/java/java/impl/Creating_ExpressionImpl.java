@@ -22,13 +22,13 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Creating_ExpressionImpl#getClassName <em>Class Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Creating_ExpressionImpl#getArgList <em>Arg List</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Creating_ExpressionImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Creating_ExpressionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

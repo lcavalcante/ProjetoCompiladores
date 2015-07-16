@@ -214,6 +214,8 @@
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnSmt" eType="#//Return_Statement"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable_declaration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressionx" eType="#//Expression"
@@ -275,9 +277,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseStatement" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Return_Statement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnSmt" eType="#//Return_Statement"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Return_Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rv" eType="#//Return_value"
         containment="true"/>
   </eClassifiers>

@@ -1708,7 +1708,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Variable()
+  public EReference getStatement_ReturnSmt()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(0);
   }
@@ -1718,7 +1718,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Expressionx()
+  public EReference getStatement_Variable()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(1);
   }
@@ -1728,7 +1728,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_IfStatement()
+  public EReference getStatement_Expressionx()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(2);
   }
@@ -1738,7 +1738,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_DoStatement()
+  public EReference getStatement_IfStatement()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(3);
   }
@@ -1748,7 +1748,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_WhileStatement()
+  public EReference getStatement_DoStatement()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(4);
   }
@@ -1758,7 +1758,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_ForStatement()
+  public EReference getStatement_WhileStatement()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(5);
   }
@@ -1768,7 +1768,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_SwitchStatement()
+  public EReference getStatement_ForStatement()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(6);
   }
@@ -1778,7 +1778,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Try()
+  public EReference getStatement_SwitchStatement()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(7);
   }
@@ -1788,9 +1788,19 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStatement_Try()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getStatement_Name()
   {
-    return (EAttribute)statementEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)statementEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1800,7 +1810,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    */
   public EReference getStatement_Statement()
   {
-    return (EReference)statementEClass.getEStructuralFeatures().get(9);
+    return (EReference)statementEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -2028,19 +2038,9 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReturn_Statement_ReturnSmt()
-  {
-    return (EReference)return_StatementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getReturn_Statement_Rv()
   {
-    return (EReference)return_StatementEClass.getEStructuralFeatures().get(1);
+    return (EReference)return_StatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2382,6 +2382,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(statement_blockEClass, STATEMENT_BLOCK__STATEMENTS);
 
     statementEClass = createEClass(STATEMENT);
+    createEReference(statementEClass, STATEMENT__RETURN_SMT);
     createEReference(statementEClass, STATEMENT__VARIABLE);
     createEReference(statementEClass, STATEMENT__EXPRESSIONX);
     createEReference(statementEClass, STATEMENT__IF_STATEMENT);
@@ -2420,7 +2421,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(if_StatementEClass, IF_STATEMENT__ELSE_STATEMENT);
 
     return_StatementEClass = createEClass(RETURN_STATEMENT);
-    createEReference(return_StatementEClass, RETURN_STATEMENT__RETURN_SMT);
     createEReference(return_StatementEClass, RETURN_STATEMENT__RV);
 
     return_valueEClass = createEClass(RETURN_VALUE);
@@ -2475,7 +2475,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     method_callEClass.getESuperTypes().add(this.getReturn_value());
     literal_ExpressionEClass.getESuperTypes().add(this.getReturn_value());
     statement_blockEClass.getESuperTypes().add(this.getStatement());
-    return_StatementEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2637,6 +2636,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getStatement_block_Statements(), this.getStatement(), null, "statements", null, 0, -1, Statement_block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStatement_ReturnSmt(), this.getReturn_Statement(), null, "returnSmt", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Variable(), this.getVariable_declaration(), null, "variable", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Expressionx(), this.getExpression(), null, "expressionx", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_IfStatement(), this.getIf_Statement(), null, "ifStatement", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2675,7 +2675,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getIf_Statement_ElseStatement(), this.getStatement(), null, "elseStatement", null, 0, 1, If_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(return_StatementEClass, Return_Statement.class, "Return_Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReturn_Statement_ReturnSmt(), this.getReturn_Statement(), null, "returnSmt", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReturn_Statement_Rv(), this.getReturn_value(), null, "rv", null, 0, 1, Return_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(return_valueEClass, Return_value.class, "Return_value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

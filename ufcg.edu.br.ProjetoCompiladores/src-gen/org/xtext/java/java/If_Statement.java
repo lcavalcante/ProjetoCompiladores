@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.If_Statement#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.If_Statement#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.If_Statement#getElseStatement <em>Else Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getIf_Statement()
  * @model

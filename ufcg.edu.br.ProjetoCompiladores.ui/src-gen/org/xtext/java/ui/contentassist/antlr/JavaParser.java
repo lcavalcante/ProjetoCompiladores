@@ -147,7 +147,6 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeAccess().getGroup_1_0(), "rule__Type__Group_1_0__0");
 					put(grammarAccess.getStatic_initializerAccess().getGroup(), "rule__Static_initializer__Group__0");
 					put(grammarAccess.getStatement_blockAccess().getGroup(), "rule__Statement_block__Group__0");
-					put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
 					put(grammarAccess.getStatementAccess().getGroup_10(), "rule__Statement__Group_10__0");
 					put(grammarAccess.getStatementAccess().getGroup_11(), "rule__Statement__Group_11__0");
 					put(grammarAccess.getStatementAccess().getGroup_12(), "rule__Statement__Group_12__0");
@@ -305,7 +304,7 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStatic_initializerAccess().getStaticAssignment_0(), "rule__Static_initializer__StaticAssignment_0");
 					put(grammarAccess.getStatic_initializerAccess().getNameAssignment_1(), "rule__Static_initializer__NameAssignment_1");
 					put(grammarAccess.getStatement_blockAccess().getStatementsAssignment_2(), "rule__Statement_block__StatementsAssignment_2");
-					put(grammarAccess.getStatementAccess().getReturnSmtAssignment_0_1(), "rule__Statement__ReturnSmtAssignment_0_1");
+					put(grammarAccess.getStatementAccess().getReturnSmtAssignment_0(), "rule__Statement__ReturnSmtAssignment_0");
 					put(grammarAccess.getStatementAccess().getVariableAssignment_1(), "rule__Statement__VariableAssignment_1");
 					put(grammarAccess.getStatementAccess().getExpressionxAssignment_2(), "rule__Statement__ExpressionxAssignment_2");
 					put(grammarAccess.getStatementAccess().getIfStatementAssignment_3(), "rule__Statement__IfStatementAssignment_3");

@@ -16,6 +16,7 @@ import org.xtext.java.java.Expression;
 import org.xtext.java.java.For_Statement;
 import org.xtext.java.java.If_Statement;
 import org.xtext.java.java.JavaPackage;
+import org.xtext.java.java.Return_Statement;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Switch_Statement;
 import org.xtext.java.java.Try_statement;
@@ -28,8 +29,8 @@ import org.xtext.java.java.While_Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
+ *   <li>{@link org.xtext.java.java.impl.StatementImpl#getReturnSmt <em>Return Smt</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getExpressionx <em>Expressionx</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getIfStatement <em>If Statement</em>}</li>
@@ -41,11 +42,22 @@ import org.xtext.java.java.While_Statement;
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
+  /**
+   * The cached value of the '{@link #getReturnSmt() <em>Return Smt</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnSmt()
+   * @generated
+   * @ordered
+   */
+  protected Return_Statement returnSmt;
+
   /**
    * The cached value of the '{@link #getVariable() <em>Variable</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -175,6 +187,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   protected EClass eStaticClass()
   {
     return JavaPackage.Literals.STATEMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return_Statement getReturnSmt()
+  {
+    return returnSmt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetReturnSmt(Return_Statement newReturnSmt, NotificationChain msgs)
+  {
+    Return_Statement oldReturnSmt = returnSmt;
+    returnSmt = newReturnSmt;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__RETURN_SMT, oldReturnSmt, newReturnSmt);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReturnSmt(Return_Statement newReturnSmt)
+  {
+    if (newReturnSmt != returnSmt)
+    {
+      NotificationChain msgs = null;
+      if (returnSmt != null)
+        msgs = ((InternalEObject)returnSmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__RETURN_SMT, null, msgs);
+      if (newReturnSmt != null)
+        msgs = ((InternalEObject)newReturnSmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__RETURN_SMT, null, msgs);
+      msgs = basicSetReturnSmt(newReturnSmt, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__RETURN_SMT, newReturnSmt, newReturnSmt));
   }
 
   /**
@@ -642,6 +702,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__RETURN_SMT:
+        return basicSetReturnSmt(null, msgs);
       case JavaPackage.STATEMENT__VARIABLE:
         return basicSetVariable(null, msgs);
       case JavaPackage.STATEMENT__EXPRESSIONX:
@@ -674,6 +736,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__RETURN_SMT:
+        return getReturnSmt();
       case JavaPackage.STATEMENT__VARIABLE:
         return getVariable();
       case JavaPackage.STATEMENT__EXPRESSIONX:
@@ -708,6 +772,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__RETURN_SMT:
+        setReturnSmt((Return_Statement)newValue);
+        return;
       case JavaPackage.STATEMENT__VARIABLE:
         setVariable((Variable_declaration)newValue);
         return;
@@ -752,6 +819,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__RETURN_SMT:
+        setReturnSmt((Return_Statement)null);
+        return;
       case JavaPackage.STATEMENT__VARIABLE:
         setVariable((Variable_declaration)null);
         return;
@@ -796,6 +866,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case JavaPackage.STATEMENT__RETURN_SMT:
+        return returnSmt != null;
       case JavaPackage.STATEMENT__VARIABLE:
         return variable != null;
       case JavaPackage.STATEMENT__EXPRESSIONX:

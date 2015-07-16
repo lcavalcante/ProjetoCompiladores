@@ -30,7 +30,6 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getArgList <em>Arg List</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getAux <em>Aux</em>}</li>
@@ -47,6 +46,7 @@ import org.xtext.java.java.JavaPackage;
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getBitSign <em>Bit Sign</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Expression_auxImpl#getExpressionBit <em>Expression Bit</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

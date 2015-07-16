@@ -1536,13 +1536,22 @@ public interface JavaPackage extends EPackage
   int STATEMENT = 29;
 
   /**
+   * The feature id for the '<em><b>Return Smt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__RETURN_SMT = 0;
+
+  /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT__VARIABLE = 0;
+  int STATEMENT__VARIABLE = 1;
 
   /**
    * The feature id for the '<em><b>Expressionx</b></em>' containment reference.
@@ -1551,7 +1560,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__EXPRESSIONX = 1;
+  int STATEMENT__EXPRESSIONX = 2;
 
   /**
    * The feature id for the '<em><b>If Statement</b></em>' containment reference.
@@ -1560,7 +1569,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__IF_STATEMENT = 2;
+  int STATEMENT__IF_STATEMENT = 3;
 
   /**
    * The feature id for the '<em><b>Do Statement</b></em>' containment reference.
@@ -1569,7 +1578,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__DO_STATEMENT = 3;
+  int STATEMENT__DO_STATEMENT = 4;
 
   /**
    * The feature id for the '<em><b>While Statement</b></em>' containment reference.
@@ -1578,7 +1587,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__WHILE_STATEMENT = 4;
+  int STATEMENT__WHILE_STATEMENT = 5;
 
   /**
    * The feature id for the '<em><b>For Statement</b></em>' containment reference.
@@ -1587,7 +1596,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__FOR_STATEMENT = 5;
+  int STATEMENT__FOR_STATEMENT = 6;
 
   /**
    * The feature id for the '<em><b>Switch Statement</b></em>' containment reference.
@@ -1596,7 +1605,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__SWITCH_STATEMENT = 6;
+  int STATEMENT__SWITCH_STATEMENT = 7;
 
   /**
    * The feature id for the '<em><b>Try</b></em>' containment reference.
@@ -1605,7 +1614,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__TRY = 7;
+  int STATEMENT__TRY = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1614,7 +1623,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__NAME = 8;
+  int STATEMENT__NAME = 9;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -1623,7 +1632,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__STATEMENT = 9;
+  int STATEMENT__STATEMENT = 10;
 
   /**
    * The number of structural features of the '<em>Statement</em>' class.
@@ -1632,7 +1641,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 10;
+  int STATEMENT_FEATURE_COUNT = 11;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Statement_blockImpl <em>Statement block</em>}' class.
@@ -1643,6 +1652,15 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   int STATEMENT_BLOCK = 28;
+
+  /**
+   * The feature id for the '<em><b>Return Smt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__RETURN_SMT = STATEMENT__RETURN_SMT;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -2002,112 +2020,13 @@ public interface JavaPackage extends EPackage
   int RETURN_STATEMENT = 35;
 
   /**
-   * The feature id for the '<em><b>Variable</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__VARIABLE = STATEMENT__VARIABLE;
-
-  /**
-   * The feature id for the '<em><b>Expressionx</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__EXPRESSIONX = STATEMENT__EXPRESSIONX;
-
-  /**
-   * The feature id for the '<em><b>If Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__IF_STATEMENT = STATEMENT__IF_STATEMENT;
-
-  /**
-   * The feature id for the '<em><b>Do Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__DO_STATEMENT = STATEMENT__DO_STATEMENT;
-
-  /**
-   * The feature id for the '<em><b>While Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__WHILE_STATEMENT = STATEMENT__WHILE_STATEMENT;
-
-  /**
-   * The feature id for the '<em><b>For Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__FOR_STATEMENT = STATEMENT__FOR_STATEMENT;
-
-  /**
-   * The feature id for the '<em><b>Switch Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__SWITCH_STATEMENT = STATEMENT__SWITCH_STATEMENT;
-
-  /**
-   * The feature id for the '<em><b>Try</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__TRY = STATEMENT__TRY;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__NAME = STATEMENT__NAME;
-
-  /**
-   * The feature id for the '<em><b>Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__STATEMENT = STATEMENT__STATEMENT;
-
-  /**
-   * The feature id for the '<em><b>Return Smt</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__RETURN_SMT = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Rv</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT__RV = STATEMENT_FEATURE_COUNT + 1;
+  int RETURN_STATEMENT__RV = 0;
 
   /**
    * The number of structural features of the '<em>Return Statement</em>' class.
@@ -2116,7 +2035,7 @@ public interface JavaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int RETURN_STATEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Try_statementImpl <em>Try statement</em>}' class.
@@ -3667,6 +3586,17 @@ public interface JavaPackage extends EPackage
   EClass getStatement();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getReturnSmt <em>Return Smt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Smt</em>'.
+   * @see org.xtext.java.java.Statement#getReturnSmt()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_ReturnSmt();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4011,17 +3941,6 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EClass getReturn_Statement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_Statement#getReturnSmt <em>Return Smt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Return Smt</em>'.
-   * @see org.xtext.java.java.Return_Statement#getReturnSmt()
-   * @see #getReturn_Statement()
-   * @generated
-   */
-  EReference getReturn_Statement_ReturnSmt();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.java.java.Return_Statement#getRv <em>Rv</em>}'.
@@ -5319,6 +5238,14 @@ public interface JavaPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
+     * The meta object literal for the '<em><b>Return Smt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__RETURN_SMT = eINSTANCE.getStatement_ReturnSmt();
+
+    /**
      * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5585,14 +5512,6 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EClass RETURN_STATEMENT = eINSTANCE.getReturn_Statement();
-
-    /**
-     * The meta object literal for the '<em><b>Return Smt</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RETURN_STATEMENT__RETURN_SMT = eINSTANCE.getReturn_Statement_ReturnSmt();
 
     /**
      * The meta object literal for the '<em><b>Rv</b></em>' containment reference feature.

@@ -9,8 +9,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.java.java.Class_declaration;
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.JavaPackage;
+import org.xtext.java.java.Literal_Expression;
+import org.xtext.java.java.Logical_Expression_NR;
 import org.xtext.java.java.Method_call;
 import org.xtext.java.java.Method_declaration;
 import org.xtext.java.java.Parameter;
@@ -21,8 +24,10 @@ import org.xtext.java.java.Return_value;
 import org.xtext.java.java.Statement;
 import org.xtext.java.java.Statement_block;
 import org.xtext.java.java.Type;
+import org.xtext.java.java.Type_declaration;
 import org.xtext.java.java.Variable_declaration;
 import org.xtext.java.java.Variable_declarator;
+import org.xtext.java.java.Variable_initializer;
 import org.xtext.java.validation.AbstractJavaValidator;
 
 /**
@@ -35,6 +40,29 @@ public class JavaValidator extends AbstractJavaValidator {
   public List<Method_declaration> metodosDeclarados;
   
   public Map<String, Type> tipos;
+  
+  public Map<String, String> classeExtends = new HashMap<String, String>();
+  
+  @Check
+  public String populaClasses(final Type_declaration td) {
+    String _xifexpression = null;
+    EObject _name = td.getName();
+    if ((_name instanceof Class_declaration)) {
+      String _xblockexpression = null;
+      {
+        EObject _name_1 = td.getName();
+        Class_declaration cd = ((Class_declaration) _name_1);
+        String _className = cd.getClassName();
+        String _extend = cd.getExtend();
+        this.classeExtends.put(_className, _extend);
+        String _className_1 = cd.getClassName();
+        String _implement = cd.getImplement();
+        _xblockexpression = this.classeExtends.put(_className_1, _implement);
+      }
+      _xifexpression = _xblockexpression;
+    }
+    return _xifexpression;
+  }
   
   @Check
   public void runChecks(final Class_declaration cd) {
@@ -122,40 +150,41 @@ public class JavaValidator extends AbstractJavaValidator {
     for (final Statement smt : statements) {
       {
         this.addTiposMetodo(smt, tiposMetodo);
-        if ((smt instanceof Return_Statement)) {
+        Return_Statement _returnSmt = smt.getReturnSmt();
+        if ((_returnSmt instanceof Return_Statement)) {
           temReturn = true;
           Type _type = md.getType();
           String _name = _type.getName();
           String _string = _name.toString();
           boolean _equals = Objects.equal(_string, "void");
           if (_equals) {
-            Return_Statement _returnSmt = ((Return_Statement)smt).getReturnSmt();
-            Return_value _rv = _returnSmt.getRv();
+            Return_Statement _returnSmt_1 = smt.getReturnSmt();
+            Return_value _rv = _returnSmt_1.getRv();
             String _name_1 = _rv.getName();
             boolean _notEquals = (!Objects.equal(_name_1, null));
             if (_notEquals) {
-              Return_Statement _returnSmt_1 = ((Return_Statement)smt).getReturnSmt();
-              this.error("Métodos void não devem retornar nada", _returnSmt_1, JavaPackage.Literals.RETURN_STATEMENT__RV);
+              Return_Statement _returnSmt_2 = smt.getReturnSmt();
+              this.error("Métodos void não devem retornar nada", _returnSmt_2, JavaPackage.Literals.RETURN_STATEMENT__RV);
             }
           } else {
-            Return_Statement _returnSmt_2 = ((Return_Statement)smt).getReturnSmt();
-            Return_value _rv_1 = _returnSmt_2.getRv();
+            Return_Statement _returnSmt_3 = smt.getReturnSmt();
+            Return_value _rv_1 = _returnSmt_3.getRv();
             boolean _equals_1 = Objects.equal(_rv_1, null);
             if (_equals_1) {
               Type _type_1 = md.getType();
               String _name_2 = _type_1.getName();
               String _string_1 = _name_2.toString();
               String _plus = ("O método deve retornar " + _string_1);
-              Return_Statement _returnSmt_3 = ((Return_Statement)smt).getReturnSmt();
-              this.error(_plus, _returnSmt_3, JavaPackage.Literals.RETURN_STATEMENT__RETURN_SMT);
+              Return_Statement _returnSmt_4 = smt.getReturnSmt();
+              this.error(_plus, _returnSmt_4, JavaPackage.Literals.RETURN_STATEMENT__RV);
             }
-            Return_Statement _returnSmt_4 = ((Return_Statement)smt).getReturnSmt();
-            Return_value _rv_2 = _returnSmt_4.getRv();
+            Return_Statement _returnSmt_5 = smt.getReturnSmt();
+            Return_value _rv_2 = _returnSmt_5.getRv();
             String _name_3 = _rv_2.getName();
             String _string_2 = _name_3.toString();
             Type retorno = this.tipos.get(_string_2);
-            Return_Statement _returnSmt_5 = ((Return_Statement)smt).getReturnSmt();
-            Return_value _rv_3 = _returnSmt_5.getRv();
+            Return_Statement _returnSmt_6 = smt.getReturnSmt();
+            Return_value _rv_3 = _returnSmt_6.getRv();
             String _name_4 = _rv_3.getName();
             String _string_3 = _name_4.toString();
             Type retorno2 = tiposMetodo.get(_string_3);
@@ -168,8 +197,8 @@ public class JavaValidator extends AbstractJavaValidator {
               _and = _equals_3;
             }
             if (_and) {
-              Return_Statement _returnSmt_6 = ((Return_Statement)smt).getReturnSmt();
-              this.error("A variável de retorno ainda não foi declarada", _returnSmt_6, JavaPackage.Literals.RETURN_STATEMENT__RV);
+              Return_Statement _returnSmt_7 = smt.getReturnSmt();
+              this.error("A variável de retorno ainda não foi declarada", _returnSmt_7, JavaPackage.Literals.RETURN_STATEMENT__RV);
             } else {
               boolean _or = false;
               boolean _and_1 = false;
@@ -204,8 +233,8 @@ public class JavaValidator extends AbstractJavaValidator {
                 _or = _and_2;
               }
               if (_or) {
-                Return_Statement _returnSmt_7 = ((Return_Statement)smt).getReturnSmt();
-                this.error("O tipo do retorno e o tipo do método são diferentes", _returnSmt_7, JavaPackage.Literals.RETURN_STATEMENT__RV);
+                Return_Statement _returnSmt_8 = smt.getReturnSmt();
+                this.error("O tipo do retorno e o tipo do método são diferentes", _returnSmt_8, JavaPackage.Literals.RETURN_STATEMENT__RV);
               } else {
                 boolean _and_3 = false;
                 boolean _and_4 = false;
@@ -240,8 +269,8 @@ public class JavaValidator extends AbstractJavaValidator {
                   _and_3 = _notEquals_6;
                 }
                 if (_and_3) {
-                  Return_Statement _returnSmt_8 = ((Return_Statement)smt).getReturnSmt();
-                  this.error("O tipo do retorno e o tipo do método são diferentes", _returnSmt_8, JavaPackage.Literals.RETURN_STATEMENT__RV);
+                  Return_Statement _returnSmt_9 = smt.getReturnSmt();
+                  this.error("O tipo do retorno e o tipo do método são diferentes", _returnSmt_9, JavaPackage.Literals.RETURN_STATEMENT__RV);
                 }
               }
             }
@@ -272,74 +301,136 @@ public class JavaValidator extends AbstractJavaValidator {
     Type _xifexpression = null;
     EObject _name = fd.getName();
     if ((_name instanceof Variable_declaration)) {
-      Type _xblockexpression = null;
-      {
-        EObject _name_1 = fd.getName();
-        Variable_declaration vd = ((Variable_declaration) _name_1);
-        Variable_declarator _name_2 = vd.getName();
-        String _name_3 = _name_2.getName();
-        String _string = _name_3.toString();
-        Type nome = tipos.get(_string);
-        Type _xifexpression_1 = null;
-        boolean _notEquals = (!Objects.equal(nome, null));
-        if (_notEquals) {
-          this.error("Já existe uma variável com o mesmo identificador", vd, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
-        } else {
-          Variable_declarator _name_4 = vd.getName();
-          String _name_5 = _name_4.getName();
-          String _string_1 = _name_5.toString();
-          Type _type = vd.getType();
-          _xifexpression_1 = tipos.put(_string_1, _type);
-        }
-        _xblockexpression = _xifexpression_1;
+      EObject _name_1 = fd.getName();
+      Variable_declaration vd = ((Variable_declaration) _name_1);
+      Variable_declarator _name_2 = vd.getName();
+      String _name_3 = _name_2.getName();
+      String _string = _name_3.toString();
+      Type nome = tipos.get(_string);
+      boolean _notEquals = (!Objects.equal(nome, null));
+      if (_notEquals) {
+        this.error("Já existe uma variável com o mesmo identificador", vd, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
+      } else {
+        Variable_declarator _name_4 = vd.getName();
+        String _name_5 = _name_4.getName();
+        String _string_1 = _name_5.toString();
+        Type _type = vd.getType();
+        tipos.put(_string_1, _type);
+        Variable_declarator _name_6 = vd.getName();
+        this.checarTiposVariaveis(_name_6, tipos);
       }
-      _xifexpression = _xblockexpression;
     } else {
       Type _xifexpression_1 = null;
-      EObject _name_1 = fd.getName();
-      if ((_name_1 instanceof Method_declaration)) {
-        Type _xblockexpression_1 = null;
+      EObject _name_7 = fd.getName();
+      if ((_name_7 instanceof Method_declaration)) {
+        Type _xblockexpression = null;
         {
-          EObject _name_2 = fd.getName();
-          Method_declaration md = ((Method_declaration) _name_2);
-          String _name_3 = md.getName();
-          String _string = _name_3.toString();
-          Type _type = md.getType();
-          _xblockexpression_1 = tipos.put(_string, _type);
+          EObject _name_8 = fd.getName();
+          Method_declaration md = ((Method_declaration) _name_8);
+          String _name_9 = md.getName();
+          String _string_2 = _name_9.toString();
+          Type _type_1 = md.getType();
+          _xblockexpression = tipos.put(_string_2, _type_1);
         }
-        _xifexpression_1 = _xblockexpression_1;
+        _xifexpression_1 = _xblockexpression;
       }
       _xifexpression = _xifexpression_1;
     }
     return _xifexpression;
   }
   
-  public Type addTiposMetodo(final Statement smt, final Map<String, Type> tipos) {
-    Type _xifexpression = null;
+  public void addTiposMetodo(final Statement smt, final Map<String, Type> tipos) {
     Variable_declaration _variable = smt.getVariable();
     if ((_variable instanceof Variable_declaration)) {
-      Type _xblockexpression = null;
-      {
-        Variable_declaration _variable_1 = smt.getVariable();
-        Variable_declarator _name = _variable_1.getName();
-        String _name_1 = _name.getName();
-        String _string = _name_1.toString();
-        Type nome = tipos.get(_string);
-        boolean _notEquals = (!Objects.equal(nome, null));
-        if (_notEquals) {
-          Variable_declaration _variable_2 = smt.getVariable();
-          this.error("Já existe uma variável com o mesmo identificador", _variable_2, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
-        }
-        Variable_declaration _variable_3 = smt.getVariable();
-        Variable_declarator _name_2 = _variable_3.getName();
-        String _name_3 = _name_2.getName();
-        String _string_1 = _name_3.toString();
-        Variable_declaration _variable_4 = smt.getVariable();
-        Type _type = _variable_4.getType();
-        _xblockexpression = tipos.put(_string_1, _type);
+      Variable_declaration _variable_1 = smt.getVariable();
+      Variable_declaration v = ((Variable_declaration) _variable_1);
+      Variable_declarator _name = v.getName();
+      String _name_1 = _name.getName();
+      String _string = _name_1.toString();
+      Type nome = tipos.get(_string);
+      boolean _notEquals = (!Objects.equal(nome, null));
+      if (_notEquals) {
+        Variable_declaration _variable_2 = smt.getVariable();
+        this.error("Já existe uma variável com o mesmo identificador", _variable_2, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
       }
-      _xifexpression = _xblockexpression;
+      Variable_declarator _name_2 = v.getName();
+      String _name_3 = _name_2.getName();
+      String _string_1 = _name_3.toString();
+      Type _type = v.getType();
+      tipos.put(_string_1, _type);
+      Variable_declaration _variable_3 = smt.getVariable();
+      Variable_declarator _name_4 = _variable_3.getName();
+      this.checarTiposVariaveis(_name_4, tipos);
     }
-    return _xifexpression;
+  }
+  
+  public void checarTiposVariaveis(final Variable_declarator vd, final Map<String, Type> tipos) {
+    String _name = vd.getName();
+    String _string = _name.toString();
+    Type tipo = tipos.get(_string);
+    boolean _and = false;
+    Variable_initializer _initializer = vd.getInitializer();
+    boolean _notEquals = (!Objects.equal(_initializer, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      Variable_initializer _initializer_1 = vd.getInitializer();
+      Expression _expression = _initializer_1.getExpression();
+      boolean _notEquals_1 = (!Objects.equal(_expression, null));
+      _and = _notEquals_1;
+    }
+    if (_and) {
+      Variable_initializer _initializer_2 = vd.getInitializer();
+      Expression _expression_1 = _initializer_2.getExpression();
+      Literal_Expression _literalExpression = _expression_1.getLiteralExpression();
+      if ((_literalExpression instanceof Literal_Expression)) {
+        boolean _and_1 = false;
+        String _name_1 = tipo.getName();
+        String _string_1 = _name_1.toString();
+        boolean _equals = Objects.equal(_string_1, "String");
+        if (!_equals) {
+          _and_1 = false;
+        } else {
+          Variable_initializer _initializer_3 = vd.getInitializer();
+          Expression _expression_2 = _initializer_3.getExpression();
+          Literal_Expression _literalExpression_1 = _expression_2.getLiteralExpression();
+          String _string_2 = _literalExpression_1.getString();
+          boolean _equals_1 = Objects.equal(_string_2, null);
+          _and_1 = _equals_1;
+        }
+        if (_and_1) {
+          this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+        } else {
+          boolean _and_2 = false;
+          String _name_2 = tipo.getName();
+          String _string_3 = _name_2.toString();
+          boolean _equals_2 = Objects.equal(_string_3, "int");
+          if (!_equals_2) {
+            _and_2 = false;
+          } else {
+            Variable_initializer _initializer_4 = vd.getInitializer();
+            Expression _expression_3 = _initializer_4.getExpression();
+            Literal_Expression _literalExpression_2 = _expression_3.getLiteralExpression();
+            String _string_4 = _literalExpression_2.getString();
+            boolean _notEquals_2 = (!Objects.equal(_string_4, null));
+            _and_2 = _notEquals_2;
+          }
+          if (_and_2) {
+            this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+          }
+        }
+      }
+      Variable_initializer _initializer_5 = vd.getInitializer();
+      Expression _expression_4 = _initializer_5.getExpression();
+      Logical_Expression_NR _logicalExpression = _expression_4.getLogicalExpression();
+      if ((!(_logicalExpression instanceof Logical_Expression_NR))) {
+        String _name_3 = tipo.getName();
+        String _string_5 = _name_3.toString();
+        boolean _equals_3 = Objects.equal(_string_5, "boolean");
+        if (_equals_3) {
+          this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+        }
+      }
+    }
   }
 }

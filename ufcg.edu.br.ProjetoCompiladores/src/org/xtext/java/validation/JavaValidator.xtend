@@ -17,6 +17,13 @@ import org.xtext.java.java.Return_Statement
 import org.xtext.java.java.Statement
 import org.xtext.java.java.Variable_declaration
 import org.xtext.java.java.Type
+import org.xtext.java.java.Type_declaration
+import org.xtext.java.java.Variable_declarator
+import org.xtext.java.java.Expression
+import java.awt.font.NumericShaper.Range
+import org.xtext.java.java.Numeric_Expression_NR
+import org.xtext.java.java.Literal_Expression
+import org.xtext.java.java.Logical_Expression_NR
 
 /**
  * This class contains custom validation rules. 
@@ -39,6 +46,17 @@ class JavaValidator extends AbstractJavaValidator {
 	public List<Method_declaration> metodosDeclarados;
 	
 	public Map<String, Type> tipos;
+	
+	public Map<String, String> classeExtends = new HashMap<String, String>();
+	
+	@Check 
+	def populaClasses(Type_declaration td) {
+		if (td.name instanceof Class_declaration) {
+			var Class_declaration cd = td.name as Class_declaration;
+			classeExtends.put(cd.className, cd.extend);
+			classeExtends.put(cd.className, cd.implement);
+		}
+	}
 	
 	@Check 
 	def runChecks(Class_declaration cd) {
@@ -105,7 +123,7 @@ class JavaValidator extends AbstractJavaValidator {
 		var boolean temReturn = false;
 		for (Statement smt : statements) {
 			addTiposMetodo(smt, tiposMetodo);
-			if (smt instanceof Return_Statement) {
+			if (smt.returnSmt instanceof Return_Statement) {
 				temReturn = true;
 				if (md.type.name.toString == "void") {
 					if (smt.returnSmt.rv.name != null) {
@@ -113,7 +131,7 @@ class JavaValidator extends AbstractJavaValidator {
 					}
 				} else {
 					if (smt.returnSmt.rv == null) {
-						error("O método deve retornar " + md.type.name.toString, smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RETURN_SMT);
+						error("O método deve retornar " + md.type.name.toString, smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
 					}
 					var retorno = tipos.get(smt.returnSmt.rv.name.toString);
 					var retorno2 = tiposMetodo.get(smt.returnSmt.rv.name.toString);
@@ -144,7 +162,8 @@ class JavaValidator extends AbstractJavaValidator {
 			if (nome != null) {
 				error("Já existe uma variável com o mesmo identificador", vd, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
 			} else {
-				tipos.put(vd.name.name.toString, vd.type);				
+				tipos.put(vd.name.name.toString, vd.type);	
+				checarTiposVariaveis(vd.name, tipos);			
 			}
 		} else if (fd.name instanceof Method_declaration) {
 			var Method_declaration md = fd.name as Method_declaration;
@@ -154,13 +173,33 @@ class JavaValidator extends AbstractJavaValidator {
 	
 	def addTiposMetodo(Statement smt, Map<String, Type> tipos) {
 		if (smt.variable instanceof Variable_declaration) {
-			var Type nome = tipos.get(smt.variable.name.name.toString);
+			var Variable_declaration v = smt.variable as Variable_declaration;
+			var Type nome = tipos.get(v.name.name.toString);
 			if (nome != null) {
 				error("Já existe uma variável com o mesmo identificador", smt.variable, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
 			}
-			tipos.put(smt.variable.name.name.toString, smt.variable.type);
+			tipos.put(v.name.name.toString, v.type);
+			checarTiposVariaveis(smt.variable.name, tipos);
 		} 
 	}
 	
-	
+	def checarTiposVariaveis(Variable_declarator vd, Map<String, Type> tipos) {
+		var Type tipo = tipos.get(vd.name.toString);
+		if (vd.initializer != null
+			&& vd.initializer.expression != null
+		) {
+			if (vd.initializer.expression.literalExpression instanceof Literal_Expression) {
+				if (tipo.name.toString == "String" && vd.initializer.expression.literalExpression.string == null) {
+					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+				} else if (tipo.name.toString == "int" && vd.initializer.expression.literalExpression.string != null) {
+					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+				}
+			} 
+			if (!(vd.initializer.expression.logicalExpression instanceof Logical_Expression_NR)) {
+				if (tipo.name.toString == "boolean") {
+					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+				}
+			}
+		}
+	}	
 }

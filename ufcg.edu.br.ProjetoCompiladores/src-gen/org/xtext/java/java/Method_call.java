@@ -10,10 +10,10 @@ package org.xtext.java.java;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Method_call#getParameter <em>Parameter</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getMethod_call()
  * @model
