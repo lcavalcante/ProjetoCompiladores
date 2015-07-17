@@ -50,11 +50,15 @@ class JavaValidator extends AbstractJavaValidator {
 	public Map<String, String> classeExtends = new HashMap<String, String>();
 	
 	@Check 
-	def populaClasses(Type_declaration td) {
+	def addClassesMapa(Type_declaration td) {
 		if (td.name instanceof Class_declaration) {
 			var Class_declaration cd = td.name as Class_declaration;
-			classeExtends.put(cd.className, cd.extend);
-			classeExtends.put(cd.className, cd.implement);
+			if (cd.extend != null) {
+				classeExtends.put(cd.className.toString, cd.extend.toString);	
+			}
+			if (cd.implement != null) {
+				classeExtends.put(cd.className.toString, cd.implement.toString);	
+			}
 		}
 	}
 	
@@ -195,9 +199,13 @@ class JavaValidator extends AbstractJavaValidator {
 			&& vd.initializer.expression != null
 		) {
 			if (vd.initializer.expression.literalExpression instanceof Literal_Expression) {
-				if (tipo.name.toString == "String" && vd.initializer.expression.literalExpression.string == null) {
+				if (tipo.name.toString == "String" && vd.initializer.expression.literalExpression.string == null
+					&& vd.initializer.expression.aux.testingSign == null
+				) {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-				} else if (tipo.name.toString == "int" && vd.initializer.expression.literalExpression.string != null) {
+				} else if (tipo.name.toString == "int" && vd.initializer.expression.literalExpression.string != null
+					&& vd.initializer.expression.aux.testingSign == null
+				) {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 				} else if (vd.initializer.expression.literalExpression.string != null
 					&& vd.initializer.expression.aux != null
@@ -221,7 +229,7 @@ class JavaValidator extends AbstractJavaValidator {
 				}
 			} 
 			if (!(vd.initializer.expression.logicalExpression instanceof Logical_Expression_NR)) {
-				if (tipo.name.toString == "boolean") {
+				if (tipo.name.toString == "boolean" && vd.initializer.expression.aux.testingSign == null) {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 				}
 			} else {
@@ -230,8 +238,9 @@ class JavaValidator extends AbstractJavaValidator {
 				}
 			}
 			if (vd.initializer.expression.aux != null
-				&& vd.initializer.expression.aux.testingSign != null) {
-					
+				&& vd.initializer.expression.aux.testingSign != null
+				&& tipo.name.toString != "boolean") {
+					error("A variável deve ser do tipo boolean", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 			}
 		}
 	}	
