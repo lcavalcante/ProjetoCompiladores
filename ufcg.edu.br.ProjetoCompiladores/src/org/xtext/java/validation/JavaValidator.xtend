@@ -217,11 +217,9 @@ class JavaValidator extends AbstractJavaValidator {
 		) {
 			if (vd.initializer.expression.literalExpression instanceof Literal_Expression) {
 				if (tipo.name.toString == "String" && vd.initializer.expression.literalExpression.string == null
-					&& vd.initializer.expression.aux.testingSign == null
 				) {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 				} else if (tipo.name.toString == "int" && vd.initializer.expression.literalExpression.string != null
-					&& vd.initializer.expression.aux.testingSign == null
 				) {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 				} else if (vd.initializer.expression.literalExpression.string != null

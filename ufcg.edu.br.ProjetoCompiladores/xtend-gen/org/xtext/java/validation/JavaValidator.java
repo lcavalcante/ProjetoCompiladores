@@ -465,157 +465,135 @@ public class JavaValidator extends AbstractJavaValidator {
       Literal_Expression _literalExpression = _expression_1.getLiteralExpression();
       if ((_literalExpression instanceof Literal_Expression)) {
         boolean _and_1 = false;
-        boolean _and_2 = false;
         String _name_1 = tipo.getName();
         String _string_1 = _name_1.toString();
         boolean _equals = Objects.equal(_string_1, "String");
         if (!_equals) {
-          _and_2 = false;
+          _and_1 = false;
         } else {
           Variable_initializer _initializer_3 = vd.getInitializer();
           Expression _expression_2 = _initializer_3.getExpression();
           Literal_Expression _literalExpression_1 = _expression_2.getLiteralExpression();
           String _string_2 = _literalExpression_1.getString();
           boolean _equals_1 = Objects.equal(_string_2, null);
-          _and_2 = _equals_1;
-        }
-        if (!_and_2) {
-          _and_1 = false;
-        } else {
-          Variable_initializer _initializer_4 = vd.getInitializer();
-          Expression _expression_3 = _initializer_4.getExpression();
-          Expression_aux _aux = _expression_3.getAux();
-          String _testingSign = _aux.getTestingSign();
-          boolean _equals_2 = Objects.equal(_testingSign, null);
-          _and_1 = _equals_2;
+          _and_1 = _equals_1;
         }
         if (_and_1) {
           this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
         } else {
-          boolean _and_3 = false;
-          boolean _and_4 = false;
+          boolean _and_2 = false;
           String _name_2 = tipo.getName();
           String _string_3 = _name_2.toString();
-          boolean _equals_3 = Objects.equal(_string_3, "int");
-          if (!_equals_3) {
-            _and_4 = false;
+          boolean _equals_2 = Objects.equal(_string_3, "int");
+          if (!_equals_2) {
+            _and_2 = false;
           } else {
-            Variable_initializer _initializer_5 = vd.getInitializer();
-            Expression _expression_4 = _initializer_5.getExpression();
-            Literal_Expression _literalExpression_2 = _expression_4.getLiteralExpression();
+            Variable_initializer _initializer_4 = vd.getInitializer();
+            Expression _expression_3 = _initializer_4.getExpression();
+            Literal_Expression _literalExpression_2 = _expression_3.getLiteralExpression();
             String _string_4 = _literalExpression_2.getString();
             boolean _notEquals_2 = (!Objects.equal(_string_4, null));
-            _and_4 = _notEquals_2;
+            _and_2 = _notEquals_2;
           }
-          if (!_and_4) {
-            _and_3 = false;
-          } else {
-            Variable_initializer _initializer_6 = vd.getInitializer();
-            Expression _expression_5 = _initializer_6.getExpression();
-            Expression_aux _aux_1 = _expression_5.getAux();
-            String _testingSign_1 = _aux_1.getTestingSign();
-            boolean _equals_4 = Objects.equal(_testingSign_1, null);
-            _and_3 = _equals_4;
-          }
-          if (_and_3) {
+          if (_and_2) {
             this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
           } else {
-            boolean _and_5 = false;
-            boolean _and_6 = false;
-            Variable_initializer _initializer_7 = vd.getInitializer();
-            Expression _expression_6 = _initializer_7.getExpression();
-            Literal_Expression _literalExpression_3 = _expression_6.getLiteralExpression();
+            boolean _and_3 = false;
+            boolean _and_4 = false;
+            Variable_initializer _initializer_5 = vd.getInitializer();
+            Expression _expression_4 = _initializer_5.getExpression();
+            Literal_Expression _literalExpression_3 = _expression_4.getLiteralExpression();
             String _string_5 = _literalExpression_3.getString();
             boolean _notEquals_3 = (!Objects.equal(_string_5, null));
             if (!_notEquals_3) {
-              _and_6 = false;
+              _and_4 = false;
             } else {
+              Variable_initializer _initializer_6 = vd.getInitializer();
+              Expression _expression_5 = _initializer_6.getExpression();
+              Expression_aux _aux = _expression_5.getAux();
+              boolean _notEquals_4 = (!Objects.equal(_aux, null));
+              _and_4 = _notEquals_4;
+            }
+            if (!_and_4) {
+              _and_3 = false;
+            } else {
+              Variable_initializer _initializer_7 = vd.getInitializer();
+              Expression _expression_6 = _initializer_7.getExpression();
+              Expression_aux _aux_1 = _expression_6.getAux();
+              String _stringSign = _aux_1.getStringSign();
+              boolean _notEquals_5 = (!Objects.equal(_stringSign, null));
+              _and_3 = _notEquals_5;
+            }
+            if (_and_3) {
+              boolean _and_5 = false;
               Variable_initializer _initializer_8 = vd.getInitializer();
               Expression _expression_7 = _initializer_8.getExpression();
               Expression_aux _aux_2 = _expression_7.getAux();
-              boolean _notEquals_4 = (!Objects.equal(_aux_2, null));
-              _and_6 = _notEquals_4;
-            }
-            if (!_and_6) {
-              _and_5 = false;
-            } else {
-              Variable_initializer _initializer_9 = vd.getInitializer();
-              Expression _expression_8 = _initializer_9.getExpression();
-              Expression_aux _aux_3 = _expression_8.getAux();
-              String _stringSign = _aux_3.getStringSign();
-              boolean _notEquals_5 = (!Objects.equal(_stringSign, null));
-              _and_5 = _notEquals_5;
-            }
-            if (_and_5) {
-              boolean _and_7 = false;
-              Variable_initializer _initializer_10 = vd.getInitializer();
-              Expression _expression_9 = _initializer_10.getExpression();
-              Expression_aux _aux_4 = _expression_9.getAux();
-              Expression _exp1 = _aux_4.getExp1();
+              Expression _exp1 = _aux_2.getExp1();
               Literal_Expression _literalExpression_4 = _exp1.getLiteralExpression();
               if (!(_literalExpression_4 instanceof Literal_Expression)) {
-                _and_7 = false;
+                _and_5 = false;
               } else {
-                Variable_initializer _initializer_11 = vd.getInitializer();
-                Expression _expression_10 = _initializer_11.getExpression();
-                Expression_aux _aux_5 = _expression_10.getAux();
-                Expression _exp1_1 = _aux_5.getExp1();
+                Variable_initializer _initializer_9 = vd.getInitializer();
+                Expression _expression_8 = _initializer_9.getExpression();
+                Expression_aux _aux_3 = _expression_8.getAux();
+                Expression _exp1_1 = _aux_3.getExp1();
                 Literal_Expression _literalExpression_5 = _exp1_1.getLiteralExpression();
                 String _string_6 = _literalExpression_5.getString();
                 boolean _notEquals_6 = (!Objects.equal(_string_6, null));
-                _and_7 = _notEquals_6;
+                _and_5 = _notEquals_6;
               }
-              if (_and_7) {
+              if (_and_5) {
               } else {
                 this.error("Operação inválida", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
               }
             } else {
-              boolean _and_8 = false;
-              boolean _and_9 = false;
-              Variable_initializer _initializer_12 = vd.getInitializer();
-              Expression _expression_11 = _initializer_12.getExpression();
-              Literal_Expression _literalExpression_6 = _expression_11.getLiteralExpression();
+              boolean _and_6 = false;
+              boolean _and_7 = false;
+              Variable_initializer _initializer_10 = vd.getInitializer();
+              Expression _expression_9 = _initializer_10.getExpression();
+              Literal_Expression _literalExpression_6 = _expression_9.getLiteralExpression();
               String _string_7 = _literalExpression_6.getString();
-              boolean _equals_5 = Objects.equal(_string_7, null);
-              if (!_equals_5) {
-                _and_9 = false;
+              boolean _equals_3 = Objects.equal(_string_7, null);
+              if (!_equals_3) {
+                _and_7 = false;
               } else {
+                Variable_initializer _initializer_11 = vd.getInitializer();
+                Expression _expression_10 = _initializer_11.getExpression();
+                Expression_aux _aux_4 = _expression_10.getAux();
+                boolean _notEquals_7 = (!Objects.equal(_aux_4, null));
+                _and_7 = _notEquals_7;
+              }
+              if (!_and_7) {
+                _and_6 = false;
+              } else {
+                Variable_initializer _initializer_12 = vd.getInitializer();
+                Expression _expression_11 = _initializer_12.getExpression();
+                Expression_aux _aux_5 = _expression_11.getAux();
+                String _numericSign = _aux_5.getNumericSign();
+                boolean _notEquals_8 = (!Objects.equal(_numericSign, null));
+                _and_6 = _notEquals_8;
+              }
+              if (_and_6) {
+                boolean _and_8 = false;
                 Variable_initializer _initializer_13 = vd.getInitializer();
                 Expression _expression_12 = _initializer_13.getExpression();
                 Expression_aux _aux_6 = _expression_12.getAux();
-                boolean _notEquals_7 = (!Objects.equal(_aux_6, null));
-                _and_9 = _notEquals_7;
-              }
-              if (!_and_9) {
-                _and_8 = false;
-              } else {
-                Variable_initializer _initializer_14 = vd.getInitializer();
-                Expression _expression_13 = _initializer_14.getExpression();
-                Expression_aux _aux_7 = _expression_13.getAux();
-                String _numericSign = _aux_7.getNumericSign();
-                boolean _notEquals_8 = (!Objects.equal(_numericSign, null));
-                _and_8 = _notEquals_8;
-              }
-              if (_and_8) {
-                boolean _and_10 = false;
-                Variable_initializer _initializer_15 = vd.getInitializer();
-                Expression _expression_14 = _initializer_15.getExpression();
-                Expression_aux _aux_8 = _expression_14.getAux();
-                Expression _exp2 = _aux_8.getExp2();
+                Expression _exp2 = _aux_6.getExp2();
                 Literal_Expression _literalExpression_7 = _exp2.getLiteralExpression();
                 if (!(_literalExpression_7 instanceof Literal_Expression)) {
-                  _and_10 = false;
+                  _and_8 = false;
                 } else {
-                  Variable_initializer _initializer_16 = vd.getInitializer();
-                  Expression _expression_15 = _initializer_16.getExpression();
-                  Expression_aux _aux_9 = _expression_15.getAux();
-                  Expression _exp2_1 = _aux_9.getExp2();
+                  Variable_initializer _initializer_14 = vd.getInitializer();
+                  Expression _expression_13 = _initializer_14.getExpression();
+                  Expression_aux _aux_7 = _expression_13.getAux();
+                  Expression _exp2_1 = _aux_7.getExp2();
                   Literal_Expression _literalExpression_8 = _exp2_1.getLiteralExpression();
                   String _string_8 = _literalExpression_8.getString();
-                  boolean _equals_6 = Objects.equal(_string_8, null);
-                  _and_10 = _equals_6;
+                  boolean _equals_4 = Objects.equal(_string_8, null);
+                  _and_8 = _equals_4;
                 }
-                if (_and_10) {
+                if (_and_8) {
                 } else {
                   this.error("Operação inválida", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
                 }
@@ -624,25 +602,25 @@ public class JavaValidator extends AbstractJavaValidator {
           }
         }
       }
-      Variable_initializer _initializer_17 = vd.getInitializer();
-      Expression _expression_16 = _initializer_17.getExpression();
-      Logical_Expression_NR _logicalExpression = _expression_16.getLogicalExpression();
+      Variable_initializer _initializer_15 = vd.getInitializer();
+      Expression _expression_14 = _initializer_15.getExpression();
+      Logical_Expression_NR _logicalExpression = _expression_14.getLogicalExpression();
       if ((!(_logicalExpression instanceof Logical_Expression_NR))) {
-        boolean _and_11 = false;
+        boolean _and_9 = false;
         String _name_3 = tipo.getName();
         String _string_9 = _name_3.toString();
-        boolean _equals_7 = Objects.equal(_string_9, "boolean");
-        if (!_equals_7) {
-          _and_11 = false;
+        boolean _equals_5 = Objects.equal(_string_9, "boolean");
+        if (!_equals_5) {
+          _and_9 = false;
         } else {
-          Variable_initializer _initializer_18 = vd.getInitializer();
-          Expression _expression_17 = _initializer_18.getExpression();
-          Expression_aux _aux_10 = _expression_17.getAux();
-          String _testingSign_2 = _aux_10.getTestingSign();
-          boolean _equals_8 = Objects.equal(_testingSign_2, null);
-          _and_11 = _equals_8;
+          Variable_initializer _initializer_16 = vd.getInitializer();
+          Expression _expression_15 = _initializer_16.getExpression();
+          Expression_aux _aux_8 = _expression_15.getAux();
+          String _testingSign = _aux_8.getTestingSign();
+          boolean _equals_6 = Objects.equal(_testingSign, null);
+          _and_9 = _equals_6;
         }
-        if (_and_11) {
+        if (_and_9) {
           this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
         }
       } else {
@@ -653,31 +631,31 @@ public class JavaValidator extends AbstractJavaValidator {
           this.error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
         }
       }
-      boolean _and_12 = false;
-      boolean _and_13 = false;
-      Variable_initializer _initializer_19 = vd.getInitializer();
-      Expression _expression_18 = _initializer_19.getExpression();
-      Expression_aux _aux_11 = _expression_18.getAux();
-      boolean _notEquals_10 = (!Objects.equal(_aux_11, null));
+      boolean _and_10 = false;
+      boolean _and_11 = false;
+      Variable_initializer _initializer_17 = vd.getInitializer();
+      Expression _expression_16 = _initializer_17.getExpression();
+      Expression_aux _aux_9 = _expression_16.getAux();
+      boolean _notEquals_10 = (!Objects.equal(_aux_9, null));
       if (!_notEquals_10) {
-        _and_13 = false;
+        _and_11 = false;
       } else {
-        Variable_initializer _initializer_20 = vd.getInitializer();
-        Expression _expression_19 = _initializer_20.getExpression();
-        Expression_aux _aux_12 = _expression_19.getAux();
-        String _testingSign_3 = _aux_12.getTestingSign();
-        boolean _notEquals_11 = (!Objects.equal(_testingSign_3, null));
-        _and_13 = _notEquals_11;
+        Variable_initializer _initializer_18 = vd.getInitializer();
+        Expression _expression_17 = _initializer_18.getExpression();
+        Expression_aux _aux_10 = _expression_17.getAux();
+        String _testingSign_1 = _aux_10.getTestingSign();
+        boolean _notEquals_11 = (!Objects.equal(_testingSign_1, null));
+        _and_11 = _notEquals_11;
       }
-      if (!_and_13) {
-        _and_12 = false;
+      if (!_and_11) {
+        _and_10 = false;
       } else {
         String _name_5 = tipo.getName();
         String _string_11 = _name_5.toString();
         boolean _notEquals_12 = (!Objects.equal(_string_11, "boolean"));
-        _and_12 = _notEquals_12;
+        _and_10 = _notEquals_12;
       }
-      if (_and_12) {
+      if (_and_10) {
         this.error("A variável deve ser do tipo boolean", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
       }
     }
