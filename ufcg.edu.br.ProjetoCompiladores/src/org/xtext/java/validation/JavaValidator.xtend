@@ -7,6 +7,7 @@ import java.util.Map
 import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.validation.Check
 import org.xtext.java.java.Class_declaration
+import org.xtext.java.java.Creating_Expression
 import org.xtext.java.java.Field_declaration
 import org.xtext.java.java.For_Statement
 import org.xtext.java.java.JavaPackage
@@ -45,17 +46,20 @@ class JavaValidator extends AbstractJavaValidator {
 	
 	public Map<String, Type> tipos;
 	
-	public Map<String, String> classeExtends = new HashMap<String, String>();
+	public Map<String, List<String>> classeExtends = new HashMap<String, List<String>>();
 	
-	@Check 
+	@Check
 	def addClassesMapa(Type_declaration td) {
 		if (td.name instanceof Class_declaration) {
 			var Class_declaration cd = td.name as Class_declaration;
+			classeExtends.put(cd.className.toString, new ArrayList<String>());
 			if (cd.extend != null) {
-				classeExtends.put(cd.className.toString, cd.extend.toString);	
+				classeExtends.get(cd.className.toString).add(cd.extend.toString);
+				classeExtends.put(cd.extend.toString, new ArrayList<String>());
 			}
 			if (cd.implement != null) {
-				classeExtends.put(cd.className.toString, cd.implement.toString);	
+				classeExtends.get(cd.className.toString).add(cd.implement.toString);
+				classeExtends.put(cd.implement.toString, new ArrayList<String>());
 			}
 		}
 	}
@@ -258,5 +262,30 @@ class JavaValidator extends AbstractJavaValidator {
 					error("A variável deve ser do tipo boolean", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 			}
 		}
-	}	
+	}
+
+	@Check
+	def checarInstanciaEntreClasses(Variable_declaration vdc) {
+		if (vdc.name != null) {
+			var Variable_declarator vd = vdc.name as Variable_declarator;
+			if (vd.initializer != null && vd.initializer.expression != null) {
+				if (vd.initializer.expression.creatingExpression instanceof Creating_Expression) {
+					var Creating_Expression creatingExp = vd.initializer.expression.creatingExpression;
+					if (!classeExtends.keySet.contains(creatingExp.className.toString)) {
+						error("Classe " + creatingExp.className.toString + " não existe", creatingExp,
+							JavaPackage.Literals.CREATING_EXPRESSION__CLASS_NAME);
+					}
+					if (!classeExtends.keySet.contains(vdc.type.name.toString)) {
+						error("Classe " + vdc.type.name.toString + " não existe", vdc.type,
+							JavaPackage.Literals.TYPE__NAME);
+					}
+					if (creatingExp.className.toString != vdc.type.name.toString &&
+						!classeExtends.get(creatingExp.className.toString).contains(vdc.type.name.toString)) {
+						error("A classe " + creatingExp.className.toString + " não herda ou implementa " +
+							vdc.type.name.toString, creatingExp, JavaPackage.Literals.CREATING_EXPRESSION__CLASS_NAME);
+					}
+				}
+			}
+		}
+	}
 }
