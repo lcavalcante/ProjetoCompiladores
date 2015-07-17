@@ -403,7 +403,7 @@ Switch_Statement:{Switch_Statement}
 ;
 
 For_Statement:
-	FOR RIGHT_PARENTHESIS (variable=Variable_declaration| pv=EOL | (expression=Expression EOL) )
+	FOR RIGHT_PARENTHESIS (variable=Variable_declaration | pv=EOL | (expression=Expression EOL) )
 	(expression2=Expression)? EOL
 	(expression3=Expression)? EOL
 	LEFT_PARENTHESIS statement=Statement

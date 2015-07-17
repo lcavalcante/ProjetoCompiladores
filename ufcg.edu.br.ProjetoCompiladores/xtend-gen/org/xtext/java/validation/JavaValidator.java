@@ -12,6 +12,7 @@ import org.xtext.java.java.Class_declaration;
 import org.xtext.java.java.Expression;
 import org.xtext.java.java.Expression_aux;
 import org.xtext.java.java.Field_declaration;
+import org.xtext.java.java.For_Statement;
 import org.xtext.java.java.JavaPackage;
 import org.xtext.java.java.Literal_Expression;
 import org.xtext.java.java.Logical_Expression_NR;
@@ -105,6 +106,60 @@ public class JavaValidator extends AbstractJavaValidator {
   
   public boolean addMetodos(final Method_declaration method) {
     return this.metodosDeclarados.add(method);
+  }
+  
+  @Check
+  public void checkForStatements(final For_Statement fs) {
+    Variable_declaration _variable = fs.getVariable();
+    Type _type = _variable.getType();
+    String _name = _type.getName();
+    String _string = _name.toString();
+    boolean _notEquals = (!Objects.equal(_string, "int"));
+    if (_notEquals) {
+      this.error("Variável iterativa inválida", fs, JavaPackage.Literals.FOR_STATEMENT__VARIABLE);
+    }
+    boolean _or = false;
+    Expression _expression2 = fs.getExpression2();
+    Expression_aux _aux = _expression2.getAux();
+    boolean _equals = Objects.equal(_aux, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      Expression _expression2_1 = fs.getExpression2();
+      Expression_aux _aux_1 = _expression2_1.getAux();
+      String _testingSign = _aux_1.getTestingSign();
+      boolean _equals_1 = Objects.equal(_testingSign, null);
+      _or = _equals_1;
+    }
+    if (_or) {
+      this.error("Condição inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION2);
+    }
+    boolean _or_1 = false;
+    Expression _expression3 = fs.getExpression3();
+    Expression_aux _aux_2 = _expression3.getAux();
+    boolean _equals_2 = Objects.equal(_aux_2, null);
+    if (_equals_2) {
+      _or_1 = true;
+    } else {
+      boolean _and = false;
+      Expression _expression3_1 = fs.getExpression3();
+      Expression_aux _aux_3 = _expression3_1.getAux();
+      String _sgin = _aux_3.getSgin();
+      boolean _equals_3 = Objects.equal(_sgin, null);
+      if (!_equals_3) {
+        _and = false;
+      } else {
+        Expression _expression3_2 = fs.getExpression3();
+        Expression_aux _aux_4 = _expression3_2.getAux();
+        String _numericSign = _aux_4.getNumericSign();
+        boolean _equals_4 = Objects.equal(_numericSign, null);
+        _and = _equals_4;
+      }
+      _or_1 = _and;
+    }
+    if (_or_1) {
+      this.error("Iteração inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
+    }
   }
   
   @Check

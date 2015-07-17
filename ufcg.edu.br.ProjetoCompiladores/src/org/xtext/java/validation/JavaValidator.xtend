@@ -8,22 +8,20 @@ import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.validation.Check
 import org.xtext.java.java.Class_declaration
 import org.xtext.java.java.Field_declaration
+import org.xtext.java.java.For_Statement
 import org.xtext.java.java.JavaPackage
+import org.xtext.java.java.Literal_Expression
+import org.xtext.java.java.Logical_Expression_NR
 import org.xtext.java.java.Method_call
 import org.xtext.java.java.Method_declaration
 import org.xtext.java.java.Parameter_list
 import org.xtext.java.java.Parameter_list_method_call
 import org.xtext.java.java.Return_Statement
 import org.xtext.java.java.Statement
-import org.xtext.java.java.Variable_declaration
 import org.xtext.java.java.Type
 import org.xtext.java.java.Type_declaration
+import org.xtext.java.java.Variable_declaration
 import org.xtext.java.java.Variable_declarator
-import org.xtext.java.java.Expression
-import java.awt.font.NumericShaper.Range
-import org.xtext.java.java.Numeric_Expression_NR
-import org.xtext.java.java.Literal_Expression
-import org.xtext.java.java.Logical_Expression_NR
 
 /**
  * This class contains custom validation rules. 
@@ -79,6 +77,25 @@ class JavaValidator extends AbstractJavaValidator {
 	
 	def addMetodos(Method_declaration method) {
 		metodosDeclarados.add(method);
+	}
+	
+	@Check
+	def checkForStatements(For_Statement fs) {
+		if (fs.variable.type.name.toString != "int") {
+			error("Variável iterativa inválida", fs, JavaPackage.Literals.FOR_STATEMENT__VARIABLE);
+		} 
+		if (fs.expression2.aux == null
+			|| fs.expression2.aux.testingSign == null
+		) {
+			error("Condição inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION2);
+		}
+		if (fs.expression3.aux == null
+			||( fs.expression3.aux.sgin == null
+			&& fs.expression3.aux.numericSign == null
+			)
+		) {
+			error("Iteração inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
+		}
 	}
 	
 	@Check
