@@ -701,6 +701,25 @@ ruleField_declaration returns [EObject current=null]
 	    }
 
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getField_declarationAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_4_0()); 
+	    }
+		lv_variableDeclarator_7_0=ruleVariable_declarator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getField_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"variableDeclarator",
+        		lv_variableDeclarator_7_0, 
+        		"Variable_declarator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
 
@@ -4321,6 +4340,25 @@ ruleStatement returns [EObject current=null]
     { 
     newLeafNode(this_EOL_22, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_13_1()); 
     }
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStatementAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_14_0()); 
+	    }
+		lv_variableDeclarator_23_0=ruleVariable_declarator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStatementRule());
+	        }
+       		set(
+       			$current, 
+       			"variableDeclarator",
+        		lv_variableDeclarator_23_0, 
+        		"Variable_declarator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
 

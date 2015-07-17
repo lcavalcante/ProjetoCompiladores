@@ -3,9 +3,18 @@
  */
 package org.xtext.java.generator;
 
+import com.google.common.collect.Iterables;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.java.java.Class_declaration;
+import org.xtext.java.java.Field_declaration;
+import org.xtext.java.java.Variable_declaration;
 
 /**
  * Generates code from your model files on save.
@@ -14,7 +23,52 @@ import org.eclipse.xtext.generator.IGenerator;
  */
 @SuppressWarnings("all")
 public class JavaGenerator implements IGenerator {
+  private Integer variables = Integer.valueOf(0);
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    Iterable<Class_declaration> _filter = Iterables.<Class_declaration>filter(_iterable, Class_declaration.class);
+    for (final Class_declaration e : _filter) {
+      String _className = e.getClassName();
+      String _string = _className.toString();
+      String _plus = (_string + ".txt");
+      CharSequence _compile = this.compile(e);
+      fsa.generateFile(_plus, _compile);
+    }
+  }
+  
+  public CharSequence compile(final Class_declaration cd) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<Field_declaration> _fields = cd.getFields();
+      for(final Field_declaration f : _fields) {
+        CharSequence _compileField = this.compileField(f);
+        _builder.append(_compileField, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence compileField(final Field_declaration declaration) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method varD is undefined for the type JavaGenerator"
+      + "\nThe method varD is undefined for the type JavaGenerator"
+      + "\n!= cannot be resolved"
+      + "\ncompileVariable cannot be resolved");
+  }
+  
+  public CharSequence compileVariable(final Variable_declaration declaration) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method le is undefined for the type JavaGenerator"
+      + "\nThe method le is undefined for the type JavaGenerator"
+      + "\n!= cannot be resolved"
+      + "\ntoString cannot be resolved");
+  }
+  
+  public void increment() {
+    this.variables++;
   }
 }

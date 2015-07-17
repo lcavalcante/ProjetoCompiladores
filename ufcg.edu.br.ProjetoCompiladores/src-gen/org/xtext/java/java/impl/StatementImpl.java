@@ -21,6 +21,7 @@ import org.xtext.java.java.Statement;
 import org.xtext.java.java.Switch_Statement;
 import org.xtext.java.java.Try_statement;
 import org.xtext.java.java.Variable_declaration;
+import org.xtext.java.java.Variable_declarator;
 import org.xtext.java.java.While_Statement;
 
 /**
@@ -41,6 +42,7 @@ import org.xtext.java.java.While_Statement;
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.StatementImpl#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.StatementImpl#getVariableDeclarator <em>Variable Declarator</em>}</li>
  * </ul>
  * </p>
  *
@@ -167,6 +169,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected Statement statement;
+
+  /**
+   * The cached value of the '{@link #getVariableDeclarator() <em>Variable Declarator</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariableDeclarator()
+   * @generated
+   * @ordered
+   */
+  protected Variable_declarator variableDeclarator;
 
   /**
    * <!-- begin-user-doc -->
@@ -697,6 +709,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public Variable_declarator getVariableDeclarator()
+  {
+    return variableDeclarator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVariableDeclarator(Variable_declarator newVariableDeclarator, NotificationChain msgs)
+  {
+    Variable_declarator oldVariableDeclarator = variableDeclarator;
+    variableDeclarator = newVariableDeclarator;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__VARIABLE_DECLARATOR, oldVariableDeclarator, newVariableDeclarator);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariableDeclarator(Variable_declarator newVariableDeclarator)
+  {
+    if (newVariableDeclarator != variableDeclarator)
+    {
+      NotificationChain msgs = null;
+      if (variableDeclarator != null)
+        msgs = ((InternalEObject)variableDeclarator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__VARIABLE_DECLARATOR, null, msgs);
+      if (newVariableDeclarator != null)
+        msgs = ((InternalEObject)newVariableDeclarator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.STATEMENT__VARIABLE_DECLARATOR, null, msgs);
+      msgs = basicSetVariableDeclarator(newVariableDeclarator, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.STATEMENT__VARIABLE_DECLARATOR, newVariableDeclarator, newVariableDeclarator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -722,6 +782,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return basicSetTry(null, msgs);
       case JavaPackage.STATEMENT__STATEMENT:
         return basicSetStatement(null, msgs);
+      case JavaPackage.STATEMENT__VARIABLE_DECLARATOR:
+        return basicSetVariableDeclarator(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -758,6 +820,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getName();
       case JavaPackage.STATEMENT__STATEMENT:
         return getStatement();
+      case JavaPackage.STATEMENT__VARIABLE_DECLARATOR:
+        return getVariableDeclarator();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -804,6 +868,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return;
       case JavaPackage.STATEMENT__STATEMENT:
         setStatement((Statement)newValue);
+        return;
+      case JavaPackage.STATEMENT__VARIABLE_DECLARATOR:
+        setVariableDeclarator((Variable_declarator)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -852,6 +919,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case JavaPackage.STATEMENT__STATEMENT:
         setStatement((Statement)null);
         return;
+      case JavaPackage.STATEMENT__VARIABLE_DECLARATOR:
+        setVariableDeclarator((Variable_declarator)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -888,6 +958,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case JavaPackage.STATEMENT__STATEMENT:
         return statement != null;
+      case JavaPackage.STATEMENT__VARIABLE_DECLARATOR:
+        return variableDeclarator != null;
     }
     return super.eIsSet(featureID);
   }

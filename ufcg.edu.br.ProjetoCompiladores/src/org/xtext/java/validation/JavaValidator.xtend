@@ -67,6 +67,9 @@ class JavaValidator extends AbstractJavaValidator {
 				addMetodos(fd.name as Method_declaration);
 			}
 			addTipos(fd, tipos);
+			if (fd.variableDeclarator instanceof Variable_declarator) {
+				checarTiposVariaveis(fd.variableDeclarator, tipos);
+			}
 		}
 	}
 	
@@ -123,6 +126,9 @@ class JavaValidator extends AbstractJavaValidator {
 		var boolean temReturn = false;
 		for (Statement smt : statements) {
 			addTiposMetodo(smt, tiposMetodo);
+			if (smt.variableDeclarator instanceof Variable_declarator) {
+				checarTiposVariaveis(smt.variableDeclarator, tiposMetodo);
+			}
 			if (smt.returnSmt instanceof Return_Statement) {
 				temReturn = true;
 				if (md.type.name.toString == "void") {
@@ -193,12 +199,39 @@ class JavaValidator extends AbstractJavaValidator {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 				} else if (tipo.name.toString == "int" && vd.initializer.expression.literalExpression.string != null) {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+				} else if (vd.initializer.expression.literalExpression.string != null
+					&& vd.initializer.expression.aux != null
+					&& vd.initializer.expression.aux.stringSign != null
+				) {
+					if (vd.initializer.expression.aux.exp1.literalExpression instanceof Literal_Expression
+						&& vd.initializer.expression.aux.exp1.literalExpression.string != null)
+					{
+					} else {
+						error("Operação inválida", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+					}
+				} else if (vd.initializer.expression.literalExpression.string == null
+					&& vd.initializer.expression.aux != null
+					&& vd.initializer.expression.aux.numericSign != null
+				) {
+					if (vd.initializer.expression.aux.exp2.literalExpression instanceof Literal_Expression
+						&& vd.initializer.expression.aux.exp2.literalExpression.string == null) {					
+					} else {
+						error("Operação inválida", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+					}
 				}
 			} 
 			if (!(vd.initializer.expression.logicalExpression instanceof Logical_Expression_NR)) {
 				if (tipo.name.toString == "boolean") {
 					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 				}
+			} else {
+				if (tipo.name.toString != "boolean") {
+					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+				}
+			}
+			if (vd.initializer.expression.aux != null
+				&& vd.initializer.expression.aux.testingSign != null) {
+					
 			}
 		}
 	}	

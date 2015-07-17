@@ -668,6 +668,16 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getField_declaration_VariableDeclarator()
+  {
+    return (EReference)field_declarationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMethod_declaration()
   {
     return method_declarationEClass;
@@ -1818,6 +1828,16 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStatement_VariableDeclarator()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSwitch_Statement()
   {
     return switch_StatementEClass;
@@ -2254,6 +2274,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEAttribute(field_declarationEClass, FIELD_DECLARATION__DOC);
     createEReference(field_declarationEClass, FIELD_DECLARATION__NAME);
     createEAttribute(field_declarationEClass, FIELD_DECLARATION__DEBUG);
+    createEReference(field_declarationEClass, FIELD_DECLARATION__VARIABLE_DECLARATOR);
 
     method_declarationEClass = createEClass(METHOD_DECLARATION);
     createEAttribute(method_declarationEClass, METHOD_DECLARATION__MODIFIERS);
@@ -2393,6 +2414,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     createEReference(statementEClass, STATEMENT__TRY);
     createEAttribute(statementEClass, STATEMENT__NAME);
     createEReference(statementEClass, STATEMENT__STATEMENT);
+    createEReference(statementEClass, STATEMENT__VARIABLE_DECLARATOR);
 
     switch_StatementEClass = createEClass(SWITCH_STATEMENT);
     createEReference(switch_StatementEClass, SWITCH_STATEMENT__EXPRESSION);
@@ -2508,6 +2530,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEAttribute(getField_declaration_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getField_declaration_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getField_declaration_Debug(), ecorePackage.getEString(), "debug", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getField_declaration_VariableDeclarator(), this.getVariable_declarator(), null, "variableDeclarator", null, 0, 1, Field_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(method_declarationEClass, Method_declaration.class, "Method_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMethod_declaration_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, Method_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2647,6 +2670,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage
     initEReference(getStatement_Try(), this.getTry_statement(), null, "try", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Statement(), this.getStatement(), null, "statement", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_VariableDeclarator(), this.getVariable_declarator(), null, "variableDeclarator", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(switch_StatementEClass, Switch_Statement.class, "Switch_Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSwitch_Statement_Expression(), this.getExpression(), null, "expression", null, 0, 1, Switch_Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

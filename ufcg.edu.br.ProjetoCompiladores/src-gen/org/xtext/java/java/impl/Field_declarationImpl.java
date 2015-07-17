@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.java.java.Field_declaration;
 import org.xtext.java.java.JavaPackage;
+import org.xtext.java.java.Variable_declarator;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import org.xtext.java.java.JavaPackage;
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getDebug <em>Debug</em>}</li>
+ *   <li>{@link org.xtext.java.java.impl.Field_declarationImpl#getVariableDeclarator <em>Variable Declarator</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +83,16 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String debug = DEBUG_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVariableDeclarator() <em>Variable Declarator</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariableDeclarator()
+   * @generated
+   * @ordered
+   */
+  protected Variable_declarator variableDeclarator;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,6 +214,54 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public Variable_declarator getVariableDeclarator()
+  {
+    return variableDeclarator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVariableDeclarator(Variable_declarator newVariableDeclarator, NotificationChain msgs)
+  {
+    Variable_declarator oldVariableDeclarator = variableDeclarator;
+    variableDeclarator = newVariableDeclarator;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR, oldVariableDeclarator, newVariableDeclarator);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariableDeclarator(Variable_declarator newVariableDeclarator)
+  {
+    if (newVariableDeclarator != variableDeclarator)
+    {
+      NotificationChain msgs = null;
+      if (variableDeclarator != null)
+        msgs = ((InternalEObject)variableDeclarator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR, null, msgs);
+      if (newVariableDeclarator != null)
+        msgs = ((InternalEObject)newVariableDeclarator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR, null, msgs);
+      msgs = basicSetVariableDeclarator(newVariableDeclarator, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR, newVariableDeclarator, newVariableDeclarator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -209,6 +269,8 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
     {
       case JavaPackage.FIELD_DECLARATION__NAME:
         return basicSetName(null, msgs);
+      case JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR:
+        return basicSetVariableDeclarator(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -229,6 +291,8 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
         return getName();
       case JavaPackage.FIELD_DECLARATION__DEBUG:
         return getDebug();
+      case JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR:
+        return getVariableDeclarator();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -251,6 +315,9 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
         return;
       case JavaPackage.FIELD_DECLARATION__DEBUG:
         setDebug((String)newValue);
+        return;
+      case JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR:
+        setVariableDeclarator((Variable_declarator)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -275,6 +342,9 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
       case JavaPackage.FIELD_DECLARATION__DEBUG:
         setDebug(DEBUG_EDEFAULT);
         return;
+      case JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR:
+        setVariableDeclarator((Variable_declarator)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -295,6 +365,8 @@ public class Field_declarationImpl extends MinimalEObjectImpl.Container implemen
         return name != null;
       case JavaPackage.FIELD_DECLARATION__DEBUG:
         return DEBUG_EDEFAULT == null ? debug != null : !DEBUG_EDEFAULT.equals(debug);
+      case JavaPackage.FIELD_DECLARATION__VARIABLE_DECLARATOR:
+        return variableDeclarator != null;
     }
     return super.eIsSet(featureID);
   }

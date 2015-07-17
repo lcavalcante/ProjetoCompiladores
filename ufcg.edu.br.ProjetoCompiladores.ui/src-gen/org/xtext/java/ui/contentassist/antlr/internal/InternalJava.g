@@ -1425,6 +1425,12 @@ rule__Field_declaration__Alternatives
 { after(grammarAccess.getField_declarationAccess().getDebugAssignment_3()); }
 )
 
+    |(
+{ before(grammarAccess.getField_declarationAccess().getVariableDeclaratorAssignment_4()); }
+(rule__Field_declaration__VariableDeclaratorAssignment_4)
+{ after(grammarAccess.getField_declarationAccess().getVariableDeclaratorAssignment_4()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2399,6 +2405,12 @@ rule__Statement__Alternatives
 { before(grammarAccess.getStatementAccess().getGroup_13()); }
 (rule__Statement__Group_13__0)
 { after(grammarAccess.getStatementAccess().getGroup_13()); }
+)
+
+    |(
+{ before(grammarAccess.getStatementAccess().getVariableDeclaratorAssignment_14()); }
+(rule__Statement__VariableDeclaratorAssignment_14)
+{ after(grammarAccess.getStatementAccess().getVariableDeclaratorAssignment_14()); }
 )
 
 ;
@@ -12120,6 +12132,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Field_declaration__VariableDeclaratorAssignment_4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getField_declarationAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_4_0()); }
+	ruleVariable_declarator{ after(grammarAccess.getField_declarationAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Method_declaration__ModifiersAssignment_0
     @init {
 		int stackSize = keepStackSize();
@@ -13935,6 +13962,21 @@ rule__Statement__NameAssignment_12_2
 (
 { before(grammarAccess.getStatementAccess().getNameIDTerminalRuleCall_12_2_0()); }
 	RULE_ID{ after(grammarAccess.getStatementAccess().getNameIDTerminalRuleCall_12_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Statement__VariableDeclaratorAssignment_14
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStatementAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_14_0()); }
+	ruleVariable_declarator{ after(grammarAccess.getStatementAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_14_0()); }
 )
 
 ;

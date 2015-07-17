@@ -342,13 +342,22 @@ public interface JavaPackage extends EPackage
   int FIELD_DECLARATION__DEBUG = 2;
 
   /**
+   * The feature id for the '<em><b>Variable Declarator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_DECLARATION__VARIABLE_DECLARATOR = 3;
+
+  /**
    * The number of structural features of the '<em>Field declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FIELD_DECLARATION_FEATURE_COUNT = 3;
+  int FIELD_DECLARATION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Method_declarationImpl <em>Method declaration</em>}' class.
@@ -1635,13 +1644,22 @@ public interface JavaPackage extends EPackage
   int STATEMENT__STATEMENT = 10;
 
   /**
+   * The feature id for the '<em><b>Variable Declarator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__VARIABLE_DECLARATOR = 11;
+
+  /**
    * The number of structural features of the '<em>Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 11;
+  int STATEMENT_FEATURE_COUNT = 12;
 
   /**
    * The meta object id for the '{@link org.xtext.java.java.impl.Statement_blockImpl <em>Statement block</em>}' class.
@@ -1751,6 +1769,15 @@ public interface JavaPackage extends EPackage
    * @ordered
    */
   int STATEMENT_BLOCK__STATEMENT = STATEMENT__STATEMENT;
+
+  /**
+   * The feature id for the '<em><b>Variable Declarator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_BLOCK__VARIABLE_DECLARATOR = STATEMENT__VARIABLE_DECLARATOR;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -2464,6 +2491,17 @@ public interface JavaPackage extends EPackage
    * @generated
    */
   EAttribute getField_declaration_Debug();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Field_declaration#getVariableDeclarator <em>Variable Declarator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable Declarator</em>'.
+   * @see org.xtext.java.java.Field_declaration#getVariableDeclarator()
+   * @see #getField_declaration()
+   * @generated
+   */
+  EReference getField_declaration_VariableDeclarator();
 
   /**
    * Returns the meta object for class '{@link org.xtext.java.java.Method_declaration <em>Method declaration</em>}'.
@@ -3707,6 +3745,17 @@ public interface JavaPackage extends EPackage
   EReference getStatement_Statement();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.java.java.Statement#getVariableDeclarator <em>Variable Declarator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable Declarator</em>'.
+   * @see org.xtext.java.java.Statement#getVariableDeclarator()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_VariableDeclarator();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.java.java.Switch_Statement <em>Switch Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4356,6 +4405,14 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EAttribute FIELD_DECLARATION__DEBUG = eINSTANCE.getField_declaration_Debug();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Declarator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_DECLARATION__VARIABLE_DECLARATOR = eINSTANCE.getField_declaration_VariableDeclarator();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Method_declarationImpl <em>Method declaration</em>}' class.
@@ -5324,6 +5381,14 @@ public interface JavaPackage extends EPackage
      * @generated
      */
     EReference STATEMENT__STATEMENT = eINSTANCE.getStatement_Statement();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Declarator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__VARIABLE_DECLARATOR = eINSTANCE.getStatement_VariableDeclarator();
 
     /**
      * The meta object literal for the '{@link org.xtext.java.java.impl.Switch_StatementImpl <em>Switch Statement</em>}' class.

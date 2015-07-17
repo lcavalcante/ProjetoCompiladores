@@ -38,6 +38,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Field_declaration/doc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Field_declaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Field_declaration/debug"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Field_declaration/variableDeclarator"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Method_declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Method_declaration/modifiers"/>
@@ -177,6 +178,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/try"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Java.ecore#//Statement/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/statement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Statement/variableDeclarator"/>
     </genClasses>
     <genClasses ecoreClass="Java.ecore#//Switch_Statement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Java.ecore#//Switch_Statement/expression"/>
