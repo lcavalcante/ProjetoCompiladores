@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Method_declaration#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.Method_declaration#getType <em>Type</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Method_declaration#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.Method_declaration#getDebug <em>Debug</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getMethod_declaration()
  * @model

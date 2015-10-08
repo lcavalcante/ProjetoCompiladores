@@ -33,8 +33,8 @@ class JavaGenerator implements IGenerator {
 	'''
 	
 	def compileField(Field_declaration declaration)'''
-		«IF declaration.varD != null»
-			«declaration.varD.compileVariable»
+		«IF declaration.name instanceof Variable_declaration»
+			«(declaration.name as Variable_declaration).compileVariable»
 		«ENDIF»		
 	'''
 	
@@ -46,8 +46,8 @@ class JavaGenerator implements IGenerator {
 				«increment»
 			«ENDIF»
 			«IF declaration.name.initializer.expression.logicalExpression != null»
-				«IF declaration.name.initializer.expression.logicalExpression.le != null»
-					LD R«variables.toString()», «declaration.name.initializer.expression.logicalExpression.le.toString»
+				«IF declaration.name.initializer.expression.logicalExpression.expression != null»
+					LD R«variables.toString()», «declaration.name.initializer.expression.logicalExpression.expression.toString»
 				«ENDIF»
 			«ENDIF»
 			

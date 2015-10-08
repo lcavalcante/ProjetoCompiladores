@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Return_Statement#getRv <em>Rv</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getReturn_Statement()
  * @model

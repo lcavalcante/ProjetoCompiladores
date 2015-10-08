@@ -18,10 +18,10 @@ import org.xtext.java.java.Return_value;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Return_valueImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

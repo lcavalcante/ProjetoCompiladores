@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.java.java.Class_declaration;
+import org.xtext.java.java.Creating_Expression;
 import org.xtext.java.java.Expression;
 import org.xtext.java.java.Expression_aux;
 import org.xtext.java.java.Field_declaration;
@@ -43,35 +44,53 @@ public class JavaValidator extends AbstractJavaValidator {
   
   public Map<String, Type> tipos;
   
-  public Map<String, String> classeExtends = new HashMap<String, String>();
+  public Map<String, List<String>> classeExtends = new HashMap<String, List<String>>();
   
   @Check
-  public String addClassesMapa(final Type_declaration td) {
-    String _xifexpression = null;
+  public List<String> addClassesMapa(final Type_declaration td) {
+    List<String> _xifexpression = null;
     EObject _name = td.getName();
     if ((_name instanceof Class_declaration)) {
-      String _xblockexpression = null;
+      List<String> _xblockexpression = null;
       {
         EObject _name_1 = td.getName();
         Class_declaration cd = ((Class_declaration) _name_1);
+        String _className = cd.getClassName();
+        String _string = _className.toString();
+        ArrayList<String> _arrayList = new ArrayList<String>();
+        this.classeExtends.put(_string, _arrayList);
         String _extend = cd.getExtend();
         boolean _notEquals = (!Objects.equal(_extend, null));
         if (_notEquals) {
-          String _className = cd.getClassName();
-          String _string = _className.toString();
+          String _className_1 = cd.getClassName();
+          String _string_1 = _className_1.toString();
+          List<String> _get = this.classeExtends.get(_string_1);
           String _extend_1 = cd.getExtend();
-          String _string_1 = _extend_1.toString();
-          this.classeExtends.put(_string, _string_1);
+          String _string_2 = _extend_1.toString();
+          _get.add(_string_2);
+          String _extend_2 = cd.getExtend();
+          String _string_3 = _extend_2.toString();
+          ArrayList<String> _arrayList_1 = new ArrayList<String>();
+          this.classeExtends.put(_string_3, _arrayList_1);
         }
-        String _xifexpression_1 = null;
+        List<String> _xifexpression_1 = null;
         String _implement = cd.getImplement();
         boolean _notEquals_1 = (!Objects.equal(_implement, null));
         if (_notEquals_1) {
-          String _className_1 = cd.getClassName();
-          String _string_2 = _className_1.toString();
-          String _implement_1 = cd.getImplement();
-          String _string_3 = _implement_1.toString();
-          _xifexpression_1 = this.classeExtends.put(_string_2, _string_3);
+          List<String> _xblockexpression_1 = null;
+          {
+            String _className_2 = cd.getClassName();
+            String _string_4 = _className_2.toString();
+            List<String> _get_1 = this.classeExtends.get(_string_4);
+            String _implement_1 = cd.getImplement();
+            String _string_5 = _implement_1.toString();
+            _get_1.add(_string_5);
+            String _implement_2 = cd.getImplement();
+            String _string_6 = _implement_2.toString();
+            ArrayList<String> _arrayList_2 = new ArrayList<String>();
+            _xblockexpression_1 = this.classeExtends.put(_string_6, _arrayList_2);
+          }
+          _xifexpression_1 = _xblockexpression_1;
         }
         _xblockexpression = _xifexpression_1;
       }
@@ -95,10 +114,10 @@ public class JavaValidator extends AbstractJavaValidator {
           this.addMetodos(((Method_declaration) _name_1));
         }
         this.addTipos(fd, this.tipos);
-        Variable_declarator _variableDeclarator = fd.getVariableDeclarator();
-        if ((_variableDeclarator instanceof Variable_declarator)) {
-          Variable_declarator _variableDeclarator_1 = fd.getVariableDeclarator();
-          this.checarTiposVariaveis(_variableDeclarator_1, this.tipos);
+        EObject _name_2 = fd.getName();
+        if ((_name_2 instanceof Variable_declarator)) {
+          EObject _name_3 = fd.getName();
+          this.checarTiposVariaveis(((Variable_declarator) _name_3), this.tipos);
         }
       }
     }
@@ -225,23 +244,25 @@ public class JavaValidator extends AbstractJavaValidator {
     for (final Statement smt : statements) {
       {
         this.addTiposMetodo(smt, tiposMetodo);
-        Variable_declarator _variableDeclarator = smt.getVariableDeclarator();
-        if ((_variableDeclarator instanceof Variable_declarator)) {
-          Variable_declarator _variableDeclarator_1 = smt.getVariableDeclarator();
-          this.checarTiposVariaveis(_variableDeclarator_1, tiposMetodo);
+        Variable_declaration _variable = smt.getVariable();
+        Variable_declarator _name = _variable.getName();
+        if ((_name instanceof Variable_declarator)) {
+          Variable_declaration _variable_1 = smt.getVariable();
+          Variable_declarator _name_1 = _variable_1.getName();
+          this.checarTiposVariaveis(_name_1, tiposMetodo);
         }
         Return_Statement _returnSmt = smt.getReturnSmt();
         if ((_returnSmt instanceof Return_Statement)) {
           temReturn = true;
           Type _type = md.getType();
-          String _name = _type.getName();
-          String _string = _name.toString();
+          String _name_2 = _type.getName();
+          String _string = _name_2.toString();
           boolean _equals = Objects.equal(_string, "void");
           if (_equals) {
             Return_Statement _returnSmt_1 = smt.getReturnSmt();
             Return_value _rv = _returnSmt_1.getRv();
-            String _name_1 = _rv.getName();
-            boolean _notEquals = (!Objects.equal(_name_1, null));
+            String _name_3 = _rv.getName();
+            boolean _notEquals = (!Objects.equal(_name_3, null));
             if (_notEquals) {
               Return_Statement _returnSmt_2 = smt.getReturnSmt();
               this.error("Métodos void não devem retornar nada", _returnSmt_2, JavaPackage.Literals.RETURN_STATEMENT__RV);
@@ -252,21 +273,21 @@ public class JavaValidator extends AbstractJavaValidator {
             boolean _equals_1 = Objects.equal(_rv_1, null);
             if (_equals_1) {
               Type _type_1 = md.getType();
-              String _name_2 = _type_1.getName();
-              String _string_1 = _name_2.toString();
+              String _name_4 = _type_1.getName();
+              String _string_1 = _name_4.toString();
               String _plus = ("O método deve retornar " + _string_1);
               Return_Statement _returnSmt_4 = smt.getReturnSmt();
               this.error(_plus, _returnSmt_4, JavaPackage.Literals.RETURN_STATEMENT__RV);
             }
             Return_Statement _returnSmt_5 = smt.getReturnSmt();
             Return_value _rv_2 = _returnSmt_5.getRv();
-            String _name_3 = _rv_2.getName();
-            String _string_2 = _name_3.toString();
+            String _name_5 = _rv_2.getName();
+            String _string_2 = _name_5.toString();
             Type retorno = this.tipos.get(_string_2);
             Return_Statement _returnSmt_6 = smt.getReturnSmt();
             Return_value _rv_3 = _returnSmt_6.getRv();
-            String _name_4 = _rv_3.getName();
-            String _string_3 = _name_4.toString();
+            String _name_6 = _rv_3.getName();
+            String _string_3 = _name_6.toString();
             Type retorno2 = tiposMetodo.get(_string_3);
             boolean _and = false;
             boolean _equals_2 = Objects.equal(retorno, null);
@@ -286,11 +307,11 @@ public class JavaValidator extends AbstractJavaValidator {
               if (!_equals_4) {
                 _and_1 = false;
               } else {
-                String _name_5 = retorno2.getName();
-                String _string_4 = _name_5.toString();
+                String _name_7 = retorno2.getName();
+                String _string_4 = _name_7.toString();
                 Type _type_2 = md.getType();
-                String _name_6 = _type_2.getName();
-                String _string_5 = _name_6.toString();
+                String _name_8 = _type_2.getName();
+                String _string_5 = _name_8.toString();
                 boolean _notEquals_1 = (!Objects.equal(_string_4, _string_5));
                 _and_1 = _notEquals_1;
               }
@@ -302,11 +323,11 @@ public class JavaValidator extends AbstractJavaValidator {
                 if (!_equals_5) {
                   _and_2 = false;
                 } else {
-                  String _name_7 = retorno.getName();
-                  String _string_6 = _name_7.toString();
+                  String _name_9 = retorno.getName();
+                  String _string_6 = _name_9.toString();
                   Type _type_3 = md.getType();
-                  String _name_8 = _type_3.getName();
-                  String _string_7 = _name_8.toString();
+                  String _name_10 = _type_3.getName();
+                  String _string_7 = _name_10.toString();
                   boolean _notEquals_2 = (!Objects.equal(_string_6, _string_7));
                   _and_2 = _notEquals_2;
                 }
@@ -329,22 +350,22 @@ public class JavaValidator extends AbstractJavaValidator {
                 if (!_and_5) {
                   _and_4 = false;
                 } else {
-                  String _name_9 = retorno2.getName();
-                  String _string_8 = _name_9.toString();
+                  String _name_11 = retorno2.getName();
+                  String _string_8 = _name_11.toString();
                   Type _type_4 = md.getType();
-                  String _name_10 = _type_4.getName();
-                  String _string_9 = _name_10.toString();
+                  String _name_12 = _type_4.getName();
+                  String _string_9 = _name_12.toString();
                   boolean _notEquals_5 = (!Objects.equal(_string_8, _string_9));
                   _and_4 = _notEquals_5;
                 }
                 if (!_and_4) {
                   _and_3 = false;
                 } else {
-                  String _name_11 = retorno.getName();
-                  String _string_10 = _name_11.toString();
+                  String _name_13 = retorno.getName();
+                  String _string_10 = _name_13.toString();
                   Type _type_5 = md.getType();
-                  String _name_12 = _type_5.getName();
-                  String _string_11 = _name_12.toString();
+                  String _name_14 = _type_5.getName();
+                  String _string_11 = _name_14.toString();
                   boolean _notEquals_6 = (!Objects.equal(_string_10, _string_11));
                   _and_3 = _notEquals_6;
                 }
@@ -605,7 +626,8 @@ public class JavaValidator extends AbstractJavaValidator {
       Variable_initializer _initializer_15 = vd.getInitializer();
       Expression _expression_14 = _initializer_15.getExpression();
       Logical_Expression_NR _logicalExpression = _expression_14.getLogicalExpression();
-      if ((!(_logicalExpression instanceof Logical_Expression_NR))) {
+      boolean _not = (!(_logicalExpression instanceof Logical_Expression_NR));
+      if (_not) {
         boolean _and_9 = false;
         String _name_3 = tipo.getName();
         String _string_9 = _name_3.toString();
@@ -657,6 +679,70 @@ public class JavaValidator extends AbstractJavaValidator {
       }
       if (_and_10) {
         this.error("A variável deve ser do tipo boolean", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+      }
+    }
+  }
+  
+  @Check
+  public void checarInstanciaEntreClasses(final Variable_declaration vdc) {
+    Variable_declarator _name = vdc.getName();
+    boolean _notEquals = (!Objects.equal(_name, null));
+    if (_notEquals) {
+      Variable_declarator _name_1 = vdc.getName();
+      Variable_declarator vd = ((Variable_declarator) _name_1);
+      boolean _and = false;
+      Variable_initializer _initializer = vd.getInitializer();
+      boolean _notEquals_1 = (!Objects.equal(_initializer, null));
+      if (!_notEquals_1) {
+        _and = false;
+      } else {
+        Variable_initializer _initializer_1 = vd.getInitializer();
+        Expression _expression = _initializer_1.getExpression();
+        boolean _notEquals_2 = (!Objects.equal(_expression, null));
+        _and = _notEquals_2;
+      }
+      if (_and) {
+        Variable_initializer _initializer_2 = vd.getInitializer();
+        Expression _expression_1 = _initializer_2.getExpression();
+        Creating_Expression _creatingExpression = _expression_1.getCreatingExpression();
+        if ((_creatingExpression instanceof Creating_Expression)) {
+          Variable_initializer _initializer_3 = vd.getInitializer();
+          Expression _expression_2 = _initializer_3.getExpression();
+          Creating_Expression creatingExp = _expression_2.getCreatingExpression();
+          boolean _and_1 = false;
+          String _className = creatingExp.getClassName();
+          String _string = _className.toString();
+          Type _type = vdc.getType();
+          String _name_2 = _type.getName();
+          String _string_1 = _name_2.toString();
+          boolean _notEquals_3 = (!Objects.equal(_string, _string_1));
+          if (!_notEquals_3) {
+            _and_1 = false;
+          } else {
+            String _className_1 = creatingExp.getClassName();
+            String _string_2 = _className_1.toString();
+            List<String> _get = this.classeExtends.get(_string_2);
+            Type _type_1 = vdc.getType();
+            String _name_3 = _type_1.getName();
+            String _string_3 = _name_3.toString();
+            boolean _contains = _get.contains(_string_3);
+            boolean _not = (!_contains);
+            _and_1 = _not;
+          }
+          if (_and_1) {
+            String _string_4 = this.classeExtends.toString();
+            String _plus = ("A classe " + _string_4);
+            String _className_2 = creatingExp.getClassName();
+            String _string_5 = _className_2.toString();
+            String _plus_1 = (_plus + _string_5);
+            String _plus_2 = (_plus_1 + " não herda ou implementa ");
+            Type _type_2 = vdc.getType();
+            String _name_4 = _type_2.getName();
+            String _string_6 = _name_4.toString();
+            String _plus_3 = (_plus_2 + _string_6);
+            this.error(_plus_3, creatingExp, JavaPackage.Literals.CREATING_EXPRESSION__CLASS_NAME);
+          }
+        }
       }
     }
   }

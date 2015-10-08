@@ -30,6 +30,7 @@ import org.xtext.java.java.Try_statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getTry <em>Try</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getTryStatement <em>Try Statement</em>}</li>
@@ -39,7 +40,6 @@ import org.xtext.java.java.Try_statement;
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getFinally <em>Finally</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Try_statementImpl#getFinallyStatement <em>Finally Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

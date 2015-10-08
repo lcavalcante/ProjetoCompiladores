@@ -29,6 +29,7 @@ import org.xtext.java.java.JavaPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Class_declarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Class_declarationImpl#getClassName <em>Class Name</em>}</li>
@@ -37,7 +38,6 @@ import org.xtext.java.java.JavaPackage;
  *   <li>{@link org.xtext.java.java.impl.Class_declarationImpl#getImplements <em>Implements</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Class_declarationImpl#getFields <em>Fields</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

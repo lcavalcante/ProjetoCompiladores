@@ -312,20 +312,16 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameMethod_declarationParserRuleCall_0_1_2_0 = (RuleCall)cNameAssignment_0_1_2.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cNameStatic_initializerParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cNameMethod_callParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cDebugAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cDebugEOLTerminalRuleCall_3_0 = (RuleCall)cDebugAssignment_3.eContents().get(0);
-		private final Assignment cVariableDeclaratorAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cVariableDeclaratorVariable_declaratorParserRuleCall_4_0 = (RuleCall)cVariableDeclaratorAssignment_4.eContents().get(0);
+		private final Assignment cDebugAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cDebugEOLTerminalRuleCall_2_0 = (RuleCall)cDebugAssignment_2.eContents().get(0);
 		
 		//Field_declaration:
 		//	doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration) |
-		//	name=Static_initializer | name=Method_call | debug=EOL | variableDeclarator=Variable_declarator;
+		//	name=Static_initializer | debug=EOL;
 		@Override public ParserRule getRule() { return rule; }
 
 		//doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration) |
-		//name=Static_initializer | name=Method_call | debug=EOL | variableDeclarator=Variable_declarator
+		//name=Static_initializer | debug=EOL
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)
@@ -364,23 +360,11 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		//Static_initializer
 		public RuleCall getNameStatic_initializerParserRuleCall_1_0() { return cNameStatic_initializerParserRuleCall_1_0; }
 
-		//name=Method_call
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//Method_call
-		public RuleCall getNameMethod_callParserRuleCall_2_0() { return cNameMethod_callParserRuleCall_2_0; }
-
 		//debug=EOL
-		public Assignment getDebugAssignment_3() { return cDebugAssignment_3; }
+		public Assignment getDebugAssignment_2() { return cDebugAssignment_2; }
 
 		//EOL
-		public RuleCall getDebugEOLTerminalRuleCall_3_0() { return cDebugEOLTerminalRuleCall_3_0; }
-
-		//variableDeclarator=Variable_declarator
-		public Assignment getVariableDeclaratorAssignment_4() { return cVariableDeclaratorAssignment_4; }
-
-		//Variable_declarator
-		public RuleCall getVariableDeclaratorVariable_declaratorParserRuleCall_4_0() { return cVariableDeclaratorVariable_declaratorParserRuleCall_4_0; }
+		public RuleCall getDebugEOLTerminalRuleCall_2_0() { return cDebugEOLTerminalRuleCall_2_0; }
 	}
 
 	public class Method_declarationElements extends AbstractParserRuleElementFinder {
@@ -2293,22 +2277,18 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
 		private final Action cStatementAction_13_0 = (Action)cGroup_13.eContents().get(0);
 		private final RuleCall cEOLTerminalRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
-		private final Assignment cVariableDeclaratorAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
-		private final RuleCall cVariableDeclaratorVariable_declaratorParserRuleCall_14_0 = (RuleCall)cVariableDeclaratorAssignment_14.eContents().get(0);
 		
 		//Statement:
 		//	returnSmt=Return_Statement | variable=Variable_declaration | expressionx=Expression | ifStatement=If_Statement |
 		//	doStatement=Do_Statement | whileStatement=While_Statement | forStatement=For_Statement |
 		//	switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID COLON statement=Statement |
-		//	{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL |
-		//	variableDeclarator=Variable_declarator;
+		//	{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL;
 		@Override public ParserRule getRule() { return rule; }
 
 		//returnSmt=Return_Statement | variable=Variable_declaration | expressionx=Expression | ifStatement=If_Statement |
 		//doStatement=Do_Statement | whileStatement=While_Statement | forStatement=For_Statement |
 		//switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID COLON statement=Statement |
-		//{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL |
-		//variableDeclarator=Variable_declarator
+		//{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//returnSmt=Return_Statement
@@ -2430,12 +2410,6 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//EOL
 		public RuleCall getEOLTerminalRuleCall_13_1() { return cEOLTerminalRuleCall_13_1; }
-
-		//variableDeclarator=Variable_declarator
-		public Assignment getVariableDeclaratorAssignment_14() { return cVariableDeclaratorAssignment_14; }
-
-		//Variable_declarator
-		public RuleCall getVariableDeclaratorVariable_declaratorParserRuleCall_14_0() { return cVariableDeclaratorVariable_declaratorParserRuleCall_14_0; }
 	}
 
 	public class Switch_StatementElements extends AbstractParserRuleElementFinder {
@@ -3455,7 +3429,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Field_declaration:
 	//	doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration) |
-	//	name=Static_initializer | name=Method_call | debug=EOL | variableDeclarator=Variable_declarator;
+	//	name=Static_initializer | debug=EOL;
 	public Field_declarationElements getField_declarationAccess() {
 		return pField_declaration;
 	}
@@ -4005,8 +3979,7 @@ public class JavaGrammarAccess extends AbstractGrammarElementFinder {
 	//	returnSmt=Return_Statement | variable=Variable_declaration | expressionx=Expression | ifStatement=If_Statement |
 	//	doStatement=Do_Statement | whileStatement=While_Statement | forStatement=For_Statement |
 	//	switchStatement=Switch_Statement | Statement_block | try=Try_statement | name=ID COLON statement=Statement |
-	//	{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL |
-	//	variableDeclarator=Variable_declarator;
+	//	{Statement} "break" name=ID? EOL | {Statement} "continue" name=ID? EOL | {Statement} EOL;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}

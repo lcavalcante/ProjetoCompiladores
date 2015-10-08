@@ -194,9 +194,7 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getField_declarationAccess().getNameAssignment_0_1_1(), "rule__Field_declaration__NameAssignment_0_1_1");
 					put(grammarAccess.getField_declarationAccess().getNameAssignment_0_1_2(), "rule__Field_declaration__NameAssignment_0_1_2");
 					put(grammarAccess.getField_declarationAccess().getNameAssignment_1(), "rule__Field_declaration__NameAssignment_1");
-					put(grammarAccess.getField_declarationAccess().getNameAssignment_2(), "rule__Field_declaration__NameAssignment_2");
-					put(grammarAccess.getField_declarationAccess().getDebugAssignment_3(), "rule__Field_declaration__DebugAssignment_3");
-					put(grammarAccess.getField_declarationAccess().getVariableDeclaratorAssignment_4(), "rule__Field_declaration__VariableDeclaratorAssignment_4");
+					put(grammarAccess.getField_declarationAccess().getDebugAssignment_2(), "rule__Field_declaration__DebugAssignment_2");
 					put(grammarAccess.getMethod_declarationAccess().getModifiersAssignment_0(), "rule__Method_declaration__ModifiersAssignment_0");
 					put(grammarAccess.getMethod_declarationAccess().getTypeAssignment_1(), "rule__Method_declaration__TypeAssignment_1");
 					put(grammarAccess.getMethod_declarationAccess().getNameAssignment_2(), "rule__Method_declaration__NameAssignment_2");
@@ -318,7 +316,6 @@ public class JavaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStatementAccess().getStatementAssignment_10_2(), "rule__Statement__StatementAssignment_10_2");
 					put(grammarAccess.getStatementAccess().getNameAssignment_11_2(), "rule__Statement__NameAssignment_11_2");
 					put(grammarAccess.getStatementAccess().getNameAssignment_12_2(), "rule__Statement__NameAssignment_12_2");
-					put(grammarAccess.getStatementAccess().getVariableDeclaratorAssignment_14(), "rule__Statement__VariableDeclaratorAssignment_14");
 					put(grammarAccess.getSwitch_StatementAccess().getExpressionAssignment_3(), "rule__Switch_Statement__ExpressionAssignment_3");
 					put(grammarAccess.getSwitch_StatementAccess().getExpressionsAssignment_6_0_1(), "rule__Switch_Statement__ExpressionsAssignment_6_0_1");
 					put(grammarAccess.getSwitch_StatementAccess().getStatementsAssignment_6_2(), "rule__Switch_Statement__StatementsAssignment_6_2");

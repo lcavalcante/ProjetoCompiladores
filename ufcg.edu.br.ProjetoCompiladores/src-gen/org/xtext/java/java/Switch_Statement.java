@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Switch_Statement#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.java.java.Switch_Statement#getExpressions <em>Expressions</em>}</li>
  *   <li>{@link org.xtext.java.java.Switch_Statement#getStatements <em>Statements</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getSwitch_Statement()
  * @model

@@ -11,13 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Field_declaration#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.xtext.java.java.Field_declaration#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.java.java.Field_declaration#getDebug <em>Debug</em>}</li>
- *   <li>{@link org.xtext.java.java.Field_declaration#getVariableDeclarator <em>Variable Declarator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getField_declaration()
  * @model
@@ -102,31 +101,5 @@ public interface Field_declaration extends EObject
    * @generated
    */
   void setDebug(String value);
-
-  /**
-   * Returns the value of the '<em><b>Variable Declarator</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Variable Declarator</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable Declarator</em>' containment reference.
-   * @see #setVariableDeclarator(Variable_declarator)
-   * @see org.xtext.java.java.JavaPackage#getField_declaration_VariableDeclarator()
-   * @model containment="true"
-   * @generated
-   */
-  Variable_declarator getVariableDeclarator();
-
-  /**
-   * Sets the value of the '{@link org.xtext.java.java.Field_declaration#getVariableDeclarator <em>Variable Declarator</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable Declarator</em>' containment reference.
-   * @see #getVariableDeclarator()
-   * @generated
-   */
-  void setVariableDeclarator(Variable_declarator value);
 
 } // Field_declaration

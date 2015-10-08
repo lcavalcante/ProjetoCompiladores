@@ -73,8 +73,8 @@ class JavaValidator extends AbstractJavaValidator {
 				addMetodos(fd.name as Method_declaration);
 			}
 			addTipos(fd, tipos);
-			if (fd.variableDeclarator instanceof Variable_declarator) {
-				checarTiposVariaveis(fd.variableDeclarator, tipos);
+			if (fd.name instanceof Variable_declarator) {
+				checarTiposVariaveis(fd.name as Variable_declarator, tipos);
 			}
 		}
 	}
@@ -151,8 +151,8 @@ class JavaValidator extends AbstractJavaValidator {
 		var boolean temReturn = false;
 		for (Statement smt : statements) {
 			addTiposMetodo(smt, tiposMetodo);
-			if (smt.variableDeclarator instanceof Variable_declarator) {
-				checarTiposVariaveis(smt.variableDeclarator, tiposMetodo);
+			if (smt.variable.name instanceof Variable_declarator) {
+				checarTiposVariaveis(smt.variable.name, tiposMetodo);
 			}
 			if (smt.returnSmt instanceof Return_Statement) {
 				temReturn = true;
@@ -271,17 +271,9 @@ class JavaValidator extends AbstractJavaValidator {
 			if (vd.initializer != null && vd.initializer.expression != null) {
 				if (vd.initializer.expression.creatingExpression instanceof Creating_Expression) {
 					var Creating_Expression creatingExp = vd.initializer.expression.creatingExpression;
-					if (!classeExtends.keySet.contains(creatingExp.className.toString)) {
-						error("Classe " + creatingExp.className.toString + " não existe", creatingExp,
-							JavaPackage.Literals.CREATING_EXPRESSION__CLASS_NAME);
-					}
-					if (!classeExtends.keySet.contains(vdc.type.name.toString)) {
-						error("Classe " + vdc.type.name.toString + " não existe", vdc.type,
-							JavaPackage.Literals.TYPE__NAME);
-					}
 					if (creatingExp.className.toString != vdc.type.name.toString &&
 						!classeExtends.get(creatingExp.className.toString).contains(vdc.type.name.toString)) {
-						error("A classe " + creatingExp.className.toString + " não herda ou implementa " +
+						error("A classe " + classeExtends.toString + creatingExp.className.toString + " não herda ou implementa " +
 							vdc.type.name.toString, creatingExp, JavaPackage.Literals.CREATING_EXPRESSION__CLASS_NAME);
 					}
 				}

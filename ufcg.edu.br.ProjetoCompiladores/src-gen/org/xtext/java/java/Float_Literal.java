@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Float_Literal#getDecimalDigits1 <em>Decimal Digits1</em>}</li>
  *   <li>{@link org.xtext.java.java.Float_Literal#getDecimalDigits2 <em>Decimal Digits2</em>}</li>
  *   <li>{@link org.xtext.java.java.Float_Literal#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.java.java.Float_Literal#getFloatTypeSufix <em>Float Type Sufix</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getFloat_Literal()
  * @model

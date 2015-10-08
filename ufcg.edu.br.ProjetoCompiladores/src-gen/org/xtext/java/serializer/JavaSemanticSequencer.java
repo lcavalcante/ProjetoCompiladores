@@ -331,13 +331,7 @@ public class JavaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)) | 
-	 *         name=Static_initializer | 
-	 *         name=Method_call | 
-	 *         debug=EOL | 
-	 *         variableDeclarator=Variable_declarator
-	 *     )
+	 *     ((doc=DOC_COMMENT? (name=Variable_declaration | name=Constructor_declaration | name=Method_declaration)) | name=Static_initializer | debug=EOL)
 	 */
 	protected void sequence_Field_declaration(EObject context, Field_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

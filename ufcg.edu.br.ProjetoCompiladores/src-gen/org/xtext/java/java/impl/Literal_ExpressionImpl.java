@@ -20,6 +20,7 @@ import org.xtext.java.java.Literal_Expression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getExp1 <em>Exp1</em>}</li>
@@ -27,7 +28,6 @@ import org.xtext.java.java.Literal_Expression;
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getString <em>String</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Literal_ExpressionImpl#getChar <em>Char</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

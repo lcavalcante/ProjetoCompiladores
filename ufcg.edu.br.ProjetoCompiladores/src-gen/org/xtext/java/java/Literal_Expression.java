@@ -10,6 +10,7 @@ package org.xtext.java.java;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Literal_Expression#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.java.java.Literal_Expression#getExp1 <em>Exp1</em>}</li>
@@ -17,7 +18,6 @@ package org.xtext.java.java;
  *   <li>{@link org.xtext.java.java.Literal_Expression#getString <em>String</em>}</li>
  *   <li>{@link org.xtext.java.java.Literal_Expression#getChar <em>Char</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getLiteral_Expression()
  * @model

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.Expression#getNumericExpression3 <em>Numeric Expression3</em>}</li>
  *   <li>{@link org.xtext.java.java.Expression#getAux <em>Aux</em>}</li>
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.java.java.Expression#getThis <em>This</em>}</li>
  *   <li>{@link org.xtext.java.java.Expression#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.java.java.JavaPackage#getExpression()
  * @model

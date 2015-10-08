@@ -666,28 +666,9 @@ ruleField_declaration returns [EObject current=null]
 )
     |(
 (
-		{ 
-	        newCompositeNode(grammarAccess.getField_declarationAccess().getNameMethod_callParserRuleCall_2_0()); 
-	    }
-		lv_name_5_0=ruleMethod_call		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getField_declarationRule());
-	        }
-       		set(
-       			$current, 
-       			"name",
-        		lv_name_5_0, 
-        		"Method_call");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |(
-(
-		lv_debug_6_0=RULE_EOL
+		lv_debug_5_0=RULE_EOL
 		{
-			newLeafNode(lv_debug_6_0, grammarAccess.getField_declarationAccess().getDebugEOLTerminalRuleCall_3_0()); 
+			newLeafNode(lv_debug_5_0, grammarAccess.getField_declarationAccess().getDebugEOLTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -696,27 +677,8 @@ ruleField_declaration returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"debug",
-        		lv_debug_6_0, 
+        		lv_debug_5_0, 
         		"EOL");
-	    }
-
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getField_declarationAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_4_0()); 
-	    }
-		lv_variableDeclarator_7_0=ruleVariable_declarator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getField_declarationRule());
-	        }
-       		set(
-       			$current, 
-       			"variableDeclarator",
-        		lv_variableDeclarator_7_0, 
-        		"Variable_declarator");
-	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -4340,25 +4302,6 @@ ruleStatement returns [EObject current=null]
     { 
     newLeafNode(this_EOL_22, grammarAccess.getStatementAccess().getEOLTerminalRuleCall_13_1()); 
     }
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getStatementAccess().getVariableDeclaratorVariable_declaratorParserRuleCall_14_0()); 
-	    }
-		lv_variableDeclarator_23_0=ruleVariable_declarator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStatementRule());
-	        }
-       		set(
-       			$current, 
-       			"variableDeclarator",
-        		lv_variableDeclarator_23_0, 
-        		"Variable_declarator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
 ))
 ;
 

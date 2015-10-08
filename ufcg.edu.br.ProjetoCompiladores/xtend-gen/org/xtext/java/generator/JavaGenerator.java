@@ -3,6 +3,7 @@
  */
 package org.xtext.java.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -13,8 +14,13 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.java.java.Class_declaration;
+import org.xtext.java.java.Expression;
 import org.xtext.java.java.Field_declaration;
+import org.xtext.java.java.Literal_Expression;
+import org.xtext.java.java.Logical_Expression_NR;
 import org.xtext.java.java.Variable_declaration;
+import org.xtext.java.java.Variable_declarator;
+import org.xtext.java.java.Variable_initializer;
 
 /**
  * Generates code from your model files on save.
@@ -53,19 +59,117 @@ public class JavaGenerator implements IGenerator {
   }
   
   public CharSequence compileField(final Field_declaration declaration) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method varD is undefined for the type JavaGenerator"
-      + "\nThe method varD is undefined for the type JavaGenerator"
-      + "\n!= cannot be resolved"
-      + "\ncompileVariable cannot be resolved");
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EObject _name = declaration.getName();
+      if ((_name instanceof Variable_declaration)) {
+        EObject _name_1 = declaration.getName();
+        CharSequence _compileVariable = this.compileVariable(((Variable_declaration) _name_1));
+        _builder.append(_compileVariable, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
   }
   
   public CharSequence compileVariable(final Variable_declaration declaration) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method le is undefined for the type JavaGenerator"
-      + "\nThe method le is undefined for the type JavaGenerator"
-      + "\n!= cannot be resolved"
-      + "\ntoString cannot be resolved");
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Variable_declarator _name = declaration.getName();
+      Variable_initializer _initializer = _name.getInitializer();
+      boolean _notEquals = (!Objects.equal(_initializer, null));
+      if (_notEquals) {
+        {
+          Variable_declarator _name_1 = declaration.getName();
+          Variable_initializer _initializer_1 = _name_1.getInitializer();
+          Expression _expression = _initializer_1.getExpression();
+          Literal_Expression _literalExpression = _expression.getLiteralExpression();
+          boolean _notEquals_1 = (!Objects.equal(_literalExpression, null));
+          if (_notEquals_1) {
+            _builder.append("LD R");
+            String _string = this.variables.toString();
+            _builder.append(_string, "");
+            _builder.append(", #");
+            Variable_declarator _name_2 = declaration.getName();
+            Variable_initializer _initializer_2 = _name_2.getInitializer();
+            Expression _expression_1 = _initializer_2.getExpression();
+            Literal_Expression _literalExpression_1 = _expression_1.getLiteralExpression();
+            int _exp1 = _literalExpression_1.getExp1();
+            _builder.append(_exp1, "");
+            _builder.newLineIfNotEmpty();
+            this.increment();
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          Variable_declarator _name_3 = declaration.getName();
+          Variable_initializer _initializer_3 = _name_3.getInitializer();
+          Expression _expression_2 = _initializer_3.getExpression();
+          Logical_Expression_NR _logicalExpression = _expression_2.getLogicalExpression();
+          boolean _notEquals_2 = (!Objects.equal(_logicalExpression, null));
+          if (_notEquals_2) {
+            {
+              Variable_declarator _name_4 = declaration.getName();
+              Variable_initializer _initializer_4 = _name_4.getInitializer();
+              Expression _expression_3 = _initializer_4.getExpression();
+              Logical_Expression_NR _logicalExpression_1 = _expression_3.getLogicalExpression();
+              Expression _expression_4 = _logicalExpression_1.getExpression();
+              boolean _notEquals_3 = (!Objects.equal(_expression_4, null));
+              if (_notEquals_3) {
+                _builder.append("LD R");
+                String _string_1 = this.variables.toString();
+                _builder.append(_string_1, "");
+                _builder.append(", ");
+                Variable_declarator _name_5 = declaration.getName();
+                Variable_initializer _initializer_5 = _name_5.getInitializer();
+                Expression _expression_5 = _initializer_5.getExpression();
+                Logical_Expression_NR _logicalExpression_2 = _expression_5.getLogicalExpression();
+                Expression _expression_6 = _logicalExpression_2.getExpression();
+                String _string_2 = _expression_6.toString();
+                _builder.append(_string_2, "");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          }
+        }
+        _builder.newLine();
+      } else {
+        _builder.append("LD R");
+        String _string_3 = this.variables.toString();
+        _builder.append(_string_3, "");
+        _builder.append(", ");
+        Variable_declarator _name_6 = declaration.getName();
+        String _name_7 = _name_6.getName();
+        String _string_4 = _name_7.toString();
+        _builder.append(_string_4, "");
+        _builder.newLineIfNotEmpty();
+        this.increment();
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      EList<Variable_declarator> _names = declaration.getNames();
+      boolean _isEmpty = _names.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        {
+          EList<Variable_declarator> _names_1 = declaration.getNames();
+          for(final Variable_declarator name : _names_1) {
+            _builder.append("LD R");
+            String _string_5 = this.variables.toString();
+            _builder.append(_string_5, "");
+            _builder.append(", ");
+            String _name_8 = name.getName();
+            String _string_6 = _name_8.toString();
+            _builder.append(_string_6, "");
+            _builder.newLineIfNotEmpty();
+            this.increment();
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
   }
   
   public void increment() {

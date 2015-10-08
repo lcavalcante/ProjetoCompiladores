@@ -22,11 +22,11 @@ import org.xtext.java.java.Statement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.java.java.impl.Do_StatementImpl#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.xtext.java.java.impl.Do_StatementImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
