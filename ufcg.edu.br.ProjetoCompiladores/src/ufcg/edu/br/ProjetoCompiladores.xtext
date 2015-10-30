@@ -391,6 +391,7 @@ Statement:
 	|{Statement}'break' name=ID? EOL
 	|{Statement}'continue' name=ID? EOL
 	|{Statement}EOL
+	|(variableDeclarator=Variable_declarator) EOL
 ;
 
 Switch_Statement:{Switch_Statement}
