@@ -134,7 +134,7 @@ terminal SUPER:
 ;
 
 Expression_aux :
-	 ((RIGHT_PARENTHESIS argList+=Arg_List LEFT_PARENTHESIS)) aux=Expression_aux
+	 ((RIGHT_PARENTHESIS (argList+=Arg_List)? LEFT_PARENTHESIS)) aux=Expression_aux
 	 |((R_ABS expression2=Expression L_ABS)) aux=Expression_aux
 	 |(('.' expression2=Expression)) aux=Expression_aux
 	 |((COMMA expression2=Expression)) aux=Expression_aux 

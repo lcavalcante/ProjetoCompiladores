@@ -6,14 +6,20 @@ import java.util.List
 import java.util.Map
 import org.eclipse.xtext.validation.Check
 import org.xtext.java.java.Class_declaration
-import org.xtext.java.java.Interface_declaration
-import org.xtext.java.java.JavaPackage
-import org.xtext.java.java.Method_declaration
-import org.xtext.java.java.Type
-import org.xtext.java.java.Type_declaration
-import org.xtext.java.java.Variable_declaration
 import org.xtext.java.java.Compilation_unit
 import org.xtext.java.java.Field_declaration
+import org.xtext.java.java.Interface_declaration
+import org.xtext.java.java.JavaPackage
+import org.xtext.java.java.Literal_Expression
+import org.xtext.java.java.Method_call
+import org.xtext.java.java.Method_declaration
+import org.xtext.java.java.Parameter
+import org.xtext.java.java.Parameter_list
+import org.xtext.java.java.Parameter_list_method_call
+import org.xtext.java.java.Return_Statement
+import org.xtext.java.java.Statement
+import org.xtext.java.java.Type_declaration
+import org.xtext.java.java.Variable_declaration
 import org.xtext.java.java.Variable_declarator
 
 /**
@@ -73,11 +79,192 @@ class JavaValidator extends AbstractJavaValidator {
 		for (Field_declaration field: cd.fields) {
 			if (field.name instanceof Method_declaration) {
 				var Method_declaration md = field.name as Method_declaration;
-				if (hasNomeMetodoNaClasse(cd, md.name)) {
+				if (hasNomeMetodoNaClasse(cd.className, md.name)) {
 					error("Método " + md.name + " já existe na classe.", md,
 						JavaPackage.Literals.METHOD_DECLARATION__NAME);
 				}
 				classeMetodos.get(cd.className).add(md);
+				validarMetodo(md, cd.className);
+			}
+		}
+	}
+	
+	def validarMetodo(Method_declaration md, String nomeClasse) {
+		var List<Variable_declaration> vds = new ArrayList<Variable_declaration>();
+		if (md.statement == null) {
+			return;
+		}
+		for (Statement st: md.statement.statements) {
+			if (st.variable != null) {
+				validaAtributoDoMetodo(vds, st.variable);
+				vds.add(st.variable);
+			}
+		}
+		validaParametrosMethodDeclaration(md);
+		validaRetornoVoidMetodo(md);
+		validaRetornoMetodoComFuncao(md, nomeClasse, vds);
+	}
+	
+	def validaRetornoMetodoComFuncao(Method_declaration md, String nomeClasse, 
+		List<Variable_declaration> vds) {
+		for (Statement st: md.statement.statements) {
+			if (st.returnSmt != null) {
+				var Return_Statement retorno = st.returnSmt;
+				if (retorno.rv instanceof Method_call) {
+					var Method_call call = retorno.rv as Method_call;
+					if (!hasNomeMetodoNaClasse(nomeClasse, call.name)) {
+						error("Método " + call.name + " não existe.", 
+							retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					}
+					var Method_declaration mdRetorno = buscaMetodoClasse(nomeClasse, call.name);
+					var List<String> parametros;
+					if (mdRetorno.parameter!=null) {
+						var int qtdParametros = 0;
+						if (mdRetorno.parameter.parameters != null) {
+							qtdParametros += mdRetorno.parameter.parameters.length;
+						}
+						if (call.parameter == null || 
+							call.parameter.parameters.length != qtdParametros) {
+							error("Quantidade inválida de parâmetros.", 
+								retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+						}
+						validaTiposParametrosCallMethod(vds, nomeClasse, mdRetorno.parameter, 
+							call);
+					} else {
+						if (call.parameter != null || call.parameter.parameters.length > 0) {
+							error("Quantidade inválida de parâmetros.", 
+								retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+						}
+					}
+				} else if (retorno.rv instanceof Literal_Expression) {
+					var Literal_Expression literal = retorno.rv as Literal_Expression;
+					if (literal.exp2 == null && md.type.name == "float") {
+						error("O método deve retornar um float.", 
+								retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					} else if (literal.string == null && md.type.name == "String") {
+						error("O método deve retornar uma String.", 
+								retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					} else if (literal.char == null && md.type.name == "char") {
+						error("O método deve retornar um char.", 
+								retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					} else if (md.type.name != "float" && md.type.name != "String" &&
+						md.type.name != "char" && (literal.exp2 != null || literal.string != null
+						|| literal.char != null)) {
+							error("O método deve retornar um int.", 
+								retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					}
+				}
+			}
+		}
+	}
+	
+	def validaTiposParametrosCallMethod(List<Variable_declaration> declarations, 
+		String nomeClasse, Parameter_list listaMetodo, Method_call methodCall) {
+		var Parameter_list_method_call parametrosCall = methodCall.parameter;
+		var List<String> tiposMetodo = new ArrayList<String>();
+		var List<String> tiposCall = new ArrayList<String>();
+		tiposMetodo.add(listaMetodo.parameter.type.name);
+		if (listaMetodo.parameters != null) {
+			for (Parameter param: listaMetodo.parameters) {
+				tiposMetodo.add(param.type.name);
+			}
+		}
+		var String tipo = buscaTipoVariavel(declarations, parametrosCall.name, nomeClasse);
+		if (tipo == null) {
+			error("Variável " + parametrosCall.name + " não existe.", 
+						parametrosCall, JavaPackage.Literals.PARAMETER_LIST_METHOD_CALL__NAME);
+		} else {
+			tiposCall.add(tipo);
+		}
+		for (String variavel: parametrosCall.parameters) {
+			tipo = buscaTipoVariavel(declarations, variavel, nomeClasse);
+			
+			if (tipo == null) {
+				error("Variável " + variavel + " não existe.", 
+							parametrosCall, JavaPackage.Literals.PARAMETER_LIST_METHOD_CALL__PARAMETERS);
+			} else {
+				tiposCall.add(tipo);
+			}
+		}
+		if (tiposMetodo.length != tiposCall.length) {
+			error("Os parâmetros " + tiposCall.toString + " não são compatíveis com " + tiposMetodo.toString, 
+						methodCall, JavaPackage.Literals.METHOD_CALL__PARAMETER);
+		}
+		for (var int i = 0; i<tiposMetodo.length; i++) {
+			if (!tiposMetodo.get(i).equals(tiposCall.get(i)) &&
+				!isClasseFilha(tiposMetodo.get(i), tiposCall.get(i))) {
+				error("Os parâmetros " + tiposCall.toString + " não são compatíveis com " + tiposMetodo.toString, 
+						methodCall, JavaPackage.Literals.METHOD_CALL__PARAMETER);
+			}
+		}
+	}
+	
+	def validaRetornoVoidMetodo(Method_declaration md) {
+		if (md.statement.statements != null && md.statement.statements.length > 0) {
+			var boolean temReturn = false;
+			for (Statement st: md.statement.statements) {
+				if (st.returnSmt != null) {
+					var Return_Statement retorno = st.returnSmt;
+					temReturn = true;
+					if  (md.type.name.equals("void") &&
+						retorno.rv != null) {
+						error("Método void não pode retornar um valor.", 
+							retorno, JavaPackage.Literals.RETURN_STATEMENT__RV);
+					}
+				}
+			} 
+			if (!md.type.name.equals("void") && !temReturn) {
+				error("O método deve retornar um " + md.type.name + ".", 
+					md, JavaPackage.Literals.METHOD_DECLARATION__NAME);
+			}
+		} else {
+			if (!md.type.name.equals("void")) {
+				error("O método deve retornar um " + md.type.name + ".", 
+					md, JavaPackage.Literals.METHOD_DECLARATION__NAME);
+			}
+		}
+	}
+	
+	def validaParametrosMethodDeclaration(Method_declaration md) {
+		if (md.parameter != null) {
+			var Parameter_list lista = md.parameter;
+			if (!this.isTipoPrimitivo(lista.parameter.type.name) &&
+				classeMetodos.get(lista.parameter.type.name) == null) {
+				error("Classe " + lista.parameter.type.name + " não existe.", lista.parameter,
+						JavaPackage.Literals.PARAMETER__TYPE);
+			}
+			for (Parameter parametro: lista.parameters) {
+				if (!this.isTipoPrimitivo(parametro.type.name) &&
+					classeMetodos.get(parametro.type.name) == null) {
+						error("Classe " + parametro.type.name + " não existe.", parametro,
+							JavaPackage.Literals.PARAMETER__TYPE);
+				}
+			}
+		}		
+	}
+	
+	def validaAtributoDoMetodo(List<Variable_declaration> vds, Variable_declaration vd) {
+		if (classeAtributos.get(vd.type.name) == null && !isTipoPrimitivo(vd.type.name)) {
+			error("Classe " + vd.type.name + " não existe.", vd,
+				JavaPackage.Literals.VARIABLE_DECLARATION__TYPE);
+		}
+		buscaNomeAtributo(vds, vd.name);
+		for (Variable_declarator declarator: vd.names) {
+			buscaNomeAtributo(vds, declarator);		
+		}
+	}
+	
+	def buscaNomeAtributo(List<Variable_declaration> vds,  Variable_declarator vd) {
+		for (Variable_declaration declaration: vds) {
+			if (declaration.name.name.equals(vd.name) ) {
+				error("Campo " + vd.name + " duplicado.", vd,
+						JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+			}
+			for (Variable_declarator declarator: declaration.names) {
+				if (declarator.name.equals(vd.name) ) {
+					error("Campo " + vd.name + " duplicado.", vd,
+						JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+				}
 			}
 		}
 	}
@@ -218,11 +405,60 @@ class JavaValidator extends AbstractJavaValidator {
 		return false;
 	}
 	
-	def hasNomeMetodoNaClasse(Class_declaration cd, String nome) {
-		for (Method_declaration md: classeMetodos.get(cd.className)) {
+	def hasNomeMetodoNaClasse(String nomeClasse, String nome) {
+		for (Method_declaration md: classeMetodos.get(nomeClasse)) {
 			if (md.name.equals(nome)) {
 				return true;
 			}
+		}
+		return false;
+	}
+	
+	def buscaMetodoClasse(String nomeClasse, String nomeMetodo) {
+		for (Method_declaration md: classeMetodos.get(nomeClasse)) {
+			if (md.name.equals(nomeMetodo)) {
+				return md;
+			}
+		}
+		return null;
+	}
+	
+	def buscaTipoVariavel(List<Variable_declaration> varsMetodo, String nomeVar, 
+		String nomeClasse) {
+		for (Variable_declaration varMetodo: varsMetodo) {
+			if (varMetodo.name.name.equals(nomeVar)) {
+				return varMetodo.type.name;
+			}
+			if (varMetodo.names != null) {
+				for (Variable_declarator declarator: varMetodo.names) {
+					if (declarator.name.equals(nomeVar)) {
+						return varMetodo.type.name;
+					}
+				}
+			}
+		}
+		for (Variable_declaration varMetodo: classeAtributos.get(nomeClasse)) {
+			if (varMetodo.name.name.equals(nomeVar)) {
+				return varMetodo.type.name;
+			}
+			if (varMetodo.names != null) {
+				for (Variable_declarator declarator: varMetodo.names) {
+					if (declarator.name.equals(nomeVar)) {
+						return varMetodo.type.name;
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	def isClasseFilha(String classePai, String classeFilha) {
+		if (classeExtends.get(classeFilha) != null) {
+			return classeExtends.get(classeFilha).contains(classePai);
+		} else if (classeFilha == "int") {
+			return classePai == "float" || classePai == "long"; 
+		} else if (classeFilha == "float") {
+			return classePai == "long"; 
 		}
 		return false;
 	}
