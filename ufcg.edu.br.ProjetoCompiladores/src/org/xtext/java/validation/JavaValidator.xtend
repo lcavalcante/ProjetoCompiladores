@@ -108,19 +108,8 @@ class JavaValidator extends AbstractJavaValidator {
 		}
 		for (Statement st : md.statement.statements) {
 			if (st.variable != null) {
-				validaAtributoDoMetodo(vds, st.variable);
+				validaAtributoDoMetodo(vds, st.variable, md);
 				vds.add(st.variable);
-			} else if (st.forStatement != null) {
-				validarForStatements(vds, nomeClasse, st.forStatement);
-			}
-		}
-		validaParametrosMethodDeclaration(md);
-		validaRetornoVoidMetodo(md);
-		validaRetornoMetodoComFuncao(md, nomeClasse, vds);
-		for (Statement st : md.statement.statements) {
-			if (st.variableDeclarator != null) {
-				validaAtributoComExpressaoAritmetica(vds, st.variableDeclarator, nomeClasse);
-			} else if (st.variable != null) {
 				if (st.variable.name != null) {
 					validaAtributoComExpressaoAritmetica(vds, st.variable.name, nomeClasse);
 				} else if (st.variable.names != null && st.variable.names.length != 0) {
@@ -128,10 +117,17 @@ class JavaValidator extends AbstractJavaValidator {
 						validaAtributoComExpressaoAritmetica(vds, declarator, nomeClasse);
 					}
 				}
+			} else if (st.forStatement != null) {
+				validarForStatements(vds, nomeClasse, st.forStatement);
+			} else if (st.variableDeclarator != null) {
+				validaAtributoComExpressaoAritmetica(vds, st.variableDeclarator, nomeClasse);
 			}
 		}
+		validaParametrosMethodDeclaration(md);
+		validaRetornoVoidMetodo(md);
+		validaRetornoMetodoComFuncao(md, nomeClasse, vds);
 	}
-
+	
 	def validaAtributoComExpressaoAritmetica(List<Variable_declaration> vds, Variable_declarator declarator,
 		String className) {
 		if (declarator.initializer != null && declarator.initializer.expression != null) {
@@ -154,18 +150,18 @@ class JavaValidator extends AbstractJavaValidator {
 					var String tipo = buscaTipoVariavel(vds, exp.name, className);
 					var Method_declaration method = buscaMetodoClasse(className, exp.name);
 					if (tipo == null && method == null) {
-						error("Identificador inválido.", exp, JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+						error("Identificador inválido.", exp, JavaPackage.Literals.EXPRESSION__NAME);
 						return;
 					} else if (method != null) {
 						validaChamadaMetodo(vds, className, exp, tipoVariavel);
 						if (!method.type.name.equals(tipoVariavel)) {
 							error("Não é possível converter de " + tipoVariavel + " para " + method.type.name, exp,
-								JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+								JavaPackage.Literals.EXPRESSION__NAME);
+								return;
 						}
-						return;
 					} else if (tipo != null && !tipo.equals(tipoVariavel)) {
 						error("Não é possível converter do tipo " + tipoVariavel + " para " + tipo, exp,
-							JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+							JavaPackage.Literals.EXPRESSION__NAME);
 						return;
 					}
 				}
@@ -265,11 +261,11 @@ class JavaValidator extends AbstractJavaValidator {
 				if (exp.aux != null && exp.aux.argList != null) {
 					var Method_declaration md = buscaMetodoClasse(nomeClasse, exp.name);
 					if (md == null) {
-						error("Método não existe", exp, JavaPackage.Literals.EXPRESSION__NAME);
+						error("Método " + exp.name + " não existe", exp, JavaPackage.Literals.EXPRESSION__NAME);
 						return false;
 					}
 					if (!md.type.name.equals(tipo)) {
-						error("Método deve retornar um " + tipo, exp, JavaPackage.Literals.EXPRESSION__NAME);
+						error("Método " + md.name + " deve retornar um " + tipo, exp, JavaPackage.Literals.EXPRESSION__NAME);
 						return false;
 					}
 					var List<String> tiposMetodo = getTiposParametrosDoMetodo(md);
@@ -500,14 +496,32 @@ class JavaValidator extends AbstractJavaValidator {
 				}
 			}
 
-			def validaAtributoDoMetodo(List<Variable_declaration> vds, Variable_declaration vd) {
+			def validaAtributoDoMetodo(List<Variable_declaration> vds, Variable_declaration vd,
+				Method_declaration md) {
 				if (classeAtributos.get(vd.type.name) == null && !isTipoPrimitivo(vd.type.name)) {
 					error("Classe " + vd.type.name + " não existe.", vd,
 						JavaPackage.Literals.VARIABLE_DECLARATION__TYPE);
 				}
 				buscaNomeAtributo(vds, vd.name);
+				validaNomeAtributoIgualParametro(md, vd.name);
 				for (Variable_declarator declarator : vd.names) {
 					buscaNomeAtributo(vds, declarator);
+					validaNomeAtributoIgualParametro(md, declarator);
+				}
+			}
+			
+			def validaNomeAtributoIgualParametro(Method_declaration md, Variable_declarator vd) {
+				if (md.parameter!=null) {
+					if (md.parameter.parameter.name.equals(vd.name)) {
+						error("Campo " + vd.name + " duplicado.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+					}
+					if (md.parameter.parameters != null) {
+						for (Parameter param: md.parameter.parameters) {
+							if (param.name.equals(vd.name)) {
+								error("Campo " + vd.name + " duplicado.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+							}
+						}
+					}
 				}
 			}
 
@@ -569,7 +583,6 @@ class JavaValidator extends AbstractJavaValidator {
 							error("Campo " + dec.name + " duplicado.", dec,
 								JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 						}
-						// validaAtributoComExpressaoAritmetica(classeAtributos.get(cd.className), dec, cd.className);
 						nomesAtributos.add(dec.name);
 					}
 				}
