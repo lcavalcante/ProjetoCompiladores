@@ -95,9 +95,11 @@ class JavaValidator extends AbstractJavaValidator {
 						JavaPackage.Literals.METHOD_DECLARATION__NAME);
 				}
 				classeMetodos.get(cd.className).add(md);
-				validarMetodo(md, cd.className);
 			}
 		}
+		for (Method_declaration metodo: classeMetodos.get(cd.className)) {
+			validarMetodo(metodo, cd.className);
+		} 
 	}
 
 	def validarMetodo(Method_declaration md, String nomeClasse) {
@@ -154,13 +156,13 @@ class JavaValidator extends AbstractJavaValidator {
 						return;
 					} else if (method != null) {
 						validaChamadaMetodo(vds, className, exp, tipoVariavel);
-						if (!method.type.name.equals(tipoVariavel)) {
-							error("Não é possível converter de " + tipoVariavel + " para " + method.type.name, exp,
+						if (!isNomeClassIgualOuFilha(method.type.name, tipoVariavel)) {
+							error("Não é possível converter de " + method.type.name + " para " + tipoVariavel, exp,
 								JavaPackage.Literals.EXPRESSION__NAME);
 								return;
 						}
-					} else if (tipo != null && !tipo.equals(tipoVariavel)) {
-						error("Não é possível converter do tipo " + tipoVariavel + " para " + tipo, exp,
+					} else if (!isNomeClassIgualOuFilha(tipo, tipoVariavel)) {
+						error("Não é possível converter do tipo " + tipo + " para " + tipoVariavel, exp,
 							JavaPackage.Literals.EXPRESSION__NAME);
 						return;
 					}
@@ -264,7 +266,7 @@ class JavaValidator extends AbstractJavaValidator {
 						error("Método " + exp.name + " não existe", exp, JavaPackage.Literals.EXPRESSION__NAME);
 						return false;
 					}
-					if (!md.type.name.equals(tipo)) {
+					if (!isNomeClassIgualOuFilha(md.type.name, tipo)) {
 						error("Método " + md.name + " deve retornar um " + tipo, exp, JavaPackage.Literals.EXPRESSION__NAME);
 						return false;
 					}
@@ -404,6 +406,15 @@ class JavaValidator extends AbstractJavaValidator {
 								(literal.exp2 != null || literal.string != null || literal.char != null)) {
 								error("O método deve retornar um int.", retorno,
 									JavaPackage.Literals.RETURN_STATEMENT__RV);
+							}
+						} else if (retorno.rv.name != null) {
+							var String tipo = buscaTipoVariavel(vds, retorno.rv.name, nomeClasse);
+							if (tipo == null) {
+								error("Variável " + retorno.rv.name + " não existe.", retorno.rv,
+									JavaPackage.Literals.RETURN_VALUE__NAME);
+							} else if (!isNomeClassIgualOuFilha(tipo, md.type.name)) {
+								error("Não é possível converter o tipo " + tipo + " para " + md.type.name
+									, retorno.rv, JavaPackage.Literals.RETURN_VALUE__NAME);
 							}
 						}
 					}
@@ -821,6 +832,18 @@ class JavaValidator extends AbstractJavaValidator {
 						}
 					}
 				}
+			}
+			
+			def boolean isNomeClassIgualOuFilha(String className, String classePai) {
+				if (className.equals(classePai)) {
+					return true;
+				} else if (!isTipoPrimitivo(className)) {
+					return (classeExtends.get(className)!=null && 
+						classeExtends.get(className).contains(classePai))
+					|| (classeImplements.get(className)!=null &&
+						classeImplements.get(className).contains(classePai));
+				}
+				return false;
 			}
 
 //	
