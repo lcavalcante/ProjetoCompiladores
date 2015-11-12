@@ -33,19 +33,6 @@ import org.xtext.java.java.For_Statement
  */
 class JavaValidator extends AbstractJavaValidator {
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
-//	public List<Method_declaration> metodosDeclarados;
-//
-//	public Map<String, Type> tipos;
 	public List<String> interfaces = new ArrayList<String>();
 
 	public static Map<String, List<String>> classeExtends = new HashMap<String, List<String>>();
@@ -97,9 +84,9 @@ class JavaValidator extends AbstractJavaValidator {
 				classeMetodos.get(cd.className).add(md);
 			}
 		}
-		for (Method_declaration metodo: classeMetodos.get(cd.className)) {
+		for (Method_declaration metodo : classeMetodos.get(cd.className)) {
 			validarMetodo(metodo, cd.className);
-		} 
+		}
 	}
 
 	def validarMetodo(Method_declaration md, String nomeClasse) {
@@ -123,13 +110,26 @@ class JavaValidator extends AbstractJavaValidator {
 				validarForStatements(vds, nomeClasse, st.forStatement);
 			} else if (st.variableDeclarator != null) {
 				validaAtributoComExpressaoAritmetica(vds, st.variableDeclarator, nomeClasse);
+			} else if (st.expressionx != null) {
+				if (st.expressionx.name != null) {
+					var Method_declaration metodo = buscaMetodoClasse(nomeClasse, st.expressionx.name);
+					if (metodo != null) {
+						validaChamadaMetodo(vds, nomeClasse, st.expressionx, metodo.type.name);
+					} else {
+						error("Identificador inválido. Insira um comando válido.", st,
+							JavaPackage.Literals.STATEMENT__EXPRESSIONX);
+					}
+				} else {
+					error("Insira uma declaração de variável ou método para completar a expressão.", st,
+						JavaPackage.Literals.STATEMENT__EXPRESSIONX);
+				}
 			}
 		}
 		validaParametrosMethodDeclaration(md);
 		validaRetornoVoidMetodo(md);
 		validaRetornoMetodoComFuncao(md, nomeClasse, vds);
 	}
-	
+
 	def validaAtributoComExpressaoAritmetica(List<Variable_declaration> vds, Variable_declarator declarator,
 		String className) {
 		if (declarator.initializer != null && declarator.initializer.expression != null) {
@@ -140,18 +140,20 @@ class JavaValidator extends AbstractJavaValidator {
 				error("Variável " + declarator.name + " não foi declarada.", declarator,
 					JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 			} else {
-				if (exp.logicalExpression != null) {
-					error("Não é possível converter do tipo boolean para " + tipoVariavel, exp, JavaPackage.Literals.EXPRESSION__NAME);	
+				if ((exp.logicalExpression != null || exp.aux.testingSign != null)&& !tipoVariavel.equals("boolean")) {
+					error("Não é posível converter do tipo boolean para " + tipoVariavel, exp,
+						JavaPackage.Literals.EXPRESSION__NAME);
 					return;
-				}
-				else if (exp.name != null) {
-					if (isNomeBooleano(exp.name) || exp.logicalExpression != null) {
-						error("Não é possível converter do tipo boolean para " + tipoVariavel, exp, JavaPackage.Literals.EXPRESSION__NAME);	
+				} else if (exp.name != null) {
+					if ((isNomeBooleano(exp.name) || exp.logicalExpression != null)
+						&& !tipoVariavel.equals("boolean")) {
+						error("Não é possível converter do tipo boolean para " + tipoVariavel, exp,
+							JavaPackage.Literals.EXPRESSION__NAME);
 						return;
 					}
 					var String tipo = buscaTipoVariavel(vds, exp.name, className);
 					var Method_declaration method = buscaMetodoClasse(className, exp.name);
-					if (tipo == null && method == null) {
+					if (tipo == null && method == null && !tipoVariavel.equals("boolean")) {
 						error("Identificador inválido.", exp, JavaPackage.Literals.EXPRESSION__NAME);
 						return;
 					} else if (method != null) {
@@ -159,7 +161,7 @@ class JavaValidator extends AbstractJavaValidator {
 						if (!isNomeClassIgualOuFilha(method.type.name, tipoVariavel)) {
 							error("Não é possível converter de " + method.type.name + " para " + tipoVariavel, exp,
 								JavaPackage.Literals.EXPRESSION__NAME);
-								return;
+							return;
 						}
 					} else if (!isNomeClassIgualOuFilha(tipo, tipoVariavel)) {
 						error("Não é possível converter do tipo " + tipo + " para " + tipoVariavel, exp,
@@ -169,7 +171,8 @@ class JavaValidator extends AbstractJavaValidator {
 				}
 			}
 			if (tipoVariavel != 'int' && tipoVariavel != 'float') {
-				if (tipoVariavel != 'char' && tipoVariavel != 'String' && exp.literalExpression != null) {
+				if (tipoVariavel != 'char' && tipoVariavel != 'String' && exp.literalExpression != null
+					&& exp.aux.testingSign == null) {
 					error("Valor inválido para o tipo " + tipoVariavel, exp,
 						JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
 				} else if (exp.aux != null &&
@@ -205,19 +208,85 @@ class JavaValidator extends AbstractJavaValidator {
 				} else if (tipoVariavel == "boolean") {
 					// validar se é expressão relacional
 					if (exp.logicalExpression == null && exp.name != "true" && exp.name != "!true" &&
-						exp.name != "false" && exp.name != "!false") {
+						exp.name != "false" && exp.name != "!false" && exp.aux.testingSign == null) {
 						error("Valor inválido para o tipo " + tipoVariavel, exp, JavaPackage.Literals.EXPRESSION__NAME);
+					} else if (exp.aux.testingSign != null) {
+						aux = exp.aux;
+						if (exp.logicalExpression != null) {
+							error("Não é possível converter do tipo boolean para int", exp,
+								JavaPackage.Literals.EXPRESSION__NAME);
+							return;
+						}
+						if (exp.literalExpression == null && exp.name != null) {
+							if (isNomeBooleano(exp.name)) {
+								error("Não é possível converter do tipo boolean para int", exp,
+									JavaPackage.Literals.EXPRESSION__NAME);
+								return;
+							}
+							var String tipo = buscaTipoVariavel(vds, exp.name, className);
+							var Method_declaration metodo = buscaMetodoClasse(className, exp.name);
+							if (tipo == null && metodo == null) {
+								error("Identificador inválido", exp, JavaPackage.Literals.EXPRESSION__NAME);
+							} else if (metodo != null) {
+								validaChamadaMetodo(vds, className, exp, "int");
+								if (!metodo.type.name.equals("int")) {
+									error("Método inválido", exp, JavaPackage.Literals.EXPRESSION__NAME);
+								}
+							} else if (!"int".equals(tipo)) {
+								error("Variável " + exp.name + " deve ser do tipo int", exp,
+									JavaPackage.Literals.EXPRESSION__NAME);
+							}
+						}
+						if (exp.literalExpression != null &&
+							(exp.literalExpression.exp2 != null || exp.literalExpression.string != null ||
+								exp.literalExpression.char != null)) {
+								error("Os valores devem ser do tipo int", exp,
+									JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+						}
+						if (aux.exp1.literalExpression == null && aux.exp1.name != null) {
+							if (isNomeBooleano(aux.exp1.name)) {
+								error("Não é possível converter do tipo boolean para int", aux.exp1,
+									JavaPackage.Literals.EXPRESSION__NAME);
+								return;
+							}
+							var String tipo = buscaTipoVariavel(vds, aux.exp1.name, className);
+							var Method_declaration metodo = buscaMetodoClasse(className, aux.exp1.name);
+							if (tipo == null && metodo == null) {
+								error("Identificador inválido", aux.exp1, JavaPackage.Literals.EXPRESSION__NAME);
+							} else if (metodo != null) {
+								validaChamadaMetodo(vds, className, aux.exp1, "int");
+								if (!metodo.type.name.equals("int")) {
+									error("Método inválido", aux.exp1, JavaPackage.Literals.EXPRESSION__NAME);
+								}
+							} else if (!"int".equals(tipo)) {
+								error("Variável " + aux.exp1.name + " deve ser do tipo int", aux.exp1,
+									JavaPackage.Literals.EXPRESSION__NAME);
+							}
+						}
+						if (aux.exp1.literalExpression != null &&
+							(aux.exp1.literalExpression.exp2 != null || aux.exp1.literalExpression.string != null ||
+								aux.exp1.literalExpression.char != null)) {
+								error("Os valores devem ser do tipo int", aux.exp1,
+									JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+						}
+						if (aux.exp1.aux.logicalSign != null || aux.exp1.aux.testingSign != null 
+							|| aux.exp1.aux.numericSign != null) {
+							error("Expressão relacional inválida", declarator.initializer,
+									JavaPackage.Literals.VARIABLE_INITIALIZER__EXPRESSION);
+						}
 					}
 				} else if (tipoVariavel == 'int') {
 					while (exp != null) {
 						var boolean validouMetodo = false;
 						if (exp.logicalExpression != null) {
-							error("Não é possível converter do tipo boolean para int", exp, JavaPackage.Literals.EXPRESSION__NAME);	
+							error("Não é possível converter do tipo boolean para int", exp,
+								JavaPackage.Literals.EXPRESSION__NAME);
 							return;
 						}
 						if (exp.literalExpression == null && exp.name != null) {
 							if (isNomeBooleano(exp.name)) {
-								error("Não é possível converter do tipo boolean para int", exp, JavaPackage.Literals.EXPRESSION__NAME);	
+								error("Não é possível converter do tipo boolean para int", exp,
+									JavaPackage.Literals.EXPRESSION__NAME);
 								return;
 							}
 							var String tipo = buscaTipoVariavel(vds, exp.name, className);
@@ -240,24 +309,24 @@ class JavaValidator extends AbstractJavaValidator {
 								exp.literalExpression.char != null)) {
 								error("Os valores devem ser do tipo int", exp,
 									JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
-						}
-						if (aux != null) {
-							if (aux.numericSign == null) {
-								error("Operação aritmética inválida.", exp,
-									JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
 							}
-						}
-						if (validouMetodo) {
-							exp = exp.aux.aux.exp2;
-						} else {
-							aux = exp.aux;
-							exp = exp.aux.exp2;
-						}
+							if (aux != null) {
+								if (aux.numericSign == null) {
+									error("Operação aritmética inválida.", exp,
+										JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+								}
+							}
+							if (validouMetodo) {
+								exp = exp.aux.aux.exp2;
+							} else {
+								aux = exp.aux;
+								exp = exp.aux.exp2;
+							}
 						}
 					}
 				}
 			}
-
+			
 			def boolean validaChamadaMetodo(List<Variable_declaration> vds, String nomeClasse, Expression exp,
 				String tipo) {
 				if (exp.aux != null && exp.aux.argList != null) {
@@ -267,7 +336,8 @@ class JavaValidator extends AbstractJavaValidator {
 						return false;
 					}
 					if (!isNomeClassIgualOuFilha(md.type.name, tipo)) {
-						error("Método " + md.name + " deve retornar um " + tipo, exp, JavaPackage.Literals.EXPRESSION__NAME);
+						error("Método " + md.name + " deve retornar um " + tipo, exp,
+							JavaPackage.Literals.EXPRESSION__NAME);
 						return false;
 					}
 					var List<String> tiposMetodo = getTiposParametrosDoMetodo(md);
@@ -413,8 +483,8 @@ class JavaValidator extends AbstractJavaValidator {
 								error("Variável " + retorno.rv.name + " não existe.", retorno.rv,
 									JavaPackage.Literals.RETURN_VALUE__NAME);
 							} else if (!isNomeClassIgualOuFilha(tipo, md.type.name)) {
-								error("Não é possível converter o tipo " + tipo + " para " + md.type.name
-									, retorno.rv, JavaPackage.Literals.RETURN_VALUE__NAME);
+								error("Não é possível converter o tipo " + tipo + " para " + md.type.name, retorno.rv,
+									JavaPackage.Literals.RETURN_VALUE__NAME);
 							}
 						}
 					}
@@ -507,8 +577,7 @@ class JavaValidator extends AbstractJavaValidator {
 				}
 			}
 
-			def validaAtributoDoMetodo(List<Variable_declaration> vds, Variable_declaration vd,
-				Method_declaration md) {
+			def validaAtributoDoMetodo(List<Variable_declaration> vds, Variable_declaration vd, Method_declaration md) {
 				if (classeAtributos.get(vd.type.name) == null && !isTipoPrimitivo(vd.type.name)) {
 					error("Classe " + vd.type.name + " não existe.", vd,
 						JavaPackage.Literals.VARIABLE_DECLARATION__TYPE);
@@ -520,16 +589,17 @@ class JavaValidator extends AbstractJavaValidator {
 					validaNomeAtributoIgualParametro(md, declarator);
 				}
 			}
-			
+
 			def validaNomeAtributoIgualParametro(Method_declaration md, Variable_declarator vd) {
-				if (md.parameter!=null) {
+				if (md.parameter != null) {
 					if (md.parameter.parameter.name.equals(vd.name)) {
 						error("Campo " + vd.name + " duplicado.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 					}
 					if (md.parameter.parameters != null) {
-						for (Parameter param: md.parameter.parameters) {
+						for (Parameter param : md.parameter.parameters) {
 							if (param.name.equals(vd.name)) {
-								error("Campo " + vd.name + " duplicado.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+								error("Campo " + vd.name + " duplicado.", vd,
+									JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 							}
 						}
 					}
@@ -541,7 +611,7 @@ class JavaValidator extends AbstractJavaValidator {
 					if (declaration.name.name.equals(vd.name)) {
 						error("Campo " + vd.name + " duplicado.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 					} else if (isNomeBooleano(vd.name)) {
-						error("Identificador inválido.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);				
+						error("Identificador inválido.", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 					}
 					for (Variable_declarator declarator : declaration.names) {
 						if (declarator.name.equals(vd.name)) {
@@ -560,13 +630,14 @@ class JavaValidator extends AbstractJavaValidator {
 						classeAtributos.get(cd.className).add(vd);
 					}
 				}
-				for (Variable_declaration dec: classeAtributos.get(cd.className)) {
+				for (Variable_declaration dec : classeAtributos.get(cd.className)) {
 					if (dec.name != null) {
-					 	validaAtributoComExpressaoAritmetica(classeAtributos.get(cd.className), dec.name, cd.className);
+						validaAtributoComExpressaoAritmetica(classeAtributos.get(cd.className), dec.name, cd.className);
 					}
 					if (dec.names != null) {
 						for (Variable_declarator declarator : dec.names) {
-							validaAtributoComExpressaoAritmetica(classeAtributos.get(cd.className), declarator, cd.className);
+							validaAtributoComExpressaoAritmetica(classeAtributos.get(cd.className), declarator,
+								cd.className);
 						}
 					}
 				}
@@ -580,12 +651,11 @@ class JavaValidator extends AbstractJavaValidator {
 						error("Campo " + declarator.name + " duplicado.", declarator,
 							JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 					} else if (isNomeBooleano(declarator.name)) {
-						error("Identificador inválido.", declarator,
-							JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+						error("Identificador inválido.", declarator, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 					} else if (classeAtributos.get(vd.type.name) == null && !isTipoPrimitivo(vd.type.name)) {
 						error("Classe " + vd.type.name + " não existe.", declarator,
 							JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-					} 
+					}
 					nomesAtributos.add(declarator.name);
 				}
 				if (vd.names != null) {
@@ -733,7 +803,7 @@ class JavaValidator extends AbstractJavaValidator {
 						}
 					}
 				}
-				if (metodoSendoValidado!=null) {
+				if (metodoSendoValidado != null) {
 					for (Variable_declaration varMetodo : classeAtributos.get(nomeClasse)) {
 						if (varMetodo.name.name.equals(nomeVar)) {
 							return varMetodo.type.name;
@@ -747,7 +817,7 @@ class JavaValidator extends AbstractJavaValidator {
 						}
 					}
 				}
-				if (metodoSendoValidado!=null && metodoSendoValidado.parameter != null) {
+				if (metodoSendoValidado != null && metodoSendoValidado.parameter != null) {
 					if (metodoSendoValidado.parameter.parameter.name.equals(nomeVar)) {
 						return metodoSendoValidado.parameter.parameter.type.name;
 					}
@@ -772,17 +842,17 @@ class JavaValidator extends AbstractJavaValidator {
 				}
 				return false;
 			}
-			
+
 			def isNomeBooleano(String nome) {
-				return "true".equals(nome) || "!true".equals(nome) ||
-						"false".equals(nome) || "!false".equals(nome);
+				return "true".equals(nome) || "!true".equals(nome) || "false".equals(nome) || "!false".equals(nome);
 			}
-			
+
 			def validarForStatements(List<Variable_declaration> vds, String className, For_Statement fs) {
 				var List<Variable_declaration> vdsFor = vds;
 				if (fs.variable != null) {
 					if (buscaTipoVariavel(vdsFor, fs.variable.name.name, className) != null) {
-						error("Variável " + fs.variable.name.name + "já existe", fs.variable.name, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
+						error("Variável " + fs.variable.name.name + "já existe", fs.variable.name,
+							JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 						return;
 					} else {
 						vdsFor.add(fs.variable);
@@ -794,319 +864,67 @@ class JavaValidator extends AbstractJavaValidator {
 						error("Condição inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION2);
 					} else {
 						if (buscaTipoVariavel(vdsFor, fs.expression2.name, className) == null) {
-							error("Variável " + fs.expression2.name + " não existe.", fs.expression2, JavaPackage.Literals.EXPRESSION__NAME);
+							error("Variável " + fs.expression2.name + " não existe.", fs.expression2,
+								JavaPackage.Literals.EXPRESSION__NAME);
 						} else if (buscaTipoVariavel(vdsFor, fs.expression2.name, className) != "int") {
-							error("Variável " + fs.expression2.name + " deve ser do tipo int.", fs.expression2, JavaPackage.Literals.EXPRESSION__NAME);
+							error("Variável " + fs.expression2.name + " deve ser do tipo int.", fs.expression2,
+								JavaPackage.Literals.EXPRESSION__NAME);
 						} else {
 							if (fs.expression2.aux.testingSign == null) {
 								error("Expressão inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
-							} else if (fs.expression2.aux.exp1.name==null && fs.expression2.aux.exp1.literalExpression == null) {
-								error("Condição inválida", fs.expression2.aux.exp1, JavaPackage.Literals.EXPRESSION__NAME);
-							} else if (fs.expression2.aux.exp1.name!=null && buscaTipoVariavel(vdsFor, fs.expression3.aux.exp1.name, className) == null) {
-								error("Variável não existe", fs.expression2.aux.exp1, JavaPackage.Literals.EXPRESSION__NAME);
-							} else if (fs.expression2.aux.exp1.name!=null && buscaTipoVariavel(vdsFor, fs.expression3.aux.exp1.name, className) != "int") {
-								error("Variável deve ser do tipo int", fs.expression2.aux.exp1, JavaPackage.Literals.EXPRESSION__NAME);
+							} else if (fs.expression2.aux.exp1.name == null &&
+								fs.expression2.aux.exp1.literalExpression == null) {
+								error("Condição inválida", fs.expression2.aux.exp1,
+									JavaPackage.Literals.EXPRESSION__NAME);
+							} else if (fs.expression2.aux.exp1.name != null &&
+								buscaTipoVariavel(vdsFor, fs.expression3.aux.exp1.name, className) == null) {
+								error("Variável não existe", fs.expression2.aux.exp1,
+									JavaPackage.Literals.EXPRESSION__NAME);
+							} else if (fs.expression2.aux.exp1.name != null &&
+								buscaTipoVariavel(vdsFor, fs.expression3.aux.exp1.name, className) != "int") {
+								error("Variável deve ser do tipo int", fs.expression2.aux.exp1,
+									JavaPackage.Literals.EXPRESSION__NAME);
 							} else if (fs.expression2.aux.exp1.literalExpression != null &&
-								(fs.expression2.aux.exp1.literalExpression.exp2 != null || fs.expression2.aux.exp1.literalExpression.string != null ||
+								(fs.expression2.aux.exp1.literalExpression.exp2 != null ||
+									fs.expression2.aux.exp1.literalExpression.string != null ||
 									fs.expression2.aux.exp1.literalExpression.char != null)) {
-								error("Literal inválido", fs.expression2.aux.exp1, JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);		
-							}
-							if (fs.expression2.aux.exp1.aux.testingSign != null) {
-								error("Condição inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION2);
+									error("Literal inválido", fs.expression2.aux.exp1,
+										JavaPackage.Literals.EXPRESSION__LITERAL_EXPRESSION);
+								}
+								if (fs.expression2.aux.exp1.aux.testingSign != null) {
+									error("Condição inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION2);
+								}
 							}
 						}
 					}
-				}
-				if (fs.expression3 != null) {
-					if (fs.expression3.name == null) {
-						error("Expressão inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
-					} else {
-						if (buscaTipoVariavel(vdsFor, fs.expression3.name, className) == null) {
-							error("Variável " + fs.expression3.name + " não existe.", fs.expression3, JavaPackage.Literals.EXPRESSION__NAME);
-						} else if (buscaTipoVariavel(vdsFor, fs.expression3.name, className) != "int") {
-							error("Variável " + fs.expression3.name + " deve ser do tipo int.", fs.expression3, JavaPackage.Literals.EXPRESSION__NAME);
+					if (fs.expression3 != null) {
+						if (fs.expression3.name == null) {
+							error("Expressão inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
 						} else {
-							if (fs.expression3.aux.sgin==null) {
-								error("Expressão inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
+							if (buscaTipoVariavel(vdsFor, fs.expression3.name, className) == null) {
+								error("Variável " + fs.expression3.name + " não existe.", fs.expression3,
+									JavaPackage.Literals.EXPRESSION__NAME);
+							} else if (buscaTipoVariavel(vdsFor, fs.expression3.name, className) != "int") {
+								error("Variável " + fs.expression3.name + " deve ser do tipo int.", fs.expression3,
+									JavaPackage.Literals.EXPRESSION__NAME);
+							} else {
+								if (fs.expression3.aux.sgin == null) {
+									error("Expressão inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
+								}
 							}
 						}
 					}
 				}
-			}
-			
-			def boolean isNomeClassIgualOuFilha(String className, String classePai) {
-				if (className.equals(classePai)) {
-					return true;
-				} else if (!isTipoPrimitivo(className)) {
-					return (classeExtends.get(className)!=null && 
-						classeExtends.get(className).contains(classePai))
-					|| (classeImplements.get(className)!=null &&
-						classeImplements.get(className).contains(classePai));
-				}
-				return false;
-			}
 
-//	
-//	@Check 
-//	def runChecks(Class_declaration cd) {
-//		metodosDeclarados = new ArrayList<Method_declaration>();
-//		tipos = new HashMap<String, Type>();
-//		for (Field_declaration fd : cd.fields) {
-//			if (fd.name instanceof Method_declaration) {
-//				addMetodos(fd.name as Method_declaration);
-//			}
-//			addTipos(fd, tipos);
-//			if (fd.name instanceof Variable_declarator) {
-//				checarTiposVariaveis(fd.name as Variable_declarator, tipos);
-//			}
-//		}
-//	}
-//	
-//	def addMetodos(Method_declaration method) {
-//		metodosDeclarados.add(method);
-//	}
-//	
-//	@Check
-//	def checkForStatements(For_Statement fs) {
-//		if (fs.variable.type.name.toString != "int") {
-//			error("Variável iterativa inválida", fs, JavaPackage.Literals.FOR_STATEMENT__VARIABLE);
-//		} 
-//		if (fs.expression2.aux == null
-//			|| fs.expression2.aux.testingSign == null
-//		) {
-//			error("Condição inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION2);
-//		}
-//		if (fs.expression3.aux == null
-//			||( fs.expression3.aux.sgin == null
-//			&& fs.expression3.aux.numericSign == null
-//			)
-//		) {
-//			error("Iteração inválida", fs, JavaPackage.Literals.FOR_STATEMENT__EXPRESSION3);
-//		}
-//	}
-//	
-//	@Check
-//	def verificaExistenciaDeMetodo(Method_call method) {
-//		var Parameter_list_method_call pc = method.getParameter();
-//		var int parametrosChamada;
-//		if (pc != null) {
-//			parametrosChamada = 1;
-//			parametrosChamada += pc.getParameters().size();
-//		} else {
-//			parametrosChamada = 0;
-//		}
-//		var boolean existeMetodo = false;
-//		var boolean mesmaQuantidadeDeParametros = false;
-//		for (Method_declaration m : metodosDeclarados) {
-//			if (m.name == method.name) {
-//				existeMetodo = true;
-//				if (verificaQuantidadeDeParametros(m, parametrosChamada)) {
-//					mesmaQuantidadeDeParametros = true;
-//				}
-//			}
-//		}
-//		if (!existeMetodo) {
-//			error("O método ainda não foi declarado", method, JavaPackage.Literals.METHOD_CALL__PARAMETER)
-//			return;
-//		}
-//		if(!mesmaQuantidadeDeParametros) {
-//			error("Números de parâmetros incorreto", method, JavaPackage.Literals.METHOD_CALL__PARAMETER);
-//			return;
-//		}
-//	}
-//	
-//	def verificaQuantidadeDeParametros(Method_declaration method, int parametrosChamada) {
-//		var Parameter_list pd = method.getParameter();
-//		var int parametrosDeclaracao;
-//		if (pd != null) {
-//			parametrosDeclaracao = 1;
-//			parametrosDeclaracao += pd.getParameters().size();
-//		} else {
-//			parametrosDeclaracao = 0;
-//		}
-//		return parametrosDeclaracao == parametrosChamada;
-//	}
-//	
-//	@Check
-//	def checaRetornoDosMetodos(Method_declaration md) {
-//		var EList<Statement> statements = md.statement.statements;
-//		var Map<String, Type> tiposMetodo = new HashMap<String, Type>();
-//		var boolean temReturn = false;
-//		for (Statement smt : statements) {
-//			addTiposMetodo(smt, tiposMetodo);
-//			if (smt.variable.name instanceof Variable_declarator) {
-//				checarTiposVariaveis(smt.variable.name, tiposMetodo);
-//			}
-//			if (smt.returnSmt != null) {
-//				error(smt.toString, smt, JavaPackage.Literals.STATEMENT__STATEMENT);
-//				temReturn = true;
-//				if (md.type.name.toString == "void") {
-//					if (smt.returnSmt.rv.name != null) {
-//						error("Métodos void não devem retornar nada", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
-//					}
-//				} else {
-//					if (smt.returnSmt.rv == null) {
-//						error("O método deve retornar " + md.type.name.toString, smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
-//					}
-//					var retorno = tipos.get(smt.returnSmt.rv.name.toString);
-//					var retorno2 = tiposMetodo.get(smt.returnSmt.rv.name.toString);
-//					if (retorno == null && retorno2 == null) {
-//						error("A variável de retorno ainda não foi declarada", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
-//					} else if ((retorno == null && retorno2.name.toString != md.type.name.toString)
-//						|| (retorno2 == null && retorno.name.toString != md.type.name.toString)
-//					) {
-//						error("O tipo do retorno e o tipo do método são diferentes", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
-//					} else if (retorno2 != null && retorno != null
-//						&& retorno2.name.toString != md.type.name.toString
-//						&& retorno.name.toString != md.type.name.toString
-//					) {
-//						error("O tipo do retorno e o tipo do método são diferentes", smt.returnSmt, JavaPackage.Literals.RETURN_STATEMENT__RV);
-//					}
-//				}	 
-//			}
-//		}
-//		if (!temReturn && md.type.name.toString != "void") {
-//			error("O método deve retornar " + md.type.name.toString, md, JavaPackage.Literals.METHOD_DECLARATION__NAME);
-//		}
-//		for (Statement smt : statements) {
-//			if (smt.ifStatement != null) {
-//				checarCondicaoDoIf(smt.ifStatement, tiposMetodo);
-//			}
-//		}
-//	} 
-//
-//	def addTipos(Field_declaration fd, Map<String, Type> tipos) {
-//		if (fd.name instanceof Variable_declaration) {
-//			var Variable_declaration vd = fd.name as Variable_declaration;
-//			var Type nome = tipos.get(vd.name.name.toString);
-//			if (nome != null) {
-//				error("Já existe uma variável com o mesmo identificador", vd, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
-//			} else {
-//				tipos.put(vd.name.name.toString, vd.type);	
-//				checarTiposVariaveis(vd.name, tipos);			
-//			}
-//		} else if (fd.name instanceof Method_declaration) {
-//			var Method_declaration md = fd.name as Method_declaration;
-//			tipos.put(md.name.toString, md.type);
-//		} 
-//	}
-//	
-//	def addTiposMetodo(Statement smt, Map<String, Type> tipos) {
-//		if (smt.variable instanceof Variable_declaration) {
-//			var Variable_declaration v = smt.variable as Variable_declaration;
-//			var Type nome = tipos.get(v.name.name.toString);
-//			if (nome != null) {
-//				error("Já existe uma variável com o mesmo identificador", smt.variable, JavaPackage.Literals.VARIABLE_DECLARATION__NAME);
-//			}
-//			tipos.put(v.name.name.toString, v.type);
-//			checarTiposVariaveis(smt.variable.name, tipos);
-//		} 
-//	}
-//	
-//	def checarTiposVariaveis(Variable_declarator vd, Map<String, Type> tipos) {
-//		var Type tipo = tipos.get(vd.name.toString);
-//		if (vd.initializer != null
-//			&& vd.initializer.expression != null
-//		) {
-//			if (vd.initializer.expression.literalExpression instanceof Literal_Expression) {
-//				if (tipo.name.toString == "String" && vd.initializer.expression.literalExpression.string == null
-//				) {
-//					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//				} else if (tipo.name.toString == "int" && vd.initializer.expression.literalExpression.string != null
-//				) {
-//					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//				} else if (vd.initializer.expression.literalExpression.string != null
-//					&& vd.initializer.expression.aux != null
-//					&& vd.initializer.expression.aux.stringSign != null
-//				) {
-//					if (vd.initializer.expression.aux.exp1.literalExpression instanceof Literal_Expression
-//						&& vd.initializer.expression.aux.exp1.literalExpression.string != null)
-//					{
-//					} else {
-//						error("Operação inválida", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//					}
-//				} else if (vd.initializer.expression.literalExpression.string == null
-//					&& vd.initializer.expression.aux != null
-//					&& vd.initializer.expression.aux.numericSign != null
-//				) {
-//					if (vd.initializer.expression.aux.exp2.literalExpression instanceof Literal_Expression
-//						&& vd.initializer.expression.aux.exp2.literalExpression.string == null) {					
-//					} else {
-//						error("Operação inválida", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//					}
-//				}
-//			} 
-//			if (!(vd.initializer.expression.logicalExpression instanceof Logical_Expression_NR)) {
-//				if (tipo.name.toString == "boolean" && vd.initializer.expression.aux.testingSign == null) {
-//					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//				}
-//			} else {
-//				if (tipo.name.toString != "boolean") {
-//					error("O valor da variável não casa com seu tipo", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//				}
-//			}
-//			if (vd.initializer.expression.aux != null
-//				&& vd.initializer.expression.aux.testingSign != null
-//				&& tipo.name.toString != "boolean") {
-//					error("A variável deve ser do tipo boolean", vd, JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
-//			}
-//		}
-//	}
-//
-//	@Check
-//	def checarInstanciaEntreClasses(Variable_declaration vdc) {
-//		if (vdc.name != null) {
-//			var Variable_declarator vd = vdc.name as Variable_declarator;
-//			if (vd.initializer != null && vd.initializer.expression != null) {
-//				if (vd.initializer.expression.creatingExpression instanceof Creating_Expression) {
-//					var Creating_Expression creatingExp = vd.initializer.expression.creatingExpression;
-//					if (creatingExp.className.toString != vdc.type.name.toString &&
-//						!classeExtends.get(creatingExp.className.toString).contains(vdc.type.name.toString)) {
-//						error("A classe " + classeExtends.toString + creatingExp.className.toString + " não herda ou implementa " +
-//							vdc.type.name.toString, creatingExp, JavaPackage.Literals.CREATING_EXPRESSION__CLASS_NAME);
-//					}
-//				}
-//			}
-//		}
-//	}
-//	
-//	def checarCondicaoDoIf(If_Statement ifStatement, Map<String, Type> tiposMetodo) {
-//		if (ifStatement.expression != null) {
-//			if (ifStatement.expression.name != null) {
-//				var Type type = tipos.get(ifStatement.expression.name);
-//				var Type typeMetodo = tiposMetodo.get(ifStatement.expression.name);
-//				if (type == null && typeMetodo == null) {
-//					error("Variável " + ifStatement.expression.name + " não existe", ifStatement, 
-//						JavaPackage.Literals.IF_STATEMENT__EXPRESSION);
-//				}
-//				else if ((type !== null && type != 'boolean' && type != 'Boolean')
-//					|| (typeMetodo !== null && typeMetodo != 'boolean' && typeMetodo != 'Boolean')) {
-//					if (ifStatement.expression.aux.testingSign == null) {
-//						error("Deve ser passado um boolean como parâmetro", ifStatement, 
-//							JavaPackage.Literals.IF_STATEMENT__EXPRESSION);
-//					}
-//				} else {
-//					if (ifStatement.expression.aux.logicalSign != null) {
-//						type = tipos.get(ifStatement.expression.aux.exp1.name);
-//						typeMetodo = tiposMetodo.get(ifStatement.expression.aux.exp1.name);
-//						if (type == null && typeMetodo == null) {
-//							error("Variável " + ifStatement.expression.aux.exp1.name + " não existe", ifStatement, 
-//							JavaPackage.Literals.IF_STATEMENT__EXPRESSION);
-//						}
-//						else if ((type !== null && type != 'boolean' && type != 'Boolean')
-//								|| (typeMetodo !== null && typeMetodo != 'boolean' && typeMetodo != 'Boolean')) {
-//							if (ifStatement.expression.aux.exp1.aux.testingSign == null) {
-//								error("Deve ser passado um boolean como parâmetro2", ifStatement, 
-//									JavaPackage.Literals.IF_STATEMENT__EXPRESSION);
-//							}
-//						}
-//					}
-//				}
-//			} else if (ifStatement.expression.aux != null &&
-//				ifStatement.expression.aux.testingSign == null) {
-//				error("Condição inválida", ifStatement, 
-//						JavaPackage.Literals.IF_STATEMENT__EXPRESSION);
-//			}
-//		} 
-//	}
-		}
+				def boolean isNomeClassIgualOuFilha(String className, String classePai) {
+					if (className.equals(classePai)) {
+						return true;
+					} else if (!isTipoPrimitivo(className)) {
+						return (classeExtends.get(className) != null &&
+							classeExtends.get(className).contains(classePai)) ||
+								(classeImplements.get(className) != null &&
+									classeImplements.get(className).contains(classePai));
+							}
+							return false;
+						}
+					}
