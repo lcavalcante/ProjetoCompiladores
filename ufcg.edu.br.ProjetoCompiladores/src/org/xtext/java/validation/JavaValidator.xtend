@@ -140,11 +140,11 @@ class JavaValidator extends AbstractJavaValidator {
 				error("Variável " + declarator.name + " não foi declarada.", declarator,
 					JavaPackage.Literals.VARIABLE_DECLARATOR__NAME);
 			} else {
-				if ((exp.logicalExpression != null || exp.aux.testingSign != null)&& !tipoVariavel.equals("boolean")) {
+				if ((exp.logicalExpression != null || exp.aux.testingSign != null) && !tipoVariavel.equals("boolean")) {
 					error("Não é posível converter do tipo boolean para " + tipoVariavel, exp,
 						JavaPackage.Literals.EXPRESSION__NAME);
 					return;
-				} else if (exp.name != null) {
+				} else if (exp.name != null && !tipoVariavel.equals("boolean")) {
 					if ((isNomeBooleano(exp.name) || exp.logicalExpression != null)
 						&& !tipoVariavel.equals("boolean")) {
 						error("Não é possível converter do tipo boolean para " + tipoVariavel, exp,
