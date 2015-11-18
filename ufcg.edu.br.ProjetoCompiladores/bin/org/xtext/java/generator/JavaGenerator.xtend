@@ -9,12 +9,6 @@ import org.eclipse.xtext.generator.IGenerator
 import org.xtext.java.java.Class_declaration
 import org.xtext.java.java.Variable_declaration
 import org.xtext.java.java.Field_declaration
-import org.xtext.java.java.Static_initializer
-import org.xtext.java.java.Statement_block
-import org.xtext.java.java.Statement
-import org.xtext.java.java.For_Statement
-import org.eclipse.emf.ecore.EObject
-import org.xtext.java.java.Variable_declarator
 
 /**
  * Generates code from your model files on save.
@@ -39,46 +33,9 @@ class JavaGenerator implements IGenerator {
 	'''
 	
 	def compileField(Field_declaration declaration)'''
-		«IF declaration.name != null»
-			«IF declaration.name instanceof Variable_declaration »
-				«var Variable_declaration vd = declaration.name as Variable_declaration»
-				«vd.compileVariable»
-			«ENDIF»
-			
-		«ENDIF»
-		«IF declaration.staticInit !=null»
-			«declaration.staticInit.compileStaticInit»
+		«IF declaration.name instanceof Variable_declaration»
+			«(declaration.name as Variable_declaration).compileVariable»
 		«ENDIF»		
-	'''
-	
-	
-	def compileStaticInit(Static_initializer initializer) '''
-		«initializer.name.compileStatementBlock»	
-	'''
-	
-	def compileStatementBlock(Statement_block block) '''
-		«FOR statement : block.statements»
-			«statement.compileStatement»
-		«ENDFOR»	
-	'''
-	
-	def compileStatement(Statement statement) '''
-		«IF statement.forStatement != null»
-			«statement.forStatement.compileForStatement»
-		«ENDIF»
-	'''
-	
-	def compileForStatement(For_Statement forStatement) '''
-		«IF forStatement.variable != null»
-			«forStatement.variable.compileVariable»
-		«ENDIF»
-		«IF forStatement.expression2 != null»
-			«IF forStatement.expression2.aux != null»
-				«IF forStatement.expression2.aux.testingSign != null»
-				
-				«ENDIF»
-			«ENDIF»
-		«ENDIF»
 	'''
 	
 	
@@ -89,8 +46,8 @@ class JavaGenerator implements IGenerator {
 				«increment»
 			«ENDIF»
 			«IF declaration.name.initializer.expression.logicalExpression != null»
-				«IF declaration.name.initializer.expression.logicalExpression.le != null»
-					LD R«variables.toString()», «declaration.name.initializer.expression.logicalExpression.le.toString»
+				«IF declaration.name.initializer.expression.logicalExpression.expression != null»
+					LD R«variables.toString()», «declaration.name.initializer.expression.logicalExpression.expression.toString»
 				«ENDIF»
 			«ENDIF»
 			
